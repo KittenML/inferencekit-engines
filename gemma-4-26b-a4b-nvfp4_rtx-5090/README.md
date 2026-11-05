@@ -41,7 +41,7 @@ The server speaks the OpenAI API (`/v1/chat/completions`, `/v1/completions`) wit
 **Reproduce:** with `./serve.sh` running, time it from a second terminal with inferencekit's client, then do the same with tuned vLLM on the same port:
 
 ```bash
-uvx --from 'inferencekit-cli==0.1.0' inferencekit bench serve --base-url http://127.0.0.1:8000 \
+uvx --from 'inferencekit-cli==0.1.1' inferencekit bench serve --base-url http://127.0.0.1:8000 \
   --model gemma-4-26b-a4b-nvfp4 --max-tokens 256 --rounds 4 \
   --extra-body '{"temperature": 1.0, "top_k": 64, "top_p": 0.95, "seed": 1234}'
 ```

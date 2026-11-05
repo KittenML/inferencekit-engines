@@ -42,7 +42,7 @@ API: `GET /health`, `POST /v1/clips` (request as in `test.sh`; the MP4 comes bac
 **Reproduce:** with `./serve.sh` running, write the request from `test.sh` as one line of `clips.jsonl` (add an `"id"`, drop the `"seed"`), then time it from a second terminal:
 
 ```bash
-uvx --from 'inferencekit-cli==0.1.0' inferencekit bench clip --base-url http://127.0.0.1:8000 \
+uvx --from 'inferencekit-cli==0.1.1' inferencekit bench clip --base-url http://127.0.0.1:8000 \
   --clips clips.jsonl --rounds 6
 ```
 

@@ -98,7 +98,7 @@ This result covers text-to-video at the measured size and duration, one request 
 With the server running, write the request from [test.sh](test.sh) as one JSON line in `clips.jsonl`, add an `id` and remove `seed`. Then run the README's timing command:
 
 ```bash
-uvx --from 'inferencekit-cli==0.1.0' inferencekit bench clip --base-url http://127.0.0.1:8000 \
+uvx --from 'inferencekit-cli==0.1.1' inferencekit bench clip --base-url http://127.0.0.1:8000 \
   --clips clips.jsonl --rounds 6
 ```
 
