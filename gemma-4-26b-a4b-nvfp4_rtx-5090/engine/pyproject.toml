@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "g4fast"
+version = "0.1.0"
+description = "Exact decode fast paths for vLLM 0.31.0 (Gemma 4 NVFP4, batch 1)"
+requires-python = ">=3.10"
+
+[project.entry-points."vllm.general_plugins"]
+g4fast = "g4fast:register"
+
+[tool.setuptools]
+packages = ["g4fast"]

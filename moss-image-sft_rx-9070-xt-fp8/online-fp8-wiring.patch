@@ -1,0 +1,146 @@
+diff --git a/vllm_omni/diffusion/models/mossimage/mossimage_transformer.py b/vllm_omni/diffusion/models/mossimage/mossimage_transformer.py
+index 5b445517..393a451f 100644
+--- a/vllm_omni/diffusion/models/mossimage/mossimage_transformer.py
++++ b/vllm_omni/diffusion/models/mossimage/mossimage_transformer.py
+@@ -235,9 +235,10 @@ class MOSSImageTextProjection(nn.Module):
+ class MOSSImageBlock(nn.Module):
+     """Main DiT block: shared AdaLN modulation, self-attention + gated SiTU FFN. TP-sharded."""
+ 
+-    def __init__(self, dim: int, ffn_dim: int, heads: int, prefix: str = ""):
++    def __init__(self, dim: int, ffn_dim: int, heads: int, prefix: str = "", quant_config=None):
+         super().__init__()
+         head_dim = dim // heads
++        self._moss_online_fp8 = quant_config is not None
+         self.norm1 = MOSSImageRMSNorm(dim)
+         self.norm2 = MOSSImageRMSNorm(dim)
+         self.q_norm = MOSSImageRMSNorm(head_dim)
+@@ -251,6 +252,7 @@ class MOSSImageBlock(nn.Module):
+                     head_size=head_dim,
+                     total_num_heads=heads,
+                     bias=False,
++                    quant_config=quant_config,
+                     prefix=f"{prefix}.proj.qkv" if prefix else "",
+                 ),
+                 "o": RowParallelLinear(
+@@ -259,12 +261,14 @@ class MOSSImageBlock(nn.Module):
+                     bias=False,
+                     input_is_parallel=True,
+                     return_bias=False,
++                    quant_config=quant_config,
+                     prefix=f"{prefix}.proj.o" if prefix else "",
+                 ),
+                 "ffn_up_gate": MergedColumnParallelLinear(
+                     dim,
+                     [ffn_dim, ffn_dim],
+                     bias=False,
++                    quant_config=quant_config,
+                     prefix=f"{prefix}.proj.ffn_up_gate" if prefix else "",
+                 ),
+                 "ffn_down": RowParallelLinear(
+@@ -273,6 +277,7 @@ class MOSSImageBlock(nn.Module):
+                     bias=False,
+                     input_is_parallel=True,
+                     return_bias=False,
++                    quant_config=quant_config,
+                     prefix=f"{prefix}.proj.ffn_down" if prefix else "",
+                 ),
+             }
+@@ -289,16 +294,29 @@ class MOSSImageBlock(nn.Module):
+     ) -> torch.Tensor:
+         shift_a, scale_a, gate_a, shift_f, scale_f, gate_f = modulation.unbind(1)
+         y = self.norm1(x, scale_a, shift_a)
+-        dtype = self.proj["qkv"].weight.dtype
+-        y = y.to(dtype)
+-        qkv, _ = self.proj["qkv"](y)
++        def input_dtype(layer):
++            # Online FP8 stores weight in FP8 but dynamically quantizes a BF16
++            # activation. orig_dtype is set by its vLLM weight constructor.
++            dtype = getattr(layer, "orig_dtype", layer.weight.dtype)
++            if self._moss_online_fp8 and dtype != torch.bfloat16:
++                raise RuntimeError("MOSS online FP8 requires BF16 projection inputs")
++            return dtype
++
++        qkv, _ = self.proj["qkv"](y.to(input_dtype(self.proj["qkv"])))
+         q, k, v = qkv.chunk(3, -1)
+-        branch = self.proj["o"](self.attention(q, k, v, rope, self.q_norm, self.k_norm, key_mask))
++        attention = self.attention(q, k, v, rope, self.q_norm, self.k_norm, key_mask)
++        if self._moss_online_fp8:
++            attention = attention.to(input_dtype(self.proj["o"]))
++        branch = self.proj["o"](attention)
+         x = gated_residual(x, branch, gate_a)
+         y = self.norm2(x, scale_f, shift_f)
+-        up_gate, _ = self.proj["ffn_up_gate"](y.to(dtype))
++        ffn_dtype = input_dtype(self.proj["ffn_up_gate"]) if self._moss_online_fp8 else input_dtype(self.proj["qkv"])
++        up_gate, _ = self.proj["ffn_up_gate"](y.to(ffn_dtype))
+         hidden, gate = up_gate.chunk(2, -1)  # [up | gate]
+-        return gated_residual(x, self.proj["ffn_down"](_situ(hidden, gate)), gate_f)
++        activation = _situ(hidden, gate)
++        if self._moss_online_fp8:
++            activation = activation.to(input_dtype(self.proj["ffn_down"]))
++        return gated_residual(x, self.proj["ffn_down"](activation), gate_f)
+ 
+ 
+ class MOSSImageRoPE(nn.Module):
+@@ -460,6 +478,19 @@ class MOSSImageTransformer(nn.Module):
+         self.freq_dim = freq_dim
+         self.latent_channels = latent_channels
+         self.quant_config = getattr(od_config, "quantization_config", None) if od_config else None
++        block_quant_config = None
++        if self.quant_config is not None:
++            from vllm_omni.quantization.component_config import resolve_component_quant_config
++            from vllm_omni.quantization.fp8_config import DiffusionFp8Config
++
++            # Resolve the component once: native block prefixes are layers.N,
++            # not transformer.layers.N. Do not route quantization to the text
++            # encoder, text-refinement blocks, modulation layers, or VAE.
++            block_quant_config = resolve_component_quant_config(self.quant_config, "transformer")
++            if block_quant_config is not None and not isinstance(block_quant_config, DiffusionFp8Config):
++                raise NotImplementedError("MOSS proposal supports only online FP8 for DiT blocks")
++            if block_quant_config is not None and getattr(block_quant_config, "ignored_layers", None):
++                raise NotImplementedError("MOSS proposal requires every DiT projection to use FP8")
+         self.stacked_params_mapping = list(_MOSSIMAGE_STACKED_PARAMS_MAPPING)
+ 
+         # Replicated (non-TP) small layers: embedders, time/modulation, head.
+@@ -469,7 +500,8 @@ class MOSSImageTransformer(nn.Module):
+         self.time_embedding = nn.Sequential(nn.Linear(freq_dim, dim), nn.SiLU(), nn.Linear(dim, dim))
+         self.shared_block_modulation = nn.Linear(dim, 6 * dim)
+         self.layers = nn.ModuleList(
+-            [MOSSImageBlock(dim, ffn_dim, num_heads, prefix=f"layers.{i}") for i in range(num_layers)]
++            [MOSSImageBlock(dim, ffn_dim, num_heads, prefix=f"layers.{i}", quant_config=block_quant_config)
++             for i in range(num_layers)]
+         )
+         self.final_norm_video = MOSSImageRMSNorm(dim)
+         self.final_linear_video = nn.Linear(dim, latent_channels, bias=False)
+diff --git a/vllm_omni/diffusion/models/mossimage/pipeline_mossimage.py b/vllm_omni/diffusion/models/mossimage/pipeline_mossimage.py
+index cbcc44f5..d09f8d0d 100644
+--- a/vllm_omni/diffusion/models/mossimage/pipeline_mossimage.py
++++ b/vllm_omni/diffusion/models/mossimage/pipeline_mossimage.py
+@@ -217,15 +217,19 @@ class MOSSImagePipeline(nn.Module, SkipLayerGuidanceMixin, DiffusionPipelineProf
+         encoder_device = (
+             torch.device("cpu") if resolve_offload(od_config).offloads(TEXT_ENCODER_COMPONENT) else self.device
+         )
+-        self.text_encoder = from_pretrained_with_prefetch(
+-            AutoModel.from_pretrained,
+-            model,
+-            subfolder="text_encoder",
+-            prefetch_list=mossimage_subfolders,
+-            local_files_only=local_files_only,
+-            revision=od_config.revision,
+-            dtype=text_dtype,
+-        ).to(encoder_device)
++        # Online quantization initializes the pipeline under an accelerator
++        # default device. Respect the existing text-offload decision during
++        # construction too, so BF16 text weights do not first fill VRAM.
++        with torch.device(encoder_device):
++            self.text_encoder = from_pretrained_with_prefetch(
++                AutoModel.from_pretrained,
++                model,
++                subfolder="text_encoder",
++                prefetch_list=mossimage_subfolders,
++                local_files_only=local_files_only,
++                revision=od_config.revision,
++                dtype=text_dtype,
++            ).to(encoder_device)
+         self.text_encoder.eval()
+         self.tokenizer = AutoTokenizer.from_pretrained(
+             model,

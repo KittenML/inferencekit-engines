@@ -1,0 +1,18 @@
+{
+  "status": "PASS_EXECUTED_LOCAL_EXPORT_CONTROLS",
+  "controls": 13,
+  "scope": "Metadata-only export joins/privacy/structure/failure controls; no public model checker or device execution.",
+  "resource": {
+    "CPUQuota": "25%",
+    "MemoryMax": "256M",
+    "TasksMax": 24
+  },
+  "new_model_ML_or_hardware_calls": 0,
+  "timing_cases": 192,
+  "timing_pairs": 96,
+  "fresh_pairs": 144,
+  "native_cases_per_fresh_arm": 144,
+  "source_receipt_roles": 26,
+  "public_checker_executed": false,
+  "repository_or_hardware_modified": false
+}

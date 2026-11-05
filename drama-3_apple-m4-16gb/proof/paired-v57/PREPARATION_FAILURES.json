@@ -1,0 +1,13 @@
+{
+  "scope": "Local export tooling only; no hardware/model call.",
+  "failures": [
+    {
+      "stage": "standalone isolated-mode export validation",
+      "error_type": "ModuleNotFoundError",
+      "error": "No module named export_evidence",
+      "cause": "Python isolated mode does not add script directory to import path.",
+      "fix": "Explicit resolved script directory inserted before local helper import.",
+      "unit_controls_before_fix": "13PASS; unit runner already inserted this directory."
+    }
+  ]
+}

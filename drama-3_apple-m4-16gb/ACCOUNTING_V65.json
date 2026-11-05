@@ -1,0 +1,180 @@
+{
+  "scope": "Direct Drama3 implementation, preflight and kernel support in the frozen October 26 checkpoint; excludes shared coordination, tooling, reference validation, hardware and later activity.",
+  "window_start_utc": "2026-10-23T21:18:31+00:00",
+  "window_end_utc": "2026-10-26T18:57:37.518704+00:00",
+  "time": {
+    "campaign_elapsed_hours": 69.65181075111111,
+    "model_active_hours": null,
+    "note": "Elapsed campaign time includes waits. Session intervals overlap and some have no end event; a shorter active optimization time is not established."
+  },
+  "tokens": {
+    "input_tokens": 2058853373,
+    "cached_input_tokens": 2042075264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 7828379,
+    "reasoning_output_tokens": 4658437,
+    "total_tokens": 2066681752
+  },
+  "cost": {
+    "standard_api_list_price_equivalent_usd": 474.6866002,
+    "recorded_tier_api_list_price_equivalent_usd": 922.6911981999999,
+    "actual_api_bill_usd": null,
+    "method": "Normalize each recorded tier bucket separately to standard rates; cached input remains included. These are estimates, not invoices."
+  },
+  "price_buckets": [
+    {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "service_tier": "default",
+      "context": "short",
+      "calls": 303,
+      "tokens": {
+        "input_tokens": 40506600,
+        "cached_input_tokens": 39843712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 219008,
+        "reasoning_output_tokens": 101497,
+        "total_tokens": 40725608
+      },
+      "list_price_usd": 7.5002272,
+      "tier_source": "requested thread settings",
+      "unpriced_calls": 0,
+      "known_list_price_subtotal_usd": 7.5002272
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "service_tier": "default",
+      "context": "long",
+      "calls": 164,
+      "tokens": {
+        "input_tokens": 61407440,
+        "cached_input_tokens": 60601600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 255873,
+        "reasoning_output_tokens": 173405,
+        "total_tokens": 61663313
+      },
+      "list_price_usd": 19.181775,
+      "tier_source": "requested thread settings",
+      "unpriced_calls": 0,
+      "known_list_price_subtotal_usd": 19.181775
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "service_tier": "priority",
+      "context": "short",
+      "calls": 4590,
+      "tokens": {
+        "input_tokens": 815891936,
+        "cached_input_tokens": 807834752,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2942538,
+        "reasoning_output_tokens": 1488669,
+        "total_tokens": 818834474
+      },
+      "list_price_usd": 252.6464464,
+      "tier_source": "requested thread settings",
+      "unpriced_calls": 0,
+      "known_list_price_subtotal_usd": 252.6464464
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "service_tier": "priority",
+      "context": "long",
+      "calls": 3191,
+      "tokens": {
+        "input_tokens": 1140028381,
+        "cached_input_tokens": 1132821248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4398294,
+        "reasoning_output_tokens": 2891599,
+        "total_tokens": 1144426675
+      },
+      "list_price_usd": 642.7343832,
+      "tier_source": "requested thread settings",
+      "unpriced_calls": 0,
+      "known_list_price_subtotal_usd": 642.7343832
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "service_tier": "priority",
+      "context": "short",
+      "calls": 22,
+      "tokens": {
+        "input_tokens": 1019016,
+        "cached_input_tokens": 973952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 12666,
+        "reasoning_output_tokens": 3267,
+        "total_tokens": 1031682
+      },
+      "list_price_usd": 0.6283664,
+      "tier_source": "requested thread settings",
+      "unpriced_calls": 0,
+      "known_list_price_subtotal_usd": 0.6283664
+    }
+  ],
+  "pricing": {
+    "status": "API list-price equivalent estimate, not an actual bill",
+    "source": "https://developers.openai.com/api/docs/pricing",
+    "cache_accounting_source": "https://developers.openai.com/api/docs/guides/prompt-caching#monitor-cache-performance",
+    "retrieved_at": "2026-10-23T21:38:46.423005+00:00",
+    "standard_rates_per_1m": {
+      "gpt-6.1-sol": {
+        "short": [
+          2,
+          "0.10",
+          "2.50",
+          5,
+          10
+        ],
+        "long": [
+          4,
+          "0.20",
+          5,
+          10,
+          15
+        ]
+      },
+      "gpt-6-astra": {
+        "short": [
+          10,
+          1,
+          "12.50",
+          25,
+          50
+        ],
+        "long": [
+          20,
+          2,
+          25,
+          50,
+          75
+        ]
+      }
+    },
+    "long_context_threshold_input_tokens": 272000,
+    "tier_multipliers": {
+      "default": 1,
+      "standard": 1,
+      "priority": 2,
+      "fast": 2,
+      "batch": "0.5",
+      "flex": "0.5",
+      "ultrafast": 6
+    },
+    "assumptions": [
+      "Recorded requested tier may differ from provider-served tier.",
+      "Regional processing premium and tool fees not established; excluded.",
+      "Subscription included usage is not billed at API list prices."
+    ]
+  },
+  "provenance": {
+    "checkpoint_file_sha256": "ade69fe97753ac3bd7eda586fc52be5dc24936169a54cb4522f2388ba7311a24",
+    "metadata_file_sha256": "7a429a6ce6ef5f4fa3570b33101673adbf68947524de709684c07bc375abf278"
+  }
+}

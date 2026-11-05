@@ -1,0 +1,9 @@
+{
+  "schema": "inferencekit-package-cleanup-v1",
+  "source_commit": "50948559f6b058121c1f8fdd09a6319f64810b5e",
+  "retained_runtime_files": 36,
+  "retained_runtime_bytes_and_modes_unchanged": true,
+  "runtime_manifest_sha256": "369af83443c3ddff0b76bee3bf4430712c560ff1a90cf6d93dccaf231794940d",
+  "historical_reproduction_record": "ACTUAL_REPRODUCTION.json",
+  "cleanup_validation": "CPU packaging and dependency checks; no new hardware run"
+}

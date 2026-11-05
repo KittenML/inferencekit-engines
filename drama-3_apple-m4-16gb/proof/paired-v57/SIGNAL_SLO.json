@@ -1,0 +1,101 @@
+{
+  "data": {
+    "actual_run_plan_sha256": "ba488d579535a4572b3dd01fb9c25b29b48c1f4069654e9783c4fc7ef6db54a1",
+    "arms": {
+      "release": {
+        "cold_voice": "NOT_RUN",
+        "components": {
+          "client_arithmetic_integrity": "PASS",
+          "complete96_inventory": "PASS",
+          "every_request_RTF_at_most_1": "FAIL",
+          "every_request_zero_underruns": "FAIL",
+          "nearest_rank_signal_playback_p95": "PASS",
+          "protocol_upper95_signal_playback_p95": "PASS",
+          "registered_source_completion_EOS": "PASS",
+          "structural_audio": "PASS"
+        },
+        "global_errors": [],
+        "listening": "UNPROVEN",
+        "onset": {
+          "available_rows": 96,
+          "bootstrap_units": "whole fresh-process round",
+          "ci95_p95_ms": [
+            1341.169167,
+            1395.681667
+          ],
+          "definition": "Frozen client simulated nonzero-signal playback onset; not perceived speech",
+          "metric": "first_audio_ms",
+          "p95_ms": 1378.156458,
+          "point_limit_ms": 2000,
+          "point_status": "PASS",
+          "required_rows": 96,
+          "resamples": 10000,
+          "seed": 0,
+          "upper95_limit_ms": 2000,
+          "upper95_status": "PASS"
+        },
+        "overall_quality_PASS": null,
+        "perceived_or_meaningful_speech_onset": "UNPROVEN",
+        "reliability_100_sequential_and_15min": "NOT_RUN",
+        "retained_planned_rows": 96,
+        "scope": "Observed warmed96 signal-playback SLO only; no overall speech-quality gate",
+        "status": "FAIL"
+      },
+      "stock": {
+        "cold_voice": "NOT_RUN",
+        "components": {
+          "client_arithmetic_integrity": "PASS",
+          "complete96_inventory": "PASS",
+          "every_request_RTF_at_most_1": "FAIL",
+          "every_request_zero_underruns": "FAIL",
+          "nearest_rank_signal_playback_p95": "PASS",
+          "protocol_upper95_signal_playback_p95": "PASS",
+          "registered_source_completion_EOS": "PASS",
+          "structural_audio": "PASS"
+        },
+        "global_errors": [],
+        "listening": "UNPROVEN",
+        "onset": {
+          "available_rows": 96,
+          "bootstrap_units": "whole fresh-process round",
+          "ci95_p95_ms": [
+            1559.490917,
+            1606.786417
+          ],
+          "definition": "Frozen client simulated nonzero-signal playback onset; not perceived speech",
+          "metric": "first_audio_ms",
+          "p95_ms": 1572.050917,
+          "point_limit_ms": 2000,
+          "point_status": "PASS",
+          "required_rows": 96,
+          "resamples": 10000,
+          "seed": 0,
+          "upper95_limit_ms": 2000,
+          "upper95_status": "PASS"
+        },
+        "overall_quality_PASS": null,
+        "perceived_or_meaningful_speech_onset": "UNPROVEN",
+        "reliability_100_sequential_and_15min": "NOT_RUN",
+        "retained_planned_rows": 96,
+        "scope": "Observed warmed96 signal-playback SLO only; no overall speech-quality gate",
+        "status": "FAIL"
+      }
+    },
+    "case_data": "CASES192.jsonl: all first_pcm/signal/audio, leading silence, chunks, RTF, underrun and completion facts retained.",
+    "cold_voice": "NOT_RUN",
+    "consumer_source_seal_sha256": "2eb714435dee089eed2ee8a98c9ae0e382a475538fbc672a812551f755f10252",
+    "listening": "UNPROVEN",
+    "new_model_ASR_speaker_or_audio_evaluations": 0,
+    "old_source_labels": "Source declared_unseen flag is omitted; no new untouched-heldout claim. Source first-recorded label remains descriptive only.",
+    "original_protocol_sha256": "6b03590d430dbd0bd95420288e706a8d88955db0167fc8a389aeda92419078dc",
+    "overall_quality_PASS": null,
+    "perceived_speech_onset": "UNPROVEN",
+    "reliability_100_sequential_requests": "NOT_RUN",
+    "reliability_15min_generated_speech": "NOT_RUN",
+    "schema": "mac-v57-warmed96-per-arm-observed-signal-SLO-v1",
+    "scope": "Independent original all96 warmed request signal-playback SLO; no perceived-speech/overall-quality or reliability claim"
+  },
+  "original_receipt_sha256": "c30214db0b8f0acd35acd7794cfb05f98513ad320054c75b6757c99d9b1bac0a",
+  "schema": "transformed-public-v57-slo-v1",
+  "transformation": "Public projection; original receipt bytes remain separate and unchanged."
+}

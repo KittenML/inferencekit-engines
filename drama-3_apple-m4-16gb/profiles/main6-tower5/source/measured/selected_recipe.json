@@ -1,0 +1,51 @@
+{
+  "schema": "drama3-m4-selected-experimental-implementation-v30",
+  "status": "MAIN6_TOWER5_PUBLIC_ONLY_NOT_QUALIFIED",
+  "track": "e2-mse-e3last8-main6-tower5-bf16heads-emb4-g128-v52",
+  "revision": "93432d8a6c97faba88309880c3fd2d1b8356bde679dc20f9e0daa57282eb904c",
+  "conversion_flags": [
+    "--source-original-BF16",
+    "--dense-bits",
+    "6",
+    "--tower-bits",
+    "5",
+    "--tower-group-size",
+    "64"
+  ],
+  "runtime": {
+    "weight_loading_mode": "native-main6-tower5-v1",
+    "codec_mode": "full-stock-fp16-refold",
+    "cache_limit_bytes": 0,
+    "memory_limit_bytes": 34359738368,
+    "load_wired_limit_bytes": 0,
+    "wired_limit_bytes": 11811160064,
+    "fixed_reference_manifest": "conditioning-cache-v2/manifest.json",
+    "fixed_reference_sha256": "5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7",
+    "default_temperature": 1.0,
+    "default_top_p": 0.9,
+    "default_top_k": 4097,
+    "default_max_tokens": 1024,
+    "default_first_chunk_frames": 24,
+    "default_streaming_interval": 0.32,
+    "sealed_runtime_policy": true,
+    "startup_warmup_fixture": "formal-conditioned-v13/startup-warmup-public-v13.jsonl",
+    "startup_warmup_fixture_sha256": "eef5f091535b748c89bddaca01a3f64486eb2e29502b6d7fe59d67824b759141",
+    "startup_warmup_native_proof": "formal-conditioned-v13/native-warmup-initial-prompt-proof.jsonl",
+    "startup_warmup_native_proof_sha256": "787e666de1617804ad1f757299f9aac955b9e9d3246fd85582fa56ab5e8e7466",
+    "startup_warmup_receipt": "telemetry/startup-warmup.json",
+    "release_codec_encoder": true,
+    "audit_codec_retained_payloads": true
+  },
+  "semantics": "Fixed admitted synthetic reference only; same architecture/layers/experts, data-free quantization; no arbitrary-reference fidelity or unique custom-kernel feasibility claim.",
+  "implementation": {
+    "name": "v19-sampler-v21-fixed-gdn",
+    "driver": "optimized_runtime.py",
+    "gdn_mode": "fixed-block",
+    "files": {
+      "optimized_runtime.py": "26a3f6d8114f702b20f4fb63bb4d4da78c845f46880ce4bf3f6fab01f9a02206",
+      "fixed_gdn.py": "d79146a40cca5e7cd74348de7ffb54ed3e89bd2ac3c672a5715b7c282f7863e8",
+      "sampler_sort.py": "dce3f067fdbe2cbe58ee5c8618707d0548ddb1d72a5b55793f9e779d6ffc8c89"
+    },
+    "selection": "Same V19/GDN numerical methods; only registeredTower78 coefficientschange. No row8. Public/quality notyet qualified."
+  }
+}

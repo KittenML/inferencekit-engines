@@ -1,0 +1,25 @@
+{
+  "verdict": "FAIL",
+  "scope": "independent blind primary recognizability; no holdout",
+  "judgments_sha256": "9708be2102ab2909ef8c571597cc21ec81bfd919a1b62fb46b1e8d09658dde76",
+  "answer_key_sha256": "301cc73958e331a3cb7ccdd8de786e064c390c6f29dcf9c0637c333ce2ce457f",
+  "groups": {
+    "candidate": {
+      "PASS": 15,
+      "FAIL": 1
+    },
+    "baseline": {
+      "PASS": 16
+    }
+  },
+  "non_pass": [
+    {
+      "arm": "candidate",
+      "round": 3,
+      "fixture": "poster",
+      "verdict": "FAIL",
+      "reason": "Green illustrated rocket; \u201cGO BEYON\u201d is visible, but the final character is largely hidden by the rocket and its visible fragment does not independently establish a D.",
+      "evidence_id": "ev_1d64a1824b21f72d6f869f81486ce92ba5d21716eeaefd030d4c8fee1a1580ae"
+    }
+  ]
+}

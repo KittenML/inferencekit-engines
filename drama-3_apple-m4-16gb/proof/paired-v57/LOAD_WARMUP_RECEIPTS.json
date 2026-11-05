@@ -1,0 +1,391 @@
+{
+  "cold_voice": "NOT_RUN",
+  "original_receipt_role": "slo",
+  "rows": [
+    {
+      "API_ready_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a",
+        "event": "API_ready"
+      },
+      "arm": "stock",
+      "client_sha256": "56905a989adb2137ff0e1693266561aff199da2e35efa4eb54d029ec21c6e373",
+      "loaded": {
+        "activation_cast_audit": {
+          "changed_elements": 0,
+          "converted_tensors": 0,
+          "max_abs_change": 0.0,
+          "mode": "checkpoint"
+        },
+        "codec_encoder_residency_release": false,
+        "compilation": {
+          "compiled_modules": 0,
+          "compiled_sampler": false
+        },
+        "compile_mode": "none",
+        "dtype_bytes": {
+          "bfloat16": 1791982848,
+          "float16": 938748678,
+          "float32": 1243136,
+          "uint32": 10766909440
+        },
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a",
+        "event": "loaded",
+        "load_maxrss_bytes_darwin": 5955190784,
+        "load_peak_mlx_bytes": 14743649056,
+        "load_seconds_self_reported": 6.859472040989203,
+        "physical_memory_bytes": 17179869184,
+        "pre_generation_api_wired_limit_bytes": 0,
+        "previous_api_cache_limit_bytes": 16320875724,
+        "previous_api_memory_limit_bytes": 16320875724,
+        "previous_api_wired_limit_bytes": 0
+      },
+      "round": 0,
+      "scope": "Measured request0 is after fixed distinct startup warmup; raw cold/warm labels are not rewritten",
+      "source_runtime_sha256": "7abd9b2dc0bb21cbc379ae2cdd5849216f54c39024f33ecfa41c18d0d142abbe",
+      "startup_warmup_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a",
+        "event": "startup_warmup_finished",
+        "fixture_sha256": "eef5f091535b748c89bddaca01a3f64486eb2e29502b6d7fe59d67824b759141",
+        "native_prompt_proof_sha256": "787e666de1617804ad1f757299f9aac955b9e9d3246fd85582fa56ab5e8e7466",
+        "sample_count": 153600
+      }
+    },
+    {
+      "API_ready_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@1+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+fixed-gdn@fixed-block+runtime@bafe948ad8395d981a83269af5d5f16f1e991635c5378da95e054279c8cb83cc",
+        "event": "API_ready"
+      },
+      "arm": "release",
+      "client_sha256": "1da8d955e7c2a1d3eda37f659584866daa8df8e42961b05014d8f3362f01ba68",
+      "loaded": {
+        "activation_cast_audit": {
+          "changed_elements": 0,
+          "converted_tensors": 0,
+          "max_abs_change": 0.0,
+          "mode": "checkpoint"
+        },
+        "codec_encoder_residency_release": true,
+        "compilation": {
+          "compiled_modules": 0,
+          "compiled_sampler": false
+        },
+        "compile_mode": "none",
+        "dtype_bytes": {
+          "bfloat16": 1791982848,
+          "float16": 477493446,
+          "float32": 1243136,
+          "uint32": 10766909440
+        },
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@1+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@e05a4fd6d0ee8588f853e2b103c01b64e57b7b452f97799ed04b01f3c271d71f",
+        "event": "loaded",
+        "load_maxrss_bytes_darwin": 7155646464,
+        "load_peak_mlx_bytes": 14735408208,
+        "load_seconds_self_reported": 7.350227334012743,
+        "physical_memory_bytes": 17179869184,
+        "pre_generation_api_wired_limit_bytes": 0,
+        "previous_api_cache_limit_bytes": 16320875724,
+        "previous_api_memory_limit_bytes": 16320875724,
+        "previous_api_wired_limit_bytes": 0
+      },
+      "round": 0,
+      "scope": "Measured request0 is after fixed distinct startup warmup; raw cold/warm labels are not rewritten",
+      "source_runtime_sha256": "f6c12e54bb62f09c86f729c87f1f4bf221a7e6c5b628351f97988221d0f32896",
+      "startup_warmup_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@1+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+fixed-gdn@fixed-block+runtime@bafe948ad8395d981a83269af5d5f16f1e991635c5378da95e054279c8cb83cc",
+        "event": "startup_warmup_finished",
+        "fixture_sha256": "eef5f091535b748c89bddaca01a3f64486eb2e29502b6d7fe59d67824b759141",
+        "native_prompt_proof_sha256": "787e666de1617804ad1f757299f9aac955b9e9d3246fd85582fa56ab5e8e7466",
+        "sample_count": 153600
+      }
+    },
+    {
+      "API_ready_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@1+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+fixed-gdn@fixed-block+runtime@bafe948ad8395d981a83269af5d5f16f1e991635c5378da95e054279c8cb83cc",
+        "event": "API_ready"
+      },
+      "arm": "release",
+      "client_sha256": "29f07dfa57b1e103aa2b17d1a9a32302e217a0c45d5339d30d5a019dfed27b88",
+      "loaded": {
+        "activation_cast_audit": {
+          "changed_elements": 0,
+          "converted_tensors": 0,
+          "max_abs_change": 0.0,
+          "mode": "checkpoint"
+        },
+        "codec_encoder_residency_release": true,
+        "compilation": {
+          "compiled_modules": 0,
+          "compiled_sampler": false
+        },
+        "compile_mode": "none",
+        "dtype_bytes": {
+          "bfloat16": 1791982848,
+          "float16": 477493446,
+          "float32": 1243136,
+          "uint32": 10766909440
+        },
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@1+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@e05a4fd6d0ee8588f853e2b103c01b64e57b7b452f97799ed04b01f3c271d71f",
+        "event": "loaded",
+        "load_maxrss_bytes_darwin": 6984269824,
+        "load_peak_mlx_bytes": 14735135024,
+        "load_seconds_self_reported": 6.816270416980842,
+        "physical_memory_bytes": 17179869184,
+        "pre_generation_api_wired_limit_bytes": 0,
+        "previous_api_cache_limit_bytes": 16320875724,
+        "previous_api_memory_limit_bytes": 16320875724,
+        "previous_api_wired_limit_bytes": 0
+      },
+      "round": 1,
+      "scope": "Measured request0 is after fixed distinct startup warmup; raw cold/warm labels are not rewritten",
+      "source_runtime_sha256": "0fcc8075c2ab187628e0a493e0361b0368f53a12f2c351605db10dbe48896c40",
+      "startup_warmup_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@1+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+fixed-gdn@fixed-block+runtime@bafe948ad8395d981a83269af5d5f16f1e991635c5378da95e054279c8cb83cc",
+        "event": "startup_warmup_finished",
+        "fixture_sha256": "eef5f091535b748c89bddaca01a3f64486eb2e29502b6d7fe59d67824b759141",
+        "native_prompt_proof_sha256": "787e666de1617804ad1f757299f9aac955b9e9d3246fd85582fa56ab5e8e7466",
+        "sample_count": 153600
+      }
+    },
+    {
+      "API_ready_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a",
+        "event": "API_ready"
+      },
+      "arm": "stock",
+      "client_sha256": "1b208024e523e938a09f2c3523165e8164cf5ea760a274376f25ba440e2301f8",
+      "loaded": {
+        "activation_cast_audit": {
+          "changed_elements": 0,
+          "converted_tensors": 0,
+          "max_abs_change": 0.0,
+          "mode": "checkpoint"
+        },
+        "codec_encoder_residency_release": false,
+        "compilation": {
+          "compiled_modules": 0,
+          "compiled_sampler": false
+        },
+        "compile_mode": "none",
+        "dtype_bytes": {
+          "bfloat16": 1791982848,
+          "float16": 938748678,
+          "float32": 1243136,
+          "uint32": 10766909440
+        },
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a",
+        "event": "loaded",
+        "load_maxrss_bytes_darwin": 6853001216,
+        "load_peak_mlx_bytes": 14735135024,
+        "load_seconds_self_reported": 6.952913167013321,
+        "physical_memory_bytes": 17179869184,
+        "pre_generation_api_wired_limit_bytes": 0,
+        "previous_api_cache_limit_bytes": 16320875724,
+        "previous_api_memory_limit_bytes": 16320875724,
+        "previous_api_wired_limit_bytes": 0
+      },
+      "round": 1,
+      "scope": "Measured request0 is after fixed distinct startup warmup; raw cold/warm labels are not rewritten",
+      "source_runtime_sha256": "3b0ff354b3290a7164c5c8f4f00bc217809c1d0d66c8420428bfd85db6ed2b9b",
+      "startup_warmup_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a",
+        "event": "startup_warmup_finished",
+        "fixture_sha256": "eef5f091535b748c89bddaca01a3f64486eb2e29502b6d7fe59d67824b759141",
+        "native_prompt_proof_sha256": "787e666de1617804ad1f757299f9aac955b9e9d3246fd85582fa56ab5e8e7466",
+        "sample_count": 153600
+      }
+    },
+    {
+      "API_ready_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a",
+        "event": "API_ready"
+      },
+      "arm": "stock",
+      "client_sha256": "6b3bdaf167fc783a39aa245d394996ac9bae967ec92574fbccdd1762e4fe85e5",
+      "loaded": {
+        "activation_cast_audit": {
+          "changed_elements": 0,
+          "converted_tensors": 0,
+          "max_abs_change": 0.0,
+          "mode": "checkpoint"
+        },
+        "codec_encoder_residency_release": false,
+        "compilation": {
+          "compiled_modules": 0,
+          "compiled_sampler": false
+        },
+        "compile_mode": "none",
+        "dtype_bytes": {
+          "bfloat16": 1791982848,
+          "float16": 938748678,
+          "float32": 1243136,
+          "uint32": 10766909440
+        },
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a",
+        "event": "loaded",
+        "load_maxrss_bytes_darwin": 7032340480,
+        "load_peak_mlx_bytes": 14735408208,
+        "load_seconds_self_reported": 6.251460750005208,
+        "physical_memory_bytes": 17179869184,
+        "pre_generation_api_wired_limit_bytes": 0,
+        "previous_api_cache_limit_bytes": 16320875724,
+        "previous_api_memory_limit_bytes": 16320875724,
+        "previous_api_wired_limit_bytes": 0
+      },
+      "round": 2,
+      "scope": "Measured request0 is after fixed distinct startup warmup; raw cold/warm labels are not rewritten",
+      "source_runtime_sha256": "ccfea303281f704b9695c828b2d1a25950cb02808314ae0b20eda7c9d0089b71",
+      "startup_warmup_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a",
+        "event": "startup_warmup_finished",
+        "fixture_sha256": "eef5f091535b748c89bddaca01a3f64486eb2e29502b6d7fe59d67824b759141",
+        "native_prompt_proof_sha256": "787e666de1617804ad1f757299f9aac955b9e9d3246fd85582fa56ab5e8e7466",
+        "sample_count": 153600
+      }
+    },
+    {
+      "API_ready_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@1+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+fixed-gdn@fixed-block+runtime@bafe948ad8395d981a83269af5d5f16f1e991635c5378da95e054279c8cb83cc",
+        "event": "API_ready"
+      },
+      "arm": "release",
+      "client_sha256": "13e5f13bac3ce106f04fdbce44c3b9fb92001e1e76478f6b490a37ae98ae4663",
+      "loaded": {
+        "activation_cast_audit": {
+          "changed_elements": 0,
+          "converted_tensors": 0,
+          "max_abs_change": 0.0,
+          "mode": "checkpoint"
+        },
+        "codec_encoder_residency_release": true,
+        "compilation": {
+          "compiled_modules": 0,
+          "compiled_sampler": false
+        },
+        "compile_mode": "none",
+        "dtype_bytes": {
+          "bfloat16": 1791982848,
+          "float16": 477493446,
+          "float32": 1243136,
+          "uint32": 10766909440
+        },
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@1+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@e05a4fd6d0ee8588f853e2b103c01b64e57b7b452f97799ed04b01f3c271d71f",
+        "event": "loaded",
+        "load_maxrss_bytes_darwin": 6973046784,
+        "load_peak_mlx_bytes": 14735135024,
+        "load_seconds_self_reported": 6.4604985829791985,
+        "physical_memory_bytes": 17179869184,
+        "pre_generation_api_wired_limit_bytes": 0,
+        "previous_api_cache_limit_bytes": 16320875724,
+        "previous_api_memory_limit_bytes": 16320875724,
+        "previous_api_wired_limit_bytes": 0
+      },
+      "round": 2,
+      "scope": "Measured request0 is after fixed distinct startup warmup; raw cold/warm labels are not rewritten",
+      "source_runtime_sha256": "2746bca4b2c10b5bcb736042467e73d43bdb507f5f886a5ce78fc6e3b17350d5",
+      "startup_warmup_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@1+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+fixed-gdn@fixed-block+runtime@bafe948ad8395d981a83269af5d5f16f1e991635c5378da95e054279c8cb83cc",
+        "event": "startup_warmup_finished",
+        "fixture_sha256": "eef5f091535b748c89bddaca01a3f64486eb2e29502b6d7fe59d67824b759141",
+        "native_prompt_proof_sha256": "787e666de1617804ad1f757299f9aac955b9e9d3246fd85582fa56ab5e8e7466",
+        "sample_count": 153600
+      }
+    },
+    {
+      "API_ready_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@1+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+fixed-gdn@fixed-block+runtime@bafe948ad8395d981a83269af5d5f16f1e991635c5378da95e054279c8cb83cc",
+        "event": "API_ready"
+      },
+      "arm": "release",
+      "client_sha256": "d7050b69670c08464bd73bb5d62a5809e1e9f2f2c5b3ff5317ed84ee3d14b399",
+      "loaded": {
+        "activation_cast_audit": {
+          "changed_elements": 0,
+          "converted_tensors": 0,
+          "max_abs_change": 0.0,
+          "mode": "checkpoint"
+        },
+        "codec_encoder_residency_release": true,
+        "compilation": {
+          "compiled_modules": 0,
+          "compiled_sampler": false
+        },
+        "compile_mode": "none",
+        "dtype_bytes": {
+          "bfloat16": 1791982848,
+          "float16": 477493446,
+          "float32": 1243136,
+          "uint32": 10766909440
+        },
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@1+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@e05a4fd6d0ee8588f853e2b103c01b64e57b7b452f97799ed04b01f3c271d71f",
+        "event": "loaded",
+        "load_maxrss_bytes_darwin": 6661980160,
+        "load_peak_mlx_bytes": 14735787368,
+        "load_seconds_self_reported": 6.197405790997436,
+        "physical_memory_bytes": 17179869184,
+        "pre_generation_api_wired_limit_bytes": 0,
+        "previous_api_cache_limit_bytes": 16320875724,
+        "previous_api_memory_limit_bytes": 16320875724,
+        "previous_api_wired_limit_bytes": 0
+      },
+      "round": 3,
+      "scope": "Measured request0 is after fixed distinct startup warmup; raw cold/warm labels are not rewritten",
+      "source_runtime_sha256": "c8ca4f0e7fd89e5fb43714c273717ebcef7af1a033eb6ffddb0fd4e22ffb050a",
+      "startup_warmup_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@1+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+fixed-gdn@fixed-block+runtime@bafe948ad8395d981a83269af5d5f16f1e991635c5378da95e054279c8cb83cc",
+        "event": "startup_warmup_finished",
+        "fixture_sha256": "eef5f091535b748c89bddaca01a3f64486eb2e29502b6d7fe59d67824b759141",
+        "native_prompt_proof_sha256": "787e666de1617804ad1f757299f9aac955b9e9d3246fd85582fa56ab5e8e7466",
+        "sample_count": 153600
+      }
+    },
+    {
+      "API_ready_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a",
+        "event": "API_ready"
+      },
+      "arm": "stock",
+      "client_sha256": "b29bbe8e83d838efcabeeba5d86359fcdda81b9e601416c304eb12bb500fcde1",
+      "loaded": {
+        "activation_cast_audit": {
+          "changed_elements": 0,
+          "converted_tensors": 0,
+          "max_abs_change": 0.0,
+          "mode": "checkpoint"
+        },
+        "codec_encoder_residency_release": false,
+        "compilation": {
+          "compiled_modules": 0,
+          "compiled_sampler": false
+        },
+        "compile_mode": "none",
+        "dtype_bytes": {
+          "bfloat16": 1791982848,
+          "float16": 938748678,
+          "float32": 1243136,
+          "uint32": 10766909440
+        },
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a",
+        "event": "loaded",
+        "load_maxrss_bytes_darwin": 6636322816,
+        "load_peak_mlx_bytes": 14743649056,
+        "load_seconds_self_reported": 6.62233208300313,
+        "physical_memory_bytes": 17179869184,
+        "pre_generation_api_wired_limit_bytes": 0,
+        "previous_api_cache_limit_bytes": 16320875724,
+        "previous_api_memory_limit_bytes": 16320875724,
+        "previous_api_wired_limit_bytes": 0
+      },
+      "round": 3,
+      "scope": "Measured request0 is after fixed distinct startup warmup; raw cold/warm labels are not rewritten",
+      "source_runtime_sha256": "aebf130fb8f171b816397179bd707303d1353b624aab6d51707b26b10263d935",
+      "startup_warmup_event": {
+        "engine_version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a",
+        "event": "startup_warmup_finished",
+        "fixture_sha256": "eef5f091535b748c89bddaca01a3f64486eb2e29502b6d7fe59d67824b759141",
+        "native_prompt_proof_sha256": "787e666de1617804ad1f757299f9aac955b9e9d3246fd85582fa56ab5e8e7466",
+        "sample_count": 153600
+      }
+    }
+  ],
+  "schema": "transformed-public-load-warmup-v57-v1"
+}

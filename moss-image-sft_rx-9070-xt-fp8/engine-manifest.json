@@ -1,0 +1,26 @@
+{
+  "files": {
+    "adapter/SOURCE_MANIFEST.json": "86929157392d2e8b7f7016dae1e35d556ee9d34b4350cbb156607e656bb2e966",
+    "adapter/audit_fp8.py": "4584fa34837ecacd8c47e2525060371d92a395955f90e21c471e1ebdf4e86d62",
+    "adapter/compiled_dispatch.py": "b2ec7d52867c0a70321c066558cb011be8b481c54412010627fe89cf6c994517",
+    "adapter/fixed_empty_negative.py": "aa55856b44ab4e5618f2b2bce1c4097f36cc17bdcceb08a3a38a99b0c4793239",
+    "adapter/make_config.py": "f337e327bbda9082db5ea6a47e305443bf77886347737763455c4c6cfaae2a2d",
+    "adapter/moss_omni_adapter.py": "585dc8ab108ae92c2897e43c2c15d67169e9f6d64550125d4f3f4c00df9b96c5",
+    "adapter/moss_omni_contract.py": "110c03f895cd96efcb8a907c9d0988b07fef5e2d52790045def3c13156797189",
+    "adapter/moss_omni_observer.py": "f147ea65780fd19b97a6732fdcd72f98900e615f4a0f6117842edc0cb531cf85",
+    "adapter/moss_omni_runner.py": "e95b56918f7ec8a8412fb7df5c7e046dd2ad3fd31b4bdea13c9dabecb9675d88",
+    "adapter/native_quality_dump.py": "80a9a2cf54df079cc5c9196e239b0d2faeb14592d1825950af9e077993535916",
+    "adapter/pinned-model-api.json": "27fea87006e53bc6aaa0452002d6159c0da73271ed5e3d3974b009ef18e55d16",
+    "adapter/ranking_policy.py": "5ad85047bd46507779d089d4f01f932f2c4c3f0b4779e038b966769245aa86de",
+    "adapter/scale_audit.py": "6dc3c2871b32f46ab027a21492ec2944002d721a84fd09a7ad680e29b84062d7",
+    "adapter/shard_observer.py": "264d5758ec3ae045771c2f23ff800b685a81d678e69b27364abb7bfbe2809437",
+    "prepare-config.sh": "9fbd0b1ce62ca0430a870f7bebf64edb474260bc06b715070b7cae3b899dc63d",
+    "serve.sh": "2948cafb259b0f425f5c69cd82cf7194a53c01536663fcf971248a0c336d3faa",
+    "transport/moss_amd/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "transport/moss_amd/hardware.py": "1cfa41317baa95f4244d3dfd0f321758af5ece4e6f4915f53d6713898f92134d",
+    "transport/moss_amd/server.py": "31255c9407d23e0938e03d0e3a01573495b1fb914624aef07ad78d789c06e674"
+  },
+  "policy": "FP8 scale-1.03125 regional",
+  "scale_patch_sha256": "95aee4ac3b9aca81327777619f93119e18c299a70c9e4e69fa074561102a78ac",
+  "source_commit": "7cbc776c16a39f73978ae5ce400729d94e0fda35"
+}

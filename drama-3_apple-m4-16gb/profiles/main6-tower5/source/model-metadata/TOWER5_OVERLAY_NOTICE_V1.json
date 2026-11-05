@@ -1,0 +1,8 @@
+{
+  "recipe": "Main6+Tower5/g64 originalBF16 affine +original742 expert2MSE/E3last8/embedding4/BF16heads and unchangedcodec",
+  "builder_sha256": "2c34ddcdc627b3d0438fe4a03498d82c2f444f5973bfaddbc4680bb1405a9a9d",
+  "source_plan_sha256": "b20ca2ccfc93c8bd470109f98d0a3654a69262da2160833ff205f11bcbceff2d",
+  "weight_loader": "Requiredexplicit native-safetensors then registered NPZoverride; native unmodified loader alone is not this artifact",
+  "parent_revision": "742d2f153e5775357faee2692480c7afdfe0b6673837e2183f2632808e7cebc3",
+  "quality": "NOT RUN; originalFAIL not overwritten; no grade inheritance"
+}
