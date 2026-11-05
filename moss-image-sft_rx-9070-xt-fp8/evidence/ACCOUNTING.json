@@ -1,0 +1,193 @@
+{
+  "snapshot_at_utc": "2026-10-29T07:50:45.454329+00:00",
+  "start_utc": "2026-10-28T12:13:00+00:00",
+  "elapsed_hours": 19.629292869166665,
+  "model_active_hours": null,
+  "groups": {
+    "infrastructure": {
+      "tokens": {
+        "input_tokens": 27229277,
+        "cached_input_tokens": 27052288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 39581,
+        "reasoning_output_tokens": 7287,
+        "total_tokens": 27268858
+      },
+      "calls": 250,
+      "recorded_tier_api_list_price_usd": 1.7275084,
+      "standard_api_list_price_equivalent_usd": 1.7275084,
+      "known_recorded_tier_subtotal_usd": 1.7275084,
+      "warnings": [],
+      "service_tiers": [
+        "default"
+      ]
+    },
+    "optimization_preparation": {
+      "tokens": {
+        "input_tokens": 8977994,
+        "cached_input_tokens": 8854144,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 19721,
+        "reasoning_output_tokens": 4643,
+        "total_tokens": 8997715
+      },
+      "calls": 97,
+      "recorded_tier_api_list_price_usd": 0.6651622,
+      "standard_api_list_price_equivalent_usd": 0.6651622,
+      "known_recorded_tier_subtotal_usd": 0.6651622,
+      "warnings": [],
+      "service_tiers": [
+        "default"
+      ]
+    },
+    "coordination": {
+      "tokens": {
+        "input_tokens": 16319657,
+        "cached_input_tokens": 16027136,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 57446,
+        "reasoning_output_tokens": 20285,
+        "total_tokens": 16377103
+      },
+      "calls": 97,
+      "recorded_tier_api_list_price_usd": 21.824646,
+      "standard_api_list_price_equivalent_usd": 21.824646,
+      "known_recorded_tier_subtotal_usd": 21.824646,
+      "warnings": [],
+      "service_tiers": [
+        "default"
+      ]
+    },
+    "optimization": {
+      "tokens": {
+        "input_tokens": 1749482505,
+        "cached_input_tokens": 1724365184,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1791510,
+        "reasoning_output_tokens": 410267,
+        "total_tokens": 1751274015
+      },
+      "calls": 7904,
+      "recorded_tier_api_list_price_usd": 363.7567452,
+      "standard_api_list_price_equivalent_usd": 181.8783726,
+      "known_recorded_tier_subtotal_usd": 363.7567452,
+      "warnings": [],
+      "service_tiers": [
+        "priority"
+      ]
+    }
+  },
+  "total_tokens": {
+    "input_tokens": 1802009433,
+    "cached_input_tokens": 1776298752,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1908258,
+    "reasoning_output_tokens": 442482,
+    "total_tokens": 1803917691
+  },
+  "actual_api_bill_usd": null,
+  "hardware": [
+    {
+      "role": "relay",
+      "quoted_usd_per_hour": 0.007,
+      "elapsed_allocation_hours": 19.532728858333332,
+      "allocation_cost_estimate_usd": 0.13672910200833333,
+      "actual_bill_usd": null,
+      "released": true
+    },
+    {
+      "role": "gpu",
+      "quoted_usd_per_hour": 0.196,
+      "elapsed_allocation_hours": 19.506646565555553,
+      "allocation_cost_estimate_usd": 3.8233027268488886,
+      "actual_bill_usd": null,
+      "released": true
+    }
+  ],
+  "pricing": {
+    "source": "https://developers.openai.com/api/docs/pricing",
+    "retrieved_date": "2026-10-23",
+    "standard_rates_per_million": {
+      "gpt-6.1-terra": {
+        "short": [
+          1,
+          "0.05",
+          "1.25",
+          "2.50",
+          5
+        ],
+        "long": [
+          2,
+          "0.10",
+          "2.50",
+          5,
+          "7.50"
+        ]
+      },
+      "gpt-6.1-sol": {
+        "short": [
+          2,
+          "0.10",
+          "2.50",
+          5,
+          10
+        ],
+        "long": [
+          4,
+          "0.20",
+          5,
+          10,
+          15
+        ]
+      },
+      "gpt-6-astra": {
+        "short": [
+          10,
+          1,
+          "12.50",
+          25,
+          50
+        ],
+        "long": [
+          20,
+          2,
+          25,
+          50,
+          75
+        ]
+      }
+    },
+    "rate_order": [
+      "fresh_input",
+      "cached_input",
+      "30m_cache_write",
+      "12h_cache_write",
+      "output"
+    ],
+    "tier_multipliers": {
+      "default": 1,
+      "standard": 1,
+      "priority": 2,
+      "fast": 2,
+      "batch": "0.5",
+      "flex": "0.5",
+      "ultrafast": 6
+    },
+    "long_context_threshold": 272000
+  },
+  "notes": [
+    "Cached reads/writes are subsets of input; reasoning is a subset of output.",
+    "Recorded-tier cost and standard-rate equivalent are distinct estimates, not invoices.",
+    "Setup, failed attempts, preparation and coordination are retained as separate groups.",
+    "Model-active time is not measured; elapsed time includes tool work and waits.",
+    "Response tier is used when recorded, otherwise requested thread settings; requested tier may differ from the served tier.",
+    "Regional processing premiums and tool fees are excluded from API list-price estimates.",
+    "GPU hardware cost is a single logical-allocation elapsed-time estimate from the launch ledger, not a reconciled invoice.",
+    "Whether replacement and previous physical allocations overlapped, or a preemption gap was billable, is UNPROVEN without billing and termination evidence.",
+    "Hardware released flags reflect ledger deletion fields only and are not independent release confirmation.",
+    "Final accounting snapshot includes recorded work through wrap-up; hardware absence independently verified in RESOURCE_RELEASE.json."
+  ],
+  "finalized": true,
+  "optimization_stopped_utc": "2026-10-29T07:42:22.470755+00:00",
+  "hardware_release_verified": true
+}

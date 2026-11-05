@@ -1,0 +1,269 @@
+{
+  "packages": [
+    {
+      "package": "libopenmpi3t64",
+      "version": "4.1.6-7ubuntu2",
+      "size": 2563070,
+      "sha256": "4709aa89fd1064c6df3b8e7e460f530d8f2df24937a1d8df8fbf4948b391e99b",
+      "filename": "pool/universe/o/openmpi/libopenmpi3t64_4.1.6-7ubuntu2_amd64.deb",
+      "catalog_record": "Package: libopenmpi3t64\nArchitecture: amd64\nVersion: 4.1.6-7ubuntu2\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: openmpi\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Alastair McKinstry <mckinstry@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 9622\nProvides: libopenmpi3 (= 4.1.6-7ubuntu2)\nDepends: libc6 (>= 2.38), libevent-core-2.1-7t64 (>= 2.1.8-stable), libevent-pthreads-2.1-7t64 (>= 2.1.8-stable), libfabric1 (>= 1.17.0), libgcc-s1 (>= 3.3.1), libhwloc15 (>= 2.10.0), libibverbs1 (>= 1.1.7), libnl-3-200 (>= 3.2.7), libpmix2 (>= 5.0.1), libpsm-infinipath1 (>= 3.3+7.gec1d6d2), libpsm2-2 (>= 10.3-37), libstdc++6 (>= 13.1), libucx0 (>= 1.15.0), zlib1g (>= 1:1.2.0), libhwloc-plugins\nBreaks: gromacs-openmpi (<< 2020~beta2-2), libeztrace0 (<< 1.1-8-5+b1), libopenmpi3 (<< 4.1.6-7ubuntu2), starpu-contrib-examples (<< 1.3.2+dfsg-2+b1), starpu-examples (<< 1.3.2+dfsg-4+b1)\nReplaces: libopenmpi3\nFilename: pool/universe/o/openmpi/libopenmpi3t64_4.1.6-7ubuntu2_amd64.deb\nSize: 2563070\nMD5sum: 86f58e998752e21042253c2d7fc77311\nSHA1: 4a68561e39b7bfa4cf1ff1f2429cf7ef3c239886\nSHA256: 4709aa89fd1064c6df3b8e7e460f530d8f2df24937a1d8df8fbf4948b391e99b\nSHA512: 983687e90a044d7193789b45ff0d6c3b45b4a3e2621d443dbb354671774fa6e385cff68f54f66a4b1496d76479969896000b895123bb607318ebf549b87ed109\nHomepage: https://www.open-mpi.org/\nDescription: high performance message passing library -- shared library\nDescription-md5: 72141e1823cc63cbe9896c2f4fefec5f"
+    },
+    {
+      "package": "libevent-core-2.1-7t64",
+      "version": "2.1.12-stable-9ubuntu2.2",
+      "size": 91942,
+      "sha256": "2a5264b572f5fe50fc9d63e115d308c79b9fb746d13cc55b5ea1f0f01a78daa7",
+      "filename": "pool/main/libe/libevent/libevent-core-2.1-7t64_2.1.12-stable-9ubuntu2.2_amd64.deb",
+      "catalog_record": "Package: libevent-core-2.1-7t64\nSource: libevent\nPriority: optional\nSection: libs\nInstalled-Size: 259\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 2.1.12-stable-9ubuntu2.2\nReplaces: libevent-core-2.1-7\nProvides: libevent-core-2.1-7 (= 2.1.12-stable-9ubuntu2.2)\nDepends: libc6 (>= 2.38)\nBreaks: libevent-core-2.1-7 (<< 2.1.12-stable-9ubuntu2.2)\nFilename: pool/main/libe/libevent/libevent-core-2.1-7t64_2.1.12-stable-9ubuntu2.2_amd64.deb\nSize: 91942\nMD5sum: 8ce7ab8f13a4e34ba2a9d28cce5dbd96\nSHA1: 509da9a8056d66e47f2dc17eb0b3d337502cf777\nSHA256: 2a5264b572f5fe50fc9d63e115d308c79b9fb746d13cc55b5ea1f0f01a78daa7\nSHA512: c228ef7dca408f8ed34404a2b49086e65495b38614192232398ee8a80407b6b66ee3b03a312b8c150084430c1b03ee814cdac0c0b2b37c5729b138a09c0ca4ab\nHomepage: https://libevent.org/\nDescription: Asynchronous event notification library (core)\nDescription-md5: 951eaa6250fb2e171dca3efbd48a13f0\nMulti-Arch: same\nOriginal-Maintainer: Nicolas Mora <babelouest@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: cloud-image, cloud-image, ubuntu-wsl, server, ubuntu-server-raspi, lamp-server"
+    },
+    {
+      "package": "libevent-pthreads-2.1-7t64",
+      "version": "2.1.12-stable-9ubuntu2.2",
+      "size": 7988,
+      "sha256": "0adf5bc30f0326ad4aa36541f4dfa4a0d5f42c5564f74c0112caf8b3c13a7fbb",
+      "filename": "pool/main/libe/libevent/libevent-pthreads-2.1-7t64_2.1.12-stable-9ubuntu2.2_amd64.deb",
+      "catalog_record": "Package: libevent-pthreads-2.1-7t64\nSource: libevent\nPriority: optional\nSection: libs\nInstalled-Size: 45\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 2.1.12-stable-9ubuntu2.2\nReplaces: libevent-pthreads-2.1-7\nProvides: libevent-pthreads-2.1-7 (= 2.1.12-stable-9ubuntu2.2)\nDepends: libc6 (>= 2.34), libevent-core-2.1-7t64 (= 2.1.12-stable-9ubuntu2.2)\nBreaks: libevent-pthreads-2.1-7 (<< 2.1.12-stable-9ubuntu2.2)\nFilename: pool/main/libe/libevent/libevent-pthreads-2.1-7t64_2.1.12-stable-9ubuntu2.2_amd64.deb\nSize: 7988\nMD5sum: e40d7d81edee509041705681ea7e2255\nSHA1: cb598dca2d3bad8eabbce4ee3783184daa9949cb\nSHA256: 0adf5bc30f0326ad4aa36541f4dfa4a0d5f42c5564f74c0112caf8b3c13a7fbb\nSHA512: b67cbc2df35fdc224cda6448533c12e2acfc3ff9d126bd3a8baa290999fb0045e549c5cc9573fb794ba429feb9ce3fb8fcc1fe126a2c46c1dea28db33bca277f\nHomepage: https://libevent.org/\nDescription: Asynchronous event notification library (pthreads)\nDescription-md5: 1a5d857791ab89f821f6bb92b9d541ca\nMulti-Arch: same\nOriginal-Maintainer: Nicolas Mora <babelouest@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: lamp-server"
+    },
+    {
+      "package": "libfabric1",
+      "version": "1.17.0-3build2",
+      "size": 656666,
+      "sha256": "804fe1206ed62d370bc5f5b1714ddb75264012c4181fb46e493e262d3102f5ca",
+      "filename": "pool/universe/libf/libfabric/libfabric1_1.17.0-3build2_amd64.deb",
+      "catalog_record": "Package: libfabric1\nArchitecture: amd64\nVersion: 1.17.0-3build2\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: libfabric\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian HPC Team <debian-hpc@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1663\nDepends: ibverbs-providers (>= 43), libatomic1 (>= 4.8), libc6 (>= 2.38), libibverbs1 (>= 35), libpsm-infinipath1 (>= 3.3+7.gec1d6d2), libpsm2-2 (>= 11.2.68), librdmacm1t64 (>= 23)\nBreaks: libfabric-dev (<< 1.6.1-4)\nReplaces: libfabric-dev (<< 1.6.1-4)\nFilename: pool/universe/libf/libfabric/libfabric1_1.17.0-3build2_amd64.deb\nSize: 656666\nMD5sum: dd5346f39c9352fc229f706015702a81\nSHA1: 46315cb9418944d9124a8bee390f2fec3a8c19bb\nSHA256: 804fe1206ed62d370bc5f5b1714ddb75264012c4181fb46e493e262d3102f5ca\nSHA512: f6efe15b435f54c418bbdfa40f24252ac6ef8219c27588a6a78b2400001e02067a44ffa68333b36d4e403fbf23169f5847afdd4b58947f692ff2dde153f1d1b3\nHomepage: https://ofiwg.github.io/libfabric/\nDescription: libfabric communication library\nDescription-md5: 23efe94450e753061e8395ccfd5a60a0"
+    },
+    {
+      "package": "libhwloc15",
+      "version": "2.10.0-1build1",
+      "size": 172340,
+      "sha256": "45acb4e6676f968d0f32ff1c5115cad0b61165931afa1a59282bda6f00d13c3b",
+      "filename": "pool/universe/h/hwloc/libhwloc15_2.10.0-1build1_amd64.deb",
+      "catalog_record": "Package: libhwloc15\nArchitecture: amd64\nVersion: 2.10.0-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: hwloc\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Samuel Thibault <sthibault@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 401\nDepends: libc6 (>= 2.38), libudev1 (>= 183)\nRecommends: libhwloc-plugins\nSuggests: libhwloc-contrib-plugins\nBreaks: libhwloc-contrib-plugins (<< 1.10~), libhwloc-plugins (<< 1.10~)\nFilename: pool/universe/h/hwloc/libhwloc15_2.10.0-1build1_amd64.deb\nSize: 172340\nMD5sum: 4d19fedf98522278127cf486636ea541\nSHA1: c37c4659f0599cbdc661a2b554da92ad107671f2\nSHA256: 45acb4e6676f968d0f32ff1c5115cad0b61165931afa1a59282bda6f00d13c3b\nSHA512: 28f840bc204356269294c8e945bddd139ead21a614803e4d36ef98726556838954b81e1787af7cba85a4b25cb3dd7c65c05cde28f9d99d197cb1ff3c3cf67b03\nHomepage: https://www.open-mpi.org/projects/hwloc/\nDescription: Hierarchical view of the machine - shared libs\nDescription-md5: bd89ad338941b41499d0c0003d81d83e\nTask: ubuntustudio-video, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-publishing, ubuntukylin-desktop, ubuntukylin-desktop-minimal"
+    },
+    {
+      "package": "libibverbs1",
+      "version": "50.0-2ubuntu0.2",
+      "size": 67960,
+      "sha256": "8489558105ee1d1c65ae6e0f1bac0e9b15f314a68f106ee9a63c89821242bd8e",
+      "filename": "pool/main/r/rdma-core/libibverbs1_50.0-2ubuntu0.2_amd64.deb",
+      "catalog_record": "Package: libibverbs1\nSource: rdma-core\nPriority: standard\nSection: libs\nInstalled-Size: 193\nMaintainer: Benjamin Drung <bdrung@ubuntu.com>\nArchitecture: amd64\nVersion: 50.0-2ubuntu0.2\nRecommends: ibverbs-providers\nDepends: adduser, libc6 (>= 2.38), libnl-3-200 (>= 3.2.7), libnl-route-3-200 (>= 3.2.7)\nBreaks: ibverbs-providers (<< 34~)\nFilename: pool/main/r/rdma-core/libibverbs1_50.0-2ubuntu0.2_amd64.deb\nSize: 67960\nMD5sum: 657571159d41735de31c69a5397cd6ab\nSHA1: 62d5cbd8f76e9229b8369bdb100525d35a8e940b\nSHA256: 8489558105ee1d1c65ae6e0f1bac0e9b15f314a68f106ee9a63c89821242bd8e\nSHA512: 65db8e4b9aa85f36bb96f08d2a8b32fe7091b26baa0d9e44671483752e32cf30dbfafb90b6e361ad1be0a35863779929b20ab7ad8b92bf5b5daac5706e8a6895\nHomepage: https://github.com/linux-rdma/rdma-core\nDescription: Library for direct userspace use of RDMA (InfiniBand/iWARP)\nDescription-md5: 8cdb9c883867c94335417ed5085d7667\nMulti-Arch: same\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: standard"
+    },
+    {
+      "package": "libnl-3-200",
+      "version": "3.7.0-0.3build1.1",
+      "size": 55706,
+      "sha256": "15b3f61db753dc3db6f62f4259f8b822299343e500886776486612a13a2ed247",
+      "filename": "pool/main/libn/libnl3/libnl-3-200_3.7.0-0.3build1.1_amd64.deb",
+      "catalog_record": "Package: libnl-3-200\nSource: libnl3\nPriority: standard\nSection: libs\nInstalled-Size: 172\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 3.7.0-0.3build1.1\nDepends: libc6 (>= 2.38)\nFilename: pool/main/libn/libnl3/libnl-3-200_3.7.0-0.3build1.1_amd64.deb\nSize: 55706\nMD5sum: 4382927c55770dba3744ad95ee087b76\nSHA1: 6c8deacc6c37402464c7bbec3c74f23b0bf4c30b\nSHA256: 15b3f61db753dc3db6f62f4259f8b822299343e500886776486612a13a2ed247\nSHA512: 0f969dddbf1f0bd978481eceb3f06d689e0bffe361a1ede92b7852aaa89cdcbee23aa9b2c3ac6a1de2f1b408a112ef45bcac3bacd53e43b715cf954f1483f390\nHomepage: http://www.infradead.org/~tgr/libnl/\nDescription: library for dealing with netlink sockets\nDescription-md5: de8043b32007ad94dc3b94b81389b53d\nMulti-Arch: same\nOriginal-Maintainer: Heiko Stuebner <mmind@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: standard"
+    },
+    {
+      "package": "libpmix2t64",
+      "version": "5.0.1-4.1build1",
+      "size": 697360,
+      "sha256": "54874f3e936e9862c2fdc2785a61e6e7220739228f911c150d41dffd788bedd0",
+      "filename": "pool/universe/p/pmix/libpmix2t64_5.0.1-4.1build1_amd64.deb",
+      "catalog_record": "Package: libpmix2t64\nArchitecture: amd64\nVersion: 5.0.1-4.1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: pmix\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Alastair McKinstry <mckinstry@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 2266\nProvides: libpmix2 (= 5.0.1-4.1build1)\nDepends: libc6 (>= 2.38), libevent-core-2.1-7t64 (>= 2.1.8-stable), libevent-pthreads-2.1-7t64 (>= 2.1.8-stable), libhwloc15 (>= 2.10.0), libmunge2 (>= 0.5.8), zlib1g (>= 1:1.2.0), libhwloc-plugins\nBreaks: libpmix2 (<< 5.0.1-4.1build1)\nReplaces: libpmix2\nFilename: pool/universe/p/pmix/libpmix2t64_5.0.1-4.1build1_amd64.deb\nSize: 697360\nMD5sum: 498550533163feaaa5a27a071555e690\nSHA1: daa571563494db654f739d5f9d6a87bb507db4b5\nSHA256: 54874f3e936e9862c2fdc2785a61e6e7220739228f911c150d41dffd788bedd0\nSHA512: 3551616b6132d6e6f5c394faa59bf3a2fd8c3c5fc97cf020132a65911a8b60f02e6b1288483ab38f88161557fbf73507daa8cf2a122135ddb6b1d57b38ca11af\nHomepage: https://github.com/pmix/pmix\nDescription: Process Management Interface (Exascale) library\nDescription-md5: aca5aa31def7ae96d62a110030ef497f"
+    },
+    {
+      "package": "libpsm-infinipath1",
+      "version": "3.3+20.604758e7-6.3build1",
+      "size": 178148,
+      "sha256": "56e190ab22563014ed60bf9c15e20a46949dda21284ff32a5e5354addde6c6bc",
+      "filename": "pool/universe/i/infinipath-psm/libpsm-infinipath1_3.3+20.604758e7-6.3build1_amd64.deb",
+      "catalog_record": "Package: libpsm-infinipath1\nArchitecture: amd64\nVersion: 3.3+20.604758e7-6.3build1\nPriority: optional\nSection: universe/libs\nSource: infinipath-psm\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian HPC Team <debian-hpc@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 442\nDepends: libc6 (>= 2.38), libuuid1 (>= 2.16)\nFilename: pool/universe/i/infinipath-psm/libpsm-infinipath1_3.3+20.604758e7-6.3build1_amd64.deb\nSize: 178148\nMD5sum: ea7e0255ca074a0497f9b1e0a5309771\nSHA1: b2f85205d6eb76e584de206c7049b05406661ab9\nSHA256: 56e190ab22563014ed60bf9c15e20a46949dda21284ff32a5e5354addde6c6bc\nSHA512: e1edb2bb44a10a2df634d3799d5f55774fba280878bdd08a93829c90dad2cf3c55b6dcc59e13c945ac5248f284dce02c81d7ff34969a57c29913e918ffde27fe\nHomepage: https://github.com/intel/psm\nDescription: PSM Messaging library for Intel Truescale adapters\nDescription-md5: f14abc291eb95080b3ab5e3c76a2cc89"
+    },
+    {
+      "package": "libpsm2-2",
+      "version": "11.2.185-2build1",
+      "size": 193594,
+      "sha256": "ff1c78b8feda2bb3537a8a2e93d5266be76c0c172b9e52dddc98509b7e18c420",
+      "filename": "pool/universe/libp/libpsm2/libpsm2-2_11.2.185-2build1_amd64.deb",
+      "catalog_record": "Package: libpsm2-2\nArchitecture: amd64\nVersion: 11.2.185-2build1\nPriority: optional\nSection: universe/libs\nSource: libpsm2\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian HPC team <debian-hpc@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 441\nDepends: libc6 (>= 2.38), libnuma1 (>= 2.0.11)\nFilename: pool/universe/libp/libpsm2/libpsm2-2_11.2.185-2build1_amd64.deb\nSize: 193594\nMD5sum: 7aad4bf6db3884feddda3fe82c3a2cd8\nSHA1: e7978084d3e2b6b205611c3ffdcad9cbcc41cb3d\nSHA256: ff1c78b8feda2bb3537a8a2e93d5266be76c0c172b9e52dddc98509b7e18c420\nSHA512: 005a16472348b5332a256aff8cb41654c6331d06aa786f3bf5f376aa94cf267d51f136cffd0a3db9b58da6882cddd31b59a54ad755db32fce4c20b1cae6d9e94\nHomepage: https://github.com/01org/opa-psm2\nDescription: Intel PSM2 library\nDescription-md5: b0d67b9b1cdc64f83fc1128eded819c0"
+    },
+    {
+      "package": "libucx0",
+      "version": "1.16.0+ds-5ubuntu1",
+      "size": 1139558,
+      "sha256": "1138ee6dd436a0111a7d5dbbad38ec4d82f3245bf3b32782973426ebf9b05e15",
+      "filename": "pool/universe/u/ucx/libucx0_1.16.0+ds-5ubuntu1_amd64.deb",
+      "catalog_record": "Package: libucx0\nArchitecture: amd64\nVersion: 1.16.0+ds-5ubuntu1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: ucx\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 3091\nDepends: ibverbs-providers (>= 35), libamdhip64-5 (>= 4.5.2), libc6 (>= 2.38), libibverbs1 (>= 34), librdmacm1t64 (>= 23)\nFilename: pool/universe/u/ucx/libucx0_1.16.0+ds-5ubuntu1_amd64.deb\nSize: 1139558\nMD5sum: ca83331fd1ef724652361c7bf7532e5a\nSHA1: f7ffd75e7af7f5697b52938b4de480f669be1708\nSHA256: 1138ee6dd436a0111a7d5dbbad38ec4d82f3245bf3b32782973426ebf9b05e15\nSHA512: 958234812da56a01e30b0d918add4b8cba2c5fc919c45c3dec06118704a4ed2af15df488e13a37c7fe33e5d26fa42daaf2b4807ed73a140327d9b7cd1e9d8851\nHomepage: https://www.openucx.org\nDescription: Unified Communication X libraries\nDescription-md5: 83e9e3f7c1645625f6431aab28b6c3d7"
+    },
+    {
+      "package": "libhwloc-plugins",
+      "version": "2.10.0-1build1",
+      "size": 15664,
+      "sha256": "64ef2b2cdf1d657ee491583931648bd805e8dfb4097de8072946cb94efc6f352",
+      "filename": "pool/universe/h/hwloc/libhwloc-plugins_2.10.0-1build1_amd64.deb",
+      "catalog_record": "Package: libhwloc-plugins\nArchitecture: amd64\nVersion: 2.10.0-1build1\nMulti-Arch: same\nPriority: extra\nSection: universe/libs\nSource: hwloc\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Samuel Thibault <sthibault@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 91\nDepends: libc6 (>= 2.38), libpciaccess0, libx11-6, libxml2 (>= 2.7.4), libxnvctrl0, ocl-icd-libopencl1 | libopencl1, libhwloc15 (>= 2.10.0~), libhwloc15 (<< 2.10.0A)\nBreaks: libhwloc-contrib-plugins (<< 2.1.0+dfsg-3~)\nReplaces: libhwloc-contrib-plugins (<< 2.1.0+dfsg-3~)\nFilename: pool/universe/h/hwloc/libhwloc-plugins_2.10.0-1build1_amd64.deb\nSize: 15664\nMD5sum: b79d8d241a389f36743c00a36f227a25\nSHA1: 5e733aed60eb52cecc341e2702f265a0ffaceb7d\nSHA256: 64ef2b2cdf1d657ee491583931648bd805e8dfb4097de8072946cb94efc6f352\nSHA512: 15fa3bd575c5e05b3e509566c0526353063e25582c3a24c09c7c5d3628c3baf382d4b182e7577b903dc06feb87b597e913c4173c31a9df11ba0a8803750a5c50\nHomepage: https://www.open-mpi.org/projects/hwloc/\nDescription: Hierarchical view of the machine - plugins\nDescription-md5: f9e5608207d0a4ad31da5436aaaacb4b\nTask: ubuntustudio-video, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-publishing, ubuntukylin-desktop, ubuntukylin-desktop-minimal"
+    },
+    {
+      "package": "ibverbs-providers",
+      "version": "50.0-2ubuntu0.2",
+      "size": 381410,
+      "sha256": "69847c5522d32c14aa3de318da8edea1a1cac6a7d936d81082bf292975f83bb6",
+      "filename": "pool/main/r/rdma-core/ibverbs-providers_50.0-2ubuntu0.2_amd64.deb",
+      "catalog_record": "Package: ibverbs-providers\nSource: rdma-core\nPriority: standard\nSection: net\nInstalled-Size: 1268\nMaintainer: Benjamin Drung <bdrung@ubuntu.com>\nArchitecture: amd64\nVersion: 50.0-2ubuntu0.2\nReplaces: libipathverbs1 (<< 15), libmlx4-1 (<< 15), libmlx5-1 (<< 15), libmthca1 (<< 15)\nProvides: libefa1, libipathverbs1, libmana1, libmlx4-1, libmlx5-1, libmthca1\nDepends: libc6 (>= 2.38), libibverbs1 (>= 38)\nBreaks: libipathverbs1 (<< 15), libmlx4-1 (<< 15), libmlx5-1 (<< 15), libmthca1 (<< 15)\nFilename: pool/main/r/rdma-core/ibverbs-providers_50.0-2ubuntu0.2_amd64.deb\nSize: 381410\nMD5sum: c3643bfba28d78164056efe7875cb1c4\nSHA1: 899bb14036dad41e0e0f8fd84e56c54784e276a2\nSHA256: 69847c5522d32c14aa3de318da8edea1a1cac6a7d936d81082bf292975f83bb6\nSHA512: f74ef2d4e34ee51d2691084c6413ef5a823e76c323a9ab5e63c669552a1226ec02604ccd7ebf2424275735143e2c0b437951c6247e46f4ec19003e8adb5d635a\nHomepage: https://github.com/linux-rdma/rdma-core\nDescription: User space provider drivers for libibverbs\nDescription-md5: 01cda83e03fc935cfb4cf44a2d536c49\nMulti-Arch: same\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: standard"
+    },
+    {
+      "package": "librdmacm1t64",
+      "version": "50.0-2ubuntu0.2",
+      "size": 70698,
+      "sha256": "7b7cc2fa16564bf301751b43d05d16f0846288b080d9a25a92a691d0df33fc68",
+      "filename": "pool/main/r/rdma-core/librdmacm1t64_50.0-2ubuntu0.2_amd64.deb",
+      "catalog_record": "Package: librdmacm1t64\nSource: rdma-core\nPriority: optional\nSection: libs\nInstalled-Size: 208\nMaintainer: Benjamin Drung <bdrung@ubuntu.com>\nArchitecture: amd64\nVersion: 50.0-2ubuntu0.2\nReplaces: librdmacm1\nProvides: librdmacm1 (= 50.0-2ubuntu0.2)\nDepends: libc6 (>= 2.38), libibverbs1 (>= 31), libnl-3-200 (>= 3.2.7)\nBreaks: librdmacm1 (<< 50.0-2ubuntu0.2)\nFilename: pool/main/r/rdma-core/librdmacm1t64_50.0-2ubuntu0.2_amd64.deb\nSize: 70698\nMD5sum: ee8a7afc1614421014545d902ffa265e\nSHA1: 14a52a3ec3c7d9fe1391004a39bf10bc806b5b86\nSHA256: 7b7cc2fa16564bf301751b43d05d16f0846288b080d9a25a92a691d0df33fc68\nSHA512: e829302a2fea54f8bccfbbfe9f13caa4954118a8f8ff5b08ca09bd3939189f8e59b4f496a8e64d6f17cf8883ee60f078164354b3cb236ef737e5897d00406d89\nHomepage: https://github.com/linux-rdma/rdma-core\nDescription: Library for managing RDMA connections\nDescription-md5: dc9d0886ecf59fc604b978f8125cf804\nMulti-Arch: same\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: samba-server, ubuntukylin-desktop, ubuntukylin-desktop-minimal"
+    },
+    {
+      "package": "libnl-route-3-200",
+      "version": "3.7.0-0.3build1.1",
+      "size": 189094,
+      "sha256": "c9dbd29cb7fdcf1a0587726cbc5432a7d3e81242108dfcfa2dd6716c44c74d4d",
+      "filename": "pool/main/libn/libnl3/libnl-route-3-200_3.7.0-0.3build1.1_amd64.deb",
+      "catalog_record": "Package: libnl-route-3-200\nSource: libnl3\nPriority: standard\nSection: libs\nInstalled-Size: 632\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 3.7.0-0.3build1.1\nDepends: libnl-3-200 (= 3.7.0-0.3build1.1), libc6 (>= 2.38)\nFilename: pool/main/libn/libnl3/libnl-route-3-200_3.7.0-0.3build1.1_amd64.deb\nSize: 189094\nMD5sum: c45c1e8ac453a03de3358ba12fcf0dc0\nSHA1: 21268b40adeff4755a71beb3b9a3d56760c659af\nSHA256: c9dbd29cb7fdcf1a0587726cbc5432a7d3e81242108dfcfa2dd6716c44c74d4d\nSHA512: 24826130770d398e0fe29116c3d7a5a98ddcbbd030e0101417c5ff6958a476ff3405409dfe6f663c01cc12db1760ec546f6241d5d64e0570debf87093bef915b\nHomepage: http://www.infradead.org/~tgr/libnl/\nDescription: library for dealing with netlink sockets - route interface\nDescription-md5: 00e1d8b59623c24502ade39580e576f8\nMulti-Arch: same\nOriginal-Maintainer: Heiko Stuebner <mmind@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: standard"
+    },
+    {
+      "package": "libmunge2",
+      "version": "0.5.15-4ubuntu0.1",
+      "size": 14846,
+      "sha256": "1cd371adfbe0cb19bb2479a0fe2340a12b09d42bffbcb85d2beb9bb2d4ef09ca",
+      "filename": "pool/universe/m/munge/libmunge2_0.5.15-4ubuntu0.1_amd64.deb",
+      "catalog_record": "Package: libmunge2\nSource: munge\nPriority: extra\nSection: universe/libs\nInstalled-Size: 50\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 0.5.15-4ubuntu0.1\nDepends: libc6 (>= 2.38)\nFilename: pool/universe/m/munge/libmunge2_0.5.15-4ubuntu0.1_amd64.deb\nSize: 14846\nMD5sum: 040b87d11201896946d798c92806b260\nSHA1: 9b4029268f7fb70aebe4b5c31b6bc00a41ea99ab\nSHA256: 1cd371adfbe0cb19bb2479a0fe2340a12b09d42bffbcb85d2beb9bb2d4ef09ca\nSHA512: c333f2531e435a1dd5ab2ba808112026d330251118f34f23633227057f80b38b1b455459e7159bfedf0e01c179f66f6a47bd1f898731a3fbf35b5ff5dcb48cba\nHomepage: https://dun.github.io/munge\nDescription: authentication service for credential -- library package\nDescription-md5: b0b124971cd61d5ccbdcc2325e9f38b3\nMulti-Arch: same\nOriginal-Maintainer: Gennaro Oliva <oliva@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug"
+    },
+    {
+      "package": "libamdhip64-5",
+      "version": "5.7.1-3",
+      "size": 9621212,
+      "sha256": "5691dfcb82ccb2bc45616793574599fcb18af95e7f1a9fcf4728535e7ab34813",
+      "filename": "pool/universe/r/rocm-hipamd/libamdhip64-5_5.7.1-3_amd64.deb",
+      "catalog_record": "Package: libamdhip64-5\nArchitecture: amd64\nVersion: 5.7.1-3\nPriority: optional\nSection: universe/libs\nSource: rocm-hipamd\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian ROCm Team <debian-ai@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 23465\nDepends: libamd-comgr2 (>= 6.0+git20231212.4510c28), libc6 (>= 2.38), libgcc-s1 (>= 3.3.1), libhsa-runtime64-1 (>= 5.7.1), libnuma1 (>= 2.0.11), libstdc++6 (>= 13.1)\nFilename: pool/universe/r/rocm-hipamd/libamdhip64-5_5.7.1-3_amd64.deb\nSize: 9621212\nMD5sum: d1b6acd3005678511a3ddfd54a43fe85\nSHA1: fb952d0dad14ba880841ea1405650b84452e5a98\nSHA256: 5691dfcb82ccb2bc45616793574599fcb18af95e7f1a9fcf4728535e7ab34813\nSHA512: 2bd49ba50564b794d2f6d801aeafd1172ea3435306123b8294f95f2b19b373117e586c802a57a2006ccf82b8faf4f312de9e97f58a396bd378e7bdbfdf1e1d14\nHomepage: https://github.com/ROCm/clr\nDescription: Heterogeneous Interface for Portability - AMD GPUs implementation\nDescription-md5: e696448cd8072ea8fe31f9d676d1eac2"
+    },
+    {
+      "package": "libpciaccess0",
+      "version": "0.17-3ubuntu0.24.04.3",
+      "size": 19220,
+      "sha256": "87a3b1c2a09f54d229e5e1f5424adc806e8f99bbb8aa8c8dea114b727f7a5a96",
+      "filename": "pool/main/libp/libpciaccess/libpciaccess0_0.17-3ubuntu0.24.04.3_amd64.deb",
+      "catalog_record": "Package: libpciaccess0\nSource: libpciaccess\nPriority: optional\nSection: libs\nInstalled-Size: 61\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 0.17-3ubuntu0.24.04.3\nSuggests: pciutils\nDepends: libc6 (>= 2.38), zlib1g (>= 1:1.1.4)\nFilename: pool/main/libp/libpciaccess/libpciaccess0_0.17-3ubuntu0.24.04.3_amd64.deb\nSize: 19220\nMD5sum: aedf7168d2f68bae12d5678bbfdf1b07\nSHA1: 3bc1d20b458811386cb1f7882b50d15e7276450f\nSHA256: 87a3b1c2a09f54d229e5e1f5424adc806e8f99bbb8aa8c8dea114b727f7a5a96\nSHA512: b305e446620d032a22f3be0d09fb276910a452ced499278e6b1663a039b3914414ec5d7a1f32d79381ada4e5f3054780283f981542c284acfd5c6bec4f0260b8\nDescription: Generic PCI access library for X\nDescription-md5: d0ad9b669375fc349fbc3c6888e88566\nMulti-Arch: same\nOriginal-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: ubuntu-desktop-minimal, ubuntu-desktop, ubuntu-wsl, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-minimal, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi"
+    },
+    {
+      "package": "libx11-6",
+      "version": "2:1.8.7-1ubuntu0.1",
+      "size": 653072,
+      "sha256": "9102f73477081a9a57994c80587ca9760341f644ed51bdfa46f2248083d418b3",
+      "filename": "pool/main/libx/libx11/libx11-6_1.8.7-1ubuntu0.1_amd64.deb",
+      "catalog_record": "Package: libx11-6\nSource: libx11\nPriority: standard\nSection: libs\nInstalled-Size: 1367\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 2:1.8.7-1ubuntu0.1\nDepends: libc6 (>= 2.38), libxcb1 (>= 1.11.1), libx11-data\nBreaks: libx11-xcb1 (<< 2:1.7.0-2)\nFilename: pool/main/libx/libx11/libx11-6_1.8.7-1ubuntu0.1_amd64.deb\nSize: 653072\nMD5sum: b029f2c2d5d5c6ad3a08f5dc2b0e89e7\nSHA1: 4c4d9fa6d219a55a5f3a1be4a6c691e110c74612\nSHA256: 9102f73477081a9a57994c80587ca9760341f644ed51bdfa46f2248083d418b3\nSHA512: 60ee2a4dd195db8a1a70e01b69a3cb0207e0df767936a8887ac14e12f45969d548dbb112f87b4df6b912b628d917e1bf10f033b73063773e21db8fef8c942d1a\nDescription: X11 client-side library\nDescription-md5: 0a0b5a32a2fcdcc685c7f4b7dd731798\nMulti-Arch: same\nOriginal-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: standard, ubuntu-wsl"
+    },
+    {
+      "package": "libxnvctrl0",
+      "version": "510.47.03-0ubuntu4.24.04.1",
+      "size": 12696,
+      "sha256": "7947ecbae8e3b5a2b83a1a1cd620d939b47c3ea282b0d1eda12b907994bae56d",
+      "filename": "pool/main/n/nvidia-settings/libxnvctrl0_510.47.03-0ubuntu4.24.04.1_amd64.deb",
+      "catalog_record": "Package: libxnvctrl0\nSource: nvidia-settings\nPriority: optional\nSection: libs\nInstalled-Size: 57\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 510.47.03-0ubuntu4.24.04.1\nDepends: libc6 (>= 2.14), libx11-6 (>= 2:1.4.99.1), libxext6\nFilename: pool/main/n/nvidia-settings/libxnvctrl0_510.47.03-0ubuntu4.24.04.1_amd64.deb\nSize: 12696\nMD5sum: 08c5a1d9b9d5fd18a33f0920bf933e36\nSHA1: 3044119e975f3929e73eb7d8380037b5f193bdcc\nSHA256: 7947ecbae8e3b5a2b83a1a1cd620d939b47c3ea282b0d1eda12b907994bae56d\nSHA512: b1b982b66af3158eeb0acc6c09bd906f733ee1a43b472f7a0f81375de8acefbf52daea21a5c5e38aa3a47b5a0bd72e0079f130086b5311e85895f1f34afe656f\nDescription: NV-CONTROL X extension (runtime library)\nDescription-md5: 6d4f8aebac836277193a58e922a49603\nMulti-Arch: same\nOriginal-Maintainer: Debian NVIDIA Maintainers <pkg-nvidia-devel@lists.alioth.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: ubuntustudio-video, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-publishing, ubuntukylin-desktop, ubuntukylin-desktop-minimal"
+    },
+    {
+      "package": "ocl-icd-libopencl1",
+      "version": "2.3.2-1build1",
+      "size": 38530,
+      "sha256": "6d98029b06335bc23166834719ac5e697bcb4a136b40eebc263dfe481e05839b",
+      "filename": "pool/universe/o/ocl-icd/ocl-icd-libopencl1_2.3.2-1build1_amd64.deb",
+      "catalog_record": "Package: ocl-icd-libopencl1\nArchitecture: amd64\nVersion: 2.3.2-1build1\nMulti-Arch: same\nPriority: extra\nSection: universe/libs\nSource: ocl-icd\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian OpenCL Maintainers <pkg-opencl-devel@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 140\nProvides: libopencl-1.1-1, libopencl-1.2-1, libopencl-2.0-1, libopencl-2.1-1, libopencl-2.2-1, libopencl-3.0-1, libopencl1\nDepends: libc6 (>= 2.34)\nSuggests: opencl-icd\nConflicts: amd-app, libopencl1, nvidia-libopencl1-dev\nReplaces: amd-app, libopencl1, nvidia-libopencl1-dev\nFilename: pool/universe/o/ocl-icd/ocl-icd-libopencl1_2.3.2-1build1_amd64.deb\nSize: 38530\nMD5sum: f77cac02a9cce384e1929e1fc52feebe\nSHA1: d3aa58461413c80c788075966a9f35dc6eca9b4f\nSHA256: 6d98029b06335bc23166834719ac5e697bcb4a136b40eebc263dfe481e05839b\nSHA512: f7652715779541bb781d267b7d29aa842fc21e13658208d5fb8a96faff8f399ca3ce957188400d83b452cff5f159ce6c9487633656bcc2a3e859ea5f98cc5fd5\nHomepage: https://github.com/OCL-dev/ocl-icd\nDescription: Generic OpenCL ICD Loader\nDescription-md5: 252e69db51366c895c699908fd2561ed\nTask: kubuntu-desktop, xubuntu-minimal, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop"
+    },
+    {
+      "package": "libamd-comgr2",
+      "version": "6.0+git20231212.4510c28+dfsg-3build2",
+      "size": 14405016,
+      "sha256": "92b588dd48ea1c49bd1e1c295a0796a0c3dae1d93d6ffc69debf7c0c86497979",
+      "filename": "pool/universe/r/rocm-compilersupport/libamd-comgr2_6.0+git20231212.4510c28+dfsg-3build2_amd64.deb",
+      "catalog_record": "Package: libamd-comgr2\nArchitecture: amd64\nVersion: 6.0+git20231212.4510c28+dfsg-3build2\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: rocm-compilersupport\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian ROCm Team <debian-ai@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 60697\nDepends: libc6 (>= 2.38), libgcc-s1 (>= 3.0), libllvm17, libstdc++6 (>= 13.1), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.2.2)\nFilename: pool/universe/r/rocm-compilersupport/libamd-comgr2_6.0+git20231212.4510c28+dfsg-3build2_amd64.deb\nSize: 14405016\nMD5sum: 522bc793a113bb3320a674a8e627b679\nSHA1: 02e93ab46e05e26469510c7242e2fddb1a09b984\nSHA256: 92b588dd48ea1c49bd1e1c295a0796a0c3dae1d93d6ffc69debf7c0c86497979\nSHA512: 457937269948a752d69e6d9a2c205a9b806ad4ee6c3359b7b08efb2a5a30a84af2cf2e9b5163fcedb9b828d8d72dc98bf3c20c267b357f5ab32573a294293bf1\nHomepage: https://github.com/ROCm/ROCm-CompilerSupport\nDescription: ROCm code object manager\nDescription-md5: 2a5ee0333556f125be633416c7925d8d"
+    },
+    {
+      "package": "libhsa-runtime64-1",
+      "version": "5.7.1-2build1",
+      "size": 490966,
+      "sha256": "a4085bb731f885aa87eed5cbd6e7f76edcd99ff1d5c7d83a538a0081c7925ab9",
+      "filename": "pool/universe/r/rocr-runtime/libhsa-runtime64-1_5.7.1-2build1_amd64.deb",
+      "catalog_record": "Package: libhsa-runtime64-1\nArchitecture: amd64\nVersion: 5.7.1-2build1\nPriority: optional\nSection: universe/libs\nSource: rocr-runtime\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian ROCm Team <debian-ai@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 2564\nDepends: libc6 (>= 2.38), libdrm-amdgpu1 (>= 2.4.63), libdrm2 (>= 2.4.60), libelf1t64 (>= 0.144), libgcc-s1 (>= 3.3.1), libhsakmt1 (>= 5.7.0), libstdc++6 (>= 13.1)\nFilename: pool/universe/r/rocr-runtime/libhsa-runtime64-1_5.7.1-2build1_amd64.deb\nSize: 490966\nMD5sum: 4fb10b08b6630dc55f08a2a9a3ce3eb5\nSHA1: 86bf3dfd6075d7ad4d98659ad27815a5f8127a41\nSHA256: a4085bb731f885aa87eed5cbd6e7f76edcd99ff1d5c7d83a538a0081c7925ab9\nSHA512: 8ec4f88130c608c8d3411d0291172b8460e7c87b6cd64821e5914046db1cf1b1adb2563cef013efa60c1a65791b10624206ccf6a8492e561a250931e604d5c29\nHomepage: https://github.com/ROCm/ROCR-Runtime/\nDescription: HSA Runtime API and runtime for ROCm\nDescription-md5: 3b6dc07958d486a817a5f2ac17827c4a"
+    },
+    {
+      "package": "libxcb1",
+      "version": "1.15-1ubuntu2",
+      "size": 47730,
+      "sha256": "e1c6611d11ad7398326f1bf028afc34c3b14c51d917a3426b966ed4b9687fa58",
+      "filename": "pool/main/libx/libxcb/libxcb1_1.15-1ubuntu2_amd64.deb",
+      "catalog_record": "Package: libxcb1\nArchitecture: amd64\nVersion: 1.15-1ubuntu2\nMulti-Arch: same\nPriority: standard\nSection: libs\nSource: libxcb\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 196\nDepends: libc6 (>= 2.38), libxau6 (>= 1:1.0.9), libxdmcp6\nBreaks: alsa-utils (<< 1.0.24.2-5)\nFilename: pool/main/libx/libxcb/libxcb1_1.15-1ubuntu2_amd64.deb\nSize: 47730\nMD5sum: c995cc5f2275fbbfca1d4812a24ce0e6\nSHA1: 8ba28a631e439103e47a729cf017a0b1996692c9\nSHA256: e1c6611d11ad7398326f1bf028afc34c3b14c51d917a3426b966ed4b9687fa58\nSHA512: 5951605a39b06df7ad3916466b7d85ca8df7dd5a1b59fcc163e68f8e584c9646658ca3e973f0775d8c7696326e0eec4d31817d9488d14d0f5921628ced640923\nHomepage: https://xcb.freedesktop.org\nDescription: X C Binding\nDescription-md5: 93568dcb3007e5182147ac40c36650aa\nTask: standard, ubuntu-wsl"
+    },
+    {
+      "package": "libx11-data",
+      "version": "2:1.8.7-1ubuntu0.1",
+      "size": 115970,
+      "sha256": "5cb70f7a8e7178e0bae4fd49eee49feaed623d2d821caf6ea5862b66f9e9630b",
+      "filename": "pool/main/libx/libx11/libx11-data_1.8.7-1ubuntu0.1_all.deb",
+      "catalog_record": "Package: libx11-data\nSource: libx11\nPriority: standard\nSection: x11\nInstalled-Size: 1343\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: all\nVersion: 2:1.8.7-1ubuntu0.1\nFilename: pool/main/libx/libx11/libx11-data_1.8.7-1ubuntu0.1_all.deb\nSize: 115970\nMD5sum: ba772ac232f3831dcf8309a966d04bff\nSHA1: 4a5e94065296195eb4f2e76507786920f40c38eb\nSHA256: 5cb70f7a8e7178e0bae4fd49eee49feaed623d2d821caf6ea5862b66f9e9630b\nSHA512: ca3a62b1d57bdfdb4ec62abfa5207205b20149bad2e8c3aec2721572eddbb0556827663e64a5a735fa2020f70fb9595eb3a087b0f1a89c6147f77065ff00faee\nDescription: X11 client-side library\nDescription-md5: 81164f2e1ff7b227f1b710491521fdab\nMulti-Arch: foreign\nOriginal-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: standard, ubuntu-wsl"
+    },
+    {
+      "package": "libxext6",
+      "version": "2:1.3.4-1build2",
+      "size": 30406,
+      "sha256": "45783969a9ece9d7b7b733b8c60981584c53c6bc5ee3b42d295d2f80d1285679",
+      "filename": "pool/main/libx/libxext/libxext6_1.3.4-1build2_amd64.deb",
+      "catalog_record": "Package: libxext6\nArchitecture: amd64\nVersion: 2:1.3.4-1build2\nMulti-Arch: same\nPriority: standard\nSection: libs\nSource: libxext\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 103\nDepends: libc6 (>= 2.14), libx11-6 (>= 2:1.6.0)\nFilename: pool/main/libx/libxext/libxext6_1.3.4-1build2_amd64.deb\nSize: 30406\nMD5sum: e00ef49a881d775435310da665ba8e76\nSHA1: 32df1a099770f31206ab91c1f9999f45700ea4fe\nSHA256: 45783969a9ece9d7b7b733b8c60981584c53c6bc5ee3b42d295d2f80d1285679\nSHA512: 3a01a7711f294d32d338eafb12c1e4c886e5f7496fbadd67bfc562f48e95fbe5b2a12e2df31a92e6800a977c2f841cfc354e800bcd4762c929c22c92c69cb4af\nDescription: X11 miscellaneous extension library\nDescription-md5: 5c72cf7a13b0990666898813406a2a89\nTask: standard, ubuntu-wsl"
+    },
+    {
+      "package": "libllvm17t64",
+      "version": "1:17.0.6-9ubuntu1",
+      "size": 26162724,
+      "sha256": "1863b5459ca4a6691f5e039e76157f074ee08b48176267642ee4dfea065f5db4",
+      "filename": "pool/main/l/llvm-toolchain-17/libllvm17t64_17.0.6-9ubuntu1_amd64.deb",
+      "catalog_record": "Package: libllvm17t64\nArchitecture: amd64\nVersion: 1:17.0.6-9ubuntu1\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: llvm-toolchain-17\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 120829\nProvides: libllvm17 (= 1:17.0.6-9ubuntu1)\nDepends: libc6 (>= 2.38), libedit2 (>= 2.11-20080614-0), libffi8 (>= 3.4), libgcc-s1 (>= 3.3), libstdc++6 (>= 12), libtinfo6 (>= 6), libxml2 (>= 2.7.4), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.2.0)\nBreaks: libllvm17 (<< 1:17.0.6-9ubuntu1)\nReplaces: libllvm17\nFilename: pool/main/l/llvm-toolchain-17/libllvm17t64_17.0.6-9ubuntu1_amd64.deb\nSize: 26162724\nMD5sum: 474c7c3ed7cd0f5cf8071cdda3739678\nSHA1: bedc3cb7d5397e328b79c6ddf8ea96c1dd05d08d\nSHA256: 1863b5459ca4a6691f5e039e76157f074ee08b48176267642ee4dfea065f5db4\nSHA512: 1c42486b90e18253ed47689e815e68f5ce3dab33c5ddcac96d0004da8ea70fd2d80e43a5a4009825cbd76ca18e7dcd9aea90d6c2f25521bc545d6980ae189885\nHomepage: https://www.llvm.org/\nDescription: Modular compiler and toolchain technologies, runtime library\nDescription-md5: a8854f4edf76a8c14ce34dc209bd1d11\nTask: ubuntu-desktop-minimal, ubuntu-desktop, ubuntu-wsl, postgresql-server, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-minimal, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi"
+    },
+    {
+      "package": "libhsakmt1",
+      "version": "5.7.0-1build1",
+      "size": 62912,
+      "sha256": "ac17b06fefb4dc7ba1b46e01a9dc6a889b4ef157883d54a9796716260c4453e4",
+      "filename": "pool/universe/r/roct-thunk-interface/libhsakmt1_5.7.0-1build1_amd64.deb",
+      "catalog_record": "Package: libhsakmt1\nArchitecture: amd64\nVersion: 5.7.0-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: roct-thunk-interface\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: ROCm Team <debian-ai@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 205\nDepends: libc6 (>= 2.38), libdrm-amdgpu1 (>= 2.4.73), libdrm2 (>= 2.4.60), libnuma1 (>= 2.0.11)\nFilename: pool/universe/r/roct-thunk-interface/libhsakmt1_5.7.0-1build1_amd64.deb\nSize: 62912\nMD5sum: c7ef1a1325c03823bd2ad50135449304\nSHA1: 74916e22cb03dfd592af83151fbb04ee9b9b7331\nSHA256: ac17b06fefb4dc7ba1b46e01a9dc6a889b4ef157883d54a9796716260c4453e4\nSHA512: c60140099b950a58fe1d3e8f9f8355ec2ead3beadabf43bc419cf51e2a94f47a79fa4557f9405ecc6274c193e73969f9d63be72f0d1b77a6905e97635aa4ff48\nHomepage: https://github.com/ROCm/ROCT-Thunk-Interface\nDescription: Thunk library for AMD KFD (shlib)\nDescription-md5: cad20c7a0db349265356ab5bbc60e4cf"
+    },
+    {
+      "package": "libxau6",
+      "version": "1:1.0.9-1build6",
+      "size": 7160,
+      "sha256": "e40d29f1d1a62393bacaedebe0da3d9006084152a9f7e5e029293f08ce1c5c80",
+      "filename": "pool/main/libx/libxau/libxau6_1.0.9-1build6_amd64.deb",
+      "catalog_record": "Package: libxau6\nArchitecture: amd64\nVersion: 1:1.0.9-1build6\nMulti-Arch: same\nPriority: standard\nSection: libs\nSource: libxau\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 33\nDepends: libc6 (>= 2.33)\nFilename: pool/main/libx/libxau/libxau6_1.0.9-1build6_amd64.deb\nSize: 7160\nMD5sum: f05b902b70e1f207fda165f92db5ec66\nSHA1: fb1c0c486db1d426713c2d780e9ab53e28776eac\nSHA256: e40d29f1d1a62393bacaedebe0da3d9006084152a9f7e5e029293f08ce1c5c80\nSHA512: f85ae33e78d8ddc54cfe6b76c3b892f7c9c9872cced58934cf02ebfd1da7b1c437b9b7eb8b0eb608da9a70ba9815ba0c4db96ab1af404618f31ab8dc47416325\nDescription: X11 authorisation library\nDescription-md5: 45583edc98c86e2c2a0970bdba4713c3\nTask: standard, ubuntu-wsl"
+    },
+    {
+      "package": "libxdmcp6",
+      "version": "1:1.1.3-0ubuntu6",
+      "size": 10254,
+      "sha256": "bcd336fce11ce2a45f34d0f95e6980af22529f22147e8f98c156e5cee8ee42bb",
+      "filename": "pool/main/libx/libxdmcp/libxdmcp6_1.1.3-0ubuntu6_amd64.deb",
+      "catalog_record": "Package: libxdmcp6\nArchitecture: amd64\nVersion: 1:1.1.3-0ubuntu6\nMulti-Arch: same\nPriority: standard\nSection: libs\nSource: libxdmcp\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 41\nDepends: libbsd0 (>= 0.2.0), libc6 (>= 2.4)\nFilename: pool/main/libx/libxdmcp/libxdmcp6_1.1.3-0ubuntu6_amd64.deb\nSize: 10254\nMD5sum: 890144c5b6a4f18457de02df46c8be62\nSHA1: d82e5cb636509781f6808662d0e15f97b576247e\nSHA256: bcd336fce11ce2a45f34d0f95e6980af22529f22147e8f98c156e5cee8ee42bb\nSHA512: f93c7241ac9d9e1541058575a13c83f57e3c4fc5609b3f7416a9f30d6e2dfb3a6a9b8ebee4780afb2ac5549c11b042e758a99a754d989132d3d66679169853fb\nDescription: X11 Display Manager Control Protocol library\nDescription-md5: 79e282811de3a2440672d104fd07bead\nTask: standard, ubuntu-wsl"
+    }
+  ],
+  "host_satisfied": {
+    "libc6": "install ok installed 2.39-0ubuntu8.9",
+    "libgcc-s1": "install ok installed 14.2.0-4ubuntu2~24.04.1",
+    "libstdc++6": "install ok installed 14.2.0-4ubuntu2~24.04.1",
+    "zlib1g": "install ok installed 1:1.3.dfsg-3.1ubuntu2.2",
+    "libatomic1": "install ok installed 14.2.0-4ubuntu2~24.04.1",
+    "libudev1": "install ok installed 255.4-1ubuntu8.17",
+    "adduser": "install ok installed 3.137ubuntu1",
+    "libuuid1": "install ok installed 2.39.3-9ubuntu6.6",
+    "libnuma1": "install ok installed 2.0.18-1ubuntu0.24.04.1",
+    "libxml2": "install ok installed 2.9.14+dfsg-1.3ubuntu3.10",
+    "libzstd1": "install ok installed 1.5.5+dfsg2-2build1.1",
+    "libdrm-amdgpu1": "install ok installed 2.4.125-1ubuntu0.1~24.04.2",
+    "libdrm2": "install ok installed 2.4.125-1ubuntu0.1~24.04.2",
+    "libelf1t64": "install ok installed 0.190-1.1ubuntu0.1",
+    "libedit2": "install ok installed 3.1-20230828-1build1",
+    "libffi8": "install ok installed 3.4.6-1build1",
+    "libtinfo6": "install ok installed 6.4+20240113-1ubuntu2.2",
+    "libbsd0": "install ok installed 0.12.1-1build1.1"
+  },
+  "virtual_aliases": {
+    "libpmix2": "libpmix2t64",
+    "libllvm17": "libllvm17t64"
+  },
+  "policy": "Exact selected APT size/SHA verified before dpkg-deb extraction; no maintainer scripts; task directory only"
+}

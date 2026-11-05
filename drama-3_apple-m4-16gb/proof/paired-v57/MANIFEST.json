@@ -1,0 +1,112 @@
+{
+  "absolute_or_listening_or_crossprecision_quality_claim": false,
+  "claim_scope": "Same-artifact current-engine speedup and observed output preservation on finite tested panels.",
+  "files": {
+    "ARCHIVE_IDENTITY.json": {
+      "bytes": 1352,
+      "sha256": "81436452f50dbfca7829c32d445bc97c10c581eed72da224c0b9611879759af4"
+    },
+    "CASES192.jsonl": {
+      "bytes": 1000997,
+      "sha256": "dc397e6ba4fa225683ff244a7ec974b5da96cbba97cb30430c4c1787b98ec569"
+    },
+    "COMPARATIVE_SPEEDUP.json": {
+      "bytes": 3914,
+      "sha256": "440a3ba068d10434d389ee2f67a6b02e27472ea53855a0d6dd19ed06ba4adbc6"
+    },
+    "FRESH288_PRESERVATION.json": {
+      "bytes": 4874,
+      "sha256": "8e05d67f22740d9abf4b8bec4d643db0461375dfe1818c27566c99232054c26d"
+    },
+    "FRESH_PAIRS144.jsonl": {
+      "bytes": 87827,
+      "sha256": "acdc1a0c9faed45272a65592a26fed76d117432f1d4420a73311d874f85a0d4f"
+    },
+    "FROZEN_STATISTICS.json": {
+      "bytes": 4943,
+      "sha256": "1bc1b24b59c74f7c5b72c24acdbc2c6c34190a9689f10ed6517a2e5bfa2e95e1"
+    },
+    "LATEST_COMPARISON.json": {
+      "bytes": 1864,
+      "sha256": "ca308f639df0053bc3f881bf9bc3e7e535c8667a2016fde1c5671d87c3eade66"
+    },
+    "LOAD_WARMUP_RECEIPTS.json": {
+      "bytes": 23849,
+      "sha256": "7a7b4fe708eafc923f11bcdeff4f7f280c6a45dece45d7ce69d3ef34faad39a0"
+    },
+    "LOCAL_EXPORT_VALIDATION.json": {
+      "bytes": 535,
+      "sha256": "2804f29dda2a5004c20e873685f45ea5f169fc68dcdde5c099730321a880bf29"
+    },
+    "MEASURED_SOURCE_LINEAGE.json": {
+      "bytes": 10717,
+      "sha256": "60b69a3307eebcd56ddc22a3357963e342f52a634537e595160a790b061c1464"
+    },
+    "NATIVE144_RELEASE.jsonl": {
+      "bytes": 83506,
+      "sha256": "9d9466645d71a75739a3ea722457dcc3ce749cb4e860b70db28d8767416fdb3b"
+    },
+    "NATIVE144_STOCK.jsonl": {
+      "bytes": 83218,
+      "sha256": "1370dc3737303e8d3b1e6d844b7076a4d476f0c66227c1eb4562ef1174273ac1"
+    },
+    "NATIVE_INVOCATION_PROVENANCE.json": {
+      "bytes": 1595,
+      "sha256": "c11a83a5bc9f179dbe82429d503e53cd9f625d9b4fb44f1e1fbbdfbf0b40b1f4"
+    },
+    "NATIVE_REPLAY.json": {
+      "bytes": 6415,
+      "sha256": "1b3299bf4085aa14f59a54c2069cdcb1292dd0aaa82439320526d8037fb1af02"
+    },
+    "PAIRS96.jsonl": {
+      "bytes": 128923,
+      "sha256": "53f537278b909d1391091823acdf1094531829ae1b1abc60e0ea1b18d6292c28"
+    },
+    "PREPARATION_FAILURES.json": {
+      "bytes": 517,
+      "sha256": "1e80973d696c3df4f64d3de656bc802ac128c79465e509e1bcd35a01bb48b73c"
+    },
+    "PUBLIC_REPRODUCTION_STATUS.json": {
+      "bytes": 257,
+      "sha256": "9c61a52fdba011545e85d9944fc18ad7ef873d81cc50480c350536c3cac0c6e0"
+    },
+    "README.md": {
+      "bytes": 3841,
+      "sha256": "f4bb2bf7885809358cfc6c95392190bd7faaf6e8dff88fcca939c77dd1e2ccd0"
+    },
+    "SIGNAL_SLO.json": {
+      "bytes": 4297,
+      "sha256": "b471f660a6a3579beda0c8dac350c2b70914e4267ecd39d3436672fbbf3d71ee"
+    },
+    "SOURCE_RECEIPTS.json": {
+      "bytes": 7187,
+      "sha256": "ca2c7bf1cbd72bcc4da0bec16cbf546854c27d291b6604c77c3839502d484432"
+    },
+    "TESTED_BASELINE_SCOPE.json": {
+      "bytes": 12866,
+      "sha256": "2898a0eb55ff4c570788930aada7ce81baf5f211513115091e5d416c3bbdc463"
+    },
+    "export_evidence.py": {
+      "bytes": 19731,
+      "sha256": "0f66e31862ae85b60ec604bbd1b6dd4dfad243233154808b942400665e8c7bd2"
+    },
+    "test_export.py": {
+      "bytes": 3548,
+      "sha256": "51c72174d01066a24e44adebda48815a9e286287b4ad7d57370d231af853b929"
+    },
+    "validate_export.py": {
+      "bytes": 4413,
+      "sha256": "b9c8c1c0d773fc3447c8596398c22df75380912481bb032b2fa2a871676bcbb8"
+    }
+  },
+  "global_best_claim": false,
+  "local_export_controls": 13,
+  "model_revision": "93432d8a6c97faba88309880c3fd2d1b8356bde679dc20f9e0daa57282eb904c",
+  "original_archives_retained_separately": true,
+  "overall_realtime_claim": false,
+  "public_files_are_transformed_not_original_receipt_bytes": true,
+  "public_model_checker_or_portable_smoke_executed_by_export": false,
+  "schema": "transformed-public-v57-evidence-manifest-v1",
+  "source_receipts_file_sha256": "ca2c7bf1cbd72bcc4da0bec16cbf546854c27d291b6604c77c3839502d484432",
+  "status": "PREPARED_PUBLIC_EXPORT_NOT_PUBLISHED"
+}

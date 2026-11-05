@@ -1,0 +1,127 @@
+{
+  "data": {
+    "actual_model_or_codec_forwards": 0,
+    "fresh144_each": {
+      "release": {
+        "GPU_visible": false,
+        "actual_segments": 144,
+        "all_planned_cases_retained": true,
+        "codec_forward_calls": 0,
+        "consumer_sha256": "f6ead832ab0ec9dc907aa366aaeef0cf106dc072bab4d59b58e7585e9cca5df9",
+        "counts": {
+          "FAIL": 0,
+          "NOT RUN": 0,
+          "PASS": 144,
+          "UNPROVEN": 0
+        },
+        "fixtures_sha256": "a0e1394ed74bbae5766e3a5246b35bbb4086d2784496ccca10da5bdc015c8da3",
+        "integer_location_sha256": "dfa0a5846ab77165377c76517eff8eb9e0f67da245109ce643dc5d02a2f65424",
+        "integrity_core_sha256": "5770ef27dfce9ea770e744fcdff26ea085566b9fa855b125bb7a1fc7015aba05",
+        "model_forward_calls": 0,
+        "model_weights_loaded": false,
+        "native_proof_sha256": "6eb18443c100f41622673eeaf0d5cfeaea490ec3c350e2566ac9aadd3d2d7f54",
+        "request_plan_sha256": "52e47945ca5943a18b25e7302cb5628147f4001e3a12f216ef3df93bff75d9bd",
+        "requests": 144,
+        "runtime_sha256": "8e48fd0ab6ea170afd9533478542adbe3f84b465c8cbe45b7db686a6941d6acc",
+        "scope": "Actual complete prompt/history replay only; no absolute, listening or perceptual grade.",
+        "source_config_sha256": "4b13a31b504cf54181f52df5bbb27604f5cc4b77b6e90a12ab85d62e0d70b693",
+        "source_inference_sha256": "73f07e13f59cf88b33862ad579b71467deb8a67f9ba89e5abb9c89c2f87d55dd",
+        "source_pin": "541566932abbaebcb0a40e562a1f846738383f38",
+        "status": "PASS",
+        "tokenizer_sha256": "0e9b9db76b2f0389b04b6ef057a2ac3b89100b7e96f2dd7034d19580a09654d6"
+      },
+      "stock": {
+        "GPU_visible": false,
+        "actual_segments": 144,
+        "all_planned_cases_retained": true,
+        "codec_forward_calls": 0,
+        "consumer_sha256": "f6ead832ab0ec9dc907aa366aaeef0cf106dc072bab4d59b58e7585e9cca5df9",
+        "counts": {
+          "FAIL": 0,
+          "NOT RUN": 0,
+          "PASS": 144,
+          "UNPROVEN": 0
+        },
+        "fixtures_sha256": "a0e1394ed74bbae5766e3a5246b35bbb4086d2784496ccca10da5bdc015c8da3",
+        "integer_location_sha256": "dfa0a5846ab77165377c76517eff8eb9e0f67da245109ce643dc5d02a2f65424",
+        "integrity_core_sha256": "5770ef27dfce9ea770e744fcdff26ea085566b9fa855b125bb7a1fc7015aba05",
+        "model_forward_calls": 0,
+        "model_weights_loaded": false,
+        "native_proof_sha256": "6eb18443c100f41622673eeaf0d5cfeaea490ec3c350e2566ac9aadd3d2d7f54",
+        "request_plan_sha256": "52e47945ca5943a18b25e7302cb5628147f4001e3a12f216ef3df93bff75d9bd",
+        "requests": 144,
+        "runtime_sha256": "869d856ea9c8d8c9c1c7e0897443f1fd5540b181fa3393f99b7de746f7a519af",
+        "scope": "Actual complete prompt/history replay only; no absolute, listening or perceptual grade.",
+        "source_config_sha256": "4b13a31b504cf54181f52df5bbb27604f5cc4b77b6e90a12ab85d62e0d70b693",
+        "source_inference_sha256": "73f07e13f59cf88b33862ad579b71467deb8a67f9ba89e5abb9c89c2f87d55dd",
+        "source_pin": "541566932abbaebcb0a40e562a1f846738383f38",
+        "status": "PASS",
+        "tokenizer_sha256": "0e9b9db76b2f0389b04b6ef057a2ac3b89100b7e96f2dd7034d19580a09654d6"
+      }
+    },
+    "quality_grade": null,
+    "timing96_each": {
+      "release": {
+        "GPU_visible": false,
+        "actual_segments": 128,
+        "all_planned_cases_retained": true,
+        "codec_forward_calls": 0,
+        "consumer_sha256": "1e9c8a70d346100d7382ed3b55a2b5af5481bae2422a43d8051486a6e0ffe054",
+        "counts": {
+          "FAIL": 0,
+          "NOT RUN": 0,
+          "PASS": 96,
+          "UNPROVEN": 0
+        },
+        "fixtures_sha256": "7464d6b9ce243d345bb7dd6fc715bb297a956ec2f24cfde47e8adca6a2fb1937",
+        "integrity_core_sha256": "5770ef27dfce9ea770e744fcdff26ea085566b9fa855b125bb7a1fc7015aba05",
+        "model_forward_calls": 0,
+        "model_weights_loaded": false,
+        "native_proof_sha256": "6eb18443c100f41622673eeaf0d5cfeaea490ec3c350e2566ac9aadd3d2d7f54",
+        "request_plan_sha256": "93adfb0987d727f7577b283db049897b67991d738503f7b44cf8039456f168e6",
+        "requests": 96,
+        "runtime_sha256": "7ff24d79e6d8bbc701acd52a36de93f861c110dd5e764eed06a96b595f9f9377",
+        "scope": "Actual complete prompt/history replay only; no absolute, listening or perceptual grade.",
+        "source_config_sha256": "4b13a31b504cf54181f52df5bbb27604f5cc4b77b6e90a12ab85d62e0d70b693",
+        "source_inference_sha256": "73f07e13f59cf88b33862ad579b71467deb8a67f9ba89e5abb9c89c2f87d55dd",
+        "source_pin": "541566932abbaebcb0a40e562a1f846738383f38",
+        "status": "PASS",
+        "tokenizer_sha256": "0e9b9db76b2f0389b04b6ef057a2ac3b89100b7e96f2dd7034d19580a09654d6"
+      },
+      "stock": {
+        "GPU_visible": false,
+        "actual_segments": 128,
+        "all_planned_cases_retained": true,
+        "codec_forward_calls": 0,
+        "consumer_sha256": "1e9c8a70d346100d7382ed3b55a2b5af5481bae2422a43d8051486a6e0ffe054",
+        "counts": {
+          "FAIL": 0,
+          "NOT RUN": 0,
+          "PASS": 96,
+          "UNPROVEN": 0
+        },
+        "fixtures_sha256": "7464d6b9ce243d345bb7dd6fc715bb297a956ec2f24cfde47e8adca6a2fb1937",
+        "integrity_core_sha256": "5770ef27dfce9ea770e744fcdff26ea085566b9fa855b125bb7a1fc7015aba05",
+        "model_forward_calls": 0,
+        "model_weights_loaded": false,
+        "native_proof_sha256": "6eb18443c100f41622673eeaf0d5cfeaea490ec3c350e2566ac9aadd3d2d7f54",
+        "request_plan_sha256": "93adfb0987d727f7577b283db049897b67991d738503f7b44cf8039456f168e6",
+        "requests": 96,
+        "runtime_sha256": "8a6d412e473dcf9cefb3a1d103a48af3121439be72d90d934d782d7a639e50e2",
+        "scope": "Actual complete prompt/history replay only; no absolute, listening or perceptual grade.",
+        "source_config_sha256": "4b13a31b504cf54181f52df5bbb27604f5cc4b77b6e90a12ab85d62e0d70b693",
+        "source_inference_sha256": "73f07e13f59cf88b33862ad579b71467deb8a67f9ba89e5abb9c89c2f87d55dd",
+        "source_pin": "541566932abbaebcb0a40e562a1f846738383f38",
+        "status": "PASS",
+        "tokenizer_sha256": "0e9b9db76b2f0389b04b6ef057a2ac3b89100b7e96f2dd7034d19580a09654d6"
+      }
+    }
+  },
+  "original_receipt_roles": [
+    "timing_native_stock",
+    "timing_native_release",
+    "fresh_native_stock",
+    "fresh_native_release"
+  ],
+  "schema": "transformed-public-native-v57-v1"
+}

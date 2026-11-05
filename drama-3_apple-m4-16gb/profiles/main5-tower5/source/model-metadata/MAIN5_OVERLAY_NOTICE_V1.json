@@ -1,0 +1,9 @@
+{
+  "recipe": "MAIN5/Tower5 native affine/group64, original trainedtop8/expert2MSE+last8E3/heads/embedding/codec retained",
+  "builder_sha256": "d30b216cae13dbdb92fde3acaef8fc61c414efa6d27bd75f57cce0e7b09a3928",
+  "source_plan_sha256": "f46e137d984bb0c461f3e91aa00221cd14112baca79792b285bb0687907f9eaa",
+  "parent_revision": "93432d8a6c97faba88309880c3fd2d1b8356bde679dc20f9e0daa57282eb904c",
+  "native_base_revision": "742d2f153e5775357faee2692480c7afdfe0b6673837e2183f2632808e7cebc3",
+  "weight_loader": "Explicit native safetensors then two hash-bound disjoint NPZ overlays; stock receives identical profile",
+  "quality": "Unresolved new precision profile. No old grade transfer; numerical equality diagnostic under policyV2; fresh task/voice/perceptual evidence required."
+}

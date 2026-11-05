@@ -1,0 +1,23 @@
+{
+  "data": {
+    "V2_actual_status": "PASS144_PER_ARM_FROM_SEPARATE_ACTUAL_NATIVE_RECEIPTS",
+    "failed_V1_original_receipt_sha256": {
+      "release": "1be8d829204d632bc69894b4d4b76cf3129cddae2f9572c1fc086f64e5e6bc05",
+      "stock": "38892db5a5983bb6d14660a5f672a07fc692c1d4243cf5f7683fdec818a90d05"
+    },
+    "failed_V1_reason": "Integer bundle is not the exact archived workspace/package root",
+    "meaning": "V1 bundle route was its parent directory; --bundle was corrected to exact archived package. No validator, algorithm, tolerance, payload, input or case change; failures retained.",
+    "repair": {
+      "actual_current_prompt_sidecar_paths_and_file_hashes_verified": 288,
+      "after_runner_sha256": "7ea6a127ed4c68040d21efa80b49833fc4e9256ad08883685ce0594fed94f1b3",
+      "before_runner_sha256": "ec0d22a26f0fb82df97b2785a564d191c1c2e3049fa946dafb840f9c9714a7a5",
+      "change": "Only --bundle argument points to the exact archived package directory instead of its parent extracted workspace. No validator, native algorithm, recorded path, payload, input or tolerance change.",
+      "native_algorithm_sha256": "f6ead832ab0ec9dc907aa366aaeef0cf106dc072bab4d59b58e7585e9cca5df9",
+      "status": "INVOCATION_PATH_REPAIR_ONLY_NATIVE_METHOD_UNCHANGED"
+    },
+    "status": "V1_FAILED_PATH_BEFORE_COMPARISON_V2_NATIVE_PASS"
+  },
+  "original_receipt_sha256": "a6e08c41897007ab6c8f2cfefb62cde55c01d69e3a5f23e31eb45ab01d68f25d",
+  "schema": "transformed-public-v57-native_repair-v1",
+  "transformation": "Public projection; original receipt bytes remain separate and unchanged."
+}

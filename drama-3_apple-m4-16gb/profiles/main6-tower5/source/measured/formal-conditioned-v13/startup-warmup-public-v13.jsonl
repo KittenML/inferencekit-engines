@@ -1,0 +1,1 @@
+{"id": "startup_warmup_public_v13", "text": "A soft breeze moved the curtain beside the window.", "seed": 20261023, "purpose": "One fixed distinct public initialization generation per fresh process, same text/seed/reference IDs across arms. No retry; startup readiness withheld on failure. No heldout response output used."}

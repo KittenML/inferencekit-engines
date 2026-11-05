@@ -1,0 +1,28 @@
+{
+  "data": {
+    "fresh288": {
+      "all_member_payloads_hash_verified": true,
+      "all_members_extracted_and_fsynced": true,
+      "archive_bytes": 560745562,
+      "archive_sha256": "5f200e0eb9725a6ecd2a074291293220f84d93363c20dcfbfaf8287bbc34ae40",
+      "extracted_regular_files": 1887,
+      "inventory_sha256": "02202538c08f03fdcec7abec61b610458adf5d5e5c2126e3e065134cc6e4be10",
+      "member_bytes": 782593354,
+      "original_files": 1886,
+      "original_remote_raw_and_archive_retained": true,
+      "regular_members_including_listing": 1887,
+      "status": "PASS_FULL_ARCHIVE_ALL_MEMBERS_LOCAL_SHA_AND_FSYNC"
+    },
+    "original_closure_sha256": {
+      "closed192": "e61291c5ada003ae2cbb666f92625d084deb88ccced4ef138d78b322109b0783",
+      "closed288": "97f690822e0326ac1ea14cd4d9971e8eb642daeed90030219bcf804f838e01d7",
+      "native_owner_closure": "41072a7e5a5776415f7b435a694ed53fed0bc6bbedf5c8efd4cf58b056f79a56"
+    },
+    "timing192": {
+      "bytes": 1060396891,
+      "sha256": "1f96554315a3cf4a58f12c636909c0df4c765d4d6929ebf57d25808124d002af"
+    },
+    "trust_boundary": "Original root verified retained hashes and lifecycle joins; exclusive hardware owner observed remote closure. This export reads receipts only and does not repeat hardware observations."
+  },
+  "schema": "transformed-public-archive-identity-v57-v1"
+}

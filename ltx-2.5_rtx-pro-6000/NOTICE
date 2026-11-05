@@ -1,0 +1,12 @@
+LTX-2.5 text-to-video engine (fastltx)
+Copyright 2026 Stellon Labs
+
+This folder is distributed under the LTX-2.x Community License Agreement (the full text is in LICENSE),
+not under the Apache License 2.0 that covers the rest of this repository. It runs the LTX-2.5 model by
+Lightricks; the model weights are not included and are downloaded from Hugging Face under the same licence.
+
+Parts of engine/fastltx/ follow the Hugging Face diffusers library (https://github.com/huggingface/diffusers,
+commit 7ecb1e1b4fe500be7fb7381a7bb79a24d7fa3941), licensed under the Apache License 2.0
+(https://www.apache.org/licenses/LICENSE-2.0). They were modified: the LTX-2 transformer forward pass, the
+guidance arithmetic of LTX2Pipeline and the query/key normalisation with rotary embedding are re-implemented
+here (engine/fastltx/model.py, pipeline.py, qknorm.py), and the pipeline's own modules are called directly.

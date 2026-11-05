@@ -1,0 +1,514 @@
+{
+  "kind": "sanitized_measurement_excerpt",
+  "sources": {
+    "timing_summary_sha256": "451913609a17f3319ac277d715f1f04171912f00e2ac56f85c93fd25f313feaf",
+    "timing_raw_sha256": "d6b1515521a84707961f76a163403bc56c0f33e8fb2037005b5db3dc3e3f68f5",
+    "quality_summary_sha256": "a6a292bf9d0fcee0a067781160db5d75512198193eccbef0eaab8ab3452b75f8"
+  },
+  "protocol": {
+    "hardware": "NVIDIA RTX 5090, 32 GB",
+    "model": "Qwen/Qwen3-8B-FP8",
+    "model_revision": "220b46e3b2180893580a4454f21f22d3ebb187d3",
+    "llamacpp_format": "Q8_0",
+    "concurrency": 1,
+    "generation_tokens": 256,
+    "sampling": "greedy",
+    "timing_boundary": "engine-timed, in-process",
+    "rounds": 10,
+    "order": "interleaved Williams schedule",
+    "decode_statistic": "median across measured samples from all rounds",
+    "ci95_scope": "per-engine decode throughput; not a paired speedup interval",
+    "ratio_scope": "candidate median decode throughput / baseline median decode throughput; per_round_range is not a confidence interval",
+    "quality_scope": "first 100 GSM8K questions; greedy, thinking disabled, maximum 512 output tokens; separate from timing"
+  },
+  "configuration": {
+    "ours": {
+      "versions": {
+        "torch": "2.14.1+cu130",
+        "torch_cuda": "13.0",
+        "triton": "3.8.0",
+        "driver": "580.95.05"
+      },
+      "measured_source_md5": "449eb4b061f5f56b91d80952fbc7d58d",
+      "settings": {
+        "pdl": true,
+        "decode_graph": true,
+        "prefill_graphs": true,
+        "prefill_graph_slots": 4,
+        "prefill_graph_lengths": [
+          128
+        ],
+        "prefill_impl": "fused",
+        "prefill_copy": true,
+        "kmajor": true,
+        "depth": [
+          4,
+          8,
+          4,
+          8
+        ],
+        "warps": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "pre": [
+          2,
+          8,
+          2,
+          2
+        ],
+        "trig": [
+          24,
+          20,
+          30,
+          88
+        ],
+        "attn_late": 0,
+        "attn_chunk": 64,
+        "lm_head_ctas": 170,
+        "max_seq": 4096
+      }
+    },
+    "vllm": {
+      "vllm": "0.31.0",
+      "enforce_eager": false,
+      "quantization": "fp8",
+      "cudagraph_mode": "FULL_AND_PIECEWISE",
+      "attention_backend_resolved": "None"
+    },
+    "vllm-flashinfer": {
+      "vllm": "0.31.0",
+      "enforce_eager": false,
+      "quantization": "fp8",
+      "cudagraph_mode": "FULL_AND_PIECEWISE",
+      "attention_backend_resolved": "AttentionBackendEnum.FLASHINFER"
+    },
+    "sglang": {
+      "version": "0.5.21",
+      "radix_cache": false,
+      "tuned": false,
+      "memory_fraction_static": 0.8,
+      "server_args": {
+        "attention_backend": "flashinfer",
+        "decode_attention_backend": "None",
+        "prefill_attention_backend": "None",
+        "disable_cuda_graph": "False",
+        "quantization": "None",
+        "sampling_backend": "flashinfer",
+        "enable_torch_compile": "False",
+        "kv_cache_dtype": "auto",
+        "chunked_prefill_size": "4096",
+        "fp8_gemm_runner_backend": "auto"
+      }
+    },
+    "llamacpp": {
+      "format": "Q8_0",
+      "effective": {
+        "n_gpu_layers": 99,
+        "flash_attn": 1,
+        "n_batch": 2048,
+        "n_ubatch": 512,
+        "type_k": "f16",
+        "type_v": "f16"
+      }
+    }
+  },
+  "timing_rows": [
+    {
+      "engine": "llamacpp",
+      "prompt_len": 128,
+      "rounds": 10,
+      "n": 40,
+      "decode_tok_s": 168.31,
+      "ci95": [
+        168.2,
+        168.4
+      ],
+      "ttft_ms": 14.6,
+      "ttft_first_seen_ms": null,
+      "round_medians": {
+        "1": 167.411,
+        "2": 168.375,
+        "3": 168.315,
+        "4": 168.19,
+        "5": 168.323,
+        "6": 167.824,
+        "7": 168.382,
+        "8": 168.471,
+        "9": 168.361,
+        "10": 168.409
+      }
+    },
+    {
+      "engine": "ours",
+      "prompt_len": 128,
+      "rounds": 10,
+      "n": 50,
+      "decode_tok_s": 186.274,
+      "ci95": [
+        186.2,
+        186.3
+      ],
+      "ttft_ms": 8.1,
+      "ttft_first_seen_ms": 19.5,
+      "round_medians": {
+        "1": 186.363,
+        "2": 186.117,
+        "3": 186.306,
+        "4": 186.161,
+        "5": 186.271,
+        "6": 186.245,
+        "7": 186.2,
+        "8": 186.417,
+        "9": 186.32,
+        "10": 186.253
+      }
+    },
+    {
+      "engine": "sglang",
+      "prompt_len": 128,
+      "rounds": 10,
+      "n": 50,
+      "decode_tok_s": 142.036,
+      "ci95": [
+        141.9,
+        142.1
+      ],
+      "ttft_ms": 20.1,
+      "ttft_first_seen_ms": null,
+      "round_medians": {
+        "1": 142.233,
+        "2": 141.914,
+        "3": 142.264,
+        "4": 141.906,
+        "5": 142.315,
+        "6": 142.017,
+        "7": 142.081,
+        "8": 141.858,
+        "9": 142.061,
+        "10": 141.865
+      }
+    },
+    {
+      "engine": "vllm",
+      "prompt_len": 128,
+      "rounds": 10,
+      "n": 50,
+      "decode_tok_s": 149.579,
+      "ci95": [
+        148.1,
+        152.1
+      ],
+      "ttft_ms": 14.4,
+      "ttft_first_seen_ms": null,
+      "round_medians": {
+        "1": 149.971,
+        "2": 149.723,
+        "3": 146.588,
+        "4": 148.104,
+        "5": 148.546,
+        "6": 149.847,
+        "7": 150.035,
+        "8": 148.487,
+        "9": 152.647,
+        "10": 152.846
+      }
+    },
+    {
+      "engine": "vllm-flashinfer",
+      "prompt_len": 128,
+      "rounds": 10,
+      "n": 50,
+      "decode_tok_s": 152.995,
+      "ci95": [
+        151.7,
+        154.1
+      ],
+      "ttft_ms": 15.9,
+      "ttft_first_seen_ms": null,
+      "round_medians": {
+        "1": 151.43,
+        "2": 154.79,
+        "3": 154.146,
+        "4": 151.905,
+        "5": 150.974,
+        "6": 150.684,
+        "7": 152.515,
+        "8": 153.354,
+        "9": 152.996,
+        "10": 154.492
+      }
+    },
+    {
+      "engine": "llamacpp",
+      "prompt_len": 1024,
+      "rounds": 10,
+      "n": 40,
+      "decode_tok_s": 166.548,
+      "ci95": [
+        166.3,
+        166.6
+      ],
+      "ttft_ms": 70.8,
+      "ttft_first_seen_ms": null,
+      "round_medians": {
+        "1": 166.388,
+        "2": 166.603,
+        "3": 166.41,
+        "4": 166.446,
+        "5": 166.616,
+        "6": 166.579,
+        "7": 166.572,
+        "8": 166.611,
+        "9": 165.101,
+        "10": 166.609
+      }
+    },
+    {
+      "engine": "ours",
+      "prompt_len": 1024,
+      "rounds": 10,
+      "n": 50,
+      "decode_tok_s": 185.165,
+      "ci95": [
+        185.1,
+        185.2
+      ],
+      "ttft_ms": 43.0,
+      "ttft_first_seen_ms": 44.0,
+      "round_medians": {
+        "1": 185.254,
+        "2": 185.123,
+        "3": 185.102,
+        "4": 185.029,
+        "5": 185.201,
+        "6": 185.149,
+        "7": 185.159,
+        "8": 185.245,
+        "9": 185.132,
+        "10": 185.175
+      }
+    },
+    {
+      "engine": "sglang",
+      "prompt_len": 1024,
+      "rounds": 10,
+      "n": 50,
+      "decode_tok_s": 140.171,
+      "ci95": [
+        140.1,
+        140.3
+      ],
+      "ttft_ms": 52.7,
+      "ttft_first_seen_ms": null,
+      "round_medians": {
+        "1": 140.341,
+        "2": 140.299,
+        "3": 140.069,
+        "4": 140.03,
+        "5": 140.547,
+        "6": 140.258,
+        "7": 139.983,
+        "8": 140.114,
+        "9": 140.182,
+        "10": 139.86
+      }
+    },
+    {
+      "engine": "vllm",
+      "prompt_len": 1024,
+      "rounds": 10,
+      "n": 50,
+      "decode_tok_s": 148.028,
+      "ci95": [
+        147.6,
+        150.4
+      ],
+      "ttft_ms": 36.7,
+      "ttft_first_seen_ms": null,
+      "round_medians": {
+        "1": 148.144,
+        "2": 146.838,
+        "3": 150.312,
+        "4": 147.658,
+        "5": 148.319,
+        "6": 147.693,
+        "7": 147.583,
+        "8": 147.871,
+        "9": 151.346,
+        "10": 151.563
+      }
+    },
+    {
+      "engine": "vllm-flashinfer",
+      "prompt_len": 1024,
+      "rounds": 10,
+      "n": 50,
+      "decode_tok_s": 152.121,
+      "ci95": [
+        150.6,
+        153.5
+      ],
+      "ttft_ms": 39.6,
+      "ttft_first_seen_ms": null,
+      "round_medians": {
+        "1": 149.496,
+        "2": 153.322,
+        "3": 149.613,
+        "4": 151.54,
+        "5": 149.876,
+        "6": 151.486,
+        "7": 152.268,
+        "8": 154.148,
+        "9": 154.192,
+        "10": 153.785
+      }
+    }
+  ],
+  "ratios": {
+    "reference": "ours",
+    "rows": [
+      {
+        "engine": "llamacpp",
+        "prompt_len": 128,
+        "ratio": 1.107,
+        "per_round_range": [
+          1.105,
+          1.113
+        ]
+      },
+      {
+        "engine": "sglang",
+        "prompt_len": 128,
+        "ratio": 1.311,
+        "per_round_range": [
+          1.309,
+          1.314
+        ]
+      },
+      {
+        "engine": "vllm",
+        "prompt_len": 128,
+        "ratio": 1.245,
+        "per_round_range": [
+          1.219,
+          1.271
+        ]
+      },
+      {
+        "engine": "vllm-flashinfer",
+        "prompt_len": 128,
+        "ratio": 1.218,
+        "per_round_range": [
+          1.202,
+          1.236
+        ]
+      },
+      {
+        "engine": "llamacpp",
+        "prompt_len": 1024,
+        "ratio": 1.112,
+        "per_round_range": [
+          1.111,
+          1.121
+        ]
+      },
+      {
+        "engine": "sglang",
+        "prompt_len": 1024,
+        "ratio": 1.321,
+        "per_round_range": [
+          1.318,
+          1.324
+        ]
+      },
+      {
+        "engine": "vllm",
+        "prompt_len": 1024,
+        "ratio": 1.251,
+        "per_round_range": [
+          1.222,
+          1.261
+        ]
+      },
+      {
+        "engine": "vllm-flashinfer",
+        "prompt_len": 1024,
+        "ratio": 1.217,
+        "per_round_range": [
+          1.201,
+          1.239
+        ]
+      }
+    ]
+  },
+  "gsm8k": {
+    "hf_sdpa": {
+      "n": 100,
+      "correct": 93,
+      "acc": 0.93,
+      "wilson95": [
+        0.8625032899347025,
+        0.965681175635936
+      ]
+    },
+    "llamacpp": {
+      "n": 100,
+      "correct": 96,
+      "acc": 0.96,
+      "wilson95": [
+        0.9016278276739262,
+        0.984336949448152
+      ]
+    },
+    "ours": {
+      "n": 100,
+      "correct": 93,
+      "acc": 0.93,
+      "wilson95": [
+        0.8625032899347025,
+        0.965681175635936
+      ]
+    },
+    "sglang": {
+      "n": 100,
+      "correct": 92,
+      "acc": 0.92,
+      "wilson95": [
+        0.8500173312059693,
+        0.9589070305141891
+      ]
+    },
+    "vllm": {
+      "n": 100,
+      "correct": 92,
+      "acc": 0.92,
+      "wilson95": [
+        0.8500173312059693,
+        0.9589070305141891
+      ]
+    }
+  },
+  "teacher_forced": {
+    "ours, decode graph": {
+      "prompts": 26,
+      "positions": 6656,
+      "agree_tie_inclusive": 0.9885817307692307,
+      "disagreements": 76
+    },
+    "HF FP8 eager attention, decode (A/A control)": {
+      "prompts": 26,
+      "positions": 6656,
+      "agree_tie_inclusive": 0.9899338942307693,
+      "disagreements": 67
+    }
+  },
+  "limitations": [
+    "llama.cpp changes weight format; its speed and quality are reported as a separate format comparison.",
+    "The GSM8K study did not separately evaluate vLLM with FlashInfer attention.",
+    "Saved timing summaries contain per-engine throughput intervals and per-round speedup ranges, not paired speedup confidence intervals.",
+    "A 100-question quality check does not establish equivalence on other tasks or detect small accuracy differences."
+  ]
+}

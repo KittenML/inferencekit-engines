@@ -1,0 +1,39 @@
+{
+  "schema": "actual-main5-portable-reproduction-summary-v65-v1",
+  "status": "PASS_ACTUAL_EXISTING_INPUT_REBUILD_AND_FRESH_CACHED_INPUT_INSTALL_CONVERSION_SMOKE",
+  "model_revision": "dc860f699a91fa5e30e32698aeb1ab4d5608eff03496c5d7d11bbdcfb3c895ce",
+  "runtime_recipe_sha256": "8008a1bed7c02d62afbb1fe6031f709aed84b747b7b1a3256e2f29d08860155e",
+  "portable_source_seal_sha256": "be7ae8eefe4afbfecd2ef37a13df1b8fd87f26add9aace4bd263db65d9354c9e",
+  "serving_adapter_sha256": "81b90bcb6dc1da1764f648d6e0873eee704a7c005e2e388ecaff39ee883fb743",
+  "measured_serving_manifest_sha256": "09029729ea8872debd5132982569f9acfb01889d410f2fb4a693a0fa9cb15bfd",
+  "existing_input_build_HTTP_join_sha256": "f7575e4eca03eee08de3142d3266237643fac530f3e1a0c39e137ae8ba209aec",
+  "fresh_install_build_HTTP_join_sha256": "a13315446886b2a7c152fe06c897317caed3efac2be4dda947706a4b7ffa6659",
+  "fresh_install_scope": {
+    "new_managed_python_and_venv": true,
+    "locked_dependencies_installed": true,
+    "actual_original_source_conversion": true,
+    "cached_checkpoint_codec_uv_inputs": true,
+    "new_network_download_claim": false,
+    "different_host_claim": false,
+    "every_new_shard_full_hash_verified_and_fsynced_before_storage_sharing": true
+  },
+  "model_reproduction": {
+    "MAIN5_arrays": 750,
+    "protected_Tower5_arrays": 234,
+    "combined_override_buffers": 984,
+    "MAIN5_npz_bytes": 966241610,
+    "MAIN5_npz_sha256": "50ac03070fc576d903467d8039e56598bebcc91d6fbb3735b0773dbe3a56f3ee",
+    "Tower5_npz_sha256": "7b67984c3fa7e4a028186e16b00b3f27a132239daf2778707d7642f16dafe1b2",
+    "fresh_overlay_constructed_before_subsequent_verified_storage_dedup": true,
+    "protected_parent_payload_bytes_unchanged": true
+  },
+  "guarded_smoke": {
+    "status": "PASS",
+    "fixed_public_HTTP_and_WAV": true,
+    "source_runtime_model_identity_verified": true,
+    "EOS_observed": true,
+    "owned_cleanup_and_process_limits_restored": true
+  },
+  "no_new_speed_or_quality_grade_from_reproduction": true,
+  "historical_preparation_null_records_preserved": true
+}

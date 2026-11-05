@@ -1,0 +1,360 @@
+{
+  "commit": "7cbc776c16a39f73978ae5ce400729d94e0fda35",
+  "files": [
+    {
+      "path": "vllm_omni/entrypoints/omni.py",
+      "sha256": "fdf161c86bc8a9d50dfb3c3bb79d5dfdb451f8bcd92adb8a9bc023a386a8801d",
+      "git_blob_sha1": "ca9fc01962ba3a5a859f85f06115553acc12993c",
+      "bytes": 9493,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/entrypoints/omni.py"
+    },
+    {
+      "path": "vllm_omni/entrypoints/omni_base.py",
+      "sha256": "4a20422b3b3a78970004d8335d49e5af8d08d0666050ff8afad396d1a6c5f1ea",
+      "git_blob_sha1": "f69f9fbbbd2424d8f6debd3632a84b817196c874",
+      "bytes": 37174,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/entrypoints/omni_base.py"
+    },
+    {
+      "path": "vllm_omni/inputs/data.py",
+      "sha256": "a3852c8951afece320b4b7bf1e256b015987597c6f769d6910309912fe74de7a",
+      "git_blob_sha1": "981679fe0ad2406e8a57a634d0bde92fd9ade3cb",
+      "bytes": 17865,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/inputs/data.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/data.py",
+      "sha256": "f7d382e27d3e9f4e189d63bee722bbd9e7243c62d0b628acf6a4709004239047",
+      "git_blob_sha1": "4ad861000d51293e27587eb9c5e6ac872e20cbd1",
+      "bytes": 118631,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/data.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/request.py",
+      "sha256": "1a7a7a5d83f57ddf34fd56e61927a656069e22ed3e6ba43dfa4d4e5c4318f6ba",
+      "git_blob_sha1": "9af1fda59f05f14d72c54cc277837ca10648b037",
+      "bytes": 6395,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/request.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/worker/diffusion_worker.py",
+      "sha256": "5ba17d9a4c094be65371946500a79e855aafa798944e8928e895a9f2c3bbbb3b",
+      "git_blob_sha1": "035077e73a3f23b204f8325e8ad639455741e228",
+      "bytes": 94666,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/worker/diffusion_worker.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/worker/diffusion_model_runner.py",
+      "sha256": "e3e75e5dbaf2ccf20b65995e32effc64962c8285b8f8c19bf61a1a785bdb21c1",
+      "git_blob_sha1": "a6fed9b85899cefab9951526da1426ef6866b643",
+      "bytes": 79219,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/worker/diffusion_model_runner.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/worker/request_batch.py",
+      "sha256": "91ec9b5956142f2725d42318aa35236c78d9b04a50559303f3a69cffc1b8ebd4",
+      "git_blob_sha1": "09048920e295ad115815430fa6d5d7da6518dc74",
+      "bytes": 11780,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/worker/request_batch.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/worker/input_batch.py",
+      "sha256": "3054a98dc4c47a4d6244ac1f2ec8f327d00cd408439ee229e9166f3dcaa32bd0",
+      "git_blob_sha1": "a536a4f58729784c0458fcfe17a11c6935efb0bc",
+      "bytes": 27518,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/worker/input_batch.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/worker/utils.py",
+      "sha256": "f05a568e982a1876ccc224ae72197263cc12bf90802093edd1af2ea27fdefabd",
+      "git_blob_sha1": "5034cdb2704ba925444e75c6383b488c38117f1c",
+      "bytes": 9032,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/worker/utils.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/models/mossimage/pipeline_mossimage.py",
+      "sha256": "34555169ac9a6990f237722f0705461dca00d62ae88688ec24f36b983f8d4ea0",
+      "bytes": 31689,
+      "baseline_sha256": "54ae50ccbe1244fdef2d915e28cb348c389b01dcc658de2a4af51b90a1fc19eb",
+      "baseline_git_blob_sha1": "cbcc44f52897895afb271e7b5d29b9bc49c622e3",
+      "baseline_bytes": 31385,
+      "baseline_url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/models/mossimage/pipeline_mossimage.py",
+      "candidate_git_blob_sha1": "d09f8d0d16b2ebcf41196f5f41cff5789d275a98",
+      "candidate_note": "Patched candidate; baseline fields identify the unmodified commit file; combined patch covers both modified files."
+    },
+    {
+      "path": "vllm_omni/diffusion/models/mossimage/mossimage_transformer.py",
+      "sha256": "5d355a33e9c00de0849d2f43f5950aba59499fe0131334530db00a1f301c8ca7",
+      "bytes": 30932,
+      "baseline_sha256": "94a144d0358d0e7bdcc21ef6ed6e88d3b39587ec4496c66cab5eb1ca1974f5b2",
+      "candidate_note": "Patched candidate; baseline fields identify the unmodified commit file; combined patch covers both modified files.",
+      "baseline_git_blob_sha1": "5b445517e850eea5a11d5e56588cc413afc95a16",
+      "baseline_url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/models/mossimage/mossimage_transformer.py",
+      "baseline_bytes": 28846,
+      "candidate_git_blob_sha1": "393a451fc530ae25011d957164f390fefe0f27eb"
+    },
+    {
+      "path": "vllm_omni/diffusion/guidance/__init__.py",
+      "sha256": "0e9b768032585c726d3311342e0a436f83a10967573cb452cbdadea19f7b5d59",
+      "git_blob_sha1": "cff72200cb23b2a420febea29e97e7fbe7341099",
+      "bytes": 688,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/guidance/__init__.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/guidance/skip_layer_guidance.py",
+      "sha256": "49e1649534d0e230c06edd037edea019983446768156532af39f9b6283ec38ea",
+      "git_blob_sha1": "2706df937c5c4288aa90f4e0d14d872672062fa1",
+      "bytes": 13027,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/guidance/skip_layer_guidance.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/distributed/cfg_parallel.py",
+      "sha256": "f4523c7f20c18b8fcc3cc5c6e4b0d29ace95e5bdf98a897ecbc76d6837a3de41",
+      "git_blob_sha1": "f5addbc9b1e55fbf70b0b1dc85bdc0c407495f39",
+      "bytes": 28199,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/distributed/cfg_parallel.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/attention/layer.py",
+      "sha256": "b42ed83bdc345468842680c508f716c2347b891c90a10dfb9605dd3ec8bab0ce",
+      "git_blob_sha1": "552039030cff045429730d0f127331f2e606b940",
+      "bytes": 48349,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/attention/layer.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/attention/selector.py",
+      "sha256": "ac1576cc81187a001c1e45dd8c8cd6d7fec0b58e655635208b5824efde3fae49",
+      "git_blob_sha1": "cafe4da46662c6a2970fc63338155f8bb4964e51",
+      "bytes": 5923,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/attention/selector.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/attention/backends/sdpa.py",
+      "sha256": "e2cbbb0d51bc6248cb182558ba0c5c2e0675f5304bbdfa5bd10044d51f7e743b",
+      "git_blob_sha1": "a9ec3ced5186dde1acd76543ad6955815aa677a7",
+      "bytes": 14588,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/attention/backends/sdpa.py"
+    },
+    {
+      "path": "vllm_omni/engine/arg_utils.py",
+      "sha256": "f569727c3612b184096d9255b07306f36fae63a1a93191bbdf6df6a3a1517f43",
+      "git_blob_sha1": "43c57c24e17a2d44aaf937234a9861e200273a69",
+      "bytes": 36685,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/engine/arg_utils.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/config.py",
+      "sha256": "26a558c59721086fd057c8b43dfa096557bba2b7a62d725ed70a5308100b3821",
+      "git_blob_sha1": "4faf482ce5e8f68954e7885a47d7e65a07fd02c0",
+      "bytes": 1459,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/config.py"
+    },
+    {
+      "path": "vllm_omni/platforms/rocm/platform.py",
+      "sha256": "7ca06ce0e2fac38eda0d2fae7f0a47a9d48a4048c0c0f0a8cb17d3ebce11367c",
+      "git_blob_sha1": "d29e9043742ecefc04e580686afb0b9bf1ca701a",
+      "bytes": 9208,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/platforms/rocm/platform.py"
+    },
+    {
+      "path": "vllm_omni/platforms/interface.py",
+      "sha256": "6552a6bbfc7721f1c0a707fe63e3f90ba4ded9bc9d29b843f738face1564c0ea",
+      "git_blob_sha1": "76d84a65ae7e40f1612f5a1af8787f6c7c8e1bc7",
+      "bytes": 14798,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/platforms/interface.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/utils/image_output.py",
+      "sha256": "8a84e250917ac139c3b98d570f0a07c976283fa1df2777d2f0b596557897d885",
+      "git_blob_sha1": "10d586894d766523cc7d2133ee207b021931f69b",
+      "bytes": 4040,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/utils/image_output.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/cache/prompt_embed_cache.py",
+      "sha256": "7b7a54df0e33d4bf63412441c19ca1d1b223d1e0395da3adb0dc67fff4be1519",
+      "git_blob_sha1": "f95197a30e20d794bf535e6a5669eab1090e9e07",
+      "bytes": 12355,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/cache/prompt_embed_cache.py"
+    },
+    {
+      "path": "vllm_omni/engine/stage_init_utils.py",
+      "sha256": "342be1963507e7cbf9d56ebd6a70dbe5e4275b20769babc20bb39ed349453fd5",
+      "git_blob_sha1": "e79e7e770981897b1db2e7158c6150641d2c8954",
+      "bytes": 91562,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/engine/stage_init_utils.py"
+    },
+    {
+      "path": "vllm_omni/config/omni_config.py",
+      "sha256": "da7c092bb4496e5b6eccc28ca19f1955297520e8b53b891573afd5b828b42cfb",
+      "git_blob_sha1": "d821899222b355bed8d018a1c734103af0bbe395",
+      "bytes": 103568,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/config/omni_config.py"
+    },
+    {
+      "path": "vllm_omni/config/stage_config.py",
+      "sha256": "b44864fcb781f11bdf4158eed4ce4f5274d2b71eb90f13c5abffeef60cb8a494",
+      "git_blob_sha1": "9cedbfb0dc2cdb624951fa162204dcf2d8a4f2de",
+      "bytes": 79274,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/config/stage_config.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/attention/backends/abstract.py",
+      "sha256": "e51ed0f873625800bf90b384e4da60843c7f7d2093ca5dc4cecbdf413e05113f",
+      "git_blob_sha1": "12af0117c2d7986db434a316b95c6ddab30e319c",
+      "bytes": 18866,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/attention/backends/abstract.py"
+    },
+    {
+      "path": "vllm_omni/quantization/__init__.py",
+      "sha256": "3e14bf43f0b4a8681b75af5a5836793538d720d376aeb29707ee6b127cc8463c",
+      "git_blob_sha1": "89d445d61406be517797c8f6e59fe3aa694caeb3",
+      "bytes": 1146,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/quantization/__init__.py"
+    },
+    {
+      "path": "vllm_omni/quantization/factory.py",
+      "sha256": "412a89e120f6a83c297bcf52842d45f9f7c2703addcdbb8464751efca8a0cd31",
+      "git_blob_sha1": "0a9d417bd330b1a2d65f90d43ad31560bb74b3c5",
+      "bytes": 22749,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/quantization/factory.py"
+    },
+    {
+      "path": "vllm_omni/quantization/component_config.py",
+      "sha256": "3365ef7394b1692bcb81d9a09cfeb68f17d20264a34465f9c909d5fbc2f9d0ae",
+      "git_blob_sha1": "bf6f3b6b22e5535b745bf10eee60e5cbce56d7d6",
+      "bytes": 5912,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/quantization/component_config.py"
+    },
+    {
+      "path": "vllm_omni/quantization/fp8_config.py",
+      "sha256": "afc2b2f447d493b5f315720dfe2001362de071ebc97200f750752ae92e746f6c",
+      "git_blob_sha1": "bfe19712797948bb3db39f96c130e0bd2eaedeec",
+      "bytes": 3611,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/quantization/fp8_config.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/__init__.py",
+      "sha256": "96b2d8c1ad177214db028df636428f6ed500b1083582a698457f64e6184f4ede",
+      "git_blob_sha1": "42ba45cc95bb2d2c78e513ddcf228a242ccdde9b",
+      "bytes": 7408,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/__init__.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/base.py",
+      "sha256": "2a9eb095efa4527b19501387d6ba96de284eba44ba60d91a2232e76e96f02d44",
+      "git_blob_sha1": "2438cedcf4b5be01b29bdf0a5a2d27952cac055d",
+      "bytes": 10625,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/base.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/block_discovery.py",
+      "sha256": "f3b3e1aaf7035a3af6d6b858a140c8c3ece6f744b1069a6a72806e62bc985f0d",
+      "git_blob_sha1": "de535e34ee2cf5bbb9b0b73acf95b49eff6ceebf",
+      "bytes": 3182,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/block_discovery.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/component_utils.py",
+      "sha256": "525df66c8e508cc19aedd63274c310b36453b33201c918599665b584649ea004",
+      "git_blob_sha1": "cbc63159d7a21005633eddfd14830270dc584898",
+      "bytes": 6936,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/component_utils.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/config.py",
+      "sha256": "16fa27cec69a660fb8b55964029a840fb84d2cb86d794ceafaf2d1a85a310649",
+      "git_blob_sha1": "d6044530d64a5bb1944282113db1b3e80a4eb3c5",
+      "bytes": 18098,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/config.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/cuda_host_registration.py",
+      "sha256": "d51b4b052191acef26ecf3344461be94d263fdbcc6419dd125c4dc13eae46796",
+      "git_blob_sha1": "418b5d9fb0d53e4a37ef17ead33228cb234cd32b",
+      "bytes": 9813,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/cuda_host_registration.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/distributed_layerwise_backend.py",
+      "sha256": "c8803f77d89ce6ca6ba64993f37129f8ffac419c04180557506d999b3fd8a932",
+      "git_blob_sha1": "61ce4aea47a22b5654a411b6b89ba0d8f170e9c0",
+      "bytes": 97960,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/distributed_layerwise_backend.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/host_registration.py",
+      "sha256": "4ca62e10f9a4de41fbf8d804e1fa0fd146318000dda175b49e2e50c7848aa28a",
+      "git_blob_sha1": "c9f22512298efdbf8d5948408385cf65f6550328",
+      "bytes": 1866,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/host_registration.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/layerwise_backend.py",
+      "sha256": "41077e5fabe95d481e5e82e31c636a1e553431c576a296fa05121e19c6d4d5dd",
+      "git_blob_sha1": "660219092b9ee44fe856ab97dc4b5e5248ad7276",
+      "bytes": 20701,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/layerwise_backend.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/module_collector.py",
+      "sha256": "7f390ec478e3e6ecfdd87c0184d446971bc675db575913e20735525de999f1a1",
+      "git_blob_sha1": "b93c9ed73a2a90e3f5e15044aaa10e8e2f7b4993",
+      "bytes": 6036,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/module_collector.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/module_residency.py",
+      "sha256": "ee107ff909d40844c9a85feafa79da9f67967134deed108c6bba7e3ee2ec2b28",
+      "git_blob_sha1": "b12d52f6084780fa91b16d03e0c24cc0cb7a3206",
+      "bytes": 12100,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/module_residency.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/offload_plan.py",
+      "sha256": "0cacbe9372ddf727fc6f2fdaf115cfcf082e7d096b41f72ab71c88f9661e67ac",
+      "git_blob_sha1": "5cc0c24c7546b1cc0459382b0231f0f268e339d9",
+      "bytes": 3122,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/offload_plan.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/plan_resolver.py",
+      "sha256": "301302e28c976d0f32e6942262af3d21df66e6d095c996641ca573a156f850fd",
+      "git_blob_sha1": "240535d85cd3d16699e2e945ea5a7b373b77bc10",
+      "bytes": 18759,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/plan_resolver.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/sequential_backend.py",
+      "sha256": "d542935b656a0d9dced78de8fb086b8e1c5aade26fac6cee5316b32a49f0d569",
+      "git_blob_sha1": "8023480ba62c4ddaec67592bb20155fb559d780c",
+      "bytes": 19738,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/sequential_backend.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/startup.py",
+      "sha256": "10a872f2d9d911b35d4dfa80a6610cfc49c412d55a0df79b8d5309415db130e6",
+      "git_blob_sha1": "7861ddfd2ebf7a6df151fff70339ba27ac21b69a",
+      "bytes": 1959,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/startup.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/offloader/tensor_utils.py",
+      "sha256": "06fb691521d36d6f3dccad6ff7bd816c0a6e66cf7e5f4a0eb7ad8653f40aee5e",
+      "git_blob_sha1": "ffc9ef3a001898160141a752e06c11f4785c8dc0",
+      "bytes": 7005,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/offloader/tensor_utils.py"
+    },
+    {
+      "path": "vllm_omni/diffusion/model_loader/diffusers_loader.py",
+      "sha256": "1871f9f08076bd8c961b43b435b1558f8f50b9ef4200041b0a0d94f0d8c1bf83",
+      "git_blob_sha1": "8a2877bccbb1034ed8aad52ec9ad3583eb9946fa",
+      "bytes": 88269,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/7cbc776c16a39f73978ae5ce400729d94e0fda35/vllm_omni/diffusion/model_loader/diffusers_loader.py"
+    }
+  ],
+  "deployment_additions": "Native fixednegative installer API and exactparent config-normalization sources, independentlyGitblobverified",
+  "deployment_v4_addition": "Pin inherited abstract attention forward actually resolved in V3; no guard weakening or numerical changes.",
+  "candidate_patch_sha256": "93f315bc8e6cc822c4c09fa9824cb6671172afdaec47d502beb999da4bbcf170",
+  "baseline_tree_sha256": "6d50d0674f4fa3f43ebcadf109140aa3d00678c3adfdf2855f812fd4cf9b0ba1"
+}

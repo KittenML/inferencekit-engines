@@ -1,0 +1,17 @@
+--- a/vllm/model_executor/layers/quantization/online/fp8.py
++++ b/vllm/model_executor/layers/quantization/online/fp8.py
+@@ -258,7 +258,14 @@
+         weight = self.get_weight_for_quantization(layer)
+         amax = weight_amax(weight).reshape(1)
+         amax = amax_for_tp_weight_quant(amax, _is_tp_sharded(layer))
++        # Candidate-only tag, set before shard loading on explicitly selected
++        # MOSS DiT blocks. Untagged layers preserve the upstream path.
+         weight_scale = _fp8_scale(amax)
++        moss_scale_factor = getattr(layer, "_moss_fp8_scale_factor", None)
++        if moss_scale_factor is not None:
++            if type(moss_scale_factor) is not float or moss_scale_factor != 1.03125:
++                raise ValueError("unsupported MOSS FP8 scale factor")
++            weight_scale = weight_scale * moss_scale_factor
+         qweight, _ = ops.scaled_fp8_quant(weight, scale=weight_scale)
+ 
+         # Update layer with new values.

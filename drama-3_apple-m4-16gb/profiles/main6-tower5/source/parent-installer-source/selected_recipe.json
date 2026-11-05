@@ -1,0 +1,62 @@
+{
+  "schema": "drama3-m4-selected-experimental-implementation-v30",
+  "status": "EXPERIMENTAL_SELECTED_V19_FIXED_GDN; fresh matched-stock comparison NOT RUN; V14 registered quality/feasibility FAIL; listening UNPROVEN",
+  "track": "e2-mse-e3last8-d6-t6-bf16heads-emb4-g128",
+  "revision": "742d2f153e5775357faee2692480c7afdfe0b6673837e2183f2632808e7cebc3",
+  "conversion_flags": [
+    "--expert-bits",
+    "2",
+    "--expert-group-size",
+    "128",
+    "--dense-bits",
+    "6",
+    "--tower-bits",
+    "6",
+    "--head-bits",
+    "0",
+    "--semantic-head-bits",
+    "0",
+    "--embedding-bits",
+    "4",
+    "--expert-quantizer",
+    "mse-clip-v1",
+    "--expert-bits-map",
+    "metadata/expert-mix-mse-top8-v1.json"
+  ],
+  "runtime": {
+    "weight_loading_mode": "native",
+    "codec_mode": "full-stock-fp16-refold",
+    "cache_limit_bytes": 0,
+    "memory_limit_bytes": 34359738368,
+    "load_wired_limit_bytes": 0,
+    "wired_limit_bytes": 11811160064,
+    "fixed_reference_manifest": "conditioning-cache-v2/manifest.json",
+    "fixed_reference_sha256": "5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7",
+    "default_temperature": 1.0,
+    "default_top_p": 0.9,
+    "default_top_k": 4097,
+    "default_max_tokens": 1024,
+    "default_first_chunk_frames": 24,
+    "default_streaming_interval": 0.32,
+    "sealed_runtime_policy": true,
+    "startup_warmup_fixture": "formal-conditioned-v13/startup-warmup-public-v13.jsonl",
+    "startup_warmup_fixture_sha256": "eef5f091535b748c89bddaca01a3f64486eb2e29502b6d7fe59d67824b759141",
+    "startup_warmup_native_proof": "formal-conditioned-v13/native-warmup-initial-prompt-proof.jsonl",
+    "startup_warmup_native_proof_sha256": "787e666de1617804ad1f757299f9aac955b9e9d3246fd85582fa56ab5e8e7466",
+    "startup_warmup_receipt": "telemetry/startup-warmup.json",
+    "release_codec_encoder": true,
+    "audit_codec_retained_payloads": true
+  },
+  "semantics": "Fixed admitted synthetic reference only; same architecture/layers/experts, data-free quantization; no arbitrary-reference fidelity or unique custom-kernel feasibility claim.",
+  "implementation": {
+    "name": "v19-sampler-v21-fixed-gdn",
+    "driver": "optimized_runtime.py",
+    "gdn_mode": "fixed-block",
+    "files": {
+      "optimized_runtime.py": "28e32d83416ca54342fb65adc3635f2f585342d76ee7f5addf18f5d319131650",
+      "fixed_gdn.py": "d79146a40cca5e7cd74348de7ffb54ed3e89bd2ac3c672a5715b7c282f7863e8",
+      "sampler_sort.py": "dce3f067fdbe2cbe58ee5c8618707d0548ddb1d72a5b55793f9e779d6ffc8c89"
+    },
+    "selection": "V19+V21 public identity screens; V24/V28/V29 losses NOT SELECTED. No V28 or6-to8 code included."
+  }
+}

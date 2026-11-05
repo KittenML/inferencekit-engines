@@ -1,0 +1,56 @@
+{
+  "schema": "public-main5-v65-timing-extract.v1",
+  "notice": "Sanitized extract of the frozen timing statistics. Current model, output-preservation and qualification scope are recorded in QUALIFIED_COMPARISON_V65.json.",
+  "source_sha256": "ec217ff66bfc30a6dce7f583b47173cb965a621819625fb118d856a2938f9035",
+  "evidence_id": "ev_acf276892c33261b022e524258f8154cf5650bb5d4dc66c6f85e55df722b55f2",
+  "model_revision": "dc860f699a91fa5e30e32698aeb1ab4d5608eff03496c5d7d11bbdcfb3c895ce",
+  "qualification_file": "QUALIFIED_COMPARISON_V65.json",
+  "metrics": [
+    {
+      "name": "rtf_ratio",
+      "value": 0.8996394555907932,
+      "unit": "x",
+      "stat": "ratio_of_medians",
+      "n": 4,
+      "ci95": [
+        0.8649046439658106,
+        0.9446335511244521
+      ]
+    },
+    {
+      "name": "rtf",
+      "value": 1.0334978438012987,
+      "unit": "x",
+      "stat": "median",
+      "n": 4,
+      "ci95": null,
+      "subject": "baseline"
+    },
+    {
+      "name": "rtf",
+      "value": 0.9297754375516589,
+      "unit": "x",
+      "stat": "median",
+      "n": 4,
+      "ci95": null,
+      "subject": "candidate"
+    }
+  ],
+  "protocol": {
+    "metric": "rtf",
+    "higher_is_better": false,
+    "method": "paired bootstrap over round index",
+    "interleaved": true,
+    "pairs": 4,
+    "resamples": 10000,
+    "seed": 0
+  },
+  "speedup": {
+    "oriented_ratio": 1.1115564060530227,
+    "oriented_ci95": [
+      1.0586115629808426,
+      1.1561968212064886
+    ],
+    "powered": false
+  }
+}

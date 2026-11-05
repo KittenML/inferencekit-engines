@@ -1,0 +1,178 @@
+{
+  "combined_root_joined_original_receipts": [
+    {
+      "original_basename": "FRESH288_DIRECT_PRESERVATION_V57_V1.json",
+      "sha256": "67ae3f935cc6657b8a799d779fb517a7de4fa250bd444cf370807d02f9432144"
+    },
+    {
+      "original_basename": "CLOSED_CORPUS_V57_QUALITY_V1.json",
+      "sha256": "97f690822e0326ac1ea14cd4d9971e8eb642daeed90030219bcf804f838e01d7"
+    },
+    {
+      "original_basename": "ROOT_WORKER_NATIVE_CLOSURE_V57_V1.json",
+      "sha256": "41072a7e5a5776415f7b435a694ed53fed0bc6bbedf5c8efd4cf58b056f79a56"
+    },
+    {
+      "original_basename": "ROOT_INDEPENDENT_CURRENT192_VERIFIED_V57_V1.json",
+      "sha256": "e674b2fb054b625b959e5fa31eca13d7878443d652fc629dc2e84a964e51c56b"
+    },
+    {
+      "original_basename": "EXACT_BEHAVIOR_COMPARISON_VERIFIED_V1.json",
+      "sha256": "9665838a63197f71fd5dd3c82300abf88a826e669e6171b577b41cb6473724e8"
+    },
+    {
+      "original_basename": "ACTUAL_TIMING_PLAN_V57.json",
+      "sha256": "ba488d579535a4572b3dd01fb9c25b29b48c1f4069654e9783c4fc7ef6db54a1"
+    },
+    {
+      "original_basename": "WARMED96_PER_ARM_SIGNAL_SLO_V57.json",
+      "sha256": "c30214db0b8f0acd35acd7794cfb05f98513ad320054c75b6757c99d9b1bac0a"
+    },
+    {
+      "original_basename": "NATIVE_INVOCATION_PATH_REPAIR_V2.json",
+      "sha256": "a6e08c41897007ab6c8f2cfefb62cde55c01d69e3a5f23e31eb45ab01d68f25d"
+    },
+    {
+      "original_basename": "stock-NATIVE_HISTORY_REPLAY_V57_V1.json",
+      "sha256": "faddcee4fb28fb0d78757dca2ae170d083e5ed0fc795644cc543baeb39396ad1"
+    },
+    {
+      "original_basename": "release-NATIVE_HISTORY_REPLAY_V57_V1.json",
+      "sha256": "875138a75e0d9105d46dce7a647cc42a0c71709612c002589e8b095f69226c01"
+    }
+  ],
+  "receipts": {
+    "archive288": {
+      "bytes": 1035,
+      "original_basename": "LOCAL_FULL_QUALITY288_ARCHIVE_VERIFIED_V57_V1.json",
+      "sha256": "08383672d4de447e58c69b0cd1ead5a15197c413bb657d063673f4755a86efa1"
+    },
+    "baseline_admission": {
+      "bytes": 569,
+      "original_basename": "V55_STOCK_ADMISSION_ACTUAL_CLOSED_V1.json",
+      "sha256": "67d5904aca1836f9680679c68d84d39d3019a652b1fb93701196d07d470152a7"
+    },
+    "baseline_replay": {
+      "bytes": 345,
+      "original_basename": "INDEPENDENT_SELECTION_REPLAY_V55_V1.json",
+      "sha256": "07a122747a8aceab0a51ef2612d8622a3ac57d8c74c7efe18d5417bd4908c4a5"
+    },
+    "baseline_selection": {
+      "bytes": 10466,
+      "original_basename": "BALANCED_STOCK_TOWER5_SELECTION_V55_V1.json",
+      "sha256": "1e01667dcdd82449508b6718959e91d71fbdeddda31be968a98af2d9033afffb"
+    },
+    "cases192": {
+      "bytes": 156964,
+      "original_basename": "CASES192.jsonl",
+      "sha256": "0e6eaa00eab4ec258cdd4446a935c1764391355b2f80f60643f9e0a2bf3e061a"
+    },
+    "closed192": {
+      "bytes": 413925,
+      "original_basename": "CLOSED_CORPUS_V57_V1.json",
+      "sha256": "e61291c5ada003ae2cbb666f92625d084deb88ccced4ef138d78b322109b0783"
+    },
+    "closed288": {
+      "bytes": 366284,
+      "original_basename": "CLOSED_CORPUS_V57_QUALITY_V1.json",
+      "sha256": "97f690822e0326ac1ea14cd4d9971e8eb642daeed90030219bcf804f838e01d7"
+    },
+    "combined": {
+      "bytes": 5181,
+      "original_basename": "ROOT_COMPARATIVE_SPEEDUP_V57_V1.json",
+      "sha256": "ba68d45a3052677ec37bf5e40f952ed6ccf629fa07d2215e58530ce207df0a93"
+    },
+    "direct144": {
+      "bytes": 193751,
+      "original_basename": "FRESH288_DIRECT_PRESERVATION_V57_V1.json",
+      "sha256": "67ae3f935cc6657b8a799d779fb517a7de4fa250bd444cf370807d02f9432144"
+    },
+    "exact192": {
+      "bytes": 2877,
+      "original_basename": "EXACT_BEHAVIOR_COMPARISON_VERIFIED_V1.json",
+      "sha256": "9665838a63197f71fd5dd3c82300abf88a826e669e6171b577b41cb6473724e8"
+    },
+    "fresh_native_release": {
+      "bytes": 140218,
+      "original_basename": "release-NATIVE_HISTORY_REPLAY_V57_V1.json",
+      "sha256": "875138a75e0d9105d46dce7a647cc42a0c71709612c002589e8b095f69226c01"
+    },
+    "fresh_native_stock": {
+      "bytes": 139928,
+      "original_basename": "stock-NATIVE_HISTORY_REPLAY_V57_V1.json",
+      "sha256": "faddcee4fb28fb0d78757dca2ae170d083e5ed0fc795644cc543baeb39396ad1"
+    },
+    "frozen": {
+      "bytes": 5349,
+      "original_basename": "FROZEN_COMPARE_REPLAY_VERIFIED_V1.json",
+      "sha256": "b962a1a940b709a56e9d56c7f91d1d5af8bbb39fbe95a25c271a17f838667939"
+    },
+    "method_source": {
+      "bytes": 5937,
+      "original_basename": "METHOD_SOURCE_SEAL_V57_V1.json",
+      "sha256": "40173c87ac07d7522e53353cfda7e84515e0d927d0e27ca560250a21cc2ccc48"
+    },
+    "native_both": {
+      "bytes": 737,
+      "original_basename": "BOTH_FRESH144_NATIVE_HISTORY_V57_V1.json",
+      "sha256": "8c9b04c6141a6d09615568a830749dbf1c7df829a4d9dfa7157c448046ebbe4f"
+    },
+    "native_failed_release": {
+      "bytes": 82906,
+      "original_basename": "release-NATIVE_HISTORY_REPLAY_V57_V1.json",
+      "sha256": "1be8d829204d632bc69894b4d4b76cf3129cddae2f9572c1fc086f64e5e6bc05"
+    },
+    "native_failed_stock": {
+      "bytes": 82616,
+      "original_basename": "stock-NATIVE_HISTORY_REPLAY_V57_V1.json",
+      "sha256": "38892db5a5983bb6d14660a5f672a07fc692c1d4243cf5f7683fdec818a90d05"
+    },
+    "native_owner_closure": {
+      "bytes": 2456,
+      "original_basename": "ROOT_WORKER_NATIVE_CLOSURE_V57_V1.json",
+      "sha256": "41072a7e5a5776415f7b435a694ed53fed0bc6bbedf5c8efd4cf58b056f79a56"
+    },
+    "native_repair": {
+      "bytes": 1208,
+      "original_basename": "NATIVE_INVOCATION_PATH_REPAIR_V2.json",
+      "sha256": "a6e08c41897007ab6c8f2cfefb62cde55c01d69e3a5f23e31eb45ab01d68f25d"
+    },
+    "pair_integrity": {
+      "bytes": 277598,
+      "original_basename": "PAIR_INTEGRITY_VERIFIED_V1.json",
+      "sha256": "621c3695510c93adf4b7172d9c55a58bc62badb9fe337c850e8b6535e75a7170"
+    },
+    "pairs96": {
+      "bytes": 72013,
+      "original_basename": "PAIRS96.jsonl",
+      "sha256": "092fbba39f0d891bc39f5cfea05882116b5691f6a9ed408c0d86d02fbb353ff9"
+    },
+    "plan": {
+      "bytes": 31023,
+      "original_basename": "ACTUAL_RUN_PLAN_V57.json",
+      "sha256": "ba488d579535a4572b3dd01fb9c25b29b48c1f4069654e9783c4fc7ef6db54a1"
+    },
+    "root192": {
+      "bytes": 17909,
+      "original_basename": "ROOT_INDEPENDENT_CURRENT192_VERIFIED_V57_V1.json",
+      "sha256": "e674b2fb054b625b959e5fa31eca13d7878443d652fc629dc2e84a964e51c56b"
+    },
+    "slo": {
+      "bytes": 2482200,
+      "original_basename": "WARMED96_PER_ARM_SIGNAL_SLO_V57.json",
+      "sha256": "c30214db0b8f0acd35acd7794cfb05f98513ad320054c75b6757c99d9b1bac0a"
+    },
+    "timing_native_release": {
+      "bytes": 110521,
+      "original_basename": "release-NATIVE_HISTORY_REPLAY_V1.json",
+      "sha256": "6b717b186d7f8842a7c184aeda037be065eaf0561a11b6e4b49d120be4af220e"
+    },
+    "timing_native_stock": {
+      "bytes": 110327,
+      "original_basename": "stock-NATIVE_HISTORY_REPLAY_V1.json",
+      "sha256": "ea0d7fd739fa39fd0ffeac97018a2e1b11663c6f8cd7f56493b3671d94470a35"
+    }
+  },
+  "rule": "Original byte SHA identities, not hashes of these transformed public summaries. Source originals retained separately; private routes omitted.",
+  "schema": "original-v57-receipt-identities-for-transformed-export-v1"
+}

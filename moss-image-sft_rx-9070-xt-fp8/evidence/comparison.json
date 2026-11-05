@@ -1,0 +1,205 @@
+{
+  "schema": "inferencekit.evidence.v2",
+  "evidence_id": "ev_45f3ff6fb70a0d8fe356aa1c94d47a46535663483abf894aa77693ebc1674cc4",
+  "kind": "comparison",
+  "claim_class": "derived",
+  "summary": "image format/work tradeoff timing; quality requires separate evidence: image_ms: candidate/baseline = 0.406 (95% CI 0.406-0.408), -59.4%, n=4: improved",
+  "identity": {
+    "gpu": {
+      "name": "AMD Radeon RX 9070 XT",
+      "count": 1,
+      "driver": null,
+      "cuda": null,
+      "clocks": null
+    },
+    "engine": {
+      "name": "fp8-scale-24",
+      "version": "7cbc776c16a39f73978ae5ce400729d94e0fda35-fp8-93f315bc8e6c-scale-95aee4ac3b9a",
+      "commit": null,
+      "flags": {}
+    },
+    "model": {
+      "id": "OpenMOSS-Team/MOSS-Image-SFT",
+      "revision": "f972bd4b4b9e3852133cc5da954d87bc32cd8fb9",
+      "dtype": "bf16",
+      "quant": "fp8-scale-1.03125"
+    },
+    "workload": {
+      "prompt_len": null,
+      "gen_len": null,
+      "batch": 1,
+      "seed": null,
+      "mode": "single",
+      "prompt_set": {
+        "name": "image fixtures",
+        "sha256": "261c5ec57c35f2cafa224576eeabf2c1baa59f7e098987ed1c86d05e657f9d78"
+      },
+      "endpoint_kind": "image_http",
+      "request_set": {
+        "sha256": "07429e033ed0f34b8b04487729cbcd1db341403e12af8d22533f265d02200466",
+        "n": 4
+      },
+      "image_task_set": {
+        "sha256": "ee3d34e7577ce6d12432b52310983decc5dcf3ac487254db6dddc5c21f20aeec",
+        "n": 4
+      },
+      "task": "t2i",
+      "width": 1024,
+      "height": 1024,
+      "steps": 24,
+      "guidance_scale": 3.0,
+      "seed_policy": {
+        "name": "per_round",
+        "base": 0
+      }
+    }
+  },
+  "provenance": {
+    "tool": "inferencekit",
+    "tool_version": "0.1.0",
+    "argv_digest": "sha256:5652710e4e132b6d7dd9eff15753d3944f5fdaebb20b18bbfa176900771d7005",
+    "started": "2026-10-28T20:43:00.771Z",
+    "ended": "2026-10-28T20:43:00.825Z"
+  },
+  "metrics": [
+    {
+      "name": "image_ms_ratio",
+      "value": 0.40644923202522987,
+      "unit": "x",
+      "stat": "ratio_of_medians",
+      "n": 4,
+      "ci95": [
+        0.4056227792624249,
+        0.40759418664266034
+      ]
+    },
+    {
+      "name": "image_ms",
+      "value": 60515.553948625005,
+      "unit": "ms",
+      "stat": "median",
+      "n": 4,
+      "ci95": null,
+      "subject": "baseline"
+    },
+    {
+      "name": "image_ms",
+      "value": 24596.500428,
+      "unit": "ms",
+      "stat": "median",
+      "n": 4,
+      "ci95": null,
+      "subject": "candidate"
+    }
+  ],
+  "artifacts": [],
+  "coverage": {
+    "complete": true,
+    "missing": []
+  },
+  "limitations": [
+    "baseline coverage incomplete: ['semantic image quality']",
+    "candidate coverage incomplete: ['semantic image quality']",
+    "This compares client-timed performance only; image/speech quality, fresh-process lifecycle and repeated-run reliability require their own evidence.",
+    "Image format/work tradeoff: steps and numerical formats may differ. Timing is not a quality or same-work engine comparison."
+  ],
+  "data": {
+    "verdict": "improved",
+    "decision": {
+      "oriented_ratio": 2.460331872242106,
+      "oriented_ci95": [
+        2.453420663913209,
+        2.4653447762928327
+      ],
+      "half_width": 0.006911208328897356,
+      "powered": true,
+      "verdict": "improved",
+      "reason": "CI above 1 and change beyond +2.0%"
+    },
+    "metric": "image_ms",
+    "comparison_scope": "image_format_work_tradeoff",
+    "higher_is_better": false,
+    "threshold": 0.02,
+    "method": "paired bootstrap over round index",
+    "interleaved": true,
+    "pairs": 4,
+    "rounds_for_power": null,
+    "resamples": 10000,
+    "seed": 0,
+    "baseline": "ev_a1619ff035d21b6e70fa32c9ccc5558bd32693526bca616eb1df8be5a6812543",
+    "candidate": "ev_1d64a1824b21f72d6f869f81486ce92ba5d21716eeaefd030d4c8fee1a1580ae",
+    "baseline_identity": {
+      "gpu": {
+        "name": "AMD Radeon RX 9070 XT",
+        "count": 1,
+        "driver": null,
+        "cuda": null,
+        "clocks": null
+      },
+      "engine": {
+        "name": "baseline",
+        "version": "7cbc776c16a39f73978ae5ce400729d94e0fda35",
+        "commit": null,
+        "flags": {}
+      },
+      "model": {
+        "id": "OpenMOSS-Team/MOSS-Image-SFT",
+        "revision": "f972bd4b4b9e3852133cc5da954d87bc32cd8fb9",
+        "dtype": "bf16",
+        "quant": "none"
+      },
+      "workload": {
+        "prompt_len": null,
+        "gen_len": null,
+        "batch": 1,
+        "seed": null,
+        "mode": "single",
+        "prompt_set": {
+          "name": "image fixtures",
+          "sha256": "61c2f9f8cb95e400bc24696080552ee28b57d6a90425ab6df167daa218832c98"
+        },
+        "endpoint_kind": "image_http",
+        "request_set": {
+          "sha256": "3c110d0f2a1beaba65f029e958599adab597a7720fc0c2592b0d9732105ba2f9",
+          "n": 4
+        },
+        "image_task_set": {
+          "sha256": "ee3d34e7577ce6d12432b52310983decc5dcf3ac487254db6dddc5c21f20aeec",
+          "n": 4
+        },
+        "task": "t2i",
+        "width": 1024,
+        "height": 1024,
+        "steps": 50,
+        "guidance_scale": 3.0,
+        "seed_policy": {
+          "name": "per_round",
+          "base": 0
+        }
+      }
+    },
+    "source_kind": "image_benchmark",
+    "required_proofs": {
+      "media quality": "UNPROVEN",
+      "fresh-process lifecycle": "UNPROVEN",
+      "repeated-run reliability": "UNPROVEN"
+    },
+    "arm_timing_verdicts": {
+      "baseline": "NOT RUN",
+      "candidate": "NOT RUN"
+    },
+    "request": {
+      "op": "compare",
+      "cli": "inferencekit compare",
+      "args": {
+        "baseline": "ev_a1619ff035d21b6e70fa32c9ccc5558bd32693526bca616eb1df8be5a6812543",
+        "candidate": "ev_1d64a1824b21f72d6f869f81486ce92ba5d21716eeaefd030d4c8fee1a1580ae",
+        "metric": "image_ms",
+        "threshold": 0.02,
+        "image_tradeoff": true,
+        "resamples": 10000,
+        "seed": 0
+      }
+    }
+  }
+}

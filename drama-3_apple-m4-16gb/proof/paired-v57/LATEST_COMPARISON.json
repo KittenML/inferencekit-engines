@@ -1,0 +1,49 @@
+{
+  "data": {
+    "baseline_selection_scope": "V55 four-round public confirmation selected12-billion-byte wired stock by minimum median-round-mean on identical Tower5 weights; CI includes a tie. Supported maximum failed admission. Finite documented panel; no global-best or exhaustive tuning claim.",
+    "case_denominator": 192,
+    "completion_component": "PASS",
+    "conservative_speedup_from_inverse_upper_ratio_bound": 1.069840834139318,
+    "created_utc": "2026-10-26T02:03:14.633562+00:00",
+    "frozen_tool_verdict": "improved",
+    "improvement_claim_supported": true,
+    "matching_completion_failure_pairs_retained": 0,
+    "native_replay_counts": {
+      "release": {
+        "actual_segments": 128,
+        "counts": {
+          "FAIL": 0,
+          "NOT RUN": 0,
+          "PASS": 96,
+          "UNPROVEN": 0
+        },
+        "requests": 96
+      },
+      "stock": {
+        "actual_segments": 128,
+        "counts": {
+          "FAIL": 0,
+          "NOT RUN": 0,
+          "PASS": 96,
+          "UNPROVEN": 0
+        },
+        "requests": 96
+      }
+    },
+    "new_ASR_speaker_or_model_evaluations": 0,
+    "no_new_heldout_claim": true,
+    "pair_denominator": 96,
+    "preserved_observed_behavior": "PASS",
+    "ratio_candidate_release_over_stock": 0.8991734646758136,
+    "ratio_ci95": [
+      0.867348668199403,
+      0.9347184815622553
+    ],
+    "round_pairs": 4,
+    "scope": "Fresh V57 same-Tower5 sampler/GDN/encoder-release at11GiB versus V55-selected stock at12-billion wired bytes; same declared child thread-environment limits of2, original24 texts/four seeds",
+    "status": "PASS"
+  },
+  "original_receipt_sha256": "9665838a63197f71fd5dd3c82300abf88a826e669e6171b577b41cb6473724e8",
+  "schema": "transformed-public-v57-exact192-v1",
+  "transformation": "Public projection; original receipt bytes remain separate and unchanged."
+}

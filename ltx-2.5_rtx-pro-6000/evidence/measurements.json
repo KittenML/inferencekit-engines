@@ -1,0 +1,199 @@
+{
+  "schema": "public-measurement-excerpt.v1",
+  "notice": "Allowlisted summary excerpt for the selected candidate and ComfyUI baseline, not a full or immutable evidence record. Source SHA256 values identify the original files. No prompts, outputs, logs, private paths or environment are included.",
+  "sources": [
+    {
+      "source": "final measurement results",
+      "sha256": "3dce9968c60b3178a9586711667cb27862c4f992c7966541f066006b7752cf69"
+    },
+    {
+      "source": "final clip quality record",
+      "sha256": "3d43f9cce3890e7dbdf2be58f536d1b6b91aeb0b1a1dd380657c266af4bff871"
+    }
+  ],
+  "model": {
+    "id": "Lightricks/LTX-2.5-Diffusers",
+    "revision": "da0b690960026eab794b8ceaf841233cf7064478",
+    "precision": "BF16",
+    "transformer_subfolder": "transformer_full"
+  },
+  "hardware": {
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "count": 1
+  },
+  "configuration": {
+    "candidate_revision": "e51495289399",
+    "diffusers_commit": "7ecb1e1b4fe500be7fb7381a7bb79a24d7fa3941",
+    "baseline": "ComfyUI",
+    "baseline_commit": "3541246a9c997f4b8c32f9f88f3c985d02021c79",
+    "baseline_cache_mode": "classic",
+    "baseline_text_encoder_dtype": "BF16",
+    "candidate_attention": "cuDNN",
+    "candidate_guidance_grouping": "reference",
+    "compiled_transformer": true,
+    "gelu_epilogue": true,
+    "coordinate_descent_tuning": true,
+    "split_bias": true,
+    "fused_qk_norm_rope": true
+  },
+  "protocol": {
+    "timer": "client request sent to complete clip received",
+    "rounds": 6,
+    "balanced_williams": true,
+    "timed_engines": 3,
+    "reported_engines": 2,
+    "clips_per_round": 6,
+    "concurrency": 1,
+    "task": "t2v",
+    "width": 768,
+    "height": 512,
+    "frames": 121,
+    "fps": 24,
+    "steps": 30,
+    "guidance_scale": 3.0,
+    "audio": true,
+    "seed_policy": "per_round",
+    "fixed_negative_prompt_encoding_reuse": "allowed for every engine"
+  },
+  "performance": {
+    "evidence_id": "ev_e3a81353aaf97710f6f28dde0748ea352d915dff77534b04c0a43e9842b1025a",
+    "classification": "observed",
+    "statistic": "median over rounds of mean clip latency in each round",
+    "metrics": [
+      {
+        "name": "clip_ms",
+        "value": 93234.75398275,
+        "unit": "ms",
+        "stat": "median_over_rounds",
+        "n": 6,
+        "ci95": [
+          92839.11063533333,
+          93284.99862783332
+        ],
+        "subject": "plugin/all"
+      },
+      {
+        "name": "clip_ms",
+        "value": 116202.25440441666,
+        "unit": "ms",
+        "stat": "median_over_rounds",
+        "n": 6,
+        "ci95": [
+          116047.48074266668,
+          116321.85948283334
+        ],
+        "subject": "prereg-baseline/all"
+      },
+      {
+        "name": "failed_requests",
+        "value": 0.0,
+        "unit": "clips",
+        "stat": "median_over_rounds",
+        "n": 6,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "subject": "plugin/all"
+      },
+      {
+        "name": "failed_requests",
+        "value": 0.0,
+        "unit": "clips",
+        "stat": "median_over_rounds",
+        "n": 6,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "subject": "prereg-baseline/all"
+      }
+    ],
+    "speedup": {
+      "classification": "derived",
+      "baseline_over_candidate": 1.246340548352989,
+      "formula": "baseline median clip_ms / candidate median clip_ms",
+      "ratio_ci95": null,
+      "ratio_ci_status": "The selected candidate/ComfyUI paired interval is not included in the retained aggregate result; its ratio_to_best fields use a different candidate."
+    }
+  },
+  "quality": {
+    "gates": {
+      "candidate": {
+        "evidence_id": "ev_3f23b9f096c4041aa40cfc3fa36a0d22e88dcc1e8fef746a05afd6f910f9206f",
+        "verdict": "PASS"
+      },
+      "baseline": {
+        "evidence_id": "ev_d390aa2fdeb59a3b711c009e682c2605ef7399e7d09e04b1ab6b71d50d57edd0",
+        "verdict": "PASS"
+      }
+    },
+    "step_audit": {
+      "evidence_id": "ev_cdcc4dbf45abfc602a2c33515094566eeb38b55a64ba279ac4c08c23e2d7d19a",
+      "verdict": "PASS",
+      "audited_clips": 2,
+      "step_outputs": 120,
+      "factor": 2.0,
+      "slack": 0.001,
+      "max_error_over_floor": 1.4990192098821764,
+      "scope": "all denoising steps of the audited clips, video and audio latents; decoded audio not compared"
+    },
+    "final_clips": {
+      "evidence_id": "ev_72062538e45d8e33074f815e226a5785c4d7664dfff76fabfc1eadeed340e94d",
+      "verdict": "PASS",
+      "fidelity": "gross",
+      "clips": 36,
+      "metrics": {
+        "psnr": {
+          "value": 25.240505345930604,
+          "ci95": [
+            23.83935341227679,
+            26.594880843472605
+          ],
+          "n_clips": 36,
+          "n_requests": 36,
+          "n_frames": 4356
+        },
+        "ssim": {
+          "value": 0.834316946630778,
+          "ci95": [
+            0.8098369789560562,
+            0.8579764936242658
+          ],
+          "n_clips": 36,
+          "n_requests": 36,
+          "n_frames": 4356
+        }
+      },
+      "checks": {
+        "psnr": {
+          "verdict": "PASS",
+          "reason": "gross gate, not entirely beyond the margin: CI [0.08614, 2.051] straddles margin 1: score more prompts",
+          "worse_than_floor": 1.0600050045752134,
+          "ci95": [
+            0.08613926085659429,
+            2.0505457634020416
+          ],
+          "margin": 1.0,
+          "n_clips": 36,
+          "n_requests": 36
+        },
+        "ssim": {
+          "verdict": "PASS",
+          "reason": "gross gate, not entirely beyond the margin: CI [-0.005133, 0.03709] straddles margin 0.01: score more prompts",
+          "worse_than_floor": 0.015933756821754796,
+          "ci95": [
+            -0.005133312048641314,
+            0.03708716970962811
+          ],
+          "margin": 0.01,
+          "n_clips": 36,
+          "n_requests": 36
+        }
+      },
+      "scope": "Registered gross fidelity gate: a metric fails when its whole loss interval exceeds the permitted margin; intervals straddling the margin pass this gate."
+    },
+    "selected_candidate_verdict": "PASS",
+    "baseline_reference_fidelity_scope": "ComfyUI draws its own initial noise; matching-reference pixel and step fidelity are not required of the pre-registered baseline."
+  }
+}

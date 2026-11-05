@@ -1,0 +1,393 @@
+{
+  "data": {
+    "admission_original_receipt_sha256": "67d5904aca1836f9680679c68d84d39d3019a652b1fb93701196d07d470152a7",
+    "all_pairwise_comparisons": {
+      "anchor11__wire12b": {
+        "ci95": [
+          0.8941672892012532,
+          1.004381130331626
+        ],
+        "decision": {
+          "half_width": 0.07913026824860925,
+          "oriented_ci95": [
+            0.995637980245428,
+            1.118358960428183
+          ],
+          "oriented_ratio": 1.0747682484940373,
+          "powered": false,
+          "reason": "CI too wide to decide",
+          "verdict": "inconclusive"
+        },
+        "log_ratio_sd": 0.0653129573528819,
+        "n_pairs": 4,
+        "ratio": 0.9304331435183331,
+        "raw_prompt_ratios": [
+          [
+            0.8717308964797932,
+            0.9263805961171856,
+            0.7459316565799304,
+            0.9267025266642381,
+            0.9137174411687977,
+            0.9298223128741517,
+            0.9385628052635524,
+            0.947714696669987
+          ],
+          [
+            0.9084956870020793,
+            0.8773784866566988,
+            0.8909442589856289,
+            0.8453509958175134,
+            0.9087649470114932,
+            0.9138638304372101,
+            0.9036074214888934,
+            0.9110213043125169
+          ],
+          [
+            1.0068803229614578,
+            0.9763401685092697,
+            0.9513932324575848,
+            0.9850409852291909,
+            1.0119461779549388,
+            1.0154939533638407,
+            1.031449309099846,
+            1.017095143426464
+          ],
+          [
+            1.0537380051776457,
+            0.9206577742863231,
+            0.9671641881947755,
+            0.9897946171336157,
+            1.0392876367094719,
+            1.009064326494891,
+            1.0352107322628408,
+            1.0309619638191263
+          ]
+        ],
+        "raw_round_ratios": [
+          0.8948016472404201,
+          0.8941672892012532,
+          0.9987209393816682,
+          1.004381130331626
+        ]
+      }
+    },
+    "cells": {
+      "r0-anchor11": {
+        "cache_limit_bytes": 0,
+        "max_RTF": 1.3665233771967915,
+        "median_RTF": 1.0920428919368717,
+        "raw8_RTF": [
+          1.1876277778430346,
+          1.0816241369010873,
+          1.3665233771967915,
+          1.119790873903764,
+          1.1024616469726563,
+          1.077574991122159,
+          1.0615545041419117,
+          1.0566152451548767
+        ],
+        "requests_sha256": "c6b18964851b49c6e22453dceee237864640615b4ae95128b66318ed18641446",
+        "round": 0,
+        "round_mean_RTF": 1.1317215691545353,
+        "setting": "anchor11",
+        "underrun_requests": 2,
+        "wired_limit_bytes": 11811160064
+      },
+      "r0-wire12b": {
+        "cache_limit_bytes": 0,
+        "max_RTF": 1.0377130321821735,
+        "median_RTF": 1.0046670238878797,
+        "raw8_RTF": [
+          1.0352918274634133,
+          1.0019956127171656,
+          1.0193330465076038,
+          1.0377130321821735,
+          1.0073384350585939,
+          1.0019532705405494,
+          0.9963355733475919,
+          1.001369796558838
+        ],
+        "requests_sha256": "e25af16c37bc1997377ac7c0e8d167b57055ec90fa6363469f04efc340de9fa7",
+        "round": 0,
+        "round_mean_RTF": 1.012666324296991,
+        "setting": "wire12b",
+        "underrun_requests": 1,
+        "wired_limit_bytes": 12000000000
+      },
+      "r1-anchor11": {
+        "cache_limit_bytes": 0,
+        "max_RTF": 1.2355874931727628,
+        "median_RTF": 1.1118366912605784,
+        "raw8_RTF": [
+          1.1884019243975572,
+          1.1213914141461565,
+          1.1282704704594584,
+          1.2355874931727628,
+          1.102281968375,
+          1.0771155719954055,
+          1.0846621050924519,
+          1.0802550459828184
+        ],
+        "requests_sha256": "180c44a04877a1499b3836596df94ffb52855d903c8e2245ded7b46de6f3550d",
+        "round": 1,
+        "round_mean_RTF": 1.1272457492027013,
+        "setting": "anchor11",
+        "underrun_requests": 2,
+        "wired_limit_bytes": 11811160064
+      },
+      "r1-wire12b": {
+        "cache_limit_bytes": 0,
+        "max_RTF": 1.0796580227401518,
+        "median_RTF": 0.9930260885146596,
+        "raw8_RTF": [
+          1.0796580227401518,
+          0.9838847018933702,
+          1.005226098238869,
+          1.04450511777326,
+          1.0017152145820314,
+          0.9843369624472879,
+          0.9801087279693055,
+          0.9841353609814452
+        ],
+        "requests_sha256": "f19b5c1714269c9e8ecf0c3c0d3b5ba6b1bd35a8a136b52a071a46ae6db44ac9",
+        "round": 1,
+        "round_mean_RTF": 1.0079462758282152,
+        "setting": "wire12b",
+        "underrun_requests": 1,
+        "wired_limit_bytes": 12000000000
+      },
+      "r2-anchor11": {
+        "cache_limit_bytes": 0,
+        "max_RTF": 1.1055084811608769,
+        "median_RTF": 1.0417201910278764,
+        "raw8_RTF": [
+          1.0813243693606955,
+          1.0593687181241123,
+          1.1055084811608769,
+          1.1019516297853338,
+          1.0240716639316407,
+          1.0156726703297008,
+          1.0104562533559833,
+          1.0140470605659484
+        ],
+        "requests_sha256": "ffba94dc024c0f79b58837e252f0aa623e21f041ffac9b8a48f7a531f0b36c81",
+        "round": 2,
+        "round_mean_RTF": 1.0515501058267864,
+        "setting": "anchor11",
+        "underrun_requests": 1,
+        "wired_limit_bytes": 11811160064
+      },
+      "r2-wire12b": {
+        "cache_limit_bytes": 0,
+        "max_RTF": 1.0887642302479918,
+        "median_RTF": 1.039269905333613,
+        "raw8_RTF": [
+          1.0887642302479918,
+          1.0343042327667449,
+          1.0517732874009216,
+          1.0854675190786578,
+          1.0363054062675783,
+          1.0314094553167168,
+          1.0422344043996479,
+          1.0313823405075073
+        ],
+        "requests_sha256": "a9594432921cd6004dc1ae1645ff7b480a67f5be4e7bf01e2923e043ff853d89",
+        "round": 2,
+        "round_mean_RTF": 1.0502051094982208,
+        "setting": "wire12b",
+        "underrun_requests": 1,
+        "wired_limit_bytes": 12000000000
+      },
+      "r3-anchor11": {
+        "cache_limit_bytes": 0,
+        "max_RTF": 1.1773171895487324,
+        "median_RTF": 1.0822217923572444,
+        "raw8_RTF": [
+          1.159522335716742,
+          1.1773171895487324,
+          1.1317159573156856,
+          1.129034984485973,
+          1.0354086002285157,
+          1.0316903793606844,
+          1.023686005208382,
+          1.030528296661377
+        ],
+        "requests_sha256": "dcec1911898d53bb2ccc94628c7f293cebd3259b0f67edbd4926e4a0c8a835eb",
+        "round": 3,
+        "round_mean_RTF": 1.0898629685657615,
+        "setting": "anchor11",
+        "underrun_requests": 1,
+        "wired_limit_bytes": 11811160064
+      },
+      "r3-wire12b": {
+        "cache_limit_bytes": 0,
+        "max_RTF": 1.221832752997084,
+        "median_RTF": 1.0799967902595609,
+        "raw8_RTF": [
+          1.221832752997084,
+          1.0839062233589651,
+          1.0945551451242983,
+          1.1175127501997515,
+          1.0760873571601564,
+          1.0410419578008476,
+          1.0597307390589914,
+          1.0624354764971924
+        ],
+        "requests_sha256": "600dfcbad1cf2ae2cf93704236ea8d3b2e5ffc48ec043799d376004dec4bab55",
+        "round": 3,
+        "round_mean_RTF": 1.0946378002746608,
+        "setting": "wire12b",
+        "underrun_requests": 1,
+        "wired_limit_bytes": 12000000000
+      }
+    },
+    "eligible_settings": [
+      "anchor11",
+      "wire12b"
+    ],
+    "finite_scope": "V55 four-round public confirmation selected12-billion-byte wired stock by minimum median-round-mean on identical Tower5 weights; CI includes a tie. Supported maximum failed admission. Finite documented panel; no global-best or exhaustive tuning claim.",
+    "frozen_stats_sha256": "e0ec35686752418772a216882ad311c923bf03e811377d1581490c80cc45b802",
+    "global_best_claim": false,
+    "independent_selection_replay": {
+      "all_pairwise_comparisons_exact": true,
+      "no_neural_or_model_calls": true,
+      "selected": "wire12b",
+      "selection_sha256": "1e01667dcdd82449508b6718959e91d71fbdeddda31be968a98af2d9033afffb",
+      "statistical_verdict": "inconclusive",
+      "status": "PASS_INDEPENDENT_FROZEN_STATS_RAW_LEDGER_REPLAY",
+      "utc": "2026-10-25T23:42:38.700247+00:00"
+    },
+    "interpretation": "Best observed balanced setting in the declared finitepanel. AllpairedCIs/statisticalties/underpowering retained; not globaloptimum. All8timingcases percell plus3resetcases retained; initialnativeprompt/source/model/effective/finitePCM/EOS/reset/decoder/shutdown checks are hard. Crossconfiguration/repeatedPCM equality diagnostic; independent fullnativehistory/quality/listening remain finalproof requirements.",
+    "rounds_per_setting": 4,
+    "selected": "wire12b",
+    "settings": {
+      "anchor11": {
+        "cache_limit_bytes": 0,
+        "max_RTF": 1.3665233771967915,
+        "median_round_mean_RTF": 1.1085543588842315,
+        "raw8_per_round": [
+          [
+            1.1876277778430346,
+            1.0816241369010873,
+            1.3665233771967915,
+            1.119790873903764,
+            1.1024616469726563,
+            1.077574991122159,
+            1.0615545041419117,
+            1.0566152451548767
+          ],
+          [
+            1.1884019243975572,
+            1.1213914141461565,
+            1.1282704704594584,
+            1.2355874931727628,
+            1.102281968375,
+            1.0771155719954055,
+            1.0846621050924519,
+            1.0802550459828184
+          ],
+          [
+            1.0813243693606955,
+            1.0593687181241123,
+            1.1055084811608769,
+            1.1019516297853338,
+            1.0240716639316407,
+            1.0156726703297008,
+            1.0104562533559833,
+            1.0140470605659484
+          ],
+          [
+            1.159522335716742,
+            1.1773171895487324,
+            1.1317159573156856,
+            1.129034984485973,
+            1.0354086002285157,
+            1.0316903793606844,
+            1.023686005208382,
+            1.030528296661377
+          ]
+        ],
+        "round_mean_RTF": [
+          1.1317215691545353,
+          1.1272457492027013,
+          1.0515501058267864,
+          1.0898629685657615
+        ],
+        "underrun_requests": 6,
+        "wired_limit_bytes": 11811160064
+      },
+      "wire12b": {
+        "cache_limit_bytes": 0,
+        "max_RTF": 1.221832752997084,
+        "median_round_mean_RTF": 1.0314357168976058,
+        "raw8_per_round": [
+          [
+            1.0352918274634133,
+            1.0019956127171656,
+            1.0193330465076038,
+            1.0377130321821735,
+            1.0073384350585939,
+            1.0019532705405494,
+            0.9963355733475919,
+            1.001369796558838
+          ],
+          [
+            1.0796580227401518,
+            0.9838847018933702,
+            1.005226098238869,
+            1.04450511777326,
+            1.0017152145820314,
+            0.9843369624472879,
+            0.9801087279693055,
+            0.9841353609814452
+          ],
+          [
+            1.0887642302479918,
+            1.0343042327667449,
+            1.0517732874009216,
+            1.0854675190786578,
+            1.0363054062675783,
+            1.0314094553167168,
+            1.0422344043996479,
+            1.0313823405075073
+          ],
+          [
+            1.221832752997084,
+            1.0839062233589651,
+            1.0945551451242983,
+            1.1175127501997515,
+            1.0760873571601564,
+            1.0410419578008476,
+            1.0597307390589914,
+            1.0624354764971924
+          ]
+        ],
+        "round_mean_RTF": [
+          1.012666324296991,
+          1.0079462758282152,
+          1.0502051094982208,
+          1.0946378002746608
+        ],
+        "underrun_requests": 4,
+        "wired_limit_bytes": 12000000000
+      }
+    },
+    "status": "COMPLETE_BALANCED_FINITE_TOWER5_STOCK_CONFIRMATION",
+    "supported_setting_admission": {
+      "actual_owner_watch_and_started_servers_gone": true,
+      "admission_seal_sha256": "5fa5d3a25694d305df7e1ff0c531f2990ef7addc296973c9c5f87005f4e7f85b",
+      "eligible": [
+        "anchor11",
+        "wire12b"
+      ],
+      "failed": "recommended",
+      "lifecycle_sha256": "54488b51bec8c95f0e0aa0f2f6362ebd58ae31194e2c3eb604b43e7d89cd5caf",
+      "owner_sha256": "0ce6a342637149844a5d7f6a4f7ee26b1f53e705d8dbd8702017780276e2a834",
+      "port_free": true,
+      "status": "CLOSED_TWO_ELIGIBLE_ONE_RECOMMENDED_STARTUP_FAILURE"
+    }
+  },
+  "original_receipt_sha256": "1e01667dcdd82449508b6718959e91d71fbdeddda31be968a98af2d9033afffb",
+  "schema": "transformed-public-v57-baseline_selection-v1",
+  "transformation": "Public projection; original receipt bytes remain separate and unchanged."
+}

@@ -1,0 +1,100 @@
+{
+  "status": "PASS_NARROW_SAME_ARTIFACT_ENGINE_SPEEDUP_AND_FRESH_OUTPUT_PRESERVATION",
+  "model_revision": "dc860f699a91fa5e30e32698aeb1ab4d5608eff03496c5d7d11bbdcfb3c895ce",
+  "artifact": "Identical MAIN5/Tower5, 984 overridden tensors (MAIN5 750 + Tower5 234), same two overlay hashes in both arms.",
+  "speedup": 1.1115564060530227,
+  "speedup_ci95": [
+    1.0586115629808426,
+    1.1561968212064886
+  ],
+  "timing_cases": 192,
+  "matched_timing_pairs": 96,
+  "round_pairs": 4,
+  "powered": false,
+  "timing_statistics": "Unchanged measured tool paired bootstrap over four round indices, 10000 resamples/seed0; four round pairs remain underpowered.",
+  "fresh_preservation_responses": 288,
+  "fresh_preservation_pairs": 144,
+  "matching_completion_failures": 0,
+  "native_replay": {
+    "stock": {
+      "status": "PASS",
+      "requests": 144,
+      "actual_segments": 144,
+      "counts": {
+        "PASS": 144,
+        "FAIL": 0,
+        "UNPROVEN": 0,
+        "NOT RUN": 0
+      },
+      "runtime_sha256": "8739d3d73afe53aff1d83533658b4b890431fdd226bfae3d5afb5e348c51464d",
+      "replay_sha256": "0125953d676686d1e5545981cbcd3dc3fbeec97ce08c1d6274347137c58f8717"
+    },
+    "release": {
+      "status": "PASS",
+      "requests": 144,
+      "actual_segments": 144,
+      "counts": {
+        "PASS": 144,
+        "FAIL": 0,
+        "UNPROVEN": 0,
+        "NOT RUN": 0
+      },
+      "runtime_sha256": "27f6f21efa7d71e3407f687238e4f53f5364e880e0281e8e140f73f718710461",
+      "replay_sha256": "429f449790c25a87f73b2dce300de266374376d3c68b88397f5e8f321f365005"
+    }
+  },
+  "runtime_and_EOS": {
+    "stock": {
+      "actual_api_requests": 144,
+      "separate_startup_warmup": 1,
+      "generation_completed": 144,
+      "all_segments_eos": 144,
+      "exact_registered_plan_order": true
+    },
+    "release": {
+      "actual_api_requests": 144,
+      "separate_startup_warmup": 1,
+      "generation_completed": 144,
+      "all_segments_eos": 144,
+      "exact_registered_plan_order": true
+    }
+  },
+  "components": {
+    "independent_timing192_and_original_frozen_statistics": "PASS",
+    "timing8_and_quality2_current984_two_overlay_model_identity": "PASS",
+    "fresh288_direct_same_artifact_preservation": "PASS",
+    "fresh_native144_per_arm_full_prompt_history": "PASS",
+    "subset_payloads_against_root_closed_corpus": "PASS",
+    "actual_all288_request_generation_and_EOS": "PASS",
+    "actual_native_worker_and_children_closed": "PASS"
+  },
+  "baseline_scope": "V63 four-round public confirmation selected11GiB/cache0 stock by minimum median-round-mean on identical MAIN5/Tower5 weights; CI includes a tie. Supported maximum failed admission. Finite documented panel; no global-best or exhaustive tuning claim.",
+  "listening": "UNPROVEN",
+  "human_listening": "NOT_RUN",
+  "MAIN5_vs_original_quality": "UNPROVEN",
+  "cross_precision_perceptual_quality": "UNPROVEN",
+  "global_best": "UNPROVEN",
+  "one_point_five_speedup_supported": false,
+  "schema": "public-qualified-main5-v65-same-artifact-engine-v1",
+  "source_receipt_sha256": "aac88703f3adfdcb249e86c306c2e8b610cb09dd51f4c0c9555a9c4de8f8fcc6",
+  "stock_runtime": "b2c5260641cd0b6e33636685b5fded4dc4db22484645f6a44881290b65dfeae3",
+  "optimized_runtime": "8008a1bed7c02d62afbb1fe6031f709aed84b747b7b1a3256e2f29d08860155e",
+  "streaming_all_requests_realtime": "FAIL_BOTH",
+  "scope": "Comparative same-artifact engine behavior and timing; original-vs-MAIN5/listening remain unproven. No global-best claim; four round pairs underpowered.",
+  "shared_preparation_and_harness": [
+    "Identical custom MAIN5/Tower5 conversion and 984-tensor overlay loader",
+    "Identical fixed-reference/native-input cache and audit instrumentation",
+    "Identical full-stock-fp16-refold decoder and sampler settings",
+    "Same 11GiB wired/cache0 and client/streaming workload"
+  ],
+  "stock_native_flags": {
+    "redundant_sort_removal": false,
+    "single_token_GDN_compilation": false,
+    "codec_encoder_residency_release": false
+  },
+  "optimized_only_flags": {
+    "redundant_sort_removal": true,
+    "compiled_native_single_token_GDN_blocks": 30,
+    "codec_encoder_residency_release": true
+  }
+}
