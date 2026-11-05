@@ -1,0 +1,9 @@
+inferencekit-engines
+Copyright 2026 Stellon Labs
+
+This repository is licensed under the Apache License, Version 2.0 (see LICENSE), except the
+ltx-2.5_rtx-pro-6000/ folder, which is distributed under the LTX-2.x Community License Agreement
+(see ltx-2.5_rtx-pro-6000/LICENSE and ltx-2.5_rtx-pro-6000/NOTICE).
+
+Model weights are not included. Each engine downloads its model from Hugging Face, under the
+model's own licence, which you accept there. Model and product names belong to their owners.

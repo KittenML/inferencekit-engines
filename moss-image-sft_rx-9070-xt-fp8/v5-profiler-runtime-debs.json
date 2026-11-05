@@ -1,0 +1,26 @@
+{
+  "source": "https://repo.radeon.com/rocm/apt/7.2.4/",
+  "catalog_sha256": "ca9ce1e681e736592a8dc8a7309a2ef5e0a71b7152da450de4dc672a3ce62e6e",
+  "packages": [
+    {
+      "Package": "hsa-amd-aqlprofile",
+      "Architecture": "amd64",
+      "Depends": "hsa-rocr, rocm-core",
+      "Priority": "optional",
+      "Section": "devel",
+      "Filename": "pool/main/h/hsa-amd-aqlprofile/hsa-amd-aqlprofile_1.0.0.70204-93~24.04_amd64.deb",
+      "Size": "215558",
+      "SHA256": "75747b2600506c251657b97c7952d36065e5ac16706104a035d39eee5d531864",
+      "SHA1": "443d8a10d3b7a171e9b2d16fc962f9db404923ba",
+      "MD5sum": "398ad77ffb41564d63feb1901a7eca36",
+      "Description": "AQLPROFILE library for AMD HSA runtime API extension support",
+      "Homepage": "https://github.com/RadeonOpenCompute/HSA-AqlProfile-AMD-extension",
+      "Maintainer": "ROCm Profiler Support <dl.rocm-profiler.support@amd.com>",
+      "Version": "1.0.0.70204-93~24.04",
+      "Installed-Size": "1732"
+    }
+  ],
+  "compatibility": "Torch rocm723 with existing private724 runtime plus additional724 profiler SONAME1; compatibility pending actual import/tinyGPU health",
+  "reused_rocm_core": "Existing frozen32package private724 runtime; unchanged",
+  "policy": "Task-only verified Deb extraction; no host package install or maintainer scripts"
+}

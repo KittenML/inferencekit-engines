@@ -1,0 +1,15 @@
+Built with Fish Audio.
+
+This adapter and its experiment tools use fishaudio/drama-3 from the pinned original checkpoint. Model weights and their local conversions remain subject to the Fish Audio Community License included in licenses/FISH_AUDIO_COMMUNITY_LICENSE.txt. Fish Audio has not endorsed this implementation.
+
+MLX-Audio source is pinned to 76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d and retains its MIT license and attribution in licenses/MLX_AUDIO_MIT_LICENSE.txt. The observed frame loop follows that source's lookahead, EOS and held-frame behavior. The optional fused expert forward is adapted from the vendored MLX-LM SwitchGLU implementation, Copyright 2023–2024 Apple Inc., under MIT terms.
+
+The implementation includes direct original-FP8 affine/mixed quantization, an embedding-quantization converter extension, standard runtime memory controls, and optional codec residency/precision treatments. The specialized decode-only codec removes unused reference-encoding modules for unconditioned synthesis and rejects reference input by default. A separately registered fixed-reference experiment can admit one exact synthetic WAV/transcript and return its hash-verified canonical native codec IDs through a narrow cache; it never enables the removed encoder or accepts arbitrary references. Its FP16 treatment explicitly handles folded convolution kernels. Full upstream codec modes remain available, including ordinary public dtype/refold APIs for baseline evaluation. Numerical changes require independent quality validation.
+
+Additional code observes actual input-segment hashes and EOS/cap outcomes. Optional development capture retains encoded prompts and emitted acoustic frames for codec replay. Compilation and packed-projection fusion remain identifiable experimental modes; their screening results must not be represented as validated improvements. No global quality or performance claim follows from this private draft alone.
+
+The optional affine2 MSE-clipping converter selects per-group reconstruction error against the original dequantized coefficients and stores standard MLX affine tensors. Selective group sizes remain explicit in the checkpoint configuration. Coefficient error does not establish speech quality. Optional read-only mapped loading preserves tensor payload bytes and can create separately verified header-aligned cache files; mapped payloads may still page. These experiments retain their separate source, numerical-format and outcome records.
+
+The unmodified pure text partitioner frozen_chunking.py is copied from the pinned MLX-Audio chunking.py under its included MIT license. Exact source bytes are hash-checked so ordered native text boundaries remain auditable.
+
+The selected V14 public recipe uses affine3 experts only in layers32–39 and MSE2 in layers0–31. Its exact-decoder residency helper removes unused encoder modules after the fixed-reference hook is installed; this is distinct from the optional specialized decode-only codec. V13 formal FAIL results and V14 public-only status remain separate.

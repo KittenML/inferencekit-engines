@@ -1,0 +1,2 @@
+# Preserve blank context lines in the sealed historical patch verbatim.
+source/BUILDER_DELTA.diff whitespace=-blank-at-eol

@@ -1,0 +1,76 @@
+{
+  "data": {
+    "Tower5_vs_original_perceptual_quality": "UNPROVEN",
+    "actual_runtime_recipes": {
+      "release": "bafe948ad8395d981a83269af5d5f16f1e991635c5378da95e054279c8cb83cc",
+      "stock": "4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a"
+    },
+    "at": "2026-10-26T03:39:25.990872+00:00",
+    "baseline_scope": "V55 four-round public confirmation selected12-billion-byte wired stock by minimum median-round-mean on identical Tower5 weights; CI includes a tie. Supported maximum failed admission. Finite documented panel; no global-best or exhaustive tuning claim.",
+    "fresh_quality_preservation": {
+      "direct_output_identity": "PASS",
+      "identity_domain": "PCM, chunks, generated codes, completion, input/source/native contracts",
+      "matching_completion_failures": 0,
+      "native_actual144_each": {
+        "release": {
+          "actual_segments": 144,
+          "cases": 144,
+          "runtime_sha256": "8e48fd0ab6ea170afd9533478542adbe3f84b465c8cbe45b7db686a6941d6acc",
+          "sha256": "875138a75e0d9105d46dce7a647cc42a0c71709612c002589e8b095f69226c01",
+          "status": "PASS"
+        },
+        "stock": {
+          "actual_segments": 144,
+          "cases": 144,
+          "runtime_sha256": "869d856ea9c8d8c9c1c7e0897443f1fd5540b181fa3393f99b7de746f7a519af",
+          "sha256": "faddcee4fb28fb0d78757dca2ae170d083e5ed0fc795644cc543baeb39396ad1",
+          "status": "PASS"
+        }
+      },
+      "original_Tower6_grade_reuse": false,
+      "pairs": 144,
+      "quality_delta_scope": "Exact observed outputs establish preservation relative to this same-artifact stock baseline; no independent absolute or cross-precision quality grade.",
+      "responses": 288
+    },
+    "full_absolute_quality": "NOT_ESTABLISHED_BY_THIS_COMPARISON",
+    "global_best_engine_claim": false,
+    "headline": "Drama3 on16GiBM4:1.112132x faster than the strongest tuned stock configuration in the tested finite panel, with exact fresh same-artifact output preservation.",
+    "historical_records": "Earlier742/Tower6 grades remain historical; they are not transferred to9343. Failed native invocationV1 is retained; V2 changes only the bundle argument and preserves all frozen replay algorithms and cases.",
+    "human_review": "NOT_RUN",
+    "listening": "UNPROVEN",
+    "model_revision": "93432d8a6c97faba88309880c3fd2d1b8356bde679dc20f9e0daa57282eb904c",
+    "new_untouched_heldout_claim": false,
+    "new_verification_model_ASR_speaker_forwards": 0,
+    "numerical_identity_scope": "Observed on this panel; not a new universal admission/rejection requirement.",
+    "portable_builder_and_smoke": "Separate public packaging/reproduction; no public checker or fresh install is asserted by this export.",
+    "powered": false,
+    "publication": "Evidence export prepared; repository integration and publication are separate.",
+    "round_pairs": 4,
+    "speedup": 1.1121324630732272,
+    "speedup_ci95": [
+      1.069840834139318,
+      1.1529388775980693
+    ],
+    "status": "PASS_NARROW_SAME_ARTIFACT_ENGINE_SPEEDUP_AND_FRESH_OUTPUT_PRESERVATION",
+    "streaming": {
+      "cold_voice": "NOT_RUN",
+      "every_request_RTF_le_1": "FAIL_BOTH",
+      "overall_realtime": "FAIL_BOTH",
+      "reliability100_and_continuous15min": "NOT_RUN_FOR_THIS_REVISION",
+      "signal_is_perceived_speech": false,
+      "signal_playback_p95_and_upper95_le_2s": "PASS_BOTH",
+      "zero_underruns": "FAIL_BOTH"
+    },
+    "target_1_5x_met": false,
+    "timing": {
+      "frozen_comparison": "PASS",
+      "native_actual_segments_per_arm": 128,
+      "pairs": 96,
+      "responses": 192,
+      "source_and_ownership": "PASS"
+    }
+  },
+  "original_receipt_sha256": "ba68d45a3052677ec37bf5e40f952ed6ccf629fa07d2215e58530ce207df0a93",
+  "schema": "transformed-public-v57-combined-v1",
+  "transformation": "Public projection; original receipt bytes remain separate and unchanged."
+}

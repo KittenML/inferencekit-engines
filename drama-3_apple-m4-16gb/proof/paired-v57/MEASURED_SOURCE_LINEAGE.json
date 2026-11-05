@@ -1,0 +1,191 @@
+{
+  "data": {
+    "actual_plan_controller_sha256": "6278ae7df3e533f31792a54352050cd8d77c8cb13c9b529a92ed03ebdc9228f1",
+    "actual_plan_protocol_sha256": "7d5c4a9ea180c19a355682ba4996da392f81dff98f324186f0d3a2ff578ed5b7",
+    "actual_runtime_recipes": {
+      "release": "bafe948ad8395d981a83269af5d5f16f1e991635c5378da95e054279c8cb83cc",
+      "stock": "4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a"
+    },
+    "arm_recipes": {
+      "release": {
+        "activation_dtype_mode": "checkpoint",
+        "compile_mode": "none",
+        "controls": {
+          "cache_limit_bytes": 0,
+          "codec_mode": "full-stock-fp16-refold",
+          "load_wired_limit_bytes": 0,
+          "memory_limit_bytes": 34359738368,
+          "weight_loading_mode": "native-main6-tower5-v1",
+          "wired_limit_bytes": 11811160064
+        },
+        "fixed_gdn_experiment": {
+          "compile_scope": "Thirty original GDN S1 blocks only, fixed shapes with explicit conv+SSM arrays; original _step scope; all prefill including S1 native; ten full-attention KV blocks native",
+          "mode": "fixed-block",
+          "native_categorical_and_RNG": true,
+          "production_observation": "Common host invocation counters and existing source telemetry; no per-step GPU-to-host state hashes or completion barriers",
+          "sort_removal": true,
+          "sources": {
+            "drama3": "902aa196da7d6e11ebbe2076cd43bb3aa8f7db91386fc0605e359cb9de552401",
+            "driver": "26a3f6d8114f702b20f4fb63bb4d4da78c845f46880ce4bf3f6fab01f9a02206",
+            "helper": "d79146a40cca5e7cd74348de7ffb54ed3e89bd2ac3c672a5715b7c282f7863e8",
+            "sampler_helper": "dce3f067fdbe2cbe58ee5c8618707d0548ddb1d72a5b55793f9e779d6ffc8c89",
+            "upstream": {
+              "cache": "ab41054c4564784e7e131d7bd9c9e42a91b951bb4478d3a7ce8017ed3028e632",
+              "gated_delta": "f69cab3c4a94431832e418c46bebd59c95a3ab35c182e482ad38f974c3999aa8",
+              "qwen3_5": "66f67b0813657bbb667fa918a00be2c1a6857f953696f75b9249f0fe08aa07af",
+              "qwen3_next": "57502b0bc872f83a4c6b813485a79531f8e87c84be0f12a8489cd0002d9b670a"
+            }
+          },
+          "state_or_attention_padding": false
+        },
+        "fixed_reference": {
+          "asset_admission_evidence_sha256": "c65d849685ff8be984d153ea0b3d515dcef59692a14022e3d281a687edb28d3f",
+          "codes_file_sha256": "00e9cad6846db60a06d246fa177d49a78f8e4cc41fefede9231608571ca20d27",
+          "codes_logical_int64le_sha256": "1332c062e02ae3cc967663559a0234d6db4e04604cd6ff142f1b6ed5f6ac83b4",
+          "codes_shape": [
+            10,
+            103
+          ],
+          "contract_sha256": "3195ac5bd26cdea22324ca47cfbca82f6acc00f0fddf1ae4d153c8754e964359",
+          "manifest_sha256": "5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7",
+          "mlx_codes_logical_int32le_sha256": "41a6a8c1b7993adc0dfd69b2c08e3c63e6412bc5579ba422310dcc2ab91b2f4c",
+          "pcm_sha256": "2f876302b0b600c0f2fd191ce0b883adc8d866a1174ddb527389b6efb7e41774",
+          "reference_text_utf8_sha256": "da74b84279be7a5bbf42b58e8ed462dbafd9102a8a4688bd85a6c79d09025865",
+          "sample_count": 210944,
+          "wav_sha256": "e00d65ba8fa036139d361c0a2133a20231e68f0c722952da7b76c96e5897a970"
+        },
+        "generation_defaults": {
+          "first_chunk_frames": 24,
+          "max_tokens": 1024,
+          "streaming_interval": 0.32,
+          "temperature": 1.0,
+          "top_k": 4097,
+          "top_p": 0.9
+        },
+        "model": {
+          "dtype": "mixed:bfloat16,float16,float32,uint32",
+          "model": "local/drama-3-e2-mse-e3last8-main6-tower5-bf16heads-emb4-g128-v52",
+          "model_revision": "93432d8a6c97faba88309880c3fd2d1b8356bde679dc20f9e0daa57282eb904c",
+          "quant": "experts2-mseclipv1-g128-layers32to39-affine3,main-dense6,tower5-group64-originalBF16,semantic-head-bf16,residual-heads-bf16,embedding4-g64"
+        },
+        "pcm": {
+          "channels": 1,
+          "encoding": "pcm_s16le",
+          "rounding": "rint(clip(float32,-1,1)*32767)",
+          "sample_rate": 44100,
+          "trimming_or_normalization": false
+        },
+        "schema": "inferencekit-drama3-runtime-recipe-v13",
+        "sources": {
+          "adapter_source_sha256_prefix": "90f401033fdb3f00",
+          "checkpoint_config_sha256": "08e4ff03a0f83aa13d75d9d24b1f0a8fd74d67ce2f73567317d0ca42a6a9ed69",
+          "checkpoint_file_manifest_sha256": "626d3e5d5dc6deb9d30c958fadf34b3ce0c94b235d8e9dd37534325a08a58fcb",
+          "codec_encoder_residency": {
+            "helper_source_sha256": "98cb24b1828a0b3d14397d0910be06eac08fab42fa333dafed9ccdc4b012de7f",
+            "release_enabled": true,
+            "retained_payload_audit": true
+          },
+          "mlx_audio_commit": "76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d",
+          "mlx_version": "0.32.4",
+          "python": "3.12.14",
+          "sources_lock_sha256": "74b73d990d374196e280e2f92e75b0952f5425935524132fee06a82eb0ad1209"
+        }
+      },
+      "stock": {
+        "activation_dtype_mode": "checkpoint",
+        "compile_mode": "none",
+        "controls": {
+          "cache_limit_bytes": 0,
+          "codec_mode": "full-stock-fp16-refold",
+          "load_wired_limit_bytes": 0,
+          "memory_limit_bytes": 34359738368,
+          "weight_loading_mode": "native-main6-tower5-v1",
+          "wired_limit_bytes": 12000000000
+        },
+        "fixed_reference": {
+          "asset_admission_evidence_sha256": "c65d849685ff8be984d153ea0b3d515dcef59692a14022e3d281a687edb28d3f",
+          "codes_file_sha256": "00e9cad6846db60a06d246fa177d49a78f8e4cc41fefede9231608571ca20d27",
+          "codes_logical_int64le_sha256": "1332c062e02ae3cc967663559a0234d6db4e04604cd6ff142f1b6ed5f6ac83b4",
+          "codes_shape": [
+            10,
+            103
+          ],
+          "contract_sha256": "3195ac5bd26cdea22324ca47cfbca82f6acc00f0fddf1ae4d153c8754e964359",
+          "manifest_sha256": "5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7",
+          "mlx_codes_logical_int32le_sha256": "41a6a8c1b7993adc0dfd69b2c08e3c63e6412bc5579ba422310dcc2ab91b2f4c",
+          "pcm_sha256": "2f876302b0b600c0f2fd191ce0b883adc8d866a1174ddb527389b6efb7e41774",
+          "reference_text_utf8_sha256": "da74b84279be7a5bbf42b58e8ed462dbafd9102a8a4688bd85a6c79d09025865",
+          "sample_count": 210944,
+          "wav_sha256": "e00d65ba8fa036139d361c0a2133a20231e68f0c722952da7b76c96e5897a970"
+        },
+        "generation_defaults": {
+          "first_chunk_frames": 24,
+          "max_tokens": 1024,
+          "streaming_interval": 0.32,
+          "temperature": 1.0,
+          "top_k": 4097,
+          "top_p": 0.9
+        },
+        "model": {
+          "dtype": "mixed:bfloat16,float16,float32,uint32",
+          "model": "local/drama-3-e2-mse-e3last8-main6-tower5-bf16heads-emb4-g128-v52",
+          "model_revision": "93432d8a6c97faba88309880c3fd2d1b8356bde679dc20f9e0daa57282eb904c",
+          "quant": "experts2-mseclipv1-g128-layers32to39-affine3,main-dense6,tower5-group64-originalBF16,semantic-head-bf16,residual-heads-bf16,embedding4-g64"
+        },
+        "pcm": {
+          "channels": 1,
+          "encoding": "pcm_s16le",
+          "rounding": "rint(clip(float32,-1,1)*32767)",
+          "sample_rate": 44100,
+          "trimming_or_normalization": false
+        },
+        "schema": "inferencekit-drama3-runtime-recipe-v13",
+        "sources": {
+          "adapter_source_sha256_prefix": "90f401033fdb3f00",
+          "checkpoint_config_sha256": "08e4ff03a0f83aa13d75d9d24b1f0a8fd74d67ce2f73567317d0ca42a6a9ed69",
+          "checkpoint_file_manifest_sha256": "626d3e5d5dc6deb9d30c958fadf34b3ce0c94b235d8e9dd37534325a08a58fcb",
+          "codec_encoder_residency": {
+            "helper_source_sha256": "98cb24b1828a0b3d14397d0910be06eac08fab42fa333dafed9ccdc4b012de7f",
+            "release_enabled": false,
+            "retained_payload_audit": true
+          },
+          "mlx_audio_commit": "76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d",
+          "mlx_version": "0.32.4",
+          "python": "3.12.14",
+          "sources_lock_sha256": "74b73d990d374196e280e2f92e75b0952f5425935524132fee06a82eb0ad1209"
+        }
+      }
+    },
+    "current_admission_sources": {
+      "benchmark/pair_core.py": "aa47173fac0851ab6241592ab2eb8d90a13e8baa3d317a22073ccf2288cf710d",
+      "benchmark/recipe_admission.py": "08de0571c6ad259d7edd0a9feb4b2317df92c62a69c7e3e1e01b56fe34d33610",
+      "benchmark/runtime_admission.py": "2cf58630a57b87ffc38f2ef561de0f4f271b6dfcc3f81864f4eed54b733089d2",
+      "quality-generation-v2/quality_arm_controller.py": "345dc7149ef3123686ad700de1572852b78b99820c1b64da9b9598d9832b8b02"
+    },
+    "fresh_consumer_sources_sha256": {
+      "ACTUAL_TIMING_PLAN_V57.json": "ba488d579535a4572b3dd01fb9c25b29b48c1f4069654e9783c4fc7ef6db54a1",
+      "consume_quality288_v57.py": "8e245a90092aba0c585e220734a583a2270e1ed876de6c0731775b12b6a90fa8",
+      "support.py": "343890d53f819205736d358b02bdab96f2f4fa26bbb25dd79fb068730c4ffc14"
+    },
+    "fresh_generation_seal_sha256": "c494d6ca2d260ffd9bf346abb712a6112d256fb82dda0c41be9bb36f306bd141",
+    "fresh_source_manifest_sha256": "46d8fa7e996ad11fd8ebf5ba73eae26c594f7f190ff455e9f7d75cdc8692e8e9",
+    "frozen_original_methods_unchanged": {
+      "baseline_core.py": "6023433cfc1f5889c9b711307bbd8680ba7c4194f918abfbf46946d538f8389c",
+      "consume_identity144.py": "7768139cd5f4db1d00e050ceb8f819b3245b1592774356bb69eb245fb8ab753e",
+      "integer_location.py": "623e4c57351276ef910fe76a264c3343d37262ec894b3685941c4700bf69ac22",
+      "integrity_core.py": "5770ef27dfce9ea770e744fcdff26ea085566b9fa855b125bb7a1fc7015aba05",
+      "pair_core.py": "aa47173fac0851ab6241592ab2eb8d90a13e8baa3d317a22073ccf2288cf710d",
+      "runtime_admission.py": "b823522e1a0eee52ff9cc6453862b51eebaff565bff9825e28d699fb0768f9e4",
+      "selected_core.py": "229366a12c582b8a9aa9ca3f202fec87712bd9a881de7301ebff646f76ec10e1"
+    },
+    "hardware_name": "Apple M4,16GiB unified (GPUcorecount not independently queried by wrapper)",
+    "model_revision": "93432d8a6c97faba88309880c3fd2d1b8356bde679dc20f9e0daa57282eb904c",
+    "physical_memory_bytes": 17179869184,
+    "public_checker_execution": "NOT_RUN_BY_THIS_EXPORT",
+    "public_packaging_identity_is_separate": true,
+    "timing_source_and_run_seal_sha256": "5bfa2f1092712f9729ba59d3c8e0e7e3075dc5baf7a6394802d0013c185c383c",
+    "timing_source_archive_sha256": "362a4e25439f233ee7162f54adec84b04eb9b25be41d44f67381e27cb02613eb",
+    "timing_source_manifest_sha256": "6f4ee7df56d7226fc456796c4d9e806259bd57bda62ca0ef1d124d2d5a69ea99"
+  },
+  "schema": "transformed-public-source-lineage-v57-v1"
+}

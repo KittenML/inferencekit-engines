@@ -1,0 +1,36 @@
+{
+  "selected_at_utc": "2026-10-29T08:06:02.337445+00:00",
+  "selection_reason": "User requested keeping the fastest engine after being informed of the requested-text failure.",
+  "selected_profile": "online FP8 scale 1.03125, 24 denoising steps, guidance 3.0",
+  "model_architecture_changed": false,
+  "speedup": 2.460331872242106,
+  "ci95": [
+    2.453420663913209,
+    2.4653447762928327
+  ],
+  "quality_original_verdict": "FAIL",
+  "candidate_images_passed": 15,
+  "candidate_images_total": 16,
+  "candidate_text_cases_passed": 7,
+  "candidate_text_cases_total": 8,
+  "baseline_images_passed": 16,
+  "baseline_images_total": 16,
+  "failure": {
+    "round": 3,
+    "seed": 1721083345,
+    "fixture": "poster",
+    "requested_text": "GO BEYOND",
+    "finding": "Final D largely obscured by the rocket; distorted lettering.",
+    "baseline_png_sha256": "101b9473c4ab78b6322bb4cd9f3253fbedd641116f4c61d2a250fc7cc22b4c03",
+    "candidate_png_sha256": "aba5e8367dda111abea88066b06b51c071c27dfe42607168f5d90d0ad52f2c3d"
+  },
+  "assessment_limitations": [
+    "Single blinded AI review of four prompts across four seeds; no human panel.",
+    "Independent unseen-seed FP8 holdout was not run after the primary failure.",
+    "Two inspected originals confirm a visible text-layout defect; this unblinded inspection does not replace the sealed review."
+  ],
+  "package_validation": "Measured adapter and patches preserved; standalone installer and launch packaging have not been GPU-tested.",
+  "hardware_released": true,
+  "selection_status": "SELECTED_LOSSY",
+  "quality_policy": "User accepted this measured speed/quality tradeoff after the requested-text failure was disclosed; the original review remains FAIL."
+}

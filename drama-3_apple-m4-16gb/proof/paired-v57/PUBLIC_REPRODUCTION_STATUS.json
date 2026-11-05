@@ -1,0 +1,7 @@
+{
+  "fresh_optional_profile_install": null,
+  "portable_builder_smoke": null,
+  "public_checker": null,
+  "scope": "Evidence projection only; later public wrapper/build/smoke receipts have their own source identity.",
+  "status": "NOT_RUN_BY_THIS_EXPORT"
+}

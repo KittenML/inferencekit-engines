@@ -1,0 +1,13 @@
+{
+  "status": "NOT RUN",
+  "scope": "same-checkpoint main DiT online per-tensor FP8; 42 blocks, four projections each",
+  "numerics_changed": true,
+  "factor": 1.03125,
+  "baseline_online_fp8_sha256": "ce504bea5fb8d7b9683eb4df0d88a850aeec8d802af63b61bfd011a24dda71b7",
+  "candidate_online_fp8_sha256": "8bcc9a37d448ed271bc5994b1211876a16d082fa1f3fdc84ea95d99465a6776d",
+  "patch_sha256": "95aee4ac3b9aca81327777619f93119e18c299a70c9e4e69fa074561102a78ac",
+  "audit_sha256": "74913ee7c90bf5f090adbcf8bc990315030bb2ecadb4ffe482cf512c9af0a63f",
+  "execution": "UNPROVEN",
+  "quality": "NOT RUN",
+  "performance": "NOT RUN"
+}

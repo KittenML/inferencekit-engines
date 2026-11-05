@@ -1,0 +1,98 @@
+{
+  "data": {
+    "actual_runtime_recipes": {
+      "release": "bafe948ad8395d981a83269af5d5f16f1e991635c5378da95e054279c8cb83cc",
+      "stock": "4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a"
+    },
+    "closure_sha256": "97f690822e0326ac1ea14cd4d9971e8eb642daeed90030219bcf804f838e01d7",
+    "created_utc": "2026-10-26T03:23:55.132234+00:00",
+    "domain_counts": {
+      "fresh_stock_vs_release": {
+        "FAIL": 0,
+        "PASS": 144,
+        "UNPROVEN": 0
+      }
+    },
+    "domain_verdicts": {
+      "fresh_stock_vs_release": "PASS"
+    },
+    "fresh_pair_cases": 144,
+    "generation_seal_sha256": "c494d6ca2d260ffd9bf346abb712a6112d256fb82dda0c41be9bb36f306bd141",
+    "human_review": "NOT_RUN",
+    "identity_failure_is_perceptual_quality_failure": false,
+    "listening": "UNPROVEN",
+    "matching_completion_failures_retained": {
+      "fresh_stock_vs_release": 0
+    },
+    "model_revision": "93432d8a6c97faba88309880c3fd2d1b8356bde679dc20f9e0daa57282eb904c",
+    "native144_each": {
+      "release": {
+        "GPU_visible": false,
+        "actual_segments": 144,
+        "all_planned_cases_retained": true,
+        "codec_forward_calls": 0,
+        "consumer_sha256": "f6ead832ab0ec9dc907aa366aaeef0cf106dc072bab4d59b58e7585e9cca5df9",
+        "counts": {
+          "FAIL": 0,
+          "NOT RUN": 0,
+          "PASS": 144,
+          "UNPROVEN": 0
+        },
+        "fixtures_sha256": "a0e1394ed74bbae5766e3a5246b35bbb4086d2784496ccca10da5bdc015c8da3",
+        "integer_location_sha256": "dfa0a5846ab77165377c76517eff8eb9e0f67da245109ce643dc5d02a2f65424",
+        "integrity_core_sha256": "5770ef27dfce9ea770e744fcdff26ea085566b9fa855b125bb7a1fc7015aba05",
+        "model_forward_calls": 0,
+        "model_weights_loaded": false,
+        "native_proof_sha256": "6eb18443c100f41622673eeaf0d5cfeaea490ec3c350e2566ac9aadd3d2d7f54",
+        "request_plan_sha256": "52e47945ca5943a18b25e7302cb5628147f4001e3a12f216ef3df93bff75d9bd",
+        "requests": 144,
+        "runtime_sha256": "8e48fd0ab6ea170afd9533478542adbe3f84b465c8cbe45b7db686a6941d6acc",
+        "scope": "Actual complete prompt/history replay only; no absolute, listening or perceptual grade.",
+        "source_config_sha256": "4b13a31b504cf54181f52df5bbb27604f5cc4b77b6e90a12ab85d62e0d70b693",
+        "source_inference_sha256": "73f07e13f59cf88b33862ad579b71467deb8a67f9ba89e5abb9c89c2f87d55dd",
+        "source_pin": "541566932abbaebcb0a40e562a1f846738383f38",
+        "status": "PASS",
+        "tokenizer_sha256": "0e9b9db76b2f0389b04b6ef057a2ac3b89100b7e96f2dd7034d19580a09654d6"
+      },
+      "stock": {
+        "GPU_visible": false,
+        "actual_segments": 144,
+        "all_planned_cases_retained": true,
+        "codec_forward_calls": 0,
+        "consumer_sha256": "f6ead832ab0ec9dc907aa366aaeef0cf106dc072bab4d59b58e7585e9cca5df9",
+        "counts": {
+          "FAIL": 0,
+          "NOT RUN": 0,
+          "PASS": 144,
+          "UNPROVEN": 0
+        },
+        "fixtures_sha256": "a0e1394ed74bbae5766e3a5246b35bbb4086d2784496ccca10da5bdc015c8da3",
+        "integer_location_sha256": "dfa0a5846ab77165377c76517eff8eb9e0f67da245109ce643dc5d02a2f65424",
+        "integrity_core_sha256": "5770ef27dfce9ea770e744fcdff26ea085566b9fa855b125bb7a1fc7015aba05",
+        "model_forward_calls": 0,
+        "model_weights_loaded": false,
+        "native_proof_sha256": "6eb18443c100f41622673eeaf0d5cfeaea490ec3c350e2566ac9aadd3d2d7f54",
+        "request_plan_sha256": "52e47945ca5943a18b25e7302cb5628147f4001e3a12f216ef3df93bff75d9bd",
+        "requests": 144,
+        "runtime_sha256": "869d856ea9c8d8c9c1c7e0897443f1fd5540b181fa3393f99b7de746f7a519af",
+        "scope": "Actual complete prompt/history replay only; no absolute, listening or perceptual grade.",
+        "source_config_sha256": "4b13a31b504cf54181f52df5bbb27604f5cc4b77b6e90a12ab85d62e0d70b693",
+        "source_inference_sha256": "73f07e13f59cf88b33862ad579b71467deb8a67f9ba89e5abb9c89c2f87d55dd",
+        "source_pin": "541566932abbaebcb0a40e562a1f846738383f38",
+        "status": "PASS",
+        "tokenizer_sha256": "0e9b9db76b2f0389b04b6ef057a2ac3b89100b7e96f2dd7034d19580a09654d6"
+      }
+    },
+    "original_grade_reuse": false,
+    "original_native_output_reuse": false,
+    "overall_quality_pass": null,
+    "perceptual_quality": "UNPROVEN",
+    "planned_fresh_responses": 288,
+    "scope": "Direct144 fresh pair preservation plus separately completed native144-per-arm replay; no inherited original742 grade/native results.",
+    "source_manifest_sha256": "46d8fa7e996ad11fd8ebf5ba73eae26c594f7f190ff455e9f7d75cdc8692e8e9",
+    "status": "PASS"
+  },
+  "original_receipt_sha256": "67ae3f935cc6657b8a799d779fb517a7de4fa250bd444cf370807d02f9432144",
+  "schema": "transformed-public-v57-direct144-v1",
+  "transformation": "Public projection; original receipt bytes remain separate and unchanged."
+}

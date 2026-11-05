@@ -1,0 +1,60 @@
+{
+  "source": "https://repo.radeon.com/rocm/apt/7.2.4/",
+  "catalog_sha256": "ca9ce1e681e736592a8dc8a7309a2ef5e0a71b7152da450de4dc672a3ce62e6e",
+  "packages": [
+    {
+      "Package": "rocprofiler-sdk",
+      "Architecture": "amd64",
+      "Depends": "rocm-core, rocprofiler-sdk-roctx (>= 1.1.0), rocprofiler-sdk-rocpd (>= 1.1.0)",
+      "Priority": "optional",
+      "Section": "devel",
+      "Filename": "pool/main/r/rocprofiler-sdk/rocprofiler-sdk_1.1.0-93~24.04_amd64.deb",
+      "Size": "5680890",
+      "SHA256": "39270239e68660cd025d3c9e84a04478696d9737f69012cd350c380aad911c30",
+      "SHA1": "737359ac5904dfce84318cecfe41561598d496c5",
+      "MD5sum": "821b57d7ffb9f74c7a775a9fc58eda8b",
+      "Description": "ROCm GPU performance analysis SDK",
+      "Homepage": "https://github.com/ROCm/rocprofiler-sdk",
+      "Maintainer": "ROCm Profiler Support <dl.ROCm-Profiler.support@amd.com>",
+      "Version": "1.1.0-93~24.04",
+      "Installed-Size": "48970"
+    },
+    {
+      "Package": "rocprofiler-sdk-rocpd",
+      "Architecture": "amd64",
+      "Depends": "rocm-core",
+      "Priority": "optional",
+      "Section": "devel",
+      "Filename": "pool/main/r/rocprofiler-sdk-rocpd/rocprofiler-sdk-rocpd_1.1.0-93~24.04_amd64.deb",
+      "Size": "4229746",
+      "SHA256": "313873a14f76dde8f4ca2aa7fed8eae68240dc6ae446537dd3b363180c38095d",
+      "SHA1": "a2c9047349d04690320ef5cd272eba106fb99492",
+      "MD5sum": "00af3a3bfa26bcd8b697df653cd95b55",
+      "Description": "ROCm GPU performance analysis SDK",
+      "Homepage": "https://github.com/ROCm/rocprofiler-sdk",
+      "Maintainer": "ROCm Profiler Support <dl.ROCm-Profiler.support@amd.com>",
+      "Version": "1.1.0-93~24.04",
+      "Installed-Size": "14199"
+    },
+    {
+      "Package": "rocprofiler-sdk-roctx",
+      "Architecture": "amd64",
+      "Depends": "rocm-core, rocprofiler-register",
+      "Priority": "optional",
+      "Section": "devel",
+      "Filename": "pool/main/r/rocprofiler-sdk-roctx/rocprofiler-sdk-roctx_1.1.0-93~24.04_amd64.deb",
+      "Size": "258610",
+      "SHA256": "4c45f467341b14fc1e1db3c9dc2475d7e880650df8ec71db46b461d7b12ffb91",
+      "SHA1": "8d8825aa6702e1cbd5b4e2dde8d172f890dc7142",
+      "MD5sum": "03a293b41460a5cfb3cc00be35cec4af",
+      "Description": "ROCm GPU performance analysis SDK",
+      "Homepage": "https://github.com/ROCm/rocprofiler-sdk",
+      "Maintainer": "ROCm Profiler Support <dl.ROCm-Profiler.support@amd.com>",
+      "Version": "1.1.0-93~24.04",
+      "Installed-Size": "1570"
+    }
+  ],
+  "compatibility": "Torch rocm723 with existing private724 runtime plus additional724 profiler SONAME1; compatibility pending actual import/tinyGPU health",
+  "reused_rocm_core": "Existing frozen32package private724 runtime; unchanged",
+  "policy": "Task-only verified Deb extraction; no host package install or maintainer scripts"
+}

@@ -1,0 +1,140 @@
+{
+  "data": {
+    "historical_intermediate_label": "Original receipt contains legacy known_quality_feasibility wording; it is not a Tower5 absolute-quality grade and is not transferred.",
+    "new_model_or_metric_forwards": 0,
+    "pair_integrity_sha256": "621c3695510c93adf4b7172d9c55a58bc62badb9fe337c850e8b6535e75a7170",
+    "registered_full_four_round_rule_match": true,
+    "scope": "Frozen tool statistical/input validation only; no preserved-behavior or quality override",
+    "statistical_fields_exact_equal": {
+      "claim_class": true,
+      "coverage": true,
+      "data": true,
+      "identity": true,
+      "kind": true,
+      "limitations": true,
+      "metrics": true,
+      "summary": true
+    },
+    "status": "PASS",
+    "tool_data": {
+      "arm_timing_verdicts": {
+        "baseline": "FAIL",
+        "candidate": "FAIL"
+      },
+      "baseline": "ev_d479dcd56579523552073d00292d335ed4aeefa0be3ce7e5ef8db826eb7f19e5",
+      "baseline_identity": {
+        "engine": {
+          "commit": null,
+          "flags": {},
+          "name": "pair16-stock",
+          "version": "mlx-audio@76f35931cfe7db8f1f6b604d7b205ffe9d74ff8d+adapter@90f401033fdb3f00+compile@none+dtype@checkpoint+fuse@0+codec@full-stock-fp16-refold+codes@0+weights@native-main6-tower5-v1+encoder-release@0+retained-payload-audit@1+fixed-reference@5884294cea15c114ad21851412f67c4c128cf60c10796c0c5a91fdafe5a632f7+runtime@4f2636ca6f5180dd5cefde43051b88f8495cb1ee8e0b5f3ddb1e7aea02ea758a"
+        },
+        "gpu": {
+          "clocks": null,
+          "count": null,
+          "cuda": null,
+          "driver": null,
+          "name": "Apple M4,16GiB unified (GPUcorecount not independently queried by wrapper)"
+        },
+        "model": {
+          "dtype": "mixed:bfloat16,float16,float32,uint32",
+          "id": "local/drama-3-e2-mse-e3last8-main6-tower5-bf16heads-emb4-g128-v52",
+          "quant": "experts2-mseclipv1-g128-layers32to39-affine3,main-dense6,tower5-group64-originalBF16,semantic-head-bf16,residual-heads-bf16,embedding4-g64",
+          "revision": "93432d8a6c97faba88309880c3fd2d1b8356bde679dc20f9e0daa57282eb904c"
+        },
+        "workload": {
+          "batch": 1,
+          "endpoint_kind": "audio_http",
+          "gen_len": null,
+          "mode": "single",
+          "prompt_len": null,
+          "request_set": {
+            "n": 24,
+            "sha256": "f63d509a60294e98e02a97f00eb41fb40a9b9411565d95b324920bc1d35c26fc"
+          },
+          "seed": null,
+          "seed_policy": {
+            "base": 20261024,
+            "name": "per_round"
+          }
+        }
+      },
+      "candidate": "ev_63632fb70be5cfffc442ab75193907d066eed27341572c8c83f732b4f8c74be0",
+      "decision": {
+        "half_width": 0.04229162893390925,
+        "oriented_ci95": [
+          1.069840834139318,
+          1.1529388775980693
+        ],
+        "oriented_ratio": 1.1121324630732272,
+        "powered": false,
+        "reason": "CI above 1 and change beyond +2.0%",
+        "verdict": "improved"
+      },
+      "higher_is_better": false,
+      "interleaved": true,
+      "method": "paired bootstrap over round index",
+      "metric": "rtf",
+      "pairs": 4,
+      "request": {
+        "args": {
+          "baseline": "ev_d479dcd56579523552073d00292d335ed4aeefa0be3ce7e5ef8db826eb7f19e5",
+          "candidate": "ev_63632fb70be5cfffc442ab75193907d066eed27341572c8c83f732b4f8c74be0",
+          "metric": "rtf",
+          "resamples": 10000,
+          "seed": 0,
+          "threshold": 0.02
+        },
+        "cli": "inferencekit compare",
+        "op": "compare"
+      },
+      "required_proofs": {
+        "fresh-process lifecycle": "UNPROVEN",
+        "media quality": "UNPROVEN",
+        "repeated-run reliability": "UNPROVEN"
+      },
+      "resamples": 10000,
+      "rounds_for_power": null,
+      "seed": 0,
+      "source_kind": "audio_benchmark",
+      "threshold": 0.02,
+      "verdict": "improved"
+    },
+    "tool_metrics": [
+      {
+        "ci95": [
+          0.867348668199403,
+          0.9347184815622553
+        ],
+        "n": 4,
+        "name": "rtf_ratio",
+        "stat": "ratio_of_medians",
+        "unit": "x",
+        "value": 0.8991734646758136
+      },
+      {
+        "ci95": null,
+        "n": 4,
+        "name": "rtf",
+        "stat": "median",
+        "subject": "baseline",
+        "unit": "x",
+        "value": 1.0784951075903657
+      },
+      {
+        "ci95": null,
+        "n": 4,
+        "name": "rtf",
+        "stat": "median",
+        "subject": "candidate",
+        "unit": "x",
+        "value": 0.9697541825279435
+      }
+    ],
+    "tool_verdict": "improved",
+    "wheel_sha256": "7eebd59f181b6070a946335421bb7fd7fe6d5ff7d5ea8878835eee64d9d9b176"
+  },
+  "original_receipt_sha256": "b962a1a940b709a56e9d56c7f91d1d5af8bbb39fbe95a25c271a17f838667939",
+  "schema": "transformed-public-v57-frozen-v1",
+  "transformation": "Public projection; original receipt bytes remain separate and unchanged."
+}

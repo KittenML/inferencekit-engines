@@ -1,0 +1,246 @@
+{
+  "schema": "public-measurement-excerpt.v1",
+  "notice": "Allowlisted summary excerpt, not a full or immutable evidence record. Source SHA256 values identify the original files. No prompts, outputs, logs, private paths or environment are included.",
+  "sources": [
+    {
+      "source": "final measurement results",
+      "sha256": "8549e45cf37206dd102202f6a2b8b46f20c43bcb32d711bf13aa7d9bd454270c"
+    },
+    {
+      "source": "final scoring verdict",
+      "sha256": "c38450d71b73388b0d8b14bc624f8f409dffd8b27c43d36006f5a39aae073b74"
+    },
+    {
+      "source": "baseline-relative reference quality record",
+      "sha256": "e78f90c28cf880ab86d1cd23a95fcfa923bf8e7cbd37ecbec4f106025e6867ab"
+    },
+    {
+      "source": "BF16 self-floor informational quality record",
+      "sha256": "1959e30c3f5fd16e4b6b4cc5b99bea6602b2fd73817d370075a919a705480529"
+    },
+    {
+      "source": "candidate resolved configuration, sampled round 1",
+      "sha256": "65367dc0ab5072263e4eddebbd00a05b93468df82847979f52e273e4725048cc"
+    }
+  ],
+  "model": {
+    "id": "nvidia/Gemma-4-26B-A4B-NVFP4",
+    "revision": "a19cfe00be84568a6867111c9a68c9c44fdcffe6",
+    "precision": "nvfp4"
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "count": 1
+  },
+  "configuration": {
+    "vllm_version": "0.31.0",
+    "candidate_revision": "23beebc07b50",
+    "compile_sizes": [
+      1
+    ],
+    "dtype": "torch.bfloat16",
+    "quantization": "modelopt_fp4",
+    "kv_cache_dtype": "fp8_e4m3",
+    "max_seq_len": 8192,
+    "enable_prefix_caching": false,
+    "speculative_config": null
+  },
+  "protocol": {
+    "timer": "client-side served decode",
+    "rounds": 4,
+    "balanced_williams": true,
+    "concurrency": 1,
+    "prompts_per_round": 64,
+    "output_tokens": 256,
+    "buckets": [
+      "very_short",
+      "short",
+      "medium",
+      "long"
+    ],
+    "thinking": false,
+    "sampling": {
+      "temperature": 1.0,
+      "top_k": 64,
+      "top_p": 0.95,
+      "seed": 1234
+    },
+    "ci_resamples": 10000,
+    "ci_seed": 0
+  },
+  "performance": {
+    "sampled": {
+      "evidence_id": "ev_5700ccecd632a57ebde78722c0ae3b430a264074f7cfd87f5fecdf1da25c66f5",
+      "classification": "derived from observed per-bucket medians",
+      "statistic": "geometric mean over four prompt-length buckets",
+      "baseline_tok_s": 201.4377232738392,
+      "candidate_tok_s": 267.4438277827044,
+      "candidate_over_baseline": 1.327674992727827,
+      "ratio_ci95": [
+        1.3265995953561502,
+        1.3290200906557017
+      ],
+      "formula": "geomean(candidate bucket median / baseline bucket median); paired bootstrap over rounds",
+      "baseline_bucket_tok_s": {
+        "long": 193.6774954639044,
+        "medium": 203.15028270233643,
+        "short": 204.4090045918964,
+        "very_short": 204.72298354142944
+      },
+      "candidate_bucket_tok_s": {
+        "long": 254.24809224407102,
+        "medium": 270.1137437200845,
+        "short": 272.728512305567,
+        "very_short": 273.1463423238164
+      }
+    },
+    "greedy": {
+      "evidence_id": "ev_d77f1a84a5b0e4724e1d57842c75654bf97af831f8fe98138f47e7d618a47614",
+      "classification": "derived from observed per-bucket medians",
+      "statistic": "geometric mean over four prompt-length buckets",
+      "baseline_tok_s": 206.99330574778622,
+      "candidate_tok_s": 271.5331575550555,
+      "candidate_over_baseline": 1.3117968070228736,
+      "ratio_ci95": [
+        1.3113495449632717,
+        1.3124714572909622
+      ],
+      "formula": "geomean(candidate bucket median / baseline bucket median); paired bootstrap over rounds",
+      "baseline_bucket_tok_s": {
+        "long": 198.84593108786055,
+        "medium": 208.85303513709312,
+        "short": 210.10182900583635,
+        "very_short": 210.39618899106884
+      },
+      "candidate_bucket_tok_s": {
+        "long": 258.26794464007105,
+        "medium": 274.32711091222654,
+        "short": 276.7899553116622,
+        "very_short": 277.2055479577261
+      }
+    }
+  },
+  "quality": {
+    "baseline_relative": {
+      "evidence_id": "ev_5291360b6df122139d8be37bc992e04695f3937acbec628556f76245cf055f92",
+      "classification": "derived",
+      "verdict": "PASS",
+      "prompts": 64,
+      "reference": "BF16 model",
+      "floor": "repeat of tuned NVFP4 baseline",
+      "margins": {
+        "agreement": 0.02,
+        "kl": 0.02,
+        "tv": null,
+        "nll": 0.05
+      },
+      "candidate": {
+        "top1_agreement": 0.9408989764129951,
+        "kl_mean": 0.06615482160390627,
+        "ref_nll_mean": 0.1643903990014089
+      },
+      "baseline_repeat": {
+        "top1_agreement": 0.9428596977555218,
+        "kl_mean": 0.0677519926992712,
+        "ref_nll_mean": 0.16099984307505785
+      },
+      "criterion": "top1_agreement: CI [-0.005202, 0.008461] <= margin 0.02; kl_mean: CI [-0.008514, 0.004941] <= margin 0.02; tv_mean: reported, not judged (no --margin-tv); ref_nll_mean: CI [-0.01054, 0.01621] <= margin 0.05"
+    },
+    "bf16_self_floor_informational": {
+      "evidence_id": "ev_7633679eb2bec6403eaeeb89892c23ec02773a1bff5ac02af5e099824ffa1134",
+      "candidate_verdict": "FAIL",
+      "baseline_verdict": "FAIL",
+      "scope": "Both NVFP4 engines differ from the BF16 reference beyond its self-repeat floor; the judged claim is no added loss versus tuned NVFP4."
+    },
+    "gsm8k": {
+      "candidate": {
+        "evidence_id": "ev_5fa638565401dd7555471b2aa8a853ce8b2a27de8dcf320b69c802656c7e224c",
+        "n": 350,
+        "correct": 341,
+        "accuracy_pct": 97.42857142857143,
+        "wilson_ci95_pct": [
+          95.18595114447696,
+          98.64138074863985
+        ],
+        "request_errors": 0,
+        "truncated": 2,
+        "max_tokens": 1024
+      },
+      "baseline": {
+        "evidence_id": "ev_ecb25343d471aab7f2e2a9f2f7b8a60250311401a01c41de8f4c1d9e10642414",
+        "n": 350,
+        "correct": 339,
+        "accuracy_pct": 96.85714285714285,
+        "wilson_ci95_pct": [
+          94.46069987832747,
+          98.23618223294453
+        ],
+        "request_errors": 0,
+        "truncated": 2,
+        "max_tokens": 1024
+      },
+      "scope": "first 350 of 1319 test problems; greedy, concurrency 1",
+      "nonregression_verdict": "PASS",
+      "one_sided_p": 1.0
+    },
+    "sampling": {
+      "candidate": {
+        "evidence_id": "ev_0f736e221ce7f9d3f92ad1f2c7f655894fb47a5227aba82a6a313fdaa9774949",
+        "verdict": "UNPROVEN",
+        "reason": "0 informative prompt(s), need 8 (dropped: 32 logprobs_unstable)",
+        "n_prompts": 0,
+        "seeds": 256
+      },
+      "baseline": {
+        "evidence_id": "ev_aaf5fa6ce3a70c08c1d20e20ab08e0e551aa2b172c5c253cab5f5a810f9511ff",
+        "verdict": "UNPROVEN",
+        "reason": "0 informative prompt(s), need 8 (dropped: 1 beyond_top, 31 logprobs_unstable)",
+        "n_prompts": 0,
+        "seeds": 256
+      }
+    },
+    "seed_repeat": {
+      "candidate": {
+        "verdict": "UNPROVEN",
+        "hidden_probes_seed_reproduced": "2/8"
+      },
+      "baseline": {
+        "verdict": "UNPROVEN",
+        "hidden_probes_seed_reproduced": "3/8"
+      }
+    },
+    "gates": {
+      "candidate": {
+        "evidence_id": "ev_69def5d5ae0e9bf1aba2f8d896037f69fa05539a96c636645cfc558bfbed4446",
+        "verdict": "PASS",
+        "checks_passed": [
+          "caching",
+          "token_count",
+          "output_length",
+          "hidden_probes",
+          "rare_tokens"
+        ],
+        "not_run": [
+          "spec_exact",
+          "unique_prompts"
+        ]
+      },
+      "baseline": {
+        "evidence_id": "ev_4e2678b2d09d3123e437b6923c8cc4cd444d2e502aed646e486e0115bc483c5b",
+        "verdict": "PASS",
+        "checks_passed": [
+          "caching",
+          "token_count",
+          "output_length",
+          "hidden_probes",
+          "rare_tokens"
+        ],
+        "not_run": [
+          "spec_exact",
+          "unique_prompts"
+        ]
+      }
+    },
+    "combined_scorer_verdict": "UNPROVEN"
+  }
+}

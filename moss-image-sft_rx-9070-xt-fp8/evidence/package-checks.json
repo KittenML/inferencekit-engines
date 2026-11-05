@@ -1,0 +1,25 @@
+{
+  "scope": "Offline CPU checks only; standalone package not GPU tested",
+  "checks": [
+    {
+      "check": "verify_snapshot.py",
+      "status": "PASS"
+    },
+    {
+      "check": "test_install_cpu.py",
+      "status": "PASS"
+    },
+    {
+      "check": "shell syntax",
+      "status": "PASS"
+    },
+    {
+      "check": "all recorded candidate adapter and patch hashes",
+      "status": "PASS"
+    },
+    {
+      "check": "wiring patch applied to all pinned upstream native-source files",
+      "status": "PASS"
+    }
+  ]
+}

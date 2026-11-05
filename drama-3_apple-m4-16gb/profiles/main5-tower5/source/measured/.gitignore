@@ -1,0 +1,13 @@
+.venv/
+.tools/
+.cache/
+models/
+outputs/
+telemetry/
+__pycache__/
+.pytest_cache/
+*.pyc
+reproduction-command.json
+model-verification.json
+.benchmark-venv/
+benchmark-runs/
