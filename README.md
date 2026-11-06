@@ -11,7 +11,7 @@ The community-maintained repo of the best inference engines for any model and ha
 [![Hardware](https://img.shields.io/badge/Hardware-RTX%205090%20%7C%20RTX%20PRO%206000%20%7C%20Apple%20M4%20%7C%20RX%209070%20XT-76b900.svg)](#engines)
 [![Built with inferencekit](https://img.shields.io/badge/built%20with-inferencekit-6b4fbb.svg)](https://github.com/kittenml/inferencekit)
 
-[Run one](#run-one) · [Engines](#engines) · [How they are made](#how-they-are-made) · [Add your engine](#add-your-engine) · [inferencekit](https://github.com/kittenml/inferencekit)
+[Run one](#run-one) · [Engines](#engines) · [How they are made](#how-they-are-made) · [Add your engine](#add-your-engine) · [inferencekit](https://github.com/kittenml/inferencekit) · [Discord](https://discord.com/invite/VJ86W4SURW)
 
 </div>
 
