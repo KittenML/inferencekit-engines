@@ -85,6 +85,8 @@ GPT-6.1 Terra used inferencekit to integrate online FP8 into selected transforme
 
 </details>
 
+**KittenML models:** Kitten TTS 2 delivers **about 5–7× faster complete-audio generation than vLLM and llama.cpp on RTX PRO 6000** in our tested configurations. Follow our ongoing inferencekit optimization work on Kitten TTS 0.8 and Kitten TTS 2 in [Kitten Inference](https://github.com/KittenML/kitten-inference), where the native implementations and benchmarks are maintained.
+
 ## How they are made
 
 These engines were built with [inferencekit](https://github.com/kittenml/inferencekit), which guides the agent through baseline tuning, profiling, implementation and quality checks. Each model README links its `REPORT.md` with the results, run commands, optimizations and supporting evidence.
