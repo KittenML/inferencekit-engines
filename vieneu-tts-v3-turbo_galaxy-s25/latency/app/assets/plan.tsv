@@ -1,0 +1,20 @@
+full-t4-eager	0	0
+adaptive3-t4-eager	0	0
+pico-i8-t4-latency-eager	0	0
+full-t4-eager	1	3
+pico-i8-t4-latency-eager	1	0
+adaptive3-t4-eager	1	0
+adaptive3-t4-eager	2	3
+full-t4-eager	2	0
+pico-i8-t4-latency-eager	2	0
+adaptive3-t4-eager	3	3
+pico-i8-t4-latency-eager	3	0
+full-t4-eager	3	0
+pico-i8-t4-latency-eager	4	3
+full-t4-eager	4	0
+adaptive3-t4-eager	4	0
+pico-i8-t4-latency-eager	5	3
+adaptive3-t4-eager	5	0
+full-t4-eager	5	0
+full-t4-eager	-3
+adaptive3-t4-eager	-3

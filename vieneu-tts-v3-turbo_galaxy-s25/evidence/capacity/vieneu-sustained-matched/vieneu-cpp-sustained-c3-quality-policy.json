@@ -1,0 +1,105 @@
+{
+  "schema": "inferencekit.evidence.v2",
+  "evidence_id": "ev_f40186b247590af90e7e5e7daf5c9d66411d6672b340512a5a1c3ed4b19d7141",
+  "kind": "quality_audio",
+  "claim_class": "derived",
+  "summary": "Speech quality policy registered; measurements NOT RUN",
+  "identity": {
+    "gpu": {
+      "name": null,
+      "count": null,
+      "driver": null,
+      "cuda": null,
+      "clocks": null
+    },
+    "engine": {
+      "name": null,
+      "version": null,
+      "commit": null,
+      "flags": {}
+    },
+    "model": {
+      "id": null,
+      "revision": null,
+      "dtype": null,
+      "quant": null
+    },
+    "workload": {
+      "prompt_len": null,
+      "gen_len": null,
+      "batch": null,
+      "seed": null
+    }
+  },
+  "provenance": {
+    "tool": "inferencekit",
+    "tool_version": "0.1.1",
+    "argv_digest": "sha256:082e4a775f6ed884dfab2d725a8131629060446905270e5213bdeb2e758dc14d",
+    "started": "2026-11-18T12:55:28.488Z",
+    "ended": "2026-11-18T12:55:28.488Z"
+  },
+  "metrics": [],
+  "artifacts": [
+    {
+      "path": "quality/audio/policies/544bc718eeb518e9c0815d6836d2a4403969e50c755799b35255fc4909ff551e.json",
+      "sha256": "15619c50d2167fd1a02c8833c237f1baab9c0b58b1cfc472eaa8dbce0ccfb117",
+      "bytes": 1224,
+      "role": "audio_quality_policy"
+    }
+  ],
+  "coverage": {
+    "complete": true,
+    "missing": []
+  },
+  "limitations": [],
+  "data": {
+    "format": "inferencekit.quality.audio.policy.v1",
+    "source": "quality audio-policy",
+    "policy": {
+      "min_fixtures": 2,
+      "min_rounds": 1,
+      "resamples": 2000,
+      "seed": 0,
+      "allow_numerics_change": false,
+      "metrics": {},
+      "scorers": {},
+      "normalization": "nfkc_casefold_punctuation_v1",
+      "acceptance": "exact"
+    },
+    "policy_sha256": "77d31126cb48c97a6c627dd8ae323135d42b7862ab7572b25852db701a755a1b",
+    "fixture_sha256": "140a2b8b1e7f7e140d353dd6a00feeddf62c555a02a01e78e405e327bd769a31",
+    "fixtures": [
+      {
+        "id": "vieneu-000",
+        "text_sha256": "1efbfc1ef734d8d5de29d4103960bb8f38a25406571e75ece908b32a61f5dc98",
+        "reference_sha256": null,
+        "reference_text_sha256": null,
+        "declared_unseen": false
+      },
+      {
+        "id": "vieneu-001",
+        "text_sha256": "3d6f68c544c8adb153a17ba3a7a3546a606630a117108402a3f6c331fc1105bd",
+        "reference_sha256": null,
+        "reference_text_sha256": null,
+        "declared_unseen": false
+      },
+      {
+        "id": "vieneu-002",
+        "text_sha256": "7cf856b011860b62b899c87b09667d705bcbb0f7e33f8de68d51bd61c8c9bacb",
+        "reference_sha256": null,
+        "reference_text_sha256": null,
+        "declared_unseen": false
+      }
+    ],
+    "verdict": "NOT RUN",
+    "request": {
+      "op": "quality_audio_policy",
+      "cli": "inferencekit quality audio-policy",
+      "args": {
+        "policy": "source/quality/wave-zero-exact.json",
+        "fixtures": "source/quality/vieneu-wave-zero-n3.jsonl",
+        "run_dir": null
+      }
+    }
+  }
+}

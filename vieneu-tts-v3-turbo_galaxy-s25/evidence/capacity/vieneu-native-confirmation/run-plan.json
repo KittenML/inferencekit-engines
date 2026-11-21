@@ -1,0 +1,82 @@
+{
+  "phase": "vieneu-native-confirmation",
+  "rounds": 4,
+  "levels": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "arms": [
+    [
+      "vieneu-direct-t1",
+      "vieneu-cpp",
+      "stream",
+      1,
+      0,
+      {
+        "INFERENCEKIT_PLAN": "vieneu-native-confirmation-vieneu-n7.json"
+      }
+    ],
+    [
+      "vieneu-direct-t2",
+      "vieneu-cpp",
+      "stream",
+      2,
+      0,
+      {
+        "INFERENCEKIT_PLAN": "vieneu-native-confirmation-vieneu-n6.json"
+      }
+    ],
+    [
+      "vieneu-direct-t4",
+      "vieneu-cpp",
+      "stream",
+      4,
+      0,
+      {
+        "INFERENCEKIT_PLAN": "vieneu-native-confirmation-vieneu-n3.json"
+      }
+    ]
+  ],
+  "round_orders": [
+    [
+      "vieneu-direct-t2",
+      "vieneu-direct-t1",
+      "vieneu-direct-t4"
+    ],
+    [
+      "vieneu-direct-t4",
+      "vieneu-direct-t1",
+      "vieneu-direct-t2"
+    ],
+    [
+      "vieneu-direct-t4",
+      "vieneu-direct-t2",
+      "vieneu-direct-t1"
+    ],
+    [
+      "vieneu-direct-t1",
+      "vieneu-direct-t2",
+      "vieneu-direct-t4"
+    ]
+  ],
+  "parity_smokes": [
+    [
+      "vieneu-direct-t2",
+      "vieneu-direct-t1"
+    ],
+    [
+      "vieneu-direct-t2",
+      "vieneu-direct-t4"
+    ]
+  ],
+  "thermal_start": {
+    "max_status": 2,
+    "interval_s": 5,
+    "timeout_s": 20
+  }
+}

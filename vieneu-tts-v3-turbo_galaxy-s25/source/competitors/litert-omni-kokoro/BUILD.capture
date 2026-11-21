@@ -1,0 +1,15 @@
+
+cc_binary(
+    name = "inferencekit_kokoro_capture",
+    srcs = ["inferencekit_kokoro_capture.cc", "kokoro_pcm_process.h"],
+    deps = [
+        ":omni_engine",
+        ":omni_registry",
+        ":omni_session",
+        "//omni/base:io_types",
+        "//omni/text2speech:kokoro",
+        "//runtime/executor:default_static_gpu_accelerator",
+        "//runtime/proto:text2speech_session_config_cc_proto",
+        "@com_google_absl//absl/status",
+    ],
+)

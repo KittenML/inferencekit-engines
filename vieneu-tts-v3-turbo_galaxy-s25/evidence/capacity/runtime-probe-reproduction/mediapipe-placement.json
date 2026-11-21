@@ -1,0 +1,20 @@
+{
+  "kokoro-mediapipe-gpu-smoke-delegate": [
+    "MediaPipe Tasks Audio 1.2.2 delegate=GPU bundle=GPU",
+    "process_stats_stage=before-init activity=none",
+    "VmHWM:\t  129440 kB",
+    "Threads:\t14",
+    "Cpus_allowed_list:\t0-5",
+    "scheduler=stock engines=1 concurrency=1",
+    "Created OpenCL device from provided device id and platform id.",
+    "Initializing OpenCL-based API from serialized data.",
+    "process_stats_stage=warmed activity=none",
+    "VmHWM:\t  439964 kB",
+    "Threads:\t25",
+    "Cpus_allowed_list:\t0-5",
+    "process_stats_stage=after-workers-close activity=none",
+    "VmHWM:\t  439964 kB",
+    "Threads:\t15",
+    "Cpus_allowed_list:\t0-5"
+  ]
+}

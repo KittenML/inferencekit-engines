@@ -1,0 +1,17 @@
+/build/
+/build-audio-android*/
+/dependencies/
+/private/
+/py/
+/results/
+/speech-capture/
+/speech-capture.tar.gz
+/toolchain/
+/upstream-*/
+
+/latency/build/
+/latency/results/
+/latency/vendor/
+/latency/toolchain/
+__pycache__/
+*.pyc

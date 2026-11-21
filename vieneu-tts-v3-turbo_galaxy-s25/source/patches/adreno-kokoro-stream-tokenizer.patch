@@ -1,0 +1,28 @@
+diff --git a/src/models/kokoro-82m/src/main.cpp b/src/models/kokoro-82m/src/main.cpp
+--- a/src/models/kokoro-82m/src/main.cpp
++++ b/src/models/kokoro-82m/src/main.cpp
+@@ -170,14 +170,16 @@ int main(int argc, char** argv) {
+         return 1;
+     }
+ 
+-    // Tokenizer first — its eos id feeds into sampler config below.
++    // On-device streaming uses the phonemizer and then supplies phoneme IDs.
+     Tokenizer tok;
+-    const bool tokenizer_ok = tok.load("weights/tokenizer_vocab.bin");
+-    if (!tokenizer_ok && token_ids_path.empty()) {
+-        NNOPT_ERROR("tokenizer load failed (use --token-ids to bypass for deterministic eval)");
+-        return 1;
+-    }
+-    if (tokenizer_ok) {
+-        sampler_config.eos_token_id = tok.eos_token_id();
++    if (!stream_mode && !serve_stream_mode && !serve_mode) {
++        const bool tokenizer_ok = tok.load("weights/tokenizer_vocab.bin");
++        if (!tokenizer_ok && token_ids_path.empty()) {
++            NNOPT_ERROR("tokenizer load failed (use --token-ids to bypass for deterministic eval)");
++            return 1;
++        }
++        if (tokenizer_ok) {
++            sampler_config.eos_token_id = tok.eos_token_id();
++        }
+     }
+ 

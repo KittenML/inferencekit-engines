@@ -1,0 +1,10 @@
+[
+  {
+    "script": "serve.sh",
+    "exit_code": 0
+  },
+  {
+    "script": "test.sh",
+    "exit_code": 0
+  }
+]

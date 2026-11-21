@@ -1,0 +1,37 @@
+{
+  "levels": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "rounds": 1,
+  "waves": 5,
+  "period_ms": 3000,
+  "sample_rate": 24000,
+  "mode": "full",
+  "chunks_per_request": 1,
+  "fixture_ids": [
+    "kokoro-000",
+    "kokoro-001",
+    "kokoro-002",
+    "kokoro-003",
+    "kokoro-004",
+    "kokoro-005",
+    "kokoro-006",
+    "kokoro-007",
+    "kokoro-008",
+    "kokoro-009",
+    "kokoro-010",
+    "kokoro-011",
+    "kokoro-012",
+    "kokoro-013",
+    "kokoro-014",
+    "kokoro-015",
+    "kokoro-016",
+    "kokoro-017",
+    "kokoro-018",
+    "kokoro-019"
+  ],
+  "fixture_sha256": "547e29553513be6a04b1a37b883b4169b8296a2688a63346e5dd8f4e4bf57999"
+}

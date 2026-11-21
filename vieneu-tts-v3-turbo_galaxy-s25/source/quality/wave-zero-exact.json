@@ -1,0 +1,7 @@
+{
+  "acceptance": "exact",
+  "min_fixtures": 2,
+  "min_rounds": 1,
+  "resamples": 2000,
+  "seed": 0
+}

@@ -1,0 +1,21 @@
+{
+  "name": "fresh-speech-whole-matched-controls",
+  "status": "COMPLETED",
+  "result": "PASSED",
+  "deviceMinutes": {
+    "total": 23.27,
+    "metered": 22.85,
+    "unmetered": 0.0
+  },
+  "counters": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "warned": 0,
+    "errored": 0,
+    "stopped": 0,
+    "skipped": 0
+  },
+  "started": "2026-11-18 23:16:39.891000+04:00",
+  "stopped": "2026-11-18 23:41:22.865000+04:00"
+}

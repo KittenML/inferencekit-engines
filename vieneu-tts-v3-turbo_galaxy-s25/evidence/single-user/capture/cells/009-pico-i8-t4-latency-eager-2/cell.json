@@ -1,0 +1,43 @@
+{
+  "codec_adaptive_groups": false,
+  "codec_first_frames": 0,
+  "codec_follow_frames": 0,
+  "engine": "pico",
+  "label": "pico-i8-t4-latency-eager",
+  "load_ms": 213.588281,
+  "loaded_memory": {
+    "pss_kib": 72875,
+    "rss_kib": 100344,
+    "vmhwm_kib": 102076
+  },
+  "pico_chunk_chars": 64,
+  "pico_int8": true,
+  "pico_retain_buffers": true,
+  "pid": 1788,
+  "pre_requests_memory": {
+    "current": {
+      "pss_kib": 91835,
+      "rss_kib": 119380,
+      "vmhwm_kib": 118744
+    },
+    "initial": {
+      "pss_kib": 20559,
+      "rss_kib": 47996,
+      "vmhwm_kib": 47692
+    },
+    "interval_ms": 100,
+    "peak": {
+      "pss_kib": 91835,
+      "rss_kib": 119380,
+      "vmhwm_kib": 118744
+    },
+    "samples": 4,
+    "smaps_samples": 4,
+    "vmhwm_scope": "process_lifetime"
+  },
+  "round": 2,
+  "sample_rate": 24000,
+  "start_output_on_admission": true,
+  "threads": 4,
+  "warmup_ms": 84.955625
+}

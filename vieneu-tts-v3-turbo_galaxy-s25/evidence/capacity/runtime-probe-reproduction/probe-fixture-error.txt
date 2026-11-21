@@ -1,0 +1,6 @@
+The standalone reproduction replaced benchmark fixture files with short smoke fixtures in this job.
+kokoro-opencl-probe-r0-n1: INSTRUMENTATION_RESULT: error=java.lang.IllegalArgumentException: invalid capture dimensions
+vieneu-native-probe-r0-n1: invalid plan dimensions
+vieneu-snapdragon-cpu-probe-r0-n1: invalid plan dimensions
+vieneu-snapdragon-htp-probe-r0-n1: invalid plan dimensions
+vieneu-snapdragon-opencl-probe-r0-n1: invalid plan dimensions

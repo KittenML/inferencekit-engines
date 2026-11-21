@@ -1,0 +1,104 @@
+{
+  "scope": "Single on-device smoke for each placement. Capacity and quality were not established.",
+  "vieneu_snapdragon": {
+    "cpu": {
+      "timing": {
+        "id": "sample",
+        "round": 0,
+        "concurrency": 1,
+        "wave": 0,
+        "stream": 0,
+        "complete_ms": 2160.67,
+        "chunks": [
+          [
+            914.026,
+            76800,
+            2908
+          ],
+          [
+            2160.52,
+            107520,
+            2409
+          ]
+        ]
+      },
+      "runtime_messages": [],
+      "files": {
+        "sample-r0-n1-s0-c0.s16le": "6aee4ab8c0a0c549aea013e2ca86a4efc929156deaf9353e8100a61a655ac972",
+        "sample-r0-n1-s0-c1.s16le": "66b5b8b2f04ef9ee700857703b2ac3d32d592f8f795fea426e07c7b9b7aafd67"
+      }
+    },
+    "htp": {
+      "timing": {
+        "id": "sample",
+        "round": 0,
+        "concurrency": 1,
+        "wave": 0,
+        "stream": 0,
+        "complete_ms": 809.129,
+        "chunks": [
+          [
+            344.255,
+            69120,
+            3232
+          ],
+          [
+            809,
+            92160,
+            2279
+          ]
+        ]
+      },
+      "runtime_messages": [
+        "VieNeu backbone device: HTP0",
+        "llama_prepare_model_devices: using device HTP0 (Hexagon) (unknown id) - 0 MiB free",
+        "load_tensors: offloaded 13/13 layers to GPU",
+        "load_tensors:         HTP0 model buffer size =   105.62 MiB"
+      ],
+      "files": {
+        "sample-r0-n1-s0-c0.s16le": "96313a0092c7ce575826335e19818ce23c9b21940022c17c064f5eb4a98d41c5",
+        "sample-r0-n1-s0-c1.s16le": "bc9b46cca9b5f69c4b03247495ea4c19d131ff729d7b47bebf4cfd6a0db49b57"
+      }
+    },
+    "opencl": {
+      "timing": {
+        "id": "sample",
+        "round": 0,
+        "concurrency": 1,
+        "wave": 0,
+        "stream": 0,
+        "complete_ms": 1087.12,
+        "chunks": [
+          [
+            487.291,
+            80640,
+            3011
+          ],
+          [
+            1086.98,
+            96000,
+            2215
+          ]
+        ]
+      },
+      "runtime_messages": [
+        "VieNeu backbone device: GPUOpenCL",
+        "llama_prepare_model_devices: using device GPUOpenCL (QUALCOMM Adreno(TM) 830) (unknown id) - 4533 MiB free",
+        "load_tensors: offloaded 13/13 layers to GPU",
+        "load_tensors:       OpenCL model buffer size =   105.63 MiB"
+      ],
+      "files": {
+        "sample-r0-n1-s0-c0.s16le": "c858066220fcd0da53572ba30f0c098eb9e70fc0a39f555c19a9a1cff293d090",
+        "sample-r0-n1-s0-c1.s16le": "9063cc8c3f2db593f4472d99fd104404db5af1359aacbbaf4dcb833bf87144d2"
+      }
+    }
+  },
+  "kokoro_adreno_fp16": {
+    "complete_audio": false,
+    "announced_pcm": {
+      "frames": 42600,
+      "sample_rate": 24000
+    },
+    "error": "The child emitted an escaped newline before the PCM framing record. The parent timed out before draining the audio pipe."
+  }
+}

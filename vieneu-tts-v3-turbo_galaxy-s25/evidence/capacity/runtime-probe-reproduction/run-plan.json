@@ -1,0 +1,54 @@
+{
+  "phase": "runtime-probe-reproduction",
+  "rounds": 1,
+  "levels": [
+    1,
+    2
+  ],
+  "arms": [
+    [
+      "kokoro-opencl-probe",
+      "kokoro-mediapipe-gpu",
+      "stream",
+      0,
+      0
+    ],
+    [
+      "kokoro-adreno-fp16-probe",
+      "kokoro-adreno-fp16",
+      "stream",
+      1,
+      0
+    ],
+    [
+      "vieneu-native-probe",
+      "vieneu-cpp",
+      "stream",
+      1,
+      0
+    ],
+    [
+      "vieneu-snapdragon-cpu-probe",
+      "vieneu-cpp-snap-cpu",
+      "stream",
+      1,
+      0
+    ],
+    [
+      "vieneu-snapdragon-htp-probe",
+      "vieneu-cpp-snap-htp",
+      "stream",
+      1,
+      0
+    ],
+    [
+      "vieneu-snapdragon-opencl-probe",
+      "vieneu-cpp-snap-opencl",
+      "stream",
+      1,
+      0
+    ]
+  ],
+  "local_reproduction": true,
+  "accelerator_inventory": true
+}

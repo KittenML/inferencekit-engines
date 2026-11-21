@@ -1,0 +1,250 @@
+diff --git a/src/vieneu/v3_native/v3_native_moss_codec.cpp b/src/vieneu/v3_native/v3_native_moss_codec.cpp
+index 73594c3..35b688a 100644
+--- a/src/vieneu/v3_native/v3_native_moss_codec.cpp
++++ b/src/vieneu/v3_native/v3_native_moss_codec.cpp
+@@ -213,11 +213,13 @@ bool V3NativeMossCodec::initialize(const V3CodecParams& params, std::string& err
+ #ifdef _WIN32
+         std::wstring w_decode_path(decode_path.begin(), decode_path.end());
+         decode_session_ = std::make_unique<Ort::Session>(*env_, w_decode_path.c_str(), *session_options_);
+-        std::wstring w_encode_path(encode_path.begin(), encode_path.end());
+-        encode_session_ = std::make_unique<Ort::Session>(*env_, w_encode_path.c_str(), *session_options_);
++        if (params.enable_encode) {
++            std::wstring w_encode_path(encode_path.begin(), encode_path.end());
++            encode_session_ = std::make_unique<Ort::Session>(*env_, w_encode_path.c_str(), *session_options_);
++        }
+ #else
+         decode_session_ = std::make_unique<Ort::Session>(*env_, decode_path.c_str(), *session_options_);
+-        encode_session_ = std::make_unique<Ort::Session>(*env_, encode_path.c_str(), *session_options_);
++        if (params.enable_encode) encode_session_ = std::make_unique<Ort::Session>(*env_, encode_path.c_str(), *session_options_);
+ #endif
+ 
+         decode_in_names_ = get_session_input_names(*decode_session_);
+@@ -225,10 +227,12 @@ bool V3NativeMossCodec::initialize(const V3CodecParams& params, std::string& err
+         decode_in_ptrs_ = convert_to_ptrs(decode_in_names_);
+         decode_out_ptrs_ = convert_to_ptrs(decode_out_names_);
+ 
+-        encode_in_names_ = get_session_input_names(*encode_session_);
+-        encode_out_names_ = get_session_output_names(*encode_session_);
+-        encode_in_ptrs_ = convert_to_ptrs(encode_in_names_);
+-        encode_out_ptrs_ = convert_to_ptrs(encode_out_names_);
++        if (encode_session_) {
++            encode_in_names_ = get_session_input_names(*encode_session_);
++            encode_out_names_ = get_session_output_names(*encode_session_);
++            encode_in_ptrs_ = convert_to_ptrs(encode_in_names_);
++            encode_out_ptrs_ = convert_to_ptrs(encode_out_names_);
++        }
+ 
+         return true;
+     } catch (const std::exception& e) {
+diff --git a/src/vieneu/v3_native/v3_native_moss_codec.h b/src/vieneu/v3_native/v3_native_moss_codec.h
+index c29d2f2..40990d6 100644
+--- a/src/vieneu/v3_native/v3_native_moss_codec.h
++++ b/src/vieneu/v3_native/v3_native_moss_codec.h
+@@ -10,6 +10,7 @@ struct V3CodecParams {
+     std::string codec_dir;
+     int n_threads = 4;
+     int n_vq = 16;
++    bool enable_encode = true;
+ };
+ 
+ class V3NativeMossCodec {
+diff --git a/src/vieneu/v3_native/v3_native_sampler.h b/src/vieneu/v3_native/v3_native_sampler.h
+index c591bd8..38688e6 100644
+--- a/src/vieneu/v3_native/v3_native_sampler.h
++++ b/src/vieneu/v3_native/v3_native_sampler.h
+@@ -9,6 +9,7 @@
+ class V3NativeSampler {
+ public:
+     V3NativeSampler(uint32_t seed = 42);
++    void seed(uint32_t value) { rng_.seed(value); }
+ 
+     int64_t sample_logits(
+         std::vector<float>& logits,
+diff --git a/src/vieneu/v3_native/vieneu_v3_native.cpp b/src/vieneu/v3_native/vieneu_v3_native.cpp
+index 537a92b..4644bca 100644
+--- a/src/vieneu/v3_native/vieneu_v3_native.cpp
++++ b/src/vieneu/v3_native/vieneu_v3_native.cpp
+@@ -1,4 +1,5 @@
+ #include "vieneu_v3_native.h"
++#include "bench_moss_step.h"
+ #include "vieneu/vieneu.h"
+ 
+ #include <algorithm>
+@@ -76,9 +77,20 @@ bool VieneuV3NativeEngine::initialize(const VieneuV3NativeInit& init, std::strin
+         codec_params.codec_dir = init.codec_dir;
+         codec_params.n_threads = init.n_threads;
+         codec_params.n_vq = config_.n_vq;
+-        if (!codec_.initialize(codec_params, error)) return false;
++        codec_params.enable_encode = !init.preset_only;
++        codec_step_.reset();
++        if (init.codec_step) {
++            codec_.free_resources();
++            if (!init.preset_only) {
++                error = "The study decoder requires a preset voice.";
++                return false;
++            }
++            codec_step_ = std::make_unique<MossStep>(init.codec_dir, init.n_threads);
++        } else if (!codec_.initialize(codec_params, error)) {
++            return false;
++        }
+ 
+-        if (config_.use_speaker_embedding) {
++        if (config_.use_speaker_embedding && !init.preset_only) {
+             const std::string spk_path = join_paths(init.model_dir, config_.speaker_encoder_filename.empty() ? "speaker_encoder.onnx" : config_.speaker_encoder_filename);
+             if (!v3_native_file_exists(spk_path)) {
+                 error = "Missing v3 native speaker encoder: " + spk_path;
+@@ -88,7 +100,7 @@ bool VieneuV3NativeEngine::initialize(const VieneuV3NativeInit& init, std::strin
+         }
+ 
+         const std::string den_path = join_paths(init.model_dir, "denoiser.onnx");
+-        if (v3_native_file_exists(den_path)) {
++        if (!init.preset_only && v3_native_file_exists(den_path)) {
+             std::string den_error;
+             has_denoiser_ = denoiser_.initialize(den_path, init.n_threads, den_error);
+             if (!has_denoiser_) {
+@@ -240,9 +252,11 @@ bool VieneuV3NativeEngine::synthesize(const VieneuV3NativeParams& params, std::v
+     out_audio.clear();
+     const int silence_samples = static_cast<int>(std::lround(static_cast<double>(sample_rate()) * 0.15));
+     const bool debug_tags = env_flag_enabled_local("VIENEU_V3_NATIVE_DEBUG_TAGS");
++    if (params.reset_sampling) sampler_.seed(params.request_seed);
+     for (size_t i = 0; i < chunks.size(); ++i) {
+         vieneu_report_progress(params.progress, "chunk", static_cast<int>(i), static_cast<int>(chunks.size()), static_cast<float>(i) / static_cast<float>(chunks.size()), "Starting v3 native text chunk.");
+-        const std::string phonemes = phonemize_for_v3(chunks[i]);
++        const std::string phonemes = phonemize_for_v3(
++            params.force_english ? "<en>" + chunks[i] + "</en>" : chunks[i]);
+         if (debug_tags || contains_v3_emotion_token(phonemes)) {
+             const std::vector<int64_t> phone_ids = tokenizer_.encode(phonemes);
+             std::cerr << "[V3NativeTags] chunk " << (i + 1) << "/" << chunks.size() << " text=\"" << chunks[i] << "\"\n";
+@@ -255,6 +269,10 @@ bool VieneuV3NativeEngine::synthesize(const VieneuV3NativeParams& params, std::v
+         VieneuV3NativeParams chunk_params = params;
+         chunk_params.progress_base = static_cast<float>(i) / static_cast<float>(chunks.size());
+         chunk_params.progress_span = 1.0f / static_cast<float>(chunks.size());
++        if (i > 0 && params.pcm) {
++            std::vector<float> silence(static_cast<size_t>(silence_samples), 0.0f);
++            params.pcm(silence.data(), silence.size());
++        }
+         if (!synthesize_phonemes(
+                 phonemes,
+                 ref_codes.empty() ? nullptr : &ref_codes,
+@@ -320,6 +338,34 @@ bool VieneuV3NativeEngine::synthesize_phonemes(
+         std::vector<float> synth_se;
+         synth_se.reserve(static_cast<size_t>(config_.hidden_size));
+         const int H = config_.hidden_size;
++        auto decoder_state = codec_step_ ? codec_step_->new_state() : std::vector<Ort::Value>{};
++        size_t decoded_codes = 0;
++        const bool streamed = static_cast<bool>(codec_step_);
++        if (streamed && (params.codec_first_frames < 1 || params.codec_follow_frames < 1)) {
++            error = "Codec streaming frame counts must be positive.";
++            return false;
++        }
++        auto first_delivery = std::chrono::steady_clock::time_point{};
++        auto flush_audio = [&] {
++            const size_t count = (frames.size() - decoded_codes) / config_.n_vq;
++            if (!count) return;
++            const auto pcm = codec_step_->decode(frames.data() + decoded_codes, static_cast<int32_t>(count), decoder_state);
++            if (params.pcm) params.pcm(pcm.data(), pcm.size());
++            else out_audio.insert(out_audio.end(), pcm.begin(), pcm.end());
++            if (decoded_codes == 0) first_delivery = std::chrono::steady_clock::now();
++            decoded_codes = frames.size();
++        };
++        auto target_frames = [&] {
++            if (decoded_codes == 0) return params.codec_first_frames;
++            if (!params.codec_adaptive_groups) return params.codec_follow_frames;
++            const double emitted_seconds = static_cast<double>(decoded_codes / config_.n_vq) * 0.08;
++            const double elapsed = std::chrono::duration<double>(std::chrono::steady_clock::now() - first_delivery).count();
++            const double lead = emitted_seconds - elapsed;
++            if (lead < 0.20) return std::min(params.codec_follow_frames, 4);
++            if (lead < 0.55) return std::min(params.codec_follow_frames, 6);
++            if (lead < 1.10) return std::min(params.codec_follow_frames, 8);
++            return params.codec_follow_frames;
++        };
+ 
+         double acoustic_ms = 0.0;
+         double backbone_decode_ms = 0.0;
+@@ -338,6 +384,9 @@ bool VieneuV3NativeEngine::synthesize_phonemes(
+             }
+             for (int64_t code : codes) frames.push_back(static_cast<int32_t>(code));
+             vieneu_report_progress(params.progress, "generate_frames", t + 1, max_frames, scaled_progress(0.18f + (static_cast<float>(t + 1) / static_cast<float>(max_frames)) * 0.68f), "Generating v3 native acoustic frames.");
++            if (streamed) {
++                if ((frames.size() - decoded_codes) / config_.n_vq >= static_cast<size_t>(target_frames())) flush_audio();
++            }
+             if (eos) {
+                 saw_eos = true;
+                 break;
+@@ -362,12 +411,22 @@ bool VieneuV3NativeEngine::synthesize_phonemes(
+             return false;
+         }
+         if (!saw_eos) {
++            if (params.require_eos) {
++                error = "Generation reached its frame cap before EOS.";
++                return false;
++            }
+             std::cerr << "[V3NativeEngine] Warning: acoustic generation reached max_new_frames=" << max_frames << " before EOS.\n";
+         }
+ 
+         vieneu_report_progress(params.progress, "decode_audio", 0, 1, scaled_progress(0.90f), "Decoding v3 native frames to audio.");
+         auto t_codec_start = benchmark_enabled ? std::chrono::high_resolution_clock::now() : std::chrono::high_resolution_clock::time_point{};
+-        bool ok = codec_.decode(frames, static_cast<int64_t>(frames.size() / config_.n_vq), out_audio, error);
++        bool ok = true;
++        if (streamed) {
++            flush_audio();
++        } else {
++            ok = codec_.decode(frames, static_cast<int64_t>(frames.size() / config_.n_vq), out_audio, error);
++            if (ok && params.pcm) params.pcm(out_audio.data(), out_audio.size());
++        }
+         if (ok) vieneu_report_progress(params.progress, "decode_audio", 1, 1, scaled_progress(0.96f), "V3 native audio decode complete.");
+         if (benchmark_enabled) {
+             auto t_codec_end = std::chrono::high_resolution_clock::now();
+diff --git a/src/vieneu/v3_native/vieneu_v3_native.h b/src/vieneu/v3_native/vieneu_v3_native.h
+index 750c085..91e951b 100644
+--- a/src/vieneu/v3_native/vieneu_v3_native.h
++++ b/src/vieneu/v3_native/vieneu_v3_native.h
+@@ -1,6 +1,7 @@
+ #ifndef VIENEU_V3_NATIVE_H
+ #define VIENEU_V3_NATIVE_H
+ 
++#include <functional>
+ #include <memory>
+ #include <string>
+ #include <unordered_map>
+@@ -18,6 +19,8 @@
+ #include "../v3_common/v3_repetition_history.h"
+ #include "../vieneu_progress.h"
+ 
++class MossStep;
++
+ struct VieneuV3NativeInit {
+     std::string model_dir;
+     std::string onnx_dir;
+@@ -26,6 +29,8 @@ struct VieneuV3NativeInit {
+     std::string tokenizer_path;
+     std::string voices_json_path;
+     int n_threads = 4;
++    bool preset_only = false;
++    bool codec_step = false;
+ };
+ 
+ struct VieneuV3NativeParams {
+@@ -43,6 +48,14 @@ struct VieneuV3NativeParams {
+     bool use_ref_codes = true;
+     bool apply_watermark = true;
+     VieneuProgressFn progress;
++    std::function<void(const float*, size_t)> pcm;
++    int codec_first_frames = 0;
++    int codec_follow_frames = 0;
++    bool codec_adaptive_groups = false;
++    uint32_t request_seed = 0;
++    bool reset_sampling = false;
++    bool force_english = false;
++    bool require_eos = false;
+     float progress_base = 0.0f;
+     float progress_span = 1.0f;
+ };
+@@ -92,6 +105,7 @@ private:
+     V3NativeBackbone backbone_;
+     std::unique_ptr<V3NativeAcoustic> acoustic_;
+     V3NativeMossCodec codec_;
++    std::unique_ptr<MossStep> codec_step_;
+     V3NativeSpeakerEncoder speaker_encoder_;
+     V3NativeDenoiser denoiser_;
+     bool has_denoiser_ = false;

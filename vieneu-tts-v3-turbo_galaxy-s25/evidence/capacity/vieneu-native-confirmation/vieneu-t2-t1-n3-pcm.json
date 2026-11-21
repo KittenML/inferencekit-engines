@@ -1,0 +1,258 @@
+{
+  "objective": "exact PCM within the retained request waves",
+  "retained_waves": 1,
+  "reference": "vieneu-direct-t2",
+  "candidate": "vieneu-direct-t1",
+  "reference_round": null,
+  "candidate_round": null,
+  "paired_chunks": 24,
+  "byte_identical_chunks": 24,
+  "structure": "PASS",
+  "byte_equivalence": "PASS",
+  "quality": "PASS",
+  "mismatched": [],
+  "reference_pcm": {
+    "vieneu-000-r0-n3-s0-c0": {
+      "sha256": "f85fa2a060201a0a61348dfd340ad84fe4b0b4b49297bb47de0d7692a3a423c6",
+      "frames": 72960,
+      "channels": 1
+    },
+    "vieneu-000-r0-n3-s0-c1": {
+      "sha256": "967c3a4db8e8720e2b50fc471d2e2f61829493722f0a6bb76135213f5afb4f22",
+      "frames": 88320,
+      "channels": 1
+    },
+    "vieneu-001-r0-n3-s1-c0": {
+      "sha256": "a0fd4410ac03685d992ee22a02853821251a0c098787028d8867870ca850c598",
+      "frames": 80640,
+      "channels": 1
+    },
+    "vieneu-001-r0-n3-s1-c1": {
+      "sha256": "e63af293fe3dbe4ba23671ccdf7cb322daf9f47ec6be5abb737dd41cbb50db00",
+      "frames": 103680,
+      "channels": 1
+    },
+    "vieneu-002-r0-n3-s2-c0": {
+      "sha256": "5782fec54e9854eb0ca4afc6c1a1f5c39ed9ff0dda9a4a277ab2bcc89bb02eae",
+      "frames": 61440,
+      "channels": 1
+    },
+    "vieneu-002-r0-n3-s2-c1": {
+      "sha256": "eb3f8b75d4766f3e71d565da2bdc0c9f7c20b4487c14beeb0d8b6405652bb9a5",
+      "frames": 92160,
+      "channels": 1
+    },
+    "vieneu-000-r1-n3-s0-c0": {
+      "sha256": "f85fa2a060201a0a61348dfd340ad84fe4b0b4b49297bb47de0d7692a3a423c6",
+      "frames": 72960,
+      "channels": 1
+    },
+    "vieneu-000-r1-n3-s0-c1": {
+      "sha256": "967c3a4db8e8720e2b50fc471d2e2f61829493722f0a6bb76135213f5afb4f22",
+      "frames": 88320,
+      "channels": 1
+    },
+    "vieneu-001-r1-n3-s1-c0": {
+      "sha256": "a0fd4410ac03685d992ee22a02853821251a0c098787028d8867870ca850c598",
+      "frames": 80640,
+      "channels": 1
+    },
+    "vieneu-001-r1-n3-s1-c1": {
+      "sha256": "e63af293fe3dbe4ba23671ccdf7cb322daf9f47ec6be5abb737dd41cbb50db00",
+      "frames": 103680,
+      "channels": 1
+    },
+    "vieneu-002-r1-n3-s2-c0": {
+      "sha256": "5782fec54e9854eb0ca4afc6c1a1f5c39ed9ff0dda9a4a277ab2bcc89bb02eae",
+      "frames": 61440,
+      "channels": 1
+    },
+    "vieneu-002-r1-n3-s2-c1": {
+      "sha256": "eb3f8b75d4766f3e71d565da2bdc0c9f7c20b4487c14beeb0d8b6405652bb9a5",
+      "frames": 92160,
+      "channels": 1
+    },
+    "vieneu-000-r2-n3-s0-c0": {
+      "sha256": "f85fa2a060201a0a61348dfd340ad84fe4b0b4b49297bb47de0d7692a3a423c6",
+      "frames": 72960,
+      "channels": 1
+    },
+    "vieneu-000-r2-n3-s0-c1": {
+      "sha256": "967c3a4db8e8720e2b50fc471d2e2f61829493722f0a6bb76135213f5afb4f22",
+      "frames": 88320,
+      "channels": 1
+    },
+    "vieneu-001-r2-n3-s1-c0": {
+      "sha256": "a0fd4410ac03685d992ee22a02853821251a0c098787028d8867870ca850c598",
+      "frames": 80640,
+      "channels": 1
+    },
+    "vieneu-001-r2-n3-s1-c1": {
+      "sha256": "e63af293fe3dbe4ba23671ccdf7cb322daf9f47ec6be5abb737dd41cbb50db00",
+      "frames": 103680,
+      "channels": 1
+    },
+    "vieneu-002-r2-n3-s2-c0": {
+      "sha256": "5782fec54e9854eb0ca4afc6c1a1f5c39ed9ff0dda9a4a277ab2bcc89bb02eae",
+      "frames": 61440,
+      "channels": 1
+    },
+    "vieneu-002-r2-n3-s2-c1": {
+      "sha256": "eb3f8b75d4766f3e71d565da2bdc0c9f7c20b4487c14beeb0d8b6405652bb9a5",
+      "frames": 92160,
+      "channels": 1
+    },
+    "vieneu-000-r3-n3-s0-c0": {
+      "sha256": "f85fa2a060201a0a61348dfd340ad84fe4b0b4b49297bb47de0d7692a3a423c6",
+      "frames": 72960,
+      "channels": 1
+    },
+    "vieneu-000-r3-n3-s0-c1": {
+      "sha256": "967c3a4db8e8720e2b50fc471d2e2f61829493722f0a6bb76135213f5afb4f22",
+      "frames": 88320,
+      "channels": 1
+    },
+    "vieneu-001-r3-n3-s1-c0": {
+      "sha256": "a0fd4410ac03685d992ee22a02853821251a0c098787028d8867870ca850c598",
+      "frames": 80640,
+      "channels": 1
+    },
+    "vieneu-001-r3-n3-s1-c1": {
+      "sha256": "e63af293fe3dbe4ba23671ccdf7cb322daf9f47ec6be5abb737dd41cbb50db00",
+      "frames": 103680,
+      "channels": 1
+    },
+    "vieneu-002-r3-n3-s2-c0": {
+      "sha256": "5782fec54e9854eb0ca4afc6c1a1f5c39ed9ff0dda9a4a277ab2bcc89bb02eae",
+      "frames": 61440,
+      "channels": 1
+    },
+    "vieneu-002-r3-n3-s2-c1": {
+      "sha256": "eb3f8b75d4766f3e71d565da2bdc0c9f7c20b4487c14beeb0d8b6405652bb9a5",
+      "frames": 92160,
+      "channels": 1
+    }
+  },
+  "candidate_pcm": {
+    "vieneu-000-r0-n3-s0-c0": {
+      "sha256": "f85fa2a060201a0a61348dfd340ad84fe4b0b4b49297bb47de0d7692a3a423c6",
+      "frames": 72960,
+      "channels": 1
+    },
+    "vieneu-000-r0-n3-s0-c1": {
+      "sha256": "967c3a4db8e8720e2b50fc471d2e2f61829493722f0a6bb76135213f5afb4f22",
+      "frames": 88320,
+      "channels": 1
+    },
+    "vieneu-001-r0-n3-s1-c0": {
+      "sha256": "a0fd4410ac03685d992ee22a02853821251a0c098787028d8867870ca850c598",
+      "frames": 80640,
+      "channels": 1
+    },
+    "vieneu-001-r0-n3-s1-c1": {
+      "sha256": "e63af293fe3dbe4ba23671ccdf7cb322daf9f47ec6be5abb737dd41cbb50db00",
+      "frames": 103680,
+      "channels": 1
+    },
+    "vieneu-002-r0-n3-s2-c0": {
+      "sha256": "5782fec54e9854eb0ca4afc6c1a1f5c39ed9ff0dda9a4a277ab2bcc89bb02eae",
+      "frames": 61440,
+      "channels": 1
+    },
+    "vieneu-002-r0-n3-s2-c1": {
+      "sha256": "eb3f8b75d4766f3e71d565da2bdc0c9f7c20b4487c14beeb0d8b6405652bb9a5",
+      "frames": 92160,
+      "channels": 1
+    },
+    "vieneu-000-r1-n3-s0-c0": {
+      "sha256": "f85fa2a060201a0a61348dfd340ad84fe4b0b4b49297bb47de0d7692a3a423c6",
+      "frames": 72960,
+      "channels": 1
+    },
+    "vieneu-000-r1-n3-s0-c1": {
+      "sha256": "967c3a4db8e8720e2b50fc471d2e2f61829493722f0a6bb76135213f5afb4f22",
+      "frames": 88320,
+      "channels": 1
+    },
+    "vieneu-001-r1-n3-s1-c0": {
+      "sha256": "a0fd4410ac03685d992ee22a02853821251a0c098787028d8867870ca850c598",
+      "frames": 80640,
+      "channels": 1
+    },
+    "vieneu-001-r1-n3-s1-c1": {
+      "sha256": "e63af293fe3dbe4ba23671ccdf7cb322daf9f47ec6be5abb737dd41cbb50db00",
+      "frames": 103680,
+      "channels": 1
+    },
+    "vieneu-002-r1-n3-s2-c0": {
+      "sha256": "5782fec54e9854eb0ca4afc6c1a1f5c39ed9ff0dda9a4a277ab2bcc89bb02eae",
+      "frames": 61440,
+      "channels": 1
+    },
+    "vieneu-002-r1-n3-s2-c1": {
+      "sha256": "eb3f8b75d4766f3e71d565da2bdc0c9f7c20b4487c14beeb0d8b6405652bb9a5",
+      "frames": 92160,
+      "channels": 1
+    },
+    "vieneu-000-r2-n3-s0-c0": {
+      "sha256": "f85fa2a060201a0a61348dfd340ad84fe4b0b4b49297bb47de0d7692a3a423c6",
+      "frames": 72960,
+      "channels": 1
+    },
+    "vieneu-000-r2-n3-s0-c1": {
+      "sha256": "967c3a4db8e8720e2b50fc471d2e2f61829493722f0a6bb76135213f5afb4f22",
+      "frames": 88320,
+      "channels": 1
+    },
+    "vieneu-001-r2-n3-s1-c0": {
+      "sha256": "a0fd4410ac03685d992ee22a02853821251a0c098787028d8867870ca850c598",
+      "frames": 80640,
+      "channels": 1
+    },
+    "vieneu-001-r2-n3-s1-c1": {
+      "sha256": "e63af293fe3dbe4ba23671ccdf7cb322daf9f47ec6be5abb737dd41cbb50db00",
+      "frames": 103680,
+      "channels": 1
+    },
+    "vieneu-002-r2-n3-s2-c0": {
+      "sha256": "5782fec54e9854eb0ca4afc6c1a1f5c39ed9ff0dda9a4a277ab2bcc89bb02eae",
+      "frames": 61440,
+      "channels": 1
+    },
+    "vieneu-002-r2-n3-s2-c1": {
+      "sha256": "eb3f8b75d4766f3e71d565da2bdc0c9f7c20b4487c14beeb0d8b6405652bb9a5",
+      "frames": 92160,
+      "channels": 1
+    },
+    "vieneu-000-r3-n3-s0-c0": {
+      "sha256": "f85fa2a060201a0a61348dfd340ad84fe4b0b4b49297bb47de0d7692a3a423c6",
+      "frames": 72960,
+      "channels": 1
+    },
+    "vieneu-000-r3-n3-s0-c1": {
+      "sha256": "967c3a4db8e8720e2b50fc471d2e2f61829493722f0a6bb76135213f5afb4f22",
+      "frames": 88320,
+      "channels": 1
+    },
+    "vieneu-001-r3-n3-s1-c0": {
+      "sha256": "a0fd4410ac03685d992ee22a02853821251a0c098787028d8867870ca850c598",
+      "frames": 80640,
+      "channels": 1
+    },
+    "vieneu-001-r3-n3-s1-c1": {
+      "sha256": "e63af293fe3dbe4ba23671ccdf7cb322daf9f47ec6be5abb737dd41cbb50db00",
+      "frames": 103680,
+      "channels": 1
+    },
+    "vieneu-002-r3-n3-s2-c0": {
+      "sha256": "5782fec54e9854eb0ca4afc6c1a1f5c39ed9ff0dda9a4a277ab2bcc89bb02eae",
+      "frames": 61440,
+      "channels": 1
+    },
+    "vieneu-002-r3-n3-s2-c1": {
+      "sha256": "eb3f8b75d4766f3e71d565da2bdc0c9f7c20b4487c14beeb0d8b6405652bb9a5",
+      "frames": 92160,
+      "channels": 1
+    }
+  }
+}

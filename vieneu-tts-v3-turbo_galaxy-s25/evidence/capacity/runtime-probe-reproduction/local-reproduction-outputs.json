@@ -1,0 +1,16 @@
+[
+  {
+    "profile": "kokoro-opencl",
+    "sha256": "a556ef9cecf618d2e62783ddfa801b6ea19554cc939310dc4e415bb13e269226",
+    "frames": 105600,
+    "rate": 24000,
+    "channels": 1
+  },
+  {
+    "profile": "vieneu-cpp",
+    "sha256": "8a2527710fee7015bebd1d59a32c257724711b1fd54ac2efbf1e20717cc60581",
+    "frames": 161280,
+    "rate": 48000,
+    "channels": 1
+  }
+]

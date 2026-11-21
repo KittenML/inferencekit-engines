@@ -1,0 +1,1424 @@
+{
+  "plan": "plan",
+  "cell_timeout_seconds": 180,
+  "model": "SM-S931B",
+  "device": "pa1q",
+  "manufacturer": "samsung",
+  "soc_model": "SM8750",
+  "android_release": "15",
+  "android_build": "AP3A.240905.015.A2",
+  "build_fingerprint": "samsung/pa1qxins/pa1q:15/AP3A.240905.015.A2/S931BXXS5AYG4_OXM5AYG4:user/release-keys",
+  "sdk": 35,
+  "abis": [
+    "arm64-v8a"
+  ],
+  "start": {
+    "elapsed_realtime_ms": 71591638,
+    "thermal_status": 1,
+    "power_save_mode": false,
+    "music_volume": 15,
+    "music_volume_max": 15,
+    "music_muted": false,
+    "audio_output_types": [
+      1,
+      2,
+      18
+    ],
+    "audio_output_routes": [
+      {
+        "id": 2,
+        "type": 1
+      },
+      {
+        "id": 3,
+        "type": 2
+      },
+      {
+        "id": 16,
+        "type": 18
+      }
+    ],
+    "battery_temperature_tenths_c": 380,
+    "battery_level": 100,
+    "battery_plugged": 2
+  },
+  "planned_cells": 20,
+  "cells": [
+    {
+      "engine": "full-t4-eager",
+      "round": "0",
+      "directory": "cells/001-full-t4-eager-0",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 71592114,
+        "thermal_status": 1,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 380,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 71665720,
+        "thermal_status": 2,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 380,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "adaptive3-t4-eager",
+      "round": "0",
+      "directory": "cells/002-adaptive3-t4-eager-0",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 71665726,
+        "thermal_status": 2,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 380,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 71734789,
+        "thermal_status": 2,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 391,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "pico-i8-t4-latency-eager",
+      "round": "0",
+      "directory": "cells/003-pico-i8-t4-latency-eager-0",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 71734795,
+        "thermal_status": 2,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 391,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 71786442,
+        "thermal_status": 2,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 391,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "full-t4-eager",
+      "round": "1",
+      "directory": "cells/004-full-t4-eager-1",
+      "cooldown_seconds": 3,
+      "before": {
+        "elapsed_realtime_ms": 71789448,
+        "thermal_status": 2,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 391,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 71863538,
+        "thermal_status": 2,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 391,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "pico-i8-t4-latency-eager",
+      "round": "1",
+      "directory": "cells/005-pico-i8-t4-latency-eager-1",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 71863543,
+        "thermal_status": 2,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 391,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 71915298,
+        "thermal_status": 2,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 391,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "adaptive3-t4-eager",
+      "round": "1",
+      "directory": "cells/006-adaptive3-t4-eager-1",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 71915304,
+        "thermal_status": 2,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 391,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 71983970,
+        "thermal_status": 2,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 409,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "adaptive3-t4-eager",
+      "round": "2",
+      "directory": "cells/007-adaptive3-t4-eager-2",
+      "cooldown_seconds": 3,
+      "before": {
+        "elapsed_realtime_ms": 71986978,
+        "thermal_status": 2,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 409,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72056242,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 409,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "full-t4-eager",
+      "round": "2",
+      "directory": "cells/008-full-t4-eager-2",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 72056251,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 409,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72132622,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 409,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "pico-i8-t4-latency-eager",
+      "round": "2",
+      "directory": "cells/009-pico-i8-t4-latency-eager-2",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 72132629,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 409,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72184178,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 409,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "adaptive3-t4-eager",
+      "round": "3",
+      "directory": "cells/010-adaptive3-t4-eager-3",
+      "cooldown_seconds": 3,
+      "before": {
+        "elapsed_realtime_ms": 72187189,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 409,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72255659,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 423,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "pico-i8-t4-latency-eager",
+      "round": "3",
+      "directory": "cells/011-pico-i8-t4-latency-eager-3",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 72255666,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 423,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72307616,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 413,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "full-t4-eager",
+      "round": "3",
+      "directory": "cells/012-full-t4-eager-3",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 72307624,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 413,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72380819,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 421,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "pico-i8-t4-latency-eager",
+      "round": "4",
+      "directory": "cells/013-pico-i8-t4-latency-eager-4",
+      "cooldown_seconds": 3,
+      "before": {
+        "elapsed_realtime_ms": 72383832,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 421,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72435491,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 421,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "full-t4-eager",
+      "round": "4",
+      "directory": "cells/014-full-t4-eager-4",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 72435499,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 421,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72507877,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 419,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "adaptive3-t4-eager",
+      "round": "4",
+      "directory": "cells/015-adaptive3-t4-eager-4",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 72507885,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 419,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72576352,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 421,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "pico-i8-t4-latency-eager",
+      "round": "5",
+      "directory": "cells/016-pico-i8-t4-latency-eager-5",
+      "cooldown_seconds": 3,
+      "before": {
+        "elapsed_realtime_ms": 72579361,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 421,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72630910,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 410,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "adaptive3-t4-eager",
+      "round": "5",
+      "directory": "cells/017-adaptive3-t4-eager-5",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 72630919,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 410,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72699001,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 419,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "full-t4-eager",
+      "round": "5",
+      "directory": "cells/018-full-t4-eager-5",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 72699011,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 419,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72774103,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 416,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "full-t4-eager",
+      "round": "-3",
+      "directory": "cells/019-full-t4-eager--3",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 72774114,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 416,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72795076,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 416,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    },
+    {
+      "engine": "adaptive3-t4-eager",
+      "round": "-3",
+      "directory": "cells/020-adaptive3-t4-eager--3",
+      "cooldown_seconds": 0,
+      "before": {
+        "elapsed_realtime_ms": 72795089,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 416,
+        "battery_level": 100,
+        "battery_plugged": 2
+      },
+      "exit_code": 0,
+      "after": {
+        "elapsed_realtime_ms": 72814740,
+        "thermal_status": 3,
+        "power_save_mode": false,
+        "music_volume": 15,
+        "music_volume_max": 15,
+        "music_muted": false,
+        "audio_output_types": [
+          1,
+          2,
+          18
+        ],
+        "audio_output_routes": [
+          {
+            "id": 2,
+            "type": 1
+          },
+          {
+            "id": 3,
+            "type": 2
+          },
+          {
+            "id": 16,
+            "type": 18
+          }
+        ],
+        "battery_temperature_tenths_c": 416,
+        "battery_level": 100,
+        "battery_plugged": 2
+      }
+    }
+  ],
+  "metrics_bytes": 72534,
+  "page_bytes": 45000,
+  "bundle_bytes": 13940399,
+  "bundle_parts": 7,
+  "failed_cells": 0,
+  "end": {
+    "elapsed_realtime_ms": 72815444,
+    "thermal_status": 3,
+    "power_save_mode": false,
+    "music_volume": 15,
+    "music_volume_max": 15,
+    "music_muted": false,
+    "audio_output_types": [
+      1,
+      2,
+      18
+    ],
+    "audio_output_routes": [
+      {
+        "id": 2,
+        "type": 1
+      },
+      {
+        "id": 3,
+        "type": 2
+      },
+      {
+        "id": 16,
+        "type": 18
+      }
+    ],
+    "battery_temperature_tenths_c": 416,
+    "battery_level": 100,
+    "battery_plugged": 2
+  },
+  "complete": true
+}

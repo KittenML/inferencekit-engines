@@ -1,0 +1,47 @@
+intake_version: 1
+run_id: fresh-galaxy-s25-kokoro-realtime
+model:
+  id: hexgrad/Kokoro-82M
+  revision: "f3ff3571791e39611d31c381e3a41a3af07b4987"
+  precision: fp32
+modality: tts
+hardware:
+  device: Samsung Galaxy S25 Android 16
+  count: 1
+  price_usd_h: 10.20
+goals:
+  lead: capacity
+  resource_policy: maximum_performance
+  slo:
+    rtf_p95: 1.0
+    max_underruns: 0
+  after_target: keep_climbing
+  traffic:
+    burstiness: simultaneous open-loop releases
+    session_len: two complete sentences per stream
+io_modes:
+  input: complete
+  output: streaming
+workload:
+  client: audio_capacity
+  rounds: 4
+  concurrency: [1, 2]
+  tts:
+    voice: af_heart
+    sample_rate: 24000
+    lead_metric: first_audio_ms
+budget:
+  approved: true
+  wall_clock_h: 1
+  stage_timeboxes: false
+  report_reserve_h: 0
+fidelity: lossless
+quality:
+  reference: none
+  preference: exact
+  protocol: Within the same shipped precision, save PCM from paired cells, check nonempty finite audio, complete paired outputs and PCM equivalence. Cross-format exploration has separate timing and unproven perceptual quality.
+constraints:
+  - Use the one explicitly authorized Android device with serialized runs and job timeouts.
+  - Main workload uses two complete input sentences and emits each generated waveform in order with no extra prebuffer.
+  - Keep first audio as a measured metric. Every stream must meet p95 RTF <= 1.0 without underruns or wave overruns.
+  - Original device study uses only newly retrieved official sources and newly observed outputs.

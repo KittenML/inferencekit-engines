@@ -1,0 +1,43 @@
+{
+  "codec_adaptive_groups": true,
+  "codec_first_frames": 3,
+  "codec_follow_frames": 25,
+  "engine": "vieneu",
+  "label": "adaptive3-t4-eager",
+  "load_ms": 892.526301,
+  "loaded_memory": {
+    "pss_kib": 533545,
+    "rss_kib": 561208,
+    "vmhwm_kib": 561176
+  },
+  "pico_chunk_chars": 0,
+  "pico_int8": false,
+  "pico_retain_buffers": false,
+  "pid": 29496,
+  "pre_requests_memory": {
+    "current": {
+      "pss_kib": 681326,
+      "rss_kib": 709420,
+      "vmhwm_kib": 708872
+    },
+    "initial": {
+      "pss_kib": 20603,
+      "rss_kib": 48192,
+      "vmhwm_kib": 47780
+    },
+    "interval_ms": 100,
+    "peak": {
+      "pss_kib": 681326,
+      "rss_kib": 709420,
+      "vmhwm_kib": 708872
+    },
+    "samples": 16,
+    "smaps_samples": 16,
+    "vmhwm_scope": "process_lifetime"
+  },
+  "round": 0,
+  "sample_rate": 48000,
+  "start_output_on_admission": true,
+  "threads": 4,
+  "warmup_ms": 756.345416
+}

@@ -1,0 +1,498 @@
+diff --git a/src/vieneu/v3_onnx/vieneu_v3_onnx_assets.cpp b/src/vieneu/v3_onnx/vieneu_v3_onnx_assets.cpp
+index 3172597..ebc7506 100644
+--- a/src/vieneu/v3_onnx/vieneu_v3_onnx_assets.cpp
++++ b/src/vieneu/v3_onnx/vieneu_v3_onnx_assets.cpp
+@@ -240,8 +240,8 @@ bool VieneuV3OnnxEngine::validate_assets(const VieneuV3OnnxInit& init, std::stri
+         join_path(onnx_dir_, "vieneu_v3_heads.npz"),
+         config_path,
+         tokenizer_path,
+-        join_path(codec_dir_, "moss_audio_tokenizer_decode_full.onnx"),
+-        join_path(codec_dir_, "moss_audio_tokenizer_encode.onnx"),
++        join_path(codec_dir_, init.codec_step ? "moss_audio_tokenizer_decode_step.onnx"
++                                              : "moss_audio_tokenizer_decode_full.onnx"),
+     };
+ 
+     for (const std::string& path : required) {
+@@ -267,6 +267,8 @@ bool VieneuV3OnnxEngine::load_config(const std::string& path, std::string& error
+         config_.speech_generation_end_token_id = c.value("speech_generation_end_token_id", config_.speech_generation_end_token_id);
+         config_.audio_ref_slot_token_id = c.value("audio_ref_slot_token_id", config_.audio_ref_slot_token_id);
+         config_.emotion_0_token_id = c.value("emotion_0_token_id", config_.emotion_0_token_id);
++        config_.default_style_token_id = c.value("default_style_token_id", config_.emotion_0_token_id);
++        config_.use_speaker_embedding = c.value("use_speaker_embedding", false);
+         config_.emotion_4_token_id = c.value("emotion_4_token_id", config_.emotion_4_token_id);
+         config_.text_vocab_size = c.value("text_vocab_size", config_.text_vocab_size);
+         config_.audio_vocab_size = c.value("audio_vocab_size", config_.audio_vocab_size);
+diff --git a/src/vieneu/v3_onnx/vieneu_v3_onnx_engine.cpp b/src/vieneu/v3_onnx/vieneu_v3_onnx_engine.cpp
+index 2161613..8a5f4f6 100644
+--- a/src/vieneu/v3_onnx/vieneu_v3_onnx_engine.cpp
++++ b/src/vieneu/v3_onnx/vieneu_v3_onnx_engine.cpp
+@@ -1,6 +1,7 @@
+ #include "../vieneu_v3_onnx.h"
+ #include "vieneu_v3_onnx_internal.h"
+ #include "../vieneu.h"
++#include "../v3_native/bench_moss_step.h"
+ 
+ #include <algorithm>
+ #include <array>
+@@ -191,7 +192,11 @@ void VieneuV3OnnxEngine::print_benchmark_stats() const {
+               << ", avg=" << avg(benchmark_stats_.codec_decode_ms, benchmark_stats_.codec_decode_calls) << " ms\n";
+ }
+ 
++VieneuV3OnnxEngine::VieneuV3OnnxEngine() = default;
++VieneuV3OnnxEngine::~VieneuV3OnnxEngine() = default;
++
+ bool VieneuV3OnnxEngine::initialize(const VieneuV3OnnxInit& init, std::string& error) {
++    codec_step_.reset();
+     initialized_ = false;
+     env_.reset();
+     prefill_session_.reset();
+@@ -252,7 +257,7 @@ bool VieneuV3OnnxEngine::initialize(const VieneuV3OnnxInit& init, std::string& e
+     }
+     session_options_->SetGraphOptimizationLevel(env_graph_optimization_level(GraphOptimizationLevel::ORT_ENABLE_ALL));
+     session_options_->EnableCpuMemArena();
+-    if (env_enabled("VIENEU_ORT_DISABLE_SPIN")) {
++    if (!init.allow_spinning || env_enabled("VIENEU_ORT_DISABLE_SPIN")) {
+         session_options_->AddConfigEntry("session.intra_op.allow_spinning", "0");
+         session_options_->AddConfigEntry("session.inter_op.allow_spinning", "0");
+     }
+@@ -278,14 +283,23 @@ bool VieneuV3OnnxEngine::initialize(const VieneuV3OnnxInit& init, std::string& e
+ 
+     if (!load_session(join_path(onnx_dir_, "vieneu_prefill.onnx"), prefill_session_, error) ||
+         !load_session(join_path(onnx_dir_, "vieneu_decode_step.onnx"), decode_session_, error) ||
+-        !load_session(join_path(onnx_dir_, "vieneu_acoustic_cached.onnx"), acoustic_session_, error) ||
+-        !load_session(join_path(codec_dir_, "moss_audio_tokenizer_decode_full.onnx"), codec_decode_session_, error)) {
++        !load_session(join_path(onnx_dir_, "vieneu_acoustic_cached.onnx"), acoustic_session_, error)) {
++        return false;
++    }
++    if (init.codec_step) {
++        try {
++            codec_step_ = std::make_unique<MossStep>(codec_dir_, threads_to_use_);
++        } catch (const std::exception& e) {
++            error = std::string("MOSS streaming decoder initialization failed: ") + e.what();
++            return false;
++        }
++    } else if (!load_session(join_path(codec_dir_, "moss_audio_tokenizer_decode_full.onnx"), codec_decode_session_, error)) {
+         return false;
+     }
+     cache_session_io(*prefill_session_, prefill_io_);
+     cache_session_io(*decode_session_, decode_io_);
+     cache_session_io(*acoustic_session_, acoustic_io_);
+-    cache_session_io(*codec_decode_session_, codec_decode_io_);
++    if (codec_decode_session_) cache_session_io(*codec_decode_session_, codec_decode_io_);
+     if (!initialize_acoustic_executor(error)) {
+         return false;
+     }
+@@ -314,6 +328,7 @@ bool VieneuV3OnnxEngine::synthesize_phonemes(
+     const std::string& phonemes,
+     const std::vector<int64_t>* ref_codes,
+     int leading_token,
++    const std::vector<float>& anchor,
+     const VieneuV3OnnxParams& params,
+     std::vector<float>& out_audio,
+     std::string& error) {
+@@ -324,7 +339,8 @@ bool VieneuV3OnnxEngine::synthesize_phonemes(
+     };
+     vieneu_report_progress(params.progress, "prefill", 0, 1, scaled_progress(0.10f), "Running v3 ONNX prompt prefill.");
+     const PromptRows rows = build_rows(phonemes, ref_codes, leading_token);
+-    std::vector<float> prompt_embeds = embed_rows(rows);
++    if (params.trace_tokenizer) params.trace_tokenizer(phonemes, tokenizer_.encode(phonemes));
++    std::vector<float> prompt_embeds = embed_rows(rows, anchor);
+     std::vector<int64_t> prompt_shape = {1, rows.rows, config_.hidden_size};
+     Ort::MemoryInfo& mem = cpu_memory_info();
+ 
+@@ -389,7 +405,29 @@ bool VieneuV3OnnxEngine::synthesize_phonemes(
+         std::array<int64_t, 3> se_shape = {1, 1, config_.hidden_size};
+         std::array<int64_t, 2> pos_shape = {1, 1};
+         synth_decode_inputs_.reserve(static_cast<size_t>(expected_decode_inputs));
++        // Retain the complete code history to match the publisher's 64-frame
++        // repetition window and to feed MOSS without changing generated codes.
++        constexpr int repetition_window = 64;
++        auto codec_state = codec_step_ ? codec_step_->new_state() : std::vector<Ort::Value>{};
++        int frames_emitted = 0;
++        bool saw_eos = false;
+         for (int t = 0; t < max_frames; ++t) {
++            if (config_.use_speaker_embedding && !history.empty() && t > repetition_window) {
++                const int begin = t - repetition_window;
++                for (int ch = 0; ch < config_.n_vq; ++ch) {
++                    const int32_t oldest = frames[(begin - 1) * config_.n_vq + ch];
++                    auto& channel = history[ch];
++                    bool still_present = false;
++                    for (int f = begin; f < t && !still_present; ++f) {
++                        still_present = frames[f * config_.n_vq + ch] == oldest;
++                    }
++                    if (!still_present) {
++                        channel.seen[static_cast<size_t>(oldest)] = 0;
++                        auto old = std::find(channel.indices.begin(), channel.indices.end(), oldest);
++                        if (old != channel.indices.end()) channel.indices.erase(old);
++                    }
++                }
++            }
+             bool eos = false;
+             if (!acoustic_frame(synth_h_, params.temperature, params.top_k, params.top_p, params.repetition_penalty, history, codes, eos, error)) {
+                 return false;
+@@ -404,7 +442,15 @@ bool VieneuV3OnnxEngine::synthesize_phonemes(
+                 max_frames,
+                 scaled_progress(0.18f + (static_cast<float>(t + 1) / static_cast<float>(max_frames)) * 0.68f),
+                 "Generating v3 ONNX acoustic frames.");
++            const int count = t + 1 - frames_emitted;
++            const int target = frames_emitted == 0 ? params.codec_first_frames : params.codec_follow_frames;
++            if (codec_step_ && (count >= target || eos || t + 1 == max_frames)) {
++                auto samples = codec_step_->decode(frames.data() + frames_emitted * config_.n_vq, count, codec_state);
++                params.pcm(samples.data(), samples.size());
++                frames_emitted += count;
++            }
+             if (eos) {
++                saw_eos = true;
+                 break;
+             }
+ 
+@@ -421,6 +467,9 @@ bool VieneuV3OnnxEngine::synthesize_phonemes(
+                     synth_se_[static_cast<size_t>(h_idx)] += src[h_idx];
+                 }
+             }
++            if (!anchor.empty()) {
++                for (int h = 0; h < config_.hidden_size; ++h) synth_se_[h] += anchor[h];
++            }
+             int64_t pos = rows.rows + t;
+ 
+             synth_decode_inputs_.clear();
+@@ -451,6 +500,14 @@ bool VieneuV3OnnxEngine::synthesize_phonemes(
+             }
+         }
+ 
++        if (!saw_eos && params.require_eos) {
++            error = "VieNeu v3 ONNX frame limit reached before EOS.";
++            return false;
++        }
++        if (codec_step_) {
++            print_benchmark_stats();
++            return true;
++        }
+         if (frames.empty()) {
+             error = "VieNeu v3 synthesis produced no acoustic frames.";
+             print_benchmark_stats();
+@@ -482,8 +539,18 @@ bool VieneuV3OnnxEngine::synthesize(const VieneuV3OnnxParams& params, std::vecto
+         return false;
+     }
+ 
+-    int leading_token = config_.emotion_0_token_id;
++    if (codec_step_ && (!params.pcm || params.codec_first_frames <= 0 || params.codec_follow_frames <= 0)) {
++        error = "VieNeu v3 streaming needs a PCM callback and positive frame group sizes.";
++        return false;
++    }
++    if (params.seed) rng_.seed(*params.seed);
++    int leading_token = config_.default_style_token_id;
++    std::vector<float> anchor;
+     std::vector<int64_t> ref_codes;
++    if (config_.use_speaker_embedding && !params.ref_audio_path.empty()) {
++        error = "The updated ONNX adapter requires a precomputed preset speaker anchor.";
++        return false;
++    }
+     if (!params.ref_audio_path.empty()) {
+         if (!encode_reference_audio(params.ref_audio_path, ref_codes, error)) {
+             return false;
+@@ -493,7 +560,13 @@ bool VieneuV3OnnxEngine::synthesize(const VieneuV3OnnxParams& params, std::vecto
+         if (!resolve_voice_preset(params.voice_id, preset, error)) {
+             return false;
+         }
+-        if (preset.has_reserved_id) {
++        if (config_.use_speaker_embedding) {
++            if (preset.speaker_anchor.empty()) {
++                error = "The updated ONNX checkpoint requires a preset speaker anchor.";
++                return false;
++            }
++            anchor = std::move(preset.speaker_anchor);
++        } else if (preset.has_reserved_id) {
+             leading_token = preset.reserved_id;
+         }
+         if (!preset.codes.empty()) {
+@@ -506,13 +579,15 @@ bool VieneuV3OnnxEngine::synthesize(const VieneuV3OnnxParams& params, std::vecto
+         return false;
+     }
+ 
+-    const std::vector<std::string> chunks = split_text_for_v3_chunks(params.text, params.max_chars);
++    const auto chunks = params.phoneme_input ? std::vector<std::string>{params.text}
++                                             : split_text_for_v3_chunks(params.text, params.max_chars);
+     if (chunks.empty()) {
+         error = "VieNeu v3 synthesis produced no text chunks.";
+         return false;
+     }
+ 
+     const int silence_samples = static_cast<int>(std::lround(static_cast<double>(sample_rate()) * 0.15));
++    bool emitted_audio = false;
+     for (size_t i = 0; i < chunks.size(); ++i) {
+         vieneu_report_progress(
+             params.progress,
+@@ -521,15 +596,29 @@ bool VieneuV3OnnxEngine::synthesize(const VieneuV3OnnxParams& params, std::vecto
+             static_cast<int>(chunks.size()),
+             chunks.empty() ? 0.0f : static_cast<float>(i) / static_cast<float>(chunks.size()),
+             "Starting v3 ONNX text chunk.");
+-        const std::string phonemes = phonemize_for_v3(chunks[i]);
++        const std::string phonemes = params.phoneme_input ? chunks[i] :
++            phonemize_for_v3(params.force_english ? "<en>" + chunks[i] + "</en>" : chunks[i]);
+         std::vector<float> chunk_audio;
+         VieneuV3OnnxParams chunk_params = params;
++        bool first_block = true;
++        if (codec_step_) {
++            chunk_params.pcm = [&](const float* samples, size_t count) {
++                if (first_block && emitted_audio && silence_samples > 0) {
++                    const std::vector<float> pause(static_cast<size_t>(silence_samples));
++                    params.pcm(pause.data(), pause.size());
++                }
++                first_block = false;
++                emitted_audio = true;
++                params.pcm(samples, count);
++            };
++        }
+         chunk_params.progress_base = static_cast<float>(i) / static_cast<float>(chunks.size());
+         chunk_params.progress_span = 1.0f / static_cast<float>(chunks.size());
+         if (!synthesize_phonemes(
+                 phonemes,
+                 ref_codes.empty() ? nullptr : &ref_codes,
+                 leading_token,
++                anchor,
+                 chunk_params,
+                 chunk_audio,
+                 error)) {
+@@ -553,7 +642,7 @@ bool VieneuV3OnnxEngine::synthesize(const VieneuV3OnnxParams& params, std::vecto
+             static_cast<float>(i + 1) / static_cast<float>(chunks.size()),
+             "Finished v3 ONNX text chunk.");
+     }
+-    if (out_audio.empty()) {
++    if (out_audio.empty() && !emitted_audio) {
+         error = "VieNeu v3 synthesis produced empty audio.";
+         return false;
+     }
+diff --git a/src/vieneu/v3_onnx/vieneu_v3_onnx_inference.cpp b/src/vieneu/v3_onnx/vieneu_v3_onnx_inference.cpp
+index 11da0e5..0781020 100644
+--- a/src/vieneu/v3_onnx/vieneu_v3_onnx_inference.cpp
++++ b/src/vieneu/v3_onnx/vieneu_v3_onnx_inference.cpp
+@@ -106,7 +106,8 @@ VieneuV3OnnxEngine::PromptRows VieneuV3OnnxEngine::build_rows(
+     return rows;
+ }
+ 
+-std::vector<float> VieneuV3OnnxEngine::embed_rows(const PromptRows& rows) const {
++std::vector<float> VieneuV3OnnxEngine::embed_rows(
++    const PromptRows& rows, const std::vector<float>& anchor) const {
+     std::vector<float> embeds(static_cast<size_t>(rows.rows * config_.hidden_size), 0.0f);
+     for (int64_t r = 0; r < rows.rows; ++r) {
+         float* dst = embeds.data() + r * config_.hidden_size;
+@@ -126,6 +127,9 @@ std::vector<float> VieneuV3OnnxEngine::embed_rows(const PromptRows& rows) const
+                 dst[h] += src[h];
+             }
+         }
++        if (!anchor.empty()) {
++            for (int h = 0; h < config_.hidden_size; ++h) dst[h] += anchor[h];
++        }
+     }
+     return embeds;
+ }
+@@ -182,18 +186,22 @@ bool VieneuV3OnnxEngine::acoustic_frame_onnx(
+         std::array<int64_t, 2> pos_shape = {1, 2};
+ 
+         Ort::MemoryInfo& mem = cpu_memory_info();
+-        if (acoustic_io_.input_names.size() != 6 || acoustic_io_.output_names.size() != 5) {
+-            error = "VieNeu v3 acoustic ONNX signature mismatch: expected 6 inputs and 5 outputs.";
++        const auto cache_count = static_cast<size_t>(2 * config_.local_num_hidden_layers);
++        if (acoustic_io_.input_names.size() != 2 + cache_count ||
++            acoustic_io_.output_names.size() != 1 + cache_count) {
++            error = "VieNeu v3 acoustic ONNX signature disagrees with config.json.";
+             return false;
+         }
+-        std::array<Ort::Value, 6> acoustic_inputs = {
+-            Ort::Value::CreateTensor<float>(mem, acoustic_token_.data(), acoustic_token_.size(), token_shape.data(), token_shape.size()),
+-            Ort::Value::CreateTensor<int64_t>(mem, pos.data(), pos.size(), pos_shape.data(), pos_shape.size()),
+-            Ort::Value::CreateTensor<float>(mem, acoustic_empty_.data(), 0, empty_shape.data(), empty_shape.size()),
+-            Ort::Value::CreateTensor<float>(mem, acoustic_empty_.data(), 0, empty_shape.data(), empty_shape.size()),
+-            Ort::Value::CreateTensor<float>(mem, acoustic_empty_.data(), 0, empty_shape.data(), empty_shape.size()),
+-            Ort::Value::CreateTensor<float>(mem, acoustic_empty_.data(), 0, empty_shape.data(), empty_shape.size()),
+-        };
++        std::vector<Ort::Value> acoustic_inputs;
++        acoustic_inputs.reserve(2 + cache_count);
++        acoustic_inputs.push_back(
++            Ort::Value::CreateTensor<float>(mem, acoustic_token_.data(), acoustic_token_.size(), token_shape.data(), token_shape.size()));
++        acoustic_inputs.push_back(
++            Ort::Value::CreateTensor<int64_t>(mem, pos.data(), pos.size(), pos_shape.data(), pos_shape.size()));
++        for (size_t i = 0; i < cache_count; ++i) {
++            acoustic_inputs.push_back(Ort::Value::CreateTensor<float>(
++                mem, acoustic_empty_.data(), 0, empty_shape.data(), empty_shape.size()));
++        }
+         const Ort::RunOptions run_options{nullptr};
+         auto out = acoustic_session_->Run(
+             run_options,
+@@ -202,13 +210,7 @@ bool VieneuV3OnnxEngine::acoustic_frame_onnx(
+             acoustic_inputs.size(),
+             acoustic_io_.output_ptrs.data(),
+             acoustic_io_.output_ptrs.size());
+-        Ort::Value hidden_val = std::move(out[0]);
+-        Ort::Value pk0 = std::move(out[1]);
+-        Ort::Value pk1 = std::move(out[2]);
+-        Ort::Value pv0 = std::move(out[3]);
+-        Ort::Value pv1 = std::move(out[4]);
+-
+-        const float* hidden_ptr = hidden_val.GetTensorData<float>();
++        const float* hidden_ptr = out[0].GetTensorData<float>();
+         acoustic_slot0_.assign(hidden_ptr, hidden_ptr + H);
+ 
+         auto sample_channel = [&](int ch, const float* vec) {
+@@ -229,28 +231,21 @@ bool VieneuV3OnnxEngine::acoustic_frame_onnx(
+             int64_t step_pos = ch + 1;
+             std::array<int64_t, 3> step_token_shape = {1, 1, H};
+             std::array<int64_t, 2> step_pos_shape = {1, 1};
+-            std::array<Ort::Value, 6> acoustic_step_inputs = {
+-                Ort::Value::CreateTensor<float>(mem, const_cast<float*>(emb), static_cast<size_t>(H), step_token_shape.data(), step_token_shape.size()),
+-                Ort::Value::CreateTensor<int64_t>(mem, &step_pos, 1, step_pos_shape.data(), step_pos_shape.size()),
+-                std::move(pk0),
+-                std::move(pk1),
+-                std::move(pv0),
+-                std::move(pv1),
+-            };
+-            auto step_out = acoustic_session_->Run(
++            acoustic_inputs.clear();
++            acoustic_inputs.push_back(Ort::Value::CreateTensor<float>(
++                mem, const_cast<float*>(emb), static_cast<size_t>(H), step_token_shape.data(), step_token_shape.size()));
++            acoustic_inputs.push_back(
++                Ort::Value::CreateTensor<int64_t>(mem, &step_pos, 1, step_pos_shape.data(), step_pos_shape.size()));
++            for (size_t i = 0; i < cache_count; ++i) acoustic_inputs.push_back(std::move(out[1 + i]));
++            out = acoustic_session_->Run(
+                 run_options,
+                 acoustic_io_.input_ptrs.data(),
+-                acoustic_step_inputs.data(),
+-                acoustic_step_inputs.size(),
++                acoustic_inputs.data(),
++                acoustic_inputs.size(),
+                 acoustic_io_.output_ptrs.data(),
+                 acoustic_io_.output_ptrs.size());
+-            hidden_val = std::move(step_out[0]);
+-            pk0 = std::move(step_out[1]);
+-            pk1 = std::move(step_out[2]);
+-            pv0 = std::move(step_out[3]);
+-            pv1 = std::move(step_out[4]);
+-            
+-            const float* step_hidden_ptr = hidden_val.GetTensorData<float>();
++
++            const float* step_hidden_ptr = out[0].GetTensorData<float>();
+             codes.push_back(sample_channel(ch, step_hidden_ptr));
+         }
+ 
+diff --git a/src/vieneu/v3_onnx/vieneu_v3_onnx_voice.cpp b/src/vieneu/v3_onnx/vieneu_v3_onnx_voice.cpp
+index b24c87b..39b5384 100644
+--- a/src/vieneu/v3_onnx/vieneu_v3_onnx_voice.cpp
++++ b/src/vieneu/v3_onnx/vieneu_v3_onnx_voice.cpp
+@@ -2,6 +2,7 @@
+ #include "vieneu_v3_onnx_internal.h"
+ 
+ #include <algorithm>
++#include <cmath>
+ #include <string>
+ #include <unordered_map>
+ #include <vector>
+@@ -36,6 +37,15 @@ bool VieneuV3OnnxEngine::load_voices(const std::string& voices_path, std::string
+             const auto& item = it.value();
+             VoicePreset preset;
+             preset.found = true;
++            if (config_.use_speaker_embedding) {
++                preset.speaker_anchor = item.at("speaker_anchor").get<std::vector<float>>();
++                if (preset.speaker_anchor.size() != static_cast<size_t>(config_.hidden_size) ||
++                    !std::all_of(preset.speaker_anchor.begin(), preset.speaker_anchor.end(),
++                                 [](float v) { return std::isfinite(v); })) {
++                    error = "VieNeu v3 preset has an invalid speaker anchor: " + id;
++                    return false;
++                }
++            }
+             if (item.contains("reserved_id") && !item.at("reserved_id").is_null()) {
+                 preset.has_reserved_id = true;
+                 preset.reserved_id = item.at("reserved_id").get<int>();
+diff --git a/src/vieneu/vieneu_v3_onnx.h b/src/vieneu/vieneu_v3_onnx.h
+index 36d1367..f80bc1f 100644
+--- a/src/vieneu/vieneu_v3_onnx.h
++++ b/src/vieneu/vieneu_v3_onnx.h
+@@ -1,8 +1,11 @@
+ #ifndef VIENEU_V3_ONNX_H
+ #define VIENEU_V3_ONNX_H
+ 
++#include <cstdint>
++#include <functional>
+ #include <memory>
+ #include <mutex>
++#include <optional>
+ #include <random>
+ #include <string>
+ #include <unordered_map>
+@@ -13,6 +16,8 @@
+ #include "v3_common/v3_repetition_history.h"
+ #include "vieneu_progress.h"
+ 
++class MossStep;
++
+ struct VieneuV3OnnxInit {
+     std::string model_dir;
+     std::string onnx_dir;
+@@ -21,10 +26,20 @@ struct VieneuV3OnnxInit {
+     std::string tokenizer_path;
+     std::string voices_json_path;
+     int n_threads = 2;
++    bool codec_step = false;
++    bool allow_spinning = true;
+ };
+ 
+ struct VieneuV3OnnxParams {
+     std::string text;
++    bool phoneme_input = false;
++    std::optional<uint32_t> seed;
++    bool force_english = false;
++    bool require_eos = false;
++    int codec_first_frames = 4;
++    int codec_follow_frames = 6;
++    std::function<void(const float*, size_t)> pcm;
++    std::function<void(const std::string&, const std::vector<int64_t>&)> trace_tokenizer;
+     std::string voice_id;
+     std::string ref_audio_path;
+     float temperature = 0.8f;
+@@ -41,6 +56,8 @@ struct VieneuV3OnnxParams {
+ 
+ class VieneuV3OnnxEngine {
+ public:
++    VieneuV3OnnxEngine();
++    ~VieneuV3OnnxEngine();
+     bool initialize(const VieneuV3OnnxInit& init, std::string& error);
+     bool synthesize(const VieneuV3OnnxParams& params, std::vector<float>& out_audio, std::string& error);
+ 
+@@ -72,6 +89,8 @@ private:
+         int speech_generation_end_token_id = 6;
+         int audio_ref_slot_token_id = 7;
+         int emotion_0_token_id = 8;
++        int default_style_token_id = 8;
++        bool use_speaker_embedding = false;
+         int emotion_4_token_id = 12;
+         int text_vocab_size = 419;
+         int audio_vocab_size = 1024;
+@@ -116,6 +135,7 @@ private:
+         bool found = false;
+         bool has_reserved_id = false;
+         int reserved_id = 0;
++        std::vector<float> speaker_anchor;
+         std::vector<int64_t> codes;
+     };
+ 
+@@ -181,10 +201,11 @@ private:
+     bool encode_reference_audio(const std::string& path, std::vector<int64_t>& out_codes, std::string& error);
+ 
+     PromptRows build_rows(const std::string& phonemes, const std::vector<int64_t>* ref_codes, int leading_token) const;
+-    std::vector<float> embed_rows(const PromptRows& rows) const;
++    std::vector<float> embed_rows(const PromptRows& rows, const std::vector<float>& anchor) const;
+     bool synthesize_phonemes(const std::string& phonemes,
+                              const std::vector<int64_t>* ref_codes,
+                              int leading_token,
++                             const std::vector<float>& anchor,
+                              const VieneuV3OnnxParams& params,
+                              std::vector<float>& out_audio,
+                              std::string& error);
+@@ -220,6 +241,7 @@ private:
+     void print_benchmark_stats() const;
+     Ort::MemoryInfo& cpu_memory_info();
+ 
++    std::unique_ptr<MossStep> codec_step_;
+     std::shared_ptr<Ort::Env> env_;
+     std::unique_ptr<Ort::SessionOptions> session_options_;
+     std::unique_ptr<Ort::Session> prefill_session_;

@@ -1,0 +1,15 @@
+{
+  "reference": "vieneu-direct-t2",
+  "candidate": "vieneu-direct-t1",
+  "wave_zero_sha256": {
+    "vieneu-direct-t2": [
+      "f85fa2a060201a0a61348dfd340ad84fe4b0b4b49297bb47de0d7692a3a423c6  ./vieneu-000-r0-n1-s0-c0.s16le",
+      "967c3a4db8e8720e2b50fc471d2e2f61829493722f0a6bb76135213f5afb4f22  ./vieneu-000-r0-n1-s0-c1.s16le"
+    ],
+    "vieneu-direct-t1": [
+      "f85fa2a060201a0a61348dfd340ad84fe4b0b4b49297bb47de0d7692a3a423c6  ./vieneu-000-r0-n1-s0-c0.s16le",
+      "967c3a4db8e8720e2b50fc471d2e2f61829493722f0a6bb76135213f5afb4f22  ./vieneu-000-r0-n1-s0-c1.s16le"
+    ]
+  },
+  "verdict": "PASS"
+}

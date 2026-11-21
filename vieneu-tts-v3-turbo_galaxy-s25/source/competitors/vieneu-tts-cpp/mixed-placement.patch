@@ -1,0 +1,214 @@
+--- a/capture.cpp
++++ b/capture.cpp
+@@ -28,6 +28,10 @@
+ #include <android/thermal.h>
+ #endif
+ 
++// Private entry point in the study build of libvieneu-tts.
++extern "C" vieneu_context * vieneu_bench_init_slot(
++    const vieneu_init_params_v2 *params, int slot, const char *device);
++
+ namespace {
+ 
+ using Clock = std::chrono::steady_clock;
+@@ -123,6 +127,41 @@
+     return chunk;
+ }
+ 
++std::vector<std::string> backbone_devices(int concurrency, int pool_size) {
++    const char *option = std::getenv("VIENEU_BACKBONE_DEVICES");
++    if (!option) {
++        return {};
++    }
++    if (pool_size) {
++        throw std::runtime_error("VIENEU_BACKBONE_DEVICES requires one worker per stream (disable INFERENCEKIT_SENTENCE_WORKERS)");
++    }
++    const char *homogeneous = std::getenv("VIENEU_BACKBONE_DEVICE");
++    if (homogeneous && *homogeneous) {
++        throw std::runtime_error("set only one of VIENEU_BACKBONE_DEVICES and VIENEU_BACKBONE_DEVICE");
++    }
++
++    std::vector<std::string> devices;
++    std::string_view list(option);
++    for (;;) {
++        const auto comma = list.find(',');
++        const auto name = list.substr(0, comma);
++        if (name.empty() || std::any_of(name.begin(), name.end(), [](unsigned char c) {
++                return c <= ' ' || c >= 127;
++            })) {
++            throw std::runtime_error("VIENEU_BACKBONE_DEVICES requires nonempty device names without whitespace");
++        }
++        devices.emplace_back(name);
++        if (comma == std::string_view::npos) {
++            break;
++        }
++        list.remove_prefix(comma + 1);
++    }
++    if (devices.size() != static_cast<size_t>(concurrency)) {
++        throw std::runtime_error("VIENEU_BACKBONE_DEVICES requires exactly one device per stream");
++    }
++    return devices;
++}
++
+ class Engines {
+ public:
+     Engines(bool kokoro, std::string model, int threads)
+@@ -135,7 +174,7 @@
+ 
+     using Generate = std::function<Chunk(const std::string &, Clock::time_point, bool)>;
+ 
+-    Generate worker() const {
++    Generate worker(int slot, const char *device = nullptr) const {
+         const std::string codec_dir = model_ + "/codec";
+         vieneu_init_params_v2 init{};
+         vieneu_init_v2_default_params(&init);
+@@ -143,7 +182,7 @@
+         init.model_dir = model_.c_str();
+         init.codec_dir = codec_dir.c_str();
+         init.n_threads = threads_;
+-        const std::shared_ptr<vieneu_context> engine(vieneu_init_v2(&init), vieneu_free);
++        const std::shared_ptr<vieneu_context> engine(vieneu_bench_init_slot(&init, slot, device), vieneu_free);
+         if (!engine) {
+             throw std::runtime_error(vieneu_last_error());
+         }
+@@ -364,7 +403,7 @@
+                 bind_worker(cpus, index, workers, threads, pin == 2);
+                 {
+                     const std::lock_guard lock(initialization);
+-                    engine = engines.worker();
++                    engine = engines.worker(index);
+                 }
+                 error = generate(engine, fixtures.back(), true, Clock::now(), false).error;
+             } catch (const std::exception &failure) {
+@@ -492,10 +531,13 @@
+     const std::chrono::milliseconds period(std::stoi(argv[10]));
+     const char *pool_option = std::getenv("INFERENCEKIT_SENTENCE_WORKERS");
+     const int pool_size = pool_option ? std::stoi(pool_option) : 0;
++    if (threads < 1 || concurrency < 1 || waves < 1 || pin < 0 || pin > 2 || period.count() < 1 ||
++        pool_size < 0 || (pool_size && !streaming)) {
++        throw std::runtime_error("invalid plan dimensions");
++    }
++    const auto devices = backbone_devices(concurrency, pool_size);
+     const auto fixtures = load_fixtures(argv[3]);
+-    if (threads < 1 || concurrency < 1 || waves < 1 || pin < 0 || pin > 2 || period.count() < 1 ||
+-        pool_size < 0 || (pool_size && !streaming) ||
+-        fixtures.size() < static_cast<size_t>(waves) * concurrency + 1) {
++    if (fixtures.size() < static_cast<size_t>(waves) * concurrency + 1) {
+         throw std::runtime_error("invalid plan dimensions");
+     }
+     const auto cpus = pin ? cpus_by_frequency() : std::vector<int>{};
+@@ -537,7 +579,7 @@
+                 bind_worker(cpus, stream, concurrency, threads, pin == 2);
+                 {
+                     const std::lock_guard lock(initialization);
+-                    engine = engines.worker();
++                    engine = engines.worker(stream, devices.empty() ? nullptr : devices[stream].c_str());
+                 }
+                 auto warmup = generate(engine, fixtures.back(), streaming, Clock::now(), false);
+                 worker_error = std::move(warmup.error);
+--- a/src/vieneu/v3_native/v3_native_backbone_llama.cpp
++++ b/src/vieneu/v3_native/v3_native_backbone_llama.cpp
+@@ -6,12 +6,41 @@
+ #include <algorithm>
+ #ifdef VIENEU_ANDROID_ACCELERATOR
+ #include "ggml-backend.h"
++#include "vieneu/vieneu_tts.h"
+ #include <array>
+ #endif
+ 
+ bool V3NativeBackbone::backend_initialized_ = false;
+ 
+ namespace {
++
++#ifdef VIENEU_ANDROID_ACCELERATOR
++struct BenchSlot {
++    int index;
++    const char* device;
++};
++
++thread_local const BenchSlot* bench_slot = nullptr;
++
++class ScopedBenchSlot {
++public:
++    ScopedBenchSlot(int index, const char* device)
++        : slot_{index, device}, previous_(bench_slot) {
++        bench_slot = &slot_;
++    }
++    ~ScopedBenchSlot() { bench_slot = previous_; }
++
++private:
++    BenchSlot slot_;
++    const BenchSlot* previous_;
++};
++
++bool placement_log(const char* text) {
++    return std::strstr(text, "using device ") || std::strstr(text, " layers to GPU") ||
++           std::strstr(text, "model buffer size =") || std::strstr(text, "KV buffer size =") ||
++           std::strstr(text, "compute buffer size =");
++}
++#endif
+ 
+ int env_int_or_default(const char* name, int fallback) {
+     const char* value = std::getenv(name);
+@@ -28,6 +57,15 @@
+ 
+ } // namespace
+ 
++#ifdef VIENEU_ANDROID_ACCELERATOR
++// Private benchmark ABI. This context is consumed synchronously by initialize().
++extern "C" VIENEU_API vieneu_context* vieneu_bench_init_slot(
++    const vieneu_init_params_v2* params, int slot, const char* device) {
++    const ScopedBenchSlot placement(slot, device);
++    return vieneu_init_v2(params);
++}
++#endif
++
+ V3NativeBackbone::V3NativeBackbone() {}
+ 
+ V3NativeBackbone::~V3NativeBackbone() {
+@@ -41,7 +79,12 @@
+     if (!backend_initialized_) {
+         // Quiet logging
+         llama_log_set([](enum ggml_log_level level, const char * text, void * user_data) {
+-            (void)user_data;
++#ifdef VIENEU_ANDROID_ACCELERATOR
++            if (bench_slot && text && (level == GGML_LOG_LEVEL_ERROR || placement_log(text))) {
++                fprintf(stderr, "vieneu backbone slot=%d %s", bench_slot->index, text);
++                return;
++            }
++#endif
+             if (text && (level >= GGML_LOG_LEVEL_ERROR ||
+                           (user_data && level >= GGML_LOG_LEVEL_INFO))) {
+                 fputs(text, stderr);
+@@ -56,10 +99,17 @@
+ 
+ 
+ #ifdef VIENEU_ANDROID_ACCELERATOR
++    if (bench_slot && bench_slot->device) {
++        selected_device = bench_slot->device;
++    }
+     std::array<ggml_backend_dev_t, 2> devices{};
+     if (selected_device && *selected_device) {
+         devices[0] = ggml_backend_dev_by_name(selected_device);
+         if (!devices[0]) {
++            if (bench_slot) {
++                fprintf(stderr, "vieneu backbone slot=%d requested=%s unavailable\n",
++                        bench_slot->index, selected_device);
++            }
+             std::cerr << "Requested backbone device unavailable: " << selected_device << "\n";
+             for (size_t index = 0; index < ggml_backend_dev_count(); ++index) {
+                 std::cerr << "Available device: " << ggml_backend_dev_name(ggml_backend_dev_get(index)) << "\n";
+@@ -96,6 +146,13 @@
+         model_ = nullptr;
+         return false;
+     }
++
++#ifdef VIENEU_ANDROID_ACCELERATOR
++    if (bench_slot) {
++        fprintf(stderr, "vieneu backbone slot=%d initialized selected=%s\n", bench_slot->index,
++                devices[0] ? ggml_backend_dev_name(devices[0]) : "auto");
++    }
++#endif
+ 
+     prefill_capacity_ = ctx_params.n_ctx;
+     prefill_batch_ = llama_batch_init(prefill_capacity_, hidden_size_, 1);

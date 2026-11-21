@@ -1,0 +1,8 @@
+version: 0.1
+android_test_host: amazon_linux_2023
+phases:
+  test:
+    commands:
+      - python3 "$DEVICEFARM_TEST_PACKAGE_PATH/tests/test_capture.py"
+artifacts:
+  - $DEVICEFARM_LOG_DIR/speech-capture.tar.gz

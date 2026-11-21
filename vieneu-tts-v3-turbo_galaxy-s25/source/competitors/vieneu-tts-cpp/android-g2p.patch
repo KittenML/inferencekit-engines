@@ -1,0 +1,16 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 224c050..9d26cf0 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -111,7 +111,10 @@ if(VIENEU_SEA_G2P)
+         set(VIENEU_SEA_G2P_LINK_LIB "${VIENEU_SEA_G2P_RUNTIME_LIB}")
+     endif()
+ 
+-    if(WIN32)
++    if(ANDROID AND DEFINED VIENEU_ANDROID_G2P_LIB)
++        set(VIENEU_SEA_G2P_RUNTIME_LIB "${VIENEU_ANDROID_G2P_LIB}")
++        set(VIENEU_SEA_G2P_LINK_LIB "${VIENEU_ANDROID_G2P_LIB}")
++    elseif(WIN32)
+         add_custom_command(
+             OUTPUT "${VIENEU_SEA_G2P_RUNTIME_LIB}"
+             BYPRODUCTS "${VIENEU_SEA_G2P_IMPORT_LIB}"

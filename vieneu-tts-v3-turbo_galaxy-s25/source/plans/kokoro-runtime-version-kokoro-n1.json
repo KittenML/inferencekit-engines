@@ -1,0 +1,19 @@
+{
+  "levels": [
+    1
+  ],
+  "rounds": 1,
+  "waves": 5,
+  "period_ms": 3000,
+  "sample_rate": 24000,
+  "mode": "stream",
+  "chunks_per_request": 2,
+  "fixture_ids": [
+    "kokoro-000",
+    "kokoro-001",
+    "kokoro-002",
+    "kokoro-003",
+    "kokoro-004"
+  ],
+  "fixture_sha256": "547e29553513be6a04b1a37b883b4169b8296a2688a63346e5dd8f4e4bf57999"
+}

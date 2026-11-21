@@ -1,0 +1,21 @@
+{
+  "name": "fresh-speech-vieneu-sustained-cool",
+  "status": "COMPLETED",
+  "result": "PASSED",
+  "deviceMinutes": {
+    "total": 16.49,
+    "metered": 16.06,
+    "unmetered": 0.0
+  },
+  "counters": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "warned": 0,
+    "errored": 0,
+    "stopped": 0,
+    "skipped": 0
+  },
+  "started": "2026-11-18 22:01:10.852000+04:00",
+  "stopped": "2026-11-18 22:19:09.449000+04:00"
+}

@@ -1,0 +1,271 @@
+{
+  "schema": "inferencekit.evidence.v2",
+  "evidence_id": "ev_20588dfe3afbb72c81f4a962f565480de8eaae4d3e8db1758a09113224380232",
+  "kind": "quality_audio",
+  "claim_class": "derived",
+  "summary": "Speech quality PASS: bit-exact preservation of the named baseline outputs",
+  "identity": {
+    "gpu": {
+      "name": null,
+      "count": null,
+      "driver": null,
+      "cuda": null,
+      "clocks": null
+    },
+    "engine": {
+      "name": "vieneu-direct-t1-r0",
+      "version": "VieNeu-TTS.cpp-838979faf0-llama-ebd048fc5e4b-ORT-1.27.0",
+      "commit": null,
+      "flags": {}
+    },
+    "model": {
+      "id": "pnnbao-ump/VieNeu-TTS-v3-Turbo",
+      "revision": "61b85e3d937fbbacb387714180e8182823512523",
+      "dtype": "Q8_0",
+      "quant": null
+    },
+    "workload": {
+      "prompt_len": null,
+      "gen_len": null,
+      "batch": null,
+      "seed": null,
+      "endpoint_kind": "imported_pcm",
+      "task": "tts"
+    }
+  },
+  "provenance": {
+    "tool": "inferencekit",
+    "tool_version": "0.1.1",
+    "argv_digest": "sha256:169418c5d7ff65ff99c393cc55e041c4bd0a7e0e363a1623d11ae6e3a7ee1b04",
+    "started": "2026-11-18T20:28:46.110Z",
+    "ended": "2026-11-18T20:28:46.187Z"
+  },
+  "metrics": [
+    {
+      "name": "bit_exact_pct",
+      "value": 100.0,
+      "unit": "%",
+      "stat": "fraction",
+      "n": 4,
+      "ci95": null,
+      "subject": "vieneu-direct-t1-r0"
+    },
+    {
+      "name": "same_sample_count_pct",
+      "value": 100.0,
+      "unit": "%",
+      "stat": "fraction",
+      "n": 4,
+      "ci95": null
+    },
+    {
+      "name": "waveform_snr_db",
+      "value": null,
+      "unit": "dB",
+      "stat": "min_finite",
+      "n": 0,
+      "ci95": null
+    },
+    {
+      "name": "waveform_maxabs",
+      "value": 0.0,
+      "unit": "full_scale",
+      "stat": "max",
+      "n": 4,
+      "ci95": null
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "quality/audio/vieneu-direct-t1-r0/eceaba576c66dc9439d34d03229908290515e2a10af06c3253f40824d459d578/audio_score.json",
+      "sha256": "1157d37bfad12d6056add9341cf7431a0220d0fa58055c095b1987a573daeb34",
+      "bytes": 4760,
+      "role": "audio_quality_result"
+    }
+  ],
+  "coverage": {
+    "complete": true,
+    "missing": []
+  },
+  "limitations": [
+    "Quality is relative to the named baseline; baseline intelligibility and suitability are not established.",
+    "Imported scorer outputs and listening blinding are producer attestations; hashes bind inputs and configuration, not methodological honesty.",
+    "SNR and maxabs use aligned raw PCM only; unequal lengths are not truncated or padded. Numerical parity is diagnostic outside exact acceptance.",
+    "Paired CIs resample fixtures, retaining all rounds; listening inference is conditional on the supplied listener panel.",
+    "Quality does not prove fresh-process lifecycle, timing, memory fit or sustained reliability."
+  ],
+  "data": {
+    "format": "inferencekit.quality.audio.v1",
+    "source": "quality audio",
+    "label": "vieneu-direct-t1-r0",
+    "baseline": "ev_746b849d45d9448400d6bd7bb040b821158431a3fb6494ad38d5bfe799a7a092",
+    "candidate": "ev_5ec89fe1b86b869a43f925b19665d626feeeab4af3cb1f13618756cdb9d3d595",
+    "protocol": "ev_39c20563be95197c464a4a7452d8d854dcaf8d5b0478f2c5a90a1786ef97f468",
+    "policy": {
+      "min_fixtures": 2,
+      "min_rounds": 1,
+      "resamples": 2000,
+      "seed": 0,
+      "allow_numerics_change": false,
+      "metrics": {},
+      "scorers": {},
+      "normalization": "nfkc_casefold_punctuation_v1",
+      "acceptance": "exact"
+    },
+    "fixture_sha256": "73173b5ada13a49e88990e30475ef85b70e1a654423555ae96fa2cb1bdd78aee",
+    "preregistered": true,
+    "acceptance": "exact",
+    "scope": "bit-exact preservation of the named baseline outputs",
+    "checks": {
+      "structural": {
+        "verdict": "PASS"
+      },
+      "parity": {
+        "verdict": "PASS",
+        "required": true
+      },
+      "round_coverage": {
+        "verdict": "PASS",
+        "arms": {
+          "baseline": {
+            "actual_indices": [
+              0
+            ],
+            "expected_indices": [
+              0
+            ],
+            "missing_indices": [],
+            "unexpected_indices": [],
+            "gaps": [],
+            "duplicate_indices": [],
+            "failed_indices": [],
+            "invalid_indices": false,
+            "invalid_plan": false,
+            "oversized_plan": false,
+            "oversized_rows": false,
+            "complete": true
+          },
+          "candidate": {
+            "actual_indices": [
+              0
+            ],
+            "expected_indices": [
+              0
+            ],
+            "missing_indices": [],
+            "unexpected_indices": [],
+            "gaps": [],
+            "duplicate_indices": [],
+            "failed_indices": [],
+            "invalid_indices": false,
+            "invalid_plan": false,
+            "oversized_plan": false,
+            "oversized_rows": false,
+            "complete": true
+          },
+          "baseline_repeat": {
+            "actual_indices": [
+              0
+            ],
+            "expected_indices": [
+              0
+            ],
+            "missing_indices": [],
+            "unexpected_indices": [],
+            "gaps": [],
+            "duplicate_indices": [],
+            "failed_indices": [],
+            "invalid_indices": false,
+            "invalid_plan": false,
+            "oversized_plan": false,
+            "oversized_rows": false,
+            "complete": true
+          }
+        }
+      },
+      "registration": {
+        "verdict": "PASS"
+      },
+      "baseline_repeat": {
+        "evidence_id": "ev_5fc83f93e4ec17e1363b1e210e93a35ceb8db59bb43db764ec0ed0004949d90d",
+        "differences": [],
+        "compared": 4,
+        "verdict": "PASS"
+      }
+    },
+    "pairs": [
+      {
+        "id": "vieneu-000",
+        "round": 0,
+        "seed": 346152860,
+        "baseline_pcm_sha256": "852e190e32ec37a96614e7eca9bea30614b4186b480b0316a77cc281edbd469b",
+        "candidate_pcm_sha256": "852e190e32ec37a96614e7eca9bea30614b4186b480b0316a77cc281edbd469b",
+        "bit_exact": true,
+        "same_sample_count": true,
+        "baseline_frames": 161280,
+        "candidate_frames": 161280,
+        "snr_db": null,
+        "maxabs": 0.0,
+        "snr_status": "identical"
+      },
+      {
+        "id": "vieneu-001",
+        "round": 0,
+        "seed": 346152860,
+        "baseline_pcm_sha256": "2739d32dc29549875fa73ff242fdc687cb54834d0fe85f3c3cdf83d7950929f3",
+        "candidate_pcm_sha256": "2739d32dc29549875fa73ff242fdc687cb54834d0fe85f3c3cdf83d7950929f3",
+        "bit_exact": true,
+        "same_sample_count": true,
+        "baseline_frames": 184320,
+        "candidate_frames": 184320,
+        "snr_db": null,
+        "maxabs": 0.0,
+        "snr_status": "identical"
+      },
+      {
+        "id": "vieneu-002",
+        "round": 0,
+        "seed": 346152860,
+        "baseline_pcm_sha256": "fc03187d62c8da1dce08b5a7103b104b3872b1c9384f065fb7c91dbab57f4513",
+        "candidate_pcm_sha256": "fc03187d62c8da1dce08b5a7103b104b3872b1c9384f065fb7c91dbab57f4513",
+        "bit_exact": true,
+        "same_sample_count": true,
+        "baseline_frames": 153600,
+        "candidate_frames": 153600,
+        "snr_db": null,
+        "maxabs": 0.0,
+        "snr_status": "identical"
+      },
+      {
+        "id": "vieneu-003",
+        "round": 0,
+        "seed": 346152860,
+        "baseline_pcm_sha256": "84c15ad155f66d6ae73137142b6c404874d123718c39f464c82e98475d87d8f9",
+        "candidate_pcm_sha256": "84c15ad155f66d6ae73137142b6c404874d123718c39f464c82e98475d87d8f9",
+        "bit_exact": true,
+        "same_sample_count": true,
+        "baseline_frames": 130560,
+        "candidate_frames": 130560,
+        "snr_db": null,
+        "maxabs": 0.0,
+        "snr_status": "identical"
+      }
+    ],
+    "verdict": "PASS",
+    "reason": "bit-exact preservation of the named baseline outputs",
+    "scorer_provenance": {},
+    "request": {
+      "op": "quality_audio",
+      "cli": "inferencekit quality audio",
+      "args": {
+        "baseline": "ev_746b849d45d9448400d6bd7bb040b821158431a3fb6494ad38d5bfe799a7a092",
+        "candidate": "ev_5ec89fe1b86b869a43f925b19665d626feeeab4af3cb1f13618756cdb9d3d595",
+        "baseline_repeat": "ev_5fc83f93e4ec17e1363b1e210e93a35ceb8db59bb43db764ec0ed0004949d90d",
+        "fixtures": "source/quality/vieneu-wave-zero-n4.jsonl",
+        "protocol": "ev_39c20563be95197c464a4a7452d8d854dcaf8d5b0478f2c5a90a1786ef97f468",
+        "scores": null,
+        "run_dir": null
+      }
+    }
+  }
+}

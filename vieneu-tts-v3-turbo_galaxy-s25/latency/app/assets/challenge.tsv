@@ -1,0 +1,13 @@
+full-t4-eager	-2
+pico-i8-t4-latency-eager	-2
+step2-4-t4	-2
+onnx-step2-4-t4-eager	-1
+adaptive3-t4-eager	-2
+onnx-step4-6-t4-eager	-2
+step2-4-t4-eager	-1
+pico-i8-t2-eager	-2
+adaptive4-t4-eager	-2
+onnx-full-t4-eager	-2
+pico-i8-t4-eager	-2
+onnx-step2-4-t2-eager	-2
+step4-6-t2-eager	-2

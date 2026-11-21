@@ -1,0 +1,36 @@
+{
+  "phase": "vieneu-sustained-matched",
+  "fixture_set": "sustained",
+  "rounds": 1,
+  "levels": [
+    3,
+    4
+  ],
+  "arms": [
+    [
+      "vieneu-cpp-direct1",
+      "vieneu-cpp",
+      "stream",
+      1,
+      0,
+      {
+        "INFERENCEKIT_CELL_TIMEOUT": "700"
+      }
+    ],
+    [
+      "vieneu-audio-cpp-stock2",
+      "vieneu-q8",
+      "stream",
+      2,
+      0,
+      {
+        "INFERENCEKIT_CELL_TIMEOUT": "700"
+      }
+    ]
+  ],
+  "thermal_start": {
+    "max_status": 2,
+    "interval_s": 5,
+    "timeout_s": 90
+  }
+}

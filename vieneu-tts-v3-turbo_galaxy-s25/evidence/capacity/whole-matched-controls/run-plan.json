@@ -1,0 +1,100 @@
+{
+  "phase": "whole-matched-controls",
+  "rounds": 4,
+  "levels": [
+    1,
+    3
+  ],
+  "arms": [
+    [
+      "kokoro-opencl-sentences",
+      "kokoro-mediapipe-gpu",
+      "stream",
+      0,
+      0
+    ],
+    [
+      "vieneu-cpp-sentences",
+      "vieneu-cpp",
+      "stream",
+      1,
+      0
+    ],
+    [
+      "kokoro-opencl-whole",
+      "kokoro-mediapipe-gpu",
+      "full",
+      0,
+      0
+    ],
+    [
+      "vieneu-cpp-whole",
+      "vieneu-cpp",
+      "full",
+      1,
+      0
+    ],
+    [
+      "kokoro-adreno-fp16-sentences",
+      "kokoro-adreno-fp16",
+      "stream",
+      1,
+      0,
+      {
+        "NNOPT_DOT8": "0",
+        "NNOPT_DOT8_GEMM": "0"
+      }
+    ],
+    [
+      "kokoro-adreno-fp16-whole",
+      "kokoro-adreno-fp16",
+      "full",
+      1,
+      0,
+      {
+        "NNOPT_DOT8": "0",
+        "NNOPT_DOT8_GEMM": "0"
+      }
+    ]
+  ],
+  "round_orders": [
+    [
+      "kokoro-adreno-fp16-sentences",
+      "kokoro-opencl-whole",
+      "kokoro-opencl-sentences",
+      "vieneu-cpp-whole",
+      "vieneu-cpp-sentences",
+      "kokoro-adreno-fp16-whole"
+    ],
+    [
+      "kokoro-adreno-fp16-whole",
+      "vieneu-cpp-sentences",
+      "vieneu-cpp-whole",
+      "kokoro-opencl-sentences",
+      "kokoro-opencl-whole",
+      "kokoro-adreno-fp16-sentences"
+    ],
+    [
+      "kokoro-adreno-fp16-whole",
+      "vieneu-cpp-sentences",
+      "kokoro-opencl-whole",
+      "kokoro-opencl-sentences",
+      "vieneu-cpp-whole",
+      "kokoro-adreno-fp16-sentences"
+    ],
+    [
+      "kokoro-adreno-fp16-sentences",
+      "vieneu-cpp-whole",
+      "kokoro-opencl-sentences",
+      "kokoro-opencl-whole",
+      "vieneu-cpp-sentences",
+      "kokoro-adreno-fp16-whole"
+    ]
+  ],
+  "thermal_start": {
+    "max_status": 2,
+    "interval_s": 5,
+    "timeout_s": 30
+  },
+  "accelerator_inventory": true
+}

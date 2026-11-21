@@ -54,6 +54,10 @@ GPT-6.1 Sol used inferencekit to remove a redundant sampler sort, compile single
 
 [Run the MAIN5/Tower5 profile](drama-3_apple-m4-16gb/profiles/main5-tower5/README.md) · [What the agent changed](drama-3_apple-m4-16gb/README.md#how-it-was-made)
 
+### VieNeu-TTS-v3-Turbo: five real-time streams on Galaxy S25
+
+Codex used InferenceKit to tune CPU threads per session. VieNeu-TTS.cpp sustained **five Vietnamese streams for 7.5 minutes** with a 700 ms simulated playback buffer. [Run the engine and see the audio.cpp comparison](vieneu-tts-v3-turbo_galaxy-s25/)
+
 ### MOSS-Image-SFT: an accepted speed/quality trade-off on AMD
 
 GPT-6.1 Terra used inferencekit to integrate online FP8 into selected transformer projections and tune the quantization scale and step count. **2.46× faster than the tested tuned vLLM-Omni baseline** on a 16 GB RX 9070 XT: FP8/24 steps versus BF16/50 steps, with quality secondary. The development configuration was measured; standalone package installation and launch have not been GPU-validated.
