@@ -42,6 +42,12 @@ Claude Opus 5.5 used inferencekit to build an exact sampler, batch-1 NVFP4 MoE k
 
 [Run the engine](gemma-4-26b-a4b-nvfp4_rtx-5090/) · [What the agent changed](gemma-4-26b-a4b-nvfp4_rtx-5090/README.md#how-it-was-made)
 
+### Kokoro-82M: three real-time streams on Galaxy S25
+
+Codex (GPT-6.1 Terra) used InferenceKit to run Kokoro's vocoder on Adreno and stream speech sentence by sentence. **1.64× faster to first audio at p95** for one stream versus whole-utterance delivery with the same MediaPipe build and checkpoint. Streaming also sustained **three streams for 7.5 minutes** with no simulated playback gaps.
+
+[Run the engine](kokoro-82m_galaxy-s25/) · [What the agent changed](kokoro-82m_galaxy-s25/README.md#how-it-was-made) · [Baseline measurements](kokoro-82m_galaxy-s25/REPORT.md#result)
+
 ### LTX-2.5: faster video generation on RTX PRO 6000
 
 Claude Opus 5.5 used inferencekit to compile transformer blocks, fuse kernels and reuse work between guidance passes. **1.25× faster than ComfyUI** for one 768 × 512, 121-frame clip at a time, with the same BF16 weights and 30 steps; quality checks passed, but outputs are not bit-identical.

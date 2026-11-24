@@ -1,0 +1,27 @@
+{
+  "phase": "kokoro-sustained",
+  "fixture_set": "sustained",
+  "rounds": 1,
+  "levels": [
+    3,
+    4
+  ],
+  "arms": [
+    [
+      "kokoro-opencl-sustained",
+      "kokoro-mediapipe-gpu",
+      "stream",
+      0,
+      0,
+      {
+        "INFERENCEKIT_CELL_TIMEOUT": "950"
+      }
+    ]
+  ],
+  "thermal_start": {
+    "max_status": 2,
+    "interval_s": 5,
+    "timeout_s": 90
+  },
+  "accelerator_inventory": true
+}

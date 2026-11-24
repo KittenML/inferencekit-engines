@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.inferencekit.mediapipecapture">
+    <uses-sdk android:minSdkVersion="28" android:targetSdkVersion="34" />
+    <application android:debuggable="true" android:extractNativeLibs="true"
+        android:label="InferenceKit MediaPipe capture">
+        <uses-native-library android:name="libOpenCL.so" android:required="false" />
+        <activity android:name="org.inferencekit.mediapipecapture.CaptureActivity" android:exported="false"
+            android:theme="@android:style/Theme.Material.NoActionBar" />
+    </application>
+    <instrumentation android:name="org.inferencekit.mediapipecapture.MediaPipeCapture"
+        android:targetPackage="org.inferencekit.mediapipecapture" />
+</manifest>
