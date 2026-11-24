@@ -1,0 +1,61 @@
+{
+  "phase": "kokoro-adreno-confirmation",
+  "rounds": 4,
+  "levels": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "arms": [
+    [
+      "kokoro-adreno-fp16-stock",
+      "kokoro-adreno-fp16",
+      "stream",
+      1,
+      0
+    ],
+    [
+      "kokoro-adreno-fp16-dot8-off",
+      "kokoro-adreno-fp16",
+      "stream",
+      1,
+      0,
+      {
+        "NNOPT_DOT8": "0",
+        "NNOPT_DOT8_GEMM": "0"
+      }
+    ]
+  ],
+  "accelerator_inventory": true,
+  "thermal_start": {
+    "max_status": 1,
+    "interval_s": 5,
+    "timeout_s": 30
+  },
+  "parity_smokes": [
+    [
+      "kokoro-adreno-fp16-stock",
+      "kokoro-adreno-fp16-dot8-off"
+    ]
+  ],
+  "round_orders": [
+    [
+      "kokoro-adreno-fp16-stock",
+      "kokoro-adreno-fp16-dot8-off"
+    ],
+    [
+      "kokoro-adreno-fp16-dot8-off",
+      "kokoro-adreno-fp16-stock"
+    ],
+    [
+      "kokoro-adreno-fp16-dot8-off",
+      "kokoro-adreno-fp16-stock"
+    ],
+    [
+      "kokoro-adreno-fp16-stock",
+      "kokoro-adreno-fp16-dot8-off"
+    ]
+  ]
+}

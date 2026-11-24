@@ -1,0 +1,185 @@
+--- a/src/vieneu/v3_native/v3_native_backbone_llama.cpp
++++ b/src/vieneu/v3_native/v3_native_backbone_llama.cpp
+@@ -4,12 +4,13 @@
+ #include <stdexcept>
+ #include <cstdlib>
+ #include <algorithm>
++#include <filesystem>
++#include <map>
++#include <mutex>
++#include "ggml-backend.h"
+ #ifdef VIENEU_ANDROID_ACCELERATOR
+-#include "ggml-backend.h"
+ #include <array>
+ #endif
+-
+-bool V3NativeBackbone::backend_initialized_ = false;
+ 
+ namespace {
+ 
+@@ -26,6 +27,55 @@
+     return static_cast<int>((std::min)(parsed, 256L));
+ }
+ 
++bool env_enabled(const char* name) {
++    const char* value = std::getenv(name);
++    return value && std::strcmp(value, "1") == 0;
++}
++
++bool can_share_cpu_model(const llama_model_params& params) {
++    if (!env_enabled("VIENEU_SHARE_CPU_BACKBONE") || params.n_gpu_layers != 0 || params.devices) {
++        return false;
++    }
++    for (size_t i = 0; i < ggml_backend_dev_count(); ++i) {
++        if (ggml_backend_dev_type(ggml_backend_dev_get(i)) != GGML_BACKEND_DEVICE_TYPE_CPU) {
++            return false;
++        }
++    }
++    return true;
++}
++
++std::shared_ptr<llama_model> load_cpu_model(const std::string& path, const llama_model_params& params) {
++    std::error_code error;
++    const auto key = std::filesystem::canonical(path, error);
++    if (error) {
++        return {llama_model_load_from_file(path.c_str(), params), llama_model_free};
++    }
++
++    // Model files are immutable while in use. Keep no owner beyond the live contexts.
++    static std::mutex mutex;
++    static std::map<std::filesystem::path, std::weak_ptr<llama_model>> models;
++    const std::lock_guard<std::mutex> lock(mutex);
++    for (auto it = models.begin(); it != models.end();) {
++        if (it->second.expired()) {
++            it = models.erase(it);
++        } else {
++            ++it;
++        }
++    }
++    auto& entry = models[key];
++    if (auto model = entry.lock()) {
++        if (env_enabled("VIENEU_BACKBONE_LOG_BUFFERS")) {
++            std::cerr << "[V3NativeBackbone] Reusing CPU backbone model\n";
++        }
++        return model;
++    }
++    std::shared_ptr<llama_model> model(llama_model_load_from_file(path.c_str(), params), llama_model_free);
++    if (model) {
++        entry = model;
++    }
++    return model;
++}
++
+ } // namespace
+ 
+ V3NativeBackbone::V3NativeBackbone() {}
+@@ -38,18 +88,18 @@
+     free_resources();
+ 
+     const char* selected_device = std::getenv("VIENEU_BACKBONE_DEVICE");
+-    if (!backend_initialized_) {
+-        // Quiet logging
+-        llama_log_set([](enum ggml_log_level level, const char * text, void * user_data) {
+-            (void)user_data;
++    static std::once_flag backend_init;
++    std::call_once(backend_init, [selected_device] {
++        static bool verbose = selected_device || env_enabled("VIENEU_BACKBONE_LOG_BUFFERS");
++        llama_log_set([](enum ggml_log_level level, const char* text, void* user_data) {
+             if (text && (level >= GGML_LOG_LEVEL_ERROR ||
+-                          (user_data && level >= GGML_LOG_LEVEL_INFO))) {
++                         (*static_cast<const bool*>(user_data) &&
++                          level >= GGML_LOG_LEVEL_INFO))) {
+                 fputs(text, stderr);
+             }
+-        }, const_cast<char*>(selected_device));
++        }, &verbose);
+         llama_backend_init();
+-        backend_initialized_ = true;
+-    }
++    });
+ 
+     llama_model_params model_params = llama_model_default_params();
+     model_params.n_gpu_layers = params.n_gpu_layers;
+@@ -73,13 +123,17 @@
+     }
+ #endif
+ 
+-    model_ = llama_model_load_from_file(params.model_path.c_str(), model_params);
++    if ((!selected_device || !*selected_device) && can_share_cpu_model(model_params)) {
++        model_ = load_cpu_model(params.model_path, model_params);
++    } else {
++        model_.reset(llama_model_load_from_file(params.model_path.c_str(), model_params), llama_model_free);
++    }
+     if (!model_) {
+         std::cerr << "[V3NativeBackbone] Failed to load model from " << params.model_path << std::endl;
+         return false;
+     }
+ 
+-    hidden_size_ = llama_model_n_embd(model_);
++    hidden_size_ = llama_model_n_embd(model_.get());
+     const int n_threads = env_int_or_default("VIENEU_BACKBONE_THREADS", params.n_threads);
+     const int n_threads_batch = env_int_or_default("VIENEU_BACKBONE_BATCH_THREADS", params.n_threads_batch > 0 ? params.n_threads_batch : n_threads);
+ 
+@@ -90,11 +144,10 @@
+     ctx_params.embeddings = true; // Enable embeddings extraction
+     ctx_params.no_perf = true;
+ 
+-    ctx_ = llama_init_from_model(model_, ctx_params);
++    ctx_ = llama_init_from_model(model_.get(), ctx_params);
+     if (!ctx_) {
+         std::cerr << "[V3NativeBackbone] Failed to initialize context." << std::endl;
+-        llama_model_free(model_);
+-        model_ = nullptr;
++        model_.reset();
+         return false;
+     }
+ 
+@@ -122,10 +175,7 @@
+         llama_free(ctx_);
+         ctx_ = nullptr;
+     }
+-    if (model_) {
+-        llama_model_free(model_);
+-        model_ = nullptr;
+-    }
++    model_.reset();
+     decoded_pos_ = 0;
+     prefill_capacity_ = 0;
+ }
+--- a/src/vieneu/v3_native/v3_native_backbone_llama.h
++++ b/src/vieneu/v3_native/v3_native_backbone_llama.h
+@@ -1,6 +1,7 @@
+ #ifndef V3_NATIVE_BACKBONE_LLAMA_H
+ #define V3_NATIVE_BACKBONE_LLAMA_H
+ 
++#include <memory>
+ #include <string>
+ #include <vector>
+ #include "llama.h"
+@@ -16,6 +17,8 @@
+ public:
+     V3NativeBackbone();
+     ~V3NativeBackbone();
++    V3NativeBackbone(const V3NativeBackbone&) = delete;
++    V3NativeBackbone& operator=(const V3NativeBackbone&) = delete;
+ 
+     bool initialize(const V3BackboneParams& params);
+     void free_resources();
+@@ -31,7 +34,7 @@
+     void clear_kv_cache();
+ 
+ private:
+-    llama_model* model_ = nullptr;
++    std::shared_ptr<llama_model> model_;
+     llama_context* ctx_ = nullptr;
+     llama_batch prefill_batch_{};
+     llama_batch decode_batch_{};
+@@ -40,8 +43,6 @@
+     int prefill_capacity_ = 0;
+     bool prefill_batch_initialized_ = false;
+     bool decode_batch_initialized_ = false;
+-
+-    static bool backend_initialized_;
+ };
+ 
+ #endif // V3_NATIVE_BACKBONE_LLAMA_H

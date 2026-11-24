@@ -1,0 +1,78 @@
+--- a/src/community_models/vieneu_v3_turbo/talker.cpp
++++ b/src/community_models/vieneu_v3_turbo/talker.cpp
+@@ -1135,6 +1135,11 @@
+         return backend_;
+     }
+ 
++    bool needs_backbone_logits() const noexcept {
++        // VieNeu uses the acoustic decoder for both codec sampling and EOS.
++        return !assets_->config.is_vieneu || backend_type_ != core::BackendType::Cpu;
++    }
++
+     core::ConstantTensorCache & talker_constants() const noexcept {
+         return *talker_constants_;
+     }
+@@ -1203,10 +1208,11 @@
+             values_.push_back(layer.value->tensor);
+         }
+         hidden_output_ = decoder_out.hidden.tensor;
+-        logits_output_ = decoder_out.logits.tensor;
+-        ggml_set_output(logits_output_);
++        logits_output_ = weights_->needs_backbone_logits() ? decoder_out.logits.tensor : nullptr;
++        auto * output = logits_output_ != nullptr ? logits_output_ : hidden_output_;
++        ggml_set_output(output);
+         graph_ = ggml_new_graph_custom(ctx_.get(), 65536, false);
+-        ggml_build_forward_expand(graph_, logits_output_);
++        ggml_build_forward_expand(graph_, output);
+         constants.finish_graph();
+         constants.ensure_uploaded();
+         buffer_ = ggml_backend_alloc_ctx_tensors(ctx_.get(), weights_->backend());
+@@ -1251,9 +1257,11 @@
+         OutputWithCache out;
+         const auto & root_config = weights_->assets().config;
+         const int64_t logits_vocab_size = root_config.is_vieneu ? config.text_vocab_size : config.vocab_size;
+-        out.result.logits.vocab_size = logits_vocab_size;
+-        out.result.logits.values.resize(static_cast<size_t>(logits_vocab_size));
+-        ggml_backend_tensor_get(logits_output_, out.result.logits.values.data(), 0, out.result.logits.values.size() * sizeof(float));
++        if (logits_output_ != nullptr) {
++            out.result.logits.vocab_size = logits_vocab_size;
++            out.result.logits.values.resize(static_cast<size_t>(logits_vocab_size));
++            ggml_backend_tensor_get(logits_output_, out.result.logits.values.data(), 0, out.result.logits.values.size() * sizeof(float));
++        }
+         out.result.last_hidden.dims = config.hidden_size;
+         out.result.last_hidden.values.resize(static_cast<size_t>(config.hidden_size));
+         ggml_backend_tensor_get(hidden_output_, out.result.last_hidden.values.data(), 0, out.result.last_hidden.values.size() * sizeof(float));
+@@ -1332,9 +1340,10 @@
+                                    cache_slot_value);
+         step_cache_ = std::move(decoder_out.cache);
+         hidden_output_ = decoder_out.hidden.tensor;
+-        logits_output_ = decoder_out.logits.tensor;
+-        ggml_set_output(logits_output_);
+-        ggml_build_forward_expand(graph_, logits_output_);
++        logits_output_ = weights_->needs_backbone_logits() ? decoder_out.logits.tensor : nullptr;
++        auto * output = logits_output_ != nullptr ? logits_output_ : hidden_output_;
++        ggml_set_output(output);
++        ggml_build_forward_expand(graph_, output);
+         constants.finish_graph();
+         constants.ensure_uploaded();
+         buffer_ = ggml_backend_alloc_ctx_tensors(ctx_.get(), weights_->backend());
+@@ -1407,12 +1416,16 @@
+         VieNeuTalkerPrefillResult out;
+         const auto & root_config = weights_->assets().config;
+         const int64_t logits_vocab_size = root_config.is_vieneu ? config.text_vocab_size : config.vocab_size;
+-        out.logits.vocab_size = logits_vocab_size;
+-        out.logits.values.resize(static_cast<size_t>(logits_vocab_size));
++        if (logits_output_ != nullptr) {
++            out.logits.vocab_size = logits_vocab_size;
++            out.logits.values.resize(static_cast<size_t>(logits_vocab_size));
++        }
+         out.last_hidden.dims = config.hidden_size;
+         out.last_hidden.values.resize(static_cast<size_t>(config.hidden_size));
+         timing_start = Clock::now();
+-        ggml_backend_tensor_get(logits_output_, out.logits.values.data(), 0, out.logits.values.size() * sizeof(float));
++        if (logits_output_ != nullptr) {
++            ggml_backend_tensor_get(logits_output_, out.logits.values.data(), 0, out.logits.values.size() * sizeof(float));
++        }
+         ggml_backend_tensor_get(hidden_output_, out.last_hidden.values.data(), 0, out.last_hidden.values.size() * sizeof(float));
+         last_timing_.output_read_ms = engine::debug::elapsed_ms(timing_start, Clock::now());
+ 

@@ -1,0 +1,221 @@
+diff --git a/plugin/skills/inference-triage/references/phones.md b/plugin/skills/inference-triage/references/phones.md
+index 5336aa3..8f376d0 100644
+--- a/plugin/skills/inference-triage/references/phones.md
++++ b/plugin/skills/inference-triage/references/phones.md
+@@ -16,6 +16,8 @@ Use `hardware.device`, `workload.client: audio_capacity` and `goals.lead: capaci
+ 
+ Register the plan before timing. Fields are `levels` (consecutive from 1), `rounds`, `waves`, `period_ms`, `sample_rate`, `mode` (`stream` or `full`), `chunks_per_request` (1 for full), `fixture_ids` and `fixture_sha256` (digest of the fixture file). List one distinct ID per wave and stream at the largest level. For each run use fixture index `wave * concurrency + stream`.
+ 
++For delayed playback, register `playback_start_delay_ms` and retain a zero-delay control.
++
+ Export one JSONL row per request with zero-based `round`, `wave`, `stream`, and fields `concurrency`, `id`, `complete_ms`, and `chunks`. Each chunk is an array of arrival milliseconds since scheduled release, PCM frame count and leading silent frame count. Use null completion for failed requests. Retain a separate record of the process launches, resolved settings, thermal state and capture code.
+ 
+ ```bash
+diff --git a/src/inferencekit/ops/audio_capacity.py b/src/inferencekit/ops/audio_capacity.py
+index 1cebfa9..29747ac 100644
+--- a/src/inferencekit/ops/audio_capacity.py
++++ b/src/inferencekit/ops/audio_capacity.py
+@@ -14,7 +14,8 @@ from inferencekit.serve.round_evidence import finite
+ 
+ KIND = "audio_capacity"
+ PLAN_KEYS = {"levels", "rounds", "waves", "period_ms", "sample_rate", "mode",
+-             "fixture_ids", "chunks_per_request", "fixture_sha256"}
++             "fixture_ids", "chunks_per_request", "fixture_sha256", "playback_start_delay_ms"}
++OPTIONAL_PLAN_KEYS = {"fixture_sha256", "playback_start_delay_ms"}
+ ROW_KEYS = {"round", "concurrency", "wave", "stream", "id", "complete_ms", "chunks"}
+ ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.+-]{0,63}")
+ SHA = re.compile(r"[0-9a-f]{64}")
+@@ -44,7 +45,7 @@ def read_plan(path):
+         plan = json.loads(Path(path).read_text(encoding="utf8"))
+     except (OSError, ValueError):
+         raise OpError("audio capacity plan is not readable JSON") from None
+-    if not isinstance(plan, dict) or set(plan) - PLAN_KEYS or PLAN_KEYS - {"fixture_sha256"} - set(plan):
++    if not isinstance(plan, dict) or set(plan) - PLAN_KEYS or PLAN_KEYS - OPTIONAL_PLAN_KEYS - set(plan):
+         raise OpError("invalid audio capacity plan fields")
+     levels = plan["levels"]
+     if (not isinstance(levels, list) or not levels or len(levels) > 256
+@@ -63,6 +64,9 @@ def read_plan(path):
+     fixture_sha = plan.get("fixture_sha256")
+     if fixture_sha is not None and (not isinstance(fixture_sha, str) or not SHA.fullmatch(fixture_sha)):
+         raise OpError("fixture_sha256 must be a lowercase SHA-256 digest")
++    playback_delay = plan.get("playback_start_delay_ms", 0)
++    if not finite(playback_delay) or playback_delay < 0:
++        raise OpError("playback_start_delay_ms must be finite and nonnegative")
+     if ev.redact(plan) != plan:
+         raise OpError("audio capacity plan fields must be safe to retain")
+     return plan
+@@ -77,6 +81,7 @@ def request_metrics(row, plan):
+         raise ValueError
+     latest = complete if complete is not None else float("inf")
+     rate = plan["sample_rate"]
++    playback_delay = plan.get("playback_start_delay_ms", 0)
+     previous, end, onset, frames = 0.0, 0.0, None, 0
+     playback = []
+     for value in chunks:
+@@ -86,6 +91,8 @@ def request_metrics(row, plan):
+         if (not finite(arrival) or not previous <= arrival <= latest
+                 or not _integer(count, 1, rate * 3600) or not _integer(silent, 0, count)):
+             raise ValueError
++        if not playback:
++            end = arrival + playback_delay
+         start = max(end, arrival)
+         if onset is None and silent < count:
+             onset = start + silent * 1000 / rate
+@@ -97,7 +104,8 @@ def request_metrics(row, plan):
+         return None
+     seconds = frames / rate
+     return {"first_pcm_ms": chunks[0][0], "first_audio_ms": onset, "rtf": complete / 1000 / seconds,
+-            "audio_s": seconds, "complete_ms": complete, **playback_metrics(playback, rate)}
++            "audio_s": seconds, "complete_ms": complete,
++            **playback_metrics(playback, rate, start_delay_ms=playback_delay)}
+ 
+ 
+ def read_timings(path, plan):
+@@ -167,6 +175,7 @@ def import_audio_capacity(call, timings, plan, fixtures, label, model, model_rev
+             raise OpError("audio capacity fixture file is not readable") from None
+         if fixture_digest != plan_doc.get("fixture_sha256"):
+             raise OpError("audio capacity fixture file differs from the registered plan")
++    playback_delay = plan_doc.get("playback_start_delay_ms", 0)
+     cells = read_timings(timings, plan_doc)
+     levels, highest, metrics = [], None, []
+     for level in plan_doc["levels"]:
+@@ -215,11 +224,12 @@ def import_audio_capacity(call, timings, plan, fixtures, label, model, model_rev
+             metrics=metrics, missing=missing,
+             artifacts=[ev.artifact(timing_path, staging, "requests"), ev.artifact(plan_path, staging, "load_plan")],
+             limitations=["Native on-device client times and process isolation are supplied by the capture producer.",
+-                         "Playback uses a PCM buffer simulation with immediate start and no extra prebuffer.",
++                         f"PCM playback simulation starts {playback_delay:g} ms after first chunk arrival.",
+                          "Burst arrivals represent this registered workload only.",
+                          "Audio throughput is decoded seconds divided by the full scheduled window plus any drain past it."],
+             data={"source": "import audio-capacity", "hardware_name": hardware_name, "timer": "imported on-device client",
+-                  "delivery_mode": plan_doc["mode"], "levels": levels, "slo": slo, "verdict": verdict,
++                  "delivery_mode": plan_doc["mode"], "playback_start_delay_ms": playback_delay,
++                  "levels": levels, "slo": slo, "verdict": verdict,
+                   "highest_passing_tested": highest, "n_star": (highest or 0) if confirmed else None,
+                   "quality_verdict": "UNPROVEN"},
+         )
+diff --git a/src/inferencekit/ops/ledger.py b/src/inferencekit/ops/ledger.py
+index d60dc5d..73e621e 100644
+--- a/src/inferencekit/ops/ledger.py
++++ b/src/inferencekit/ops/ledger.py
+@@ -372,19 +372,21 @@ def speech_trailers(builder, recs):
+             continue
+         data = record["data"]
+         level, source = data.get("n_star"), [record.get("evidence_id")]
++        delay = data.get("playback_start_delay_ms", 0)
++        playback = f" with {num(delay)} ms playback start delay" if delay else ""
+         if level is not None:
+             slo = data["slo"]
+             limits = []
+             if slo.get("first_audio_p95_ms") is not None:
+                 limits.append(f"p95 first audio <= {num(slo['first_audio_p95_ms'])} ms")
+             limits.extend((f"p95 RTF <= {num(slo['rtf_p95'])}", "zero underruns"))
+-            value = f"{num(level)} streams (per stream: {', '.join(limits)})"
++            value = f"{num(level)} streams{playback} (per stream: {', '.join(limits)})"
+             builder.add("Perf-Speech-Capacity-N", value, "derived", source)
+         subject = f"concurrency {level or data.get('highest_passing_tested')}"
+         metric = next((m for m in record.get("metrics", []) if m["name"] == "audio_s_per_s"
+                        and m.get("subject") == subject and m.get("value") is not None), None)
+         if metric:
+-            builder.add("Perf-Speech-Audio-S-Per-S", f"{num(metric['value'])} audio s/s at {subject}",
++            builder.add("Perf-Speech-Audio-S-Per-S", f"{num(metric['value'])} audio s/s at {subject}{playback}",
+                         "derived", source)
+         break
+ 
+diff --git a/src/inferencekit/ops/report.py b/src/inferencekit/ops/report.py
+index 59c75c7..86edf1d 100644
+--- a/src/inferencekit/ops/report.py
++++ b/src/inferencekit/ops/report.py
+@@ -90,10 +90,11 @@ def claims_of(rec: dict, expect: str, integrity: dict) -> list[dict]:
+                     "verdict": "UNPROVEN", "reason": "Timing and structural checks do not establish image quality, "
+                     "speech intelligibility, speaker fidelity or repeated-run reliability; cite task-specific quality evidence."})
+     elif kind == "audio_capacity":
++        delay = data.get("playback_start_delay_ms", 0)
+         out.append({"source": eid, "claim": "on-device speech capacity under the registered SLOs",
+                     "verdict": data.get("verdict", "UNPROVEN"),
+                     "reason": f"Highest passing tested level: {data.get('highest_passing_tested')}. "
+-                    "Open-loop burst arrivals with simulated zero-prebuffer playback."})
++                    f"Open-loop burst arrivals with a simulated {_fmt(delay)} ms playback start delay."})
+         out.append({"source": eid, "claim": "speech quality and process isolation", "verdict": "UNPROVEN",
+                     "reason": "The timing import requires separate verification of the capture and outputs."})
+     elif kind == "quality_audio":
+diff --git a/src/inferencekit/serve/audio_client.py b/src/inferencekit/serve/audio_client.py
+index e862563..e27473b 100644
+--- a/src/inferencekit/serve/audio_client.py
++++ b/src/inferencekit/serve/audio_client.py
+@@ -149,8 +149,9 @@ class AudioResult:
+         return self.sample_count / self.sample_rate if self.ok and self.sample_rate else None
+ 
+ 
+-def playback_metrics(chunks: list[tuple[int, int]], sample_rate: int) -> dict:
+-    """Simulate playback starting immediately at the first chunk; no hidden prebuffer.
++def playback_metrics(chunks: list[tuple[int, int]], sample_rate: int, *,
++                     start_delay_ms: float = 0) -> dict:
++    """Simulate playback from the first chunk plus a fixed startup delay.
+ 
+     Stall intervals count once per late arrival. Stream closure after the last
+     sample cannot cause an underrun. This is a derived PCM buffer simulation,
+@@ -158,7 +159,7 @@ def playback_metrics(chunks: list[tuple[int, int]], sample_rate: int) -> dict:
+     """
+     if not chunks:
+         return {"underruns": None, "underrun_ms": None, "max_stream_gap_ms": None}
+-    play_end = chunks[0][0] / 1e9
++    play_end = chunks[0][0] / 1e9 + start_delay_ms / 1000
+     count, stalled = 0, 0.0
+     for t_ns, frames in chunks:
+         arrival = t_ns / 1e9
+diff --git a/tests/test_audio_capacity.py b/tests/test_audio_capacity.py
+index fe2ed0a..7a40a04 100644
+--- a/tests/test_audio_capacity.py
++++ b/tests/test_audio_capacity.py
+@@ -1,5 +1,6 @@
+ import hashlib
+ import json
++from pathlib import Path
+ 
+ import pytest
+ 
+@@ -90,6 +91,43 @@ def test_detects_underruns_despite_good_real_time_factor(tmp_path, store):
+     assert record["data"]["levels"][0]["rounds"][0]["underruns"] == 1
+ 
+ 
++def test_registered_playback_delay_charges_audible_latency_and_preserves_generation(tmp_path, store):
++    def gaps(rows):
++        for row in rows:
++            if row["stream"] == 0:
++                row["chunks"][1][0] = 650
++                row["complete_ms"] = 700
++            else:
++                row["complete_ms"] = 2050
++        return rows
++
++    args = {**capture(tmp_path, gaps), "first_audio_as_metric": True}
++    immediate = call("import_audio_capacity", args)["data"]["levels"][0]["rounds"][0]
++    plan_path = Path(args["plan"])
++    plan = json.loads(plan_path.read_text())
++    plan["playback_start_delay_ms"] = 80
++    plan_path.write_text(json.dumps(plan))
++
++    delayed = call("import_audio_capacity", args)
++    assert ev.validate(delayed) == []
++    data = delayed["data"]
++    assert data["playback_start_delay_ms"] == 80
++    assert data["n_star"] == 1
++    assert data["levels"][1]["rounds"][0]["wave_overruns"] == 1
++    buffered = data["levels"][0]["rounds"][0]
++    assert immediate["underruns"] == 1
++    assert buffered["underruns"] == 0
++    assert buffered["audio_s_per_s"] == immediate["audio_s_per_s"]
++    assert buffered["streams"][0] == {**immediate["streams"][0], "first_audio_p95_ms": 200, "underruns": 0}
++    trailers = call("ledger_trailers", {"ids": [delayed["evidence_id"]], "format": "json"})
++    assert "80 ms playback start delay" in str(trailers["trailers"])
++
++    plan["playback_start_delay_ms"] = -1
++    plan_path.write_text(json.dumps(plan))
++    with pytest.raises(OpError, match="playback_start_delay_ms"):
++        call("import_audio_capacity", args)
++
++
+ def test_rejects_tampered_fixture_and_malformed_failed_row(tmp_path, store):
+     args = capture(tmp_path)
+     args["fixtures"] = args["plan"]

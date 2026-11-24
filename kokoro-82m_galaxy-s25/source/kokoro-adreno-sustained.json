@@ -1,0 +1,46 @@
+{
+  "phase": "kokoro-adreno-sustained",
+  "rounds": 1,
+  "levels": [
+    4,
+    3
+  ],
+  "arms": [
+    [
+      "kokoro-adreno-fp16-dot8-off",
+      "kokoro-adreno-fp16",
+      "stream",
+      1,
+      0,
+      {
+        "NNOPT_DOT8": "0",
+        "NNOPT_DOT8_GEMM": "0",
+        "INFERENCEKIT_CELL_TIMEOUT": "950",
+        "INFERENCEKIT_PLAN": "kokoro-sustained-kokoro-stream.json"
+      }
+    ],
+    [
+      "kokoro-mediapipe-opencl-stock",
+      "kokoro-mediapipe-gpu",
+      "stream",
+      0,
+      0,
+      {
+        "INFERENCEKIT_CELL_TIMEOUT": "950",
+        "INFERENCEKIT_PLAN": "kokoro-sustained-kokoro-stream.json"
+      }
+    ]
+  ],
+  "accelerator_inventory": true,
+  "thermal_start": {
+    "max_status": 0,
+    "interval_s": 5,
+    "timeout_s": 120
+  },
+  "fixture_set": "sustained",
+  "arm_levels": {
+    "kokoro-mediapipe-opencl-stock": [
+      4
+    ]
+  }
+}
