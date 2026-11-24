@@ -1,0 +1,189 @@
+{
+  "engine": {
+    "full-t4-eager": {
+      "condition_count": 7,
+      "framed_requests": 57,
+      "pss_requests": 57,
+      "rendered_requests": 57,
+      "audible_timestamps": 57,
+      "gapped_requests": 0,
+      "requests_with_xruns": 0,
+      "clipped_samples": 0
+    },
+    "adaptive3-t4-eager": {
+      "condition_count": 7,
+      "framed_requests": 57,
+      "pss_requests": 57,
+      "rendered_requests": 57,
+      "audible_timestamps": 57,
+      "gapped_requests": 0,
+      "requests_with_xruns": 0,
+      "clipped_samples": 0
+    },
+    "pico-i8-t4-latency-eager": {
+      "condition_count": 6,
+      "framed_requests": 54,
+      "pss_requests": 54,
+      "rendered_requests": 54,
+      "audible_timestamps": 54,
+      "gapped_requests": 0,
+      "requests_with_xruns": 0,
+      "clipped_samples": 0
+    }
+  },
+  "conditions": [
+    {
+      "label": "full-t4-eager",
+      "round": 0,
+      "thermal_status_before": 1,
+      "thermal_status_after": 2,
+      "music_volume": 15
+    },
+    {
+      "label": "adaptive3-t4-eager",
+      "round": 0,
+      "thermal_status_before": 2,
+      "thermal_status_after": 2,
+      "music_volume": 15
+    },
+    {
+      "label": "pico-i8-t4-latency-eager",
+      "round": 0,
+      "thermal_status_before": 2,
+      "thermal_status_after": 2,
+      "music_volume": 15
+    },
+    {
+      "label": "full-t4-eager",
+      "round": 1,
+      "thermal_status_before": 2,
+      "thermal_status_after": 2,
+      "music_volume": 15
+    },
+    {
+      "label": "pico-i8-t4-latency-eager",
+      "round": 1,
+      "thermal_status_before": 2,
+      "thermal_status_after": 2,
+      "music_volume": 15
+    },
+    {
+      "label": "adaptive3-t4-eager",
+      "round": 1,
+      "thermal_status_before": 2,
+      "thermal_status_after": 2,
+      "music_volume": 15
+    },
+    {
+      "label": "adaptive3-t4-eager",
+      "round": 2,
+      "thermal_status_before": 2,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "full-t4-eager",
+      "round": 2,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "pico-i8-t4-latency-eager",
+      "round": 2,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "adaptive3-t4-eager",
+      "round": 3,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "pico-i8-t4-latency-eager",
+      "round": 3,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "full-t4-eager",
+      "round": 3,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "pico-i8-t4-latency-eager",
+      "round": 4,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "full-t4-eager",
+      "round": 4,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "adaptive3-t4-eager",
+      "round": 4,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "pico-i8-t4-latency-eager",
+      "round": 5,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "adaptive3-t4-eager",
+      "round": 5,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "full-t4-eager",
+      "round": 5,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "full-t4-eager",
+      "round": -3,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    },
+    {
+      "label": "adaptive3-t4-eager",
+      "round": -3,
+      "thermal_status_before": 3,
+      "thermal_status_after": 3,
+      "music_volume": 15
+    }
+  ],
+  "issues": [],
+  "unique_processes": 20,
+  "retained_wavs": 33,
+  "device": "SM-S931B",
+  "apk_sha256": "dd9eadc542fe4604990b2847cdc9e8afe270d439453684a3f3e2f52b7dfc978d",
+  "audio_routes": [
+    {
+      "device_id": "<redacted>",
+      "type": 2,
+      "rate": 48000,
+      "requests": 168
+    }
+  ]
+}

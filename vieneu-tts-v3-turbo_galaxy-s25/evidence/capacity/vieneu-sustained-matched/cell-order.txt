@@ -1,8 +1,0 @@
-vieneu-cpp-direct1-r0-n3 start
-vieneu-cpp-direct1-r0-n3 finished
-vieneu-audio-cpp-stock2-r0-n3 start
-vieneu-audio-cpp-stock2-r0-n3 finished
-vieneu-cpp-direct1-r0-n4 start
-vieneu-cpp-direct1-r0-n4 finished
-vieneu-audio-cpp-stock2-r0-n4 start
-vieneu-audio-cpp-stock2-r0-n4 finished

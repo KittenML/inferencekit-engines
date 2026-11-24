@@ -1,1 +1,0 @@
-{"initial":{"pss_kib":20628,"rss_kib":48192,"vmhwm_kib":47304},"peak":{"pss_kib":104892,"rss_kib":133340,"vmhwm_kib":132364},"current":{"pss_kib":96832,"rss_kib":125264,"vmhwm_kib":132364},"samples":504,"smaps_samples":504,"interval_ms":100,"vmhwm_scope":"process_lifetime"}

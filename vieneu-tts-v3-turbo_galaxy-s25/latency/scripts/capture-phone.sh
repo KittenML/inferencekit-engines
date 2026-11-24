@@ -4,9 +4,16 @@ set -euo pipefail
 apk=${1:?Supply the signed VieNeu playback benchmark APK}
 output=${2:?Supply a new output directory}
 minutes=${3:-26}
+plan=${4:-confirmation}
+install=${5:-}
 package=org.inferencekit.s25study
 remote=files/study/latest
 
+case "$plan" in
+    confirmation|smoke-baseline|smoke-adaptive) ;;
+    *) echo 'Unknown playback plan.' >&2; exit 2 ;;
+esac
+[[ -z "$install" || "$install" == --installed ]] || { echo 'Unknown installation option.' >&2; exit 2; }
 [[ "$minutes" =~ ^[1-9][0-9]?$ ]] || { echo 'Supply a timeout in minutes from 1 to 99.' >&2; exit 2; }
 [[ -s "$apk" ]] || { echo 'Build the signed playback APK first.' >&2; exit 2; }
 model=$(adb shell getprop ro.product.model | tr -d '\r')
@@ -14,8 +21,12 @@ model=$(adb shell getprop ro.product.model | tr -d '\r')
 mkdir -p -- "$(dirname -- "$output")"
 mkdir -- "$output"
 capture_id=$(python3 -c 'import uuid; print(uuid.uuid4())')
-adb install -r "$apk"
-adb shell am start -W -S -n "$package/.MainActivity" --es plan_name confirmation --es capture_id "$capture_id"
+if [[ "$install" == --installed ]]; then
+    adb shell pm path "$package" | grep -q '^package:' || { echo 'Run ./serve.sh first.' >&2; exit 2; }
+else
+    adb install -r "$apk"
+fi
+adb shell am start -W -S -n "$package/.MainActivity" --es plan_name "$plan" --es capture_id "$capture_id"
 
 deadline=$((SECONDS + minutes * 60))
 while ((SECONDS < deadline)); do

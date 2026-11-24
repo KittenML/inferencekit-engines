@@ -1,0 +1,2445 @@
+{
+  "metrics": [
+    {
+      "label": "adaptive3-t4-eager",
+      "language": "en",
+      "bucket": "long",
+      "requests": 18,
+      "first_pcm_ms": {
+        "n": 18,
+        "median": 152.5537755,
+        "p95": 186.60125
+      },
+      "first_audible_ms": {
+        "n": 18,
+        "median": 289.356276,
+        "p95": 348.507135
+      },
+      "synthesis_ms": {
+        "n": 18,
+        "median": 3155.4928375,
+        "p95": 4126.347967
+      },
+      "playback_ms": {
+        "n": 18,
+        "median": 12631.497026500001,
+        "p95": 12730.951037
+      },
+      "rtf": {
+        "n": 18,
+        "median": 0.26460864028825204,
+        "p95": 0.3293174754189944
+      },
+      "audio_s": {
+        "n": 18,
+        "median": 12.46,
+        "p95": 12.53
+      },
+      "peak_pss_kib": {
+        "n": 18,
+        "median": 866914.0,
+        "p95": 874466
+      },
+      "peak_rss_kib": {
+        "n": 18,
+        "median": 895682.0,
+        "p95": 903292
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "adaptive3-t4-eager",
+      "language": "en",
+      "bucket": "medium",
+      "requests": 18,
+      "first_pcm_ms": {
+        "n": 18,
+        "median": 157.37401,
+        "p95": 196.044896
+      },
+      "first_audible_ms": {
+        "n": 18,
+        "median": 216.25854199999998,
+        "p95": 238.125522
+      },
+      "synthesis_ms": {
+        "n": 18,
+        "median": 1320.2646089999998,
+        "p95": 2038.515156
+      },
+      "playback_ms": {
+        "n": 18,
+        "median": 5456.74867,
+        "p95": 7606.633903
+      },
+      "rtf": {
+        "n": 18,
+        "median": 0.2531030880208333,
+        "p95": 0.2956200124999999
+      },
+      "audio_s": {
+        "n": 18,
+        "median": 5.28,
+        "p95": 7.43
+      },
+      "peak_pss_kib": {
+        "n": 18,
+        "median": 860225.0,
+        "p95": 873191
+      },
+      "peak_rss_kib": {
+        "n": 18,
+        "median": 888980.0,
+        "p95": 901776
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "adaptive3-t4-eager",
+      "language": "en",
+      "bucket": "short",
+      "requests": 18,
+      "first_pcm_ms": {
+        "n": 18,
+        "median": 122.90789050000001,
+        "p95": 155.095989
+      },
+      "first_audible_ms": {
+        "n": 18,
+        "median": 222.1292975,
+        "p95": 334.850781
+      },
+      "synthesis_ms": {
+        "n": 18,
+        "median": 618.8829424999999,
+        "p95": 1700.871562
+      },
+      "playback_ms": {
+        "n": 18,
+        "median": 2331.7570564999996,
+        "p95": 6333.625622
+      },
+      "rtf": {
+        "n": 18,
+        "median": 0.27287775549843674,
+        "p95": 0.3249691179347826
+      },
+      "audio_s": {
+        "n": 18,
+        "median": 2.16,
+        "p95": 6.16
+      },
+      "peak_pss_kib": {
+        "n": 18,
+        "median": 865050.5,
+        "p95": 868992
+      },
+      "peak_rss_kib": {
+        "n": 18,
+        "median": 893708.0,
+        "p95": 897596
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "adaptive3-t4-eager",
+      "language": "vi",
+      "bucket": "long",
+      "requests": 1,
+      "first_pcm_ms": {
+        "n": 1,
+        "median": 141.419531,
+        "p95": 141.419531
+      },
+      "first_audible_ms": {
+        "n": 1,
+        "median": 235.077344,
+        "p95": 235.077344
+      },
+      "synthesis_ms": {
+        "n": 1,
+        "median": 2381.608437,
+        "p95": 2381.608437
+      },
+      "playback_ms": {
+        "n": 1,
+        "median": 9753.185778,
+        "p95": 9753.185778
+      },
+      "rtf": {
+        "n": 1,
+        "median": 0.24860213329853859,
+        "p95": 0.24860213329853859
+      },
+      "audio_s": {
+        "n": 1,
+        "median": 9.58,
+        "p95": 9.58
+      },
+      "peak_pss_kib": {
+        "n": 1,
+        "median": 773539,
+        "p95": 773539
+      },
+      "peak_rss_kib": {
+        "n": 1,
+        "median": 802012,
+        "p95": 802012
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "adaptive3-t4-eager",
+      "language": "vi",
+      "bucket": "medium",
+      "requests": 1,
+      "first_pcm_ms": {
+        "n": 1,
+        "median": 173.578959,
+        "p95": 173.578959
+      },
+      "first_audible_ms": {
+        "n": 1,
+        "median": 292.722605,
+        "p95": 292.722605
+      },
+      "synthesis_ms": {
+        "n": 1,
+        "median": 1117.600573,
+        "p95": 1117.600573
+      },
+      "playback_ms": {
+        "n": 1,
+        "median": 4428.684061,
+        "p95": 4428.684061
+      },
+      "rtf": {
+        "n": 1,
+        "median": 0.26358504080188677,
+        "p95": 0.26358504080188677
+      },
+      "audio_s": {
+        "n": 1,
+        "median": 4.24,
+        "p95": 4.24
+      },
+      "peak_pss_kib": {
+        "n": 1,
+        "median": 740471,
+        "p95": 740471
+      },
+      "peak_rss_kib": {
+        "n": 1,
+        "median": 768944,
+        "p95": 768944
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "adaptive3-t4-eager",
+      "language": "vi",
+      "bucket": "short",
+      "requests": 1,
+      "first_pcm_ms": {
+        "n": 1,
+        "median": 225.805677,
+        "p95": 225.805677
+      },
+      "first_audible_ms": {
+        "n": 1,
+        "median": 330.34573,
+        "p95": 330.34573
+      },
+      "synthesis_ms": {
+        "n": 1,
+        "median": 922.275937,
+        "p95": 922.275937
+      },
+      "playback_ms": {
+        "n": 1,
+        "median": 2399.174739,
+        "p95": 2399.174739
+      },
+      "rtf": {
+        "n": 1,
+        "median": 0.4269796004629629,
+        "p95": 0.4269796004629629
+      },
+      "audio_s": {
+        "n": 1,
+        "median": 2.16,
+        "p95": 2.16
+      },
+      "peak_pss_kib": {
+        "n": 1,
+        "median": 716157,
+        "p95": 716157
+      },
+      "peak_rss_kib": {
+        "n": 1,
+        "median": 744600,
+        "p95": 744600
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "full-t4-eager",
+      "language": "en",
+      "bucket": "long",
+      "requests": 18,
+      "first_pcm_ms": {
+        "n": 18,
+        "median": 711.3680730000001,
+        "p95": 1014.584635
+      },
+      "first_audible_ms": {
+        "n": 18,
+        "median": 857.4530729999999,
+        "p95": 1142.441979
+      },
+      "synthesis_ms": {
+        "n": 18,
+        "median": 2350.9954415,
+        "p95": 3418.395415
+      },
+      "playback_ms": {
+        "n": 18,
+        "median": 13169.355437999999,
+        "p95": 13559.237599
+      },
+      "rtf": {
+        "n": 18,
+        "median": 0.20774446036254562,
+        "p95": 0.27434955176565007
+      },
+      "audio_s": {
+        "n": 18,
+        "median": 12.46,
+        "p95": 12.53
+      },
+      "peak_pss_kib": {
+        "n": 18,
+        "median": 893861.5,
+        "p95": 930658
+      },
+      "peak_rss_kib": {
+        "n": 18,
+        "median": 922602.0,
+        "p95": 959224
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "full-t4-eager",
+      "language": "en",
+      "bucket": "medium",
+      "requests": 18,
+      "first_pcm_ms": {
+        "n": 18,
+        "median": 840.701223,
+        "p95": 1250.832812
+      },
+      "first_audible_ms": {
+        "n": 18,
+        "median": 902.756849,
+        "p95": 1303.559323
+      },
+      "synthesis_ms": {
+        "n": 18,
+        "median": 1055.9491145,
+        "p95": 1655.52552
+      },
+      "playback_ms": {
+        "n": 18,
+        "median": 6296.139867,
+        "p95": 8296.532549
+      },
+      "rtf": {
+        "n": 18,
+        "median": 0.19381718606998655,
+        "p95": 0.23758359962121212
+      },
+      "audio_s": {
+        "n": 18,
+        "median": 5.28,
+        "p95": 7.43
+      },
+      "peak_pss_kib": {
+        "n": 18,
+        "median": 908966.0,
+        "p95": 929764
+      },
+      "peak_rss_kib": {
+        "n": 18,
+        "median": 937692.0,
+        "p95": 958648
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "full-t4-eager",
+      "language": "en",
+      "bucket": "short",
+      "requests": 18,
+      "first_pcm_ms": {
+        "n": 18,
+        "median": 463.4973695,
+        "p95": 1796.373905
+      },
+      "first_audible_ms": {
+        "n": 18,
+        "median": 512.8997395,
+        "p95": 1973.602291
+      },
+      "synthesis_ms": {
+        "n": 18,
+        "median": 464.9676035,
+        "p95": 1801.53328
+      },
+      "playback_ms": {
+        "n": 18,
+        "median": 2585.6715355,
+        "p95": 7971.836507
+      },
+      "rtf": {
+        "n": 18,
+        "median": 0.20968024252344875,
+        "p95": 0.2924567012987013
+      },
+      "audio_s": {
+        "n": 18,
+        "median": 2.16,
+        "p95": 6.16
+      },
+      "peak_pss_kib": {
+        "n": 18,
+        "median": 904900.0,
+        "p95": 933729
+      },
+      "peak_rss_kib": {
+        "n": 18,
+        "median": 933686.0,
+        "p95": 962428
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "full-t4-eager",
+      "language": "vi",
+      "bucket": "long",
+      "requests": 1,
+      "first_pcm_ms": {
+        "n": 1,
+        "median": 626.499479,
+        "p95": 626.499479
+      },
+      "first_audible_ms": {
+        "n": 1,
+        "median": 702.6,
+        "p95": 702.6
+      },
+      "synthesis_ms": {
+        "n": 1,
+        "median": 1888.645,
+        "p95": 1888.645
+      },
+      "playback_ms": {
+        "n": 1,
+        "median": 10220.776507,
+        "p95": 10220.776507
+      },
+      "rtf": {
+        "n": 1,
+        "median": 0.19714457202505217,
+        "p95": 0.19714457202505217
+      },
+      "audio_s": {
+        "n": 1,
+        "median": 9.58,
+        "p95": 9.58
+      },
+      "peak_pss_kib": {
+        "n": 1,
+        "median": 747949,
+        "p95": 747949
+      },
+      "peak_rss_kib": {
+        "n": 1,
+        "median": 776884,
+        "p95": 776884
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "full-t4-eager",
+      "language": "vi",
+      "bucket": "medium",
+      "requests": 1,
+      "first_pcm_ms": {
+        "n": 1,
+        "median": 898.454374,
+        "p95": 898.454374
+      },
+      "first_audible_ms": {
+        "n": 1,
+        "median": 1021.005,
+        "p95": 1021.005
+      },
+      "synthesis_ms": {
+        "n": 1,
+        "median": 900.616093,
+        "p95": 900.616093
+      },
+      "playback_ms": {
+        "n": 1,
+        "median": 5155.334477,
+        "p95": 5155.334477
+      },
+      "rtf": {
+        "n": 1,
+        "median": 0.2124094558962264,
+        "p95": 0.2124094558962264
+      },
+      "audio_s": {
+        "n": 1,
+        "median": 4.24,
+        "p95": 4.24
+      },
+      "peak_pss_kib": {
+        "n": 1,
+        "median": 739845,
+        "p95": 739845
+      },
+      "peak_rss_kib": {
+        "n": 1,
+        "median": 768780,
+        "p95": 768780
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "full-t4-eager",
+      "language": "vi",
+      "bucket": "short",
+      "requests": 1,
+      "first_pcm_ms": {
+        "n": 1,
+        "median": 447.105833,
+        "p95": 447.105833
+      },
+      "first_audible_ms": {
+        "n": 1,
+        "median": 552.571407,
+        "p95": 552.571407
+      },
+      "synthesis_ms": {
+        "n": 1,
+        "median": 448.616406,
+        "p95": 448.616406
+      },
+      "playback_ms": {
+        "n": 1,
+        "median": 2621.651406,
+        "p95": 2621.651406
+      },
+      "rtf": {
+        "n": 1,
+        "median": 0.20769278055555554,
+        "p95": 0.20769278055555554
+      },
+      "audio_s": {
+        "n": 1,
+        "median": 2.16,
+        "p95": 2.16
+      },
+      "peak_pss_kib": {
+        "n": 1,
+        "median": 631116,
+        "p95": 631116
+      },
+      "peak_rss_kib": {
+        "n": 1,
+        "median": 660020,
+        "p95": 660020
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "pico-i8-t4-latency-eager",
+      "language": "en",
+      "bucket": "long",
+      "requests": 18,
+      "first_pcm_ms": {
+        "n": 18,
+        "median": 99.2923175,
+        "p95": 135.007031
+      },
+      "first_audible_ms": {
+        "n": 18,
+        "median": 192.3839585,
+        "p95": 219.733594
+      },
+      "synthesis_ms": {
+        "n": 18,
+        "median": 368.249375,
+        "p95": 477.291459
+      },
+      "playback_ms": {
+        "n": 18,
+        "median": 10088.579502,
+        "p95": 10289.007132
+      },
+      "rtf": {
+        "n": 18,
+        "median": 0.04042538148536563,
+        "p95": 0.049199017423468626
+      },
+      "audio_s": {
+        "n": 18,
+        "median": 9.903416666666667,
+        "p95": 10.101416666666667
+      },
+      "peak_pss_kib": {
+        "n": 18,
+        "median": 101062.5,
+        "p95": 114252
+      },
+      "peak_rss_kib": {
+        "n": 18,
+        "median": 129346.0,
+        "p95": 142540
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "pico-i8-t4-latency-eager",
+      "language": "en",
+      "bucket": "medium",
+      "requests": 18,
+      "first_pcm_ms": {
+        "n": 18,
+        "median": 107.3608855,
+        "p95": 144.028177
+      },
+      "first_audible_ms": {
+        "n": 18,
+        "median": 196.898021,
+        "p95": 211.026511
+      },
+      "synthesis_ms": {
+        "n": 18,
+        "median": 191.597396,
+        "p95": 272.014739
+      },
+      "playback_ms": {
+        "n": 18,
+        "median": 4905.3427329999995,
+        "p95": 5866.531821
+      },
+      "rtf": {
+        "n": 18,
+        "median": 0.04249236088134599,
+        "p95": 0.055906920229449826
+      },
+      "audio_s": {
+        "n": 18,
+        "median": 4.724166666666667,
+        "p95": 5.679958333333333
+      },
+      "peak_pss_kib": {
+        "n": 18,
+        "median": 96808.0,
+        "p95": 104976
+      },
+      "peak_rss_kib": {
+        "n": 18,
+        "median": 125214.0,
+        "p95": 133340
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "label": "pico-i8-t4-latency-eager",
+      "language": "en",
+      "bucket": "short",
+      "requests": 18,
+      "first_pcm_ms": {
+        "n": 18,
+        "median": 68.6453385,
+        "p95": 94.003178
+      },
+      "first_audible_ms": {
+        "n": 18,
+        "median": 207.7516405,
+        "p95": 230.172605
+      },
+      "synthesis_ms": {
+        "n": 18,
+        "median": 69.135182,
+        "p95": 94.457396
+      },
+      "playback_ms": {
+        "n": 18,
+        "median": 1482.688568,
+        "p95": 1560.907083
+      },
+      "rtf": {
+        "n": 18,
+        "median": 0.0571221832605574,
+        "p95": 0.07350293444004928
+      },
+      "audio_s": {
+        "n": 18,
+        "median": 1.2850833333333334,
+        "p95": 1.3613333333333333
+      },
+      "peak_pss_kib": {
+        "n": 18,
+        "median": 95308.5,
+        "p95": 97137
+      },
+      "peak_rss_kib": {
+        "n": 18,
+        "median": 123594.0,
+        "p95": 125396
+      },
+      "gapped_requests": 0,
+      "app_gap_frames": 0,
+      "xrun_requests": 0,
+      "xrun_unknown_requests": 0,
+      "playback_statuses": [
+        "ok"
+      ],
+      "clipped_samples": 0
+    }
+  ],
+  "device_cell_records": {
+    "full-t4-eager": [
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "vieneu",
+        "label": "full-t4-eager",
+        "load_ms": 455.824843,
+        "loaded_memory": {
+          "pss_kib": 533890,
+          "rss_kib": 561244,
+          "vmhwm_kib": 560940
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 28723,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 623866,
+            "rss_kib": 651640,
+            "vmhwm_kib": 650840
+          },
+          "initial": {
+            "pss_kib": 20608,
+            "rss_kib": 47892,
+            "vmhwm_kib": 47336
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 623866,
+            "rss_kib": 651640,
+            "vmhwm_kib": 650840
+          },
+          "samples": 9,
+          "smaps_samples": 9,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 0,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 388.68,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20608,
+            "rss_kib": 47892,
+            "vmhwm_kib": 47336
+          },
+          "peak": {
+            "pss_kib": 930658,
+            "rss_kib": 959224,
+            "vmhwm_kib": 959680
+          },
+          "current": {
+            "pss_kib": 925476,
+            "rss_kib": 954032,
+            "vmhwm_kib": 959680
+          },
+          "samples": 666,
+          "smaps_samples": 666,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "vieneu",
+        "label": "full-t4-eager",
+        "load_ms": 596.07,
+        "loaded_memory": {
+          "pss_kib": 545280,
+          "rss_kib": 572772,
+          "vmhwm_kib": 572836
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 30612,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 632821,
+            "rss_kib": 660744,
+            "vmhwm_kib": 661028
+          },
+          "initial": {
+            "pss_kib": 20546,
+            "rss_kib": 47964,
+            "vmhwm_kib": 47504
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 632821,
+            "rss_kib": 660744,
+            "vmhwm_kib": 661028
+          },
+          "samples": 14,
+          "smaps_samples": 14,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 1,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 784.161511,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20546,
+            "rss_kib": 47964,
+            "vmhwm_kib": 47504
+          },
+          "peak": {
+            "pss_kib": 933729,
+            "rss_kib": 962428,
+            "vmhwm_kib": 962324
+          },
+          "current": {
+            "pss_kib": 930631,
+            "rss_kib": 959320,
+            "vmhwm_kib": 962324
+          },
+          "samples": 665,
+          "smaps_samples": 665,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "vieneu",
+        "label": "full-t4-eager",
+        "load_ms": 1062.599844,
+        "loaded_memory": {
+          "pss_kib": 542483,
+          "rss_kib": 570224,
+          "vmhwm_kib": 570112
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 559,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 625927,
+            "rss_kib": 654088,
+            "vmhwm_kib": 653860
+          },
+          "initial": {
+            "pss_kib": 20645,
+            "rss_kib": 48316,
+            "vmhwm_kib": 47808
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 625927,
+            "rss_kib": 654088,
+            "vmhwm_kib": 653860
+          },
+          "samples": 18,
+          "smaps_samples": 18,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 2,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 789.394687,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20645,
+            "rss_kib": 48316,
+            "vmhwm_kib": 47808
+          },
+          "peak": {
+            "pss_kib": 929764,
+            "rss_kib": 958648,
+            "vmhwm_kib": 957940
+          },
+          "current": {
+            "pss_kib": 925870,
+            "rss_kib": 954744,
+            "vmhwm_kib": 957940
+          },
+          "samples": 666,
+          "smaps_samples": 666,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "vieneu",
+        "label": "full-t4-eager",
+        "load_ms": 683.072344,
+        "loaded_memory": {
+          "pss_kib": 533269,
+          "rss_kib": 560900,
+          "vmhwm_kib": 560864
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 5143,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 615229,
+            "rss_kib": 643264,
+            "vmhwm_kib": 645236
+          },
+          "initial": {
+            "pss_kib": 20655,
+            "rss_kib": 48224,
+            "vmhwm_kib": 47888
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 616801,
+            "rss_kib": 644800,
+            "vmhwm_kib": 645236
+          },
+          "samples": 13,
+          "smaps_samples": 13,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 3,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 580.782032,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20655,
+            "rss_kib": 48224,
+            "vmhwm_kib": 47888
+          },
+          "peak": {
+            "pss_kib": 926829,
+            "rss_kib": 955716,
+            "vmhwm_kib": 956908
+          },
+          "current": {
+            "pss_kib": 921955,
+            "rss_kib": 950832,
+            "vmhwm_kib": 956908
+          },
+          "samples": 664,
+          "smaps_samples": 664,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "vieneu",
+        "label": "full-t4-eager",
+        "load_ms": 549.849375,
+        "loaded_memory": {
+          "pss_kib": 536455,
+          "rss_kib": 564040,
+          "vmhwm_kib": 563752
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 6567,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 620095,
+            "rss_kib": 648100,
+            "vmhwm_kib": 647248
+          },
+          "initial": {
+            "pss_kib": 20585,
+            "rss_kib": 48100,
+            "vmhwm_kib": 47496
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 620095,
+            "rss_kib": 648100,
+            "vmhwm_kib": 647248
+          },
+          "samples": 11,
+          "smaps_samples": 11,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 4,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 475.115729,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20585,
+            "rss_kib": 48100,
+            "vmhwm_kib": 47496
+          },
+          "peak": {
+            "pss_kib": 918946,
+            "rss_kib": 947728,
+            "vmhwm_kib": 947884
+          },
+          "current": {
+            "pss_kib": 915844,
+            "rss_kib": 944616,
+            "vmhwm_kib": 947884
+          },
+          "samples": 664,
+          "smaps_samples": 664,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "vieneu",
+        "label": "full-t4-eager",
+        "load_ms": 1052.018697,
+        "loaded_memory": {
+          "pss_kib": 533912,
+          "rss_kib": 561520,
+          "vmhwm_kib": 561352
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 8998,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 618868,
+            "rss_kib": 646896,
+            "vmhwm_kib": 646304
+          },
+          "initial": {
+            "pss_kib": 20666,
+            "rss_kib": 48204,
+            "vmhwm_kib": 47604
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 618868,
+            "rss_kib": 646896,
+            "vmhwm_kib": 646304
+          },
+          "samples": 17,
+          "smaps_samples": 17,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 5,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 644.157083,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20666,
+            "rss_kib": 48204,
+            "vmhwm_kib": 47604
+          },
+          "peak": {
+            "pss_kib": 923050,
+            "rss_kib": 951840,
+            "vmhwm_kib": 950836
+          },
+          "current": {
+            "pss_kib": 919156,
+            "rss_kib": 947936,
+            "vmhwm_kib": 950836
+          },
+          "samples": 682,
+          "smaps_samples": 682,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "vieneu",
+        "label": "full-t4-eager",
+        "load_ms": 920.2275,
+        "loaded_memory": {
+          "pss_kib": 533406,
+          "rss_kib": 561108,
+          "vmhwm_kib": 561272
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 9706,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 617442,
+            "rss_kib": 645552,
+            "vmhwm_kib": 645644
+          },
+          "initial": {
+            "pss_kib": 20573,
+            "rss_kib": 48212,
+            "vmhwm_kib": 47984
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 617442,
+            "rss_kib": 645552,
+            "vmhwm_kib": 645644
+          },
+          "samples": 16,
+          "smaps_samples": 16,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": -3,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 692.941094,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20573,
+            "rss_kib": 48212,
+            "vmhwm_kib": 47984
+          },
+          "peak": {
+            "pss_kib": 747949,
+            "rss_kib": 776884,
+            "vmhwm_kib": 778912
+          },
+          "current": {
+            "pss_kib": 742703,
+            "rss_kib": 771628,
+            "vmhwm_kib": 778912
+          },
+          "samples": 193,
+          "smaps_samples": 193,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      }
+    ],
+    "adaptive3-t4-eager": [
+      {
+        "codec_adaptive_groups": true,
+        "codec_first_frames": 3,
+        "codec_follow_frames": 25,
+        "engine": "vieneu",
+        "label": "adaptive3-t4-eager",
+        "load_ms": 892.526301,
+        "loaded_memory": {
+          "pss_kib": 533545,
+          "rss_kib": 561208,
+          "vmhwm_kib": 561176
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 29496,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 681326,
+            "rss_kib": 709420,
+            "vmhwm_kib": 708872
+          },
+          "initial": {
+            "pss_kib": 20603,
+            "rss_kib": 48192,
+            "vmhwm_kib": 47780
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 681326,
+            "rss_kib": 709420,
+            "vmhwm_kib": 708872
+          },
+          "samples": 16,
+          "smaps_samples": 16,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 0,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 756.345416,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20603,
+            "rss_kib": 48192,
+            "vmhwm_kib": 47780
+          },
+          "peak": {
+            "pss_kib": 874466,
+            "rss_kib": 903292,
+            "vmhwm_kib": 902620
+          },
+          "current": {
+            "pss_kib": 849120,
+            "rss_kib": 877936,
+            "vmhwm_kib": 902620
+          },
+          "samples": 614,
+          "smaps_samples": 614,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": true,
+        "codec_first_frames": 3,
+        "codec_follow_frames": 25,
+        "engine": "vieneu",
+        "label": "adaptive3-t4-eager",
+        "load_ms": 898.65,
+        "loaded_memory": {
+          "pss_kib": 531688,
+          "rss_kib": 559160,
+          "vmhwm_kib": 559136
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 31789,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 684760,
+            "rss_kib": 712660,
+            "vmhwm_kib": 712168
+          },
+          "initial": {
+            "pss_kib": 20566,
+            "rss_kib": 47964,
+            "vmhwm_kib": 47648
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 684760,
+            "rss_kib": 712660,
+            "vmhwm_kib": 712168
+          },
+          "samples": 16,
+          "smaps_samples": 16,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 1,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 727.081354,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20566,
+            "rss_kib": 47964,
+            "vmhwm_kib": 47648
+          },
+          "peak": {
+            "pss_kib": 870812,
+            "rss_kib": 899416,
+            "vmhwm_kib": 898640
+          },
+          "current": {
+            "pss_kib": 843078,
+            "rss_kib": 871672,
+            "vmhwm_kib": 898640
+          },
+          "samples": 608,
+          "smaps_samples": 608,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": true,
+        "codec_first_frames": 3,
+        "codec_follow_frames": 25,
+        "engine": "vieneu",
+        "label": "adaptive3-t4-eager",
+        "load_ms": 1008.283229,
+        "loaded_memory": {
+          "pss_kib": 537502,
+          "rss_kib": 564884,
+          "vmhwm_kib": 564940
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 32360,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 719222,
+            "rss_kib": 747004,
+            "vmhwm_kib": 746412
+          },
+          "initial": {
+            "pss_kib": 20560,
+            "rss_kib": 47880,
+            "vmhwm_kib": 47500
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 719222,
+            "rss_kib": 747004,
+            "vmhwm_kib": 746412
+          },
+          "samples": 20,
+          "smaps_samples": 20,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 2,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 1019.873854,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20560,
+            "rss_kib": 47880,
+            "vmhwm_kib": 47500
+          },
+          "peak": {
+            "pss_kib": 873191,
+            "rss_kib": 901776,
+            "vmhwm_kib": 900496
+          },
+          "current": {
+            "pss_kib": 845993,
+            "rss_kib": 874568,
+            "vmhwm_kib": 900496
+          },
+          "samples": 609,
+          "smaps_samples": 609,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": true,
+        "codec_first_frames": 3,
+        "codec_follow_frames": 25,
+        "engine": "vieneu",
+        "label": "adaptive3-t4-eager",
+        "load_ms": 653.984999,
+        "loaded_memory": {
+          "pss_kib": 531653,
+          "rss_kib": 559360,
+          "vmhwm_kib": 559116
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 2560,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 710393,
+            "rss_kib": 738508,
+            "vmhwm_kib": 739840
+          },
+          "initial": {
+            "pss_kib": 20647,
+            "rss_kib": 48292,
+            "vmhwm_kib": 47616
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 710393,
+            "rss_kib": 738508,
+            "vmhwm_kib": 739840
+          },
+          "samples": 13,
+          "smaps_samples": 13,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 3,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 566.694635,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20647,
+            "rss_kib": 48292,
+            "vmhwm_kib": 47616
+          },
+          "peak": {
+            "pss_kib": 871396,
+            "rss_kib": 900328,
+            "vmhwm_kib": 899368
+          },
+          "current": {
+            "pss_kib": 844006,
+            "rss_kib": 872928,
+            "vmhwm_kib": 899368
+          },
+          "samples": 607,
+          "smaps_samples": 607,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": true,
+        "codec_first_frames": 3,
+        "codec_follow_frames": 25,
+        "engine": "vieneu",
+        "label": "adaptive3-t4-eager",
+        "load_ms": 692.448437,
+        "loaded_memory": {
+          "pss_kib": 531683,
+          "rss_kib": 559092,
+          "vmhwm_kib": 558832
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 7297,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 714415,
+            "rss_kib": 742236,
+            "vmhwm_kib": 743776
+          },
+          "initial": {
+            "pss_kib": 20769,
+            "rss_kib": 48116,
+            "vmhwm_kib": 47516
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 714415,
+            "rss_kib": 742236,
+            "vmhwm_kib": 743776
+          },
+          "samples": 13,
+          "smaps_samples": 13,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 4,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 586.380469,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20769,
+            "rss_kib": 48116,
+            "vmhwm_kib": 47516
+          },
+          "peak": {
+            "pss_kib": 868730,
+            "rss_kib": 897336,
+            "vmhwm_kib": 896440
+          },
+          "current": {
+            "pss_kib": 841116,
+            "rss_kib": 869712,
+            "vmhwm_kib": 896440
+          },
+          "samples": 621,
+          "smaps_samples": 621,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": true,
+        "codec_first_frames": 3,
+        "codec_follow_frames": 25,
+        "engine": "vieneu",
+        "label": "adaptive3-t4-eager",
+        "load_ms": 483.824271,
+        "loaded_memory": {
+          "pss_kib": 533247,
+          "rss_kib": 560720,
+          "vmhwm_kib": 560720
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 8423,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 696131,
+            "rss_kib": 724012,
+            "vmhwm_kib": 723540
+          },
+          "initial": {
+            "pss_kib": 20709,
+            "rss_kib": 48120,
+            "vmhwm_kib": 47704
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 696131,
+            "rss_kib": 724012,
+            "vmhwm_kib": 723540
+          },
+          "samples": 10,
+          "smaps_samples": 10,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 5,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 464.515364,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20709,
+            "rss_kib": 48120,
+            "vmhwm_kib": 47704
+          },
+          "peak": {
+            "pss_kib": 869935,
+            "rss_kib": 898644,
+            "vmhwm_kib": 897860
+          },
+          "current": {
+            "pss_kib": 842857,
+            "rss_kib": 871556,
+            "vmhwm_kib": 897860
+          },
+          "samples": 622,
+          "smaps_samples": 622,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": true,
+        "codec_first_frames": 3,
+        "codec_follow_frames": 25,
+        "engine": "vieneu",
+        "label": "adaptive3-t4-eager",
+        "load_ms": 863.455781,
+        "loaded_memory": {
+          "pss_kib": 532510,
+          "rss_kib": 559820,
+          "vmhwm_kib": 559968
+        },
+        "pico_chunk_chars": 0,
+        "pico_int8": false,
+        "pico_retain_buffers": false,
+        "pid": 9915,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 711486,
+            "rss_kib": 739224,
+            "vmhwm_kib": 739236
+          },
+          "initial": {
+            "pss_kib": 20400,
+            "rss_kib": 47636,
+            "vmhwm_kib": 47224
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 711486,
+            "rss_kib": 739224,
+            "vmhwm_kib": 739236
+          },
+          "samples": 19,
+          "smaps_samples": 19,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": -3,
+        "sample_rate": 48000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 1097.038697,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20400,
+            "rss_kib": 47636,
+            "vmhwm_kib": 47224
+          },
+          "peak": {
+            "pss_kib": 773539,
+            "rss_kib": 802012,
+            "vmhwm_kib": 802376
+          },
+          "current": {
+            "pss_kib": 748529,
+            "rss_kib": 776992,
+            "vmhwm_kib": 802376
+          },
+          "samples": 181,
+          "smaps_samples": 181,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      }
+    ],
+    "pico-i8-t4-latency-eager": [
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "pico",
+        "label": "pico-i8-t4-latency-eager",
+        "load_ms": 214.447032,
+        "loaded_memory": {
+          "pss_kib": 72819,
+          "rss_kib": 100324,
+          "vmhwm_kib": 101984
+        },
+        "pico_chunk_chars": 64,
+        "pico_int8": true,
+        "pico_retain_buffers": true,
+        "pid": 30153,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 91611,
+            "rss_kib": 119192,
+            "vmhwm_kib": 118812
+          },
+          "initial": {
+            "pss_kib": 20499,
+            "rss_kib": 47972,
+            "vmhwm_kib": 47580
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 91611,
+            "rss_kib": 119192,
+            "vmhwm_kib": 118812
+          },
+          "samples": 4,
+          "smaps_samples": 4,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 0,
+        "sample_rate": 24000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 87.798594,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20499,
+            "rss_kib": 47972,
+            "vmhwm_kib": 47580
+          },
+          "peak": {
+            "pss_kib": 104976,
+            "rss_kib": 133340,
+            "vmhwm_kib": 132604
+          },
+          "current": {
+            "pss_kib": 97230,
+            "rss_kib": 125584,
+            "vmhwm_kib": 132604
+          },
+          "samples": 502,
+          "smaps_samples": 502,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "pico",
+        "label": "pico-i8-t4-latency-eager",
+        "load_ms": 214.450833,
+        "loaded_memory": {
+          "pss_kib": 72898,
+          "rss_kib": 100388,
+          "vmhwm_kib": 101856
+        },
+        "pico_chunk_chars": 64,
+        "pico_int8": true,
+        "pico_retain_buffers": true,
+        "pid": 31243,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 91689,
+            "rss_kib": 119256,
+            "vmhwm_kib": 118644
+          },
+          "initial": {
+            "pss_kib": 20509,
+            "rss_kib": 47968,
+            "vmhwm_kib": 47520
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 91689,
+            "rss_kib": 119256,
+            "vmhwm_kib": 118644
+          },
+          "samples": 4,
+          "smaps_samples": 4,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 1,
+        "sample_rate": 24000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 87.292656,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20509,
+            "rss_kib": 47968,
+            "vmhwm_kib": 47520
+          },
+          "peak": {
+            "pss_kib": 103889,
+            "rss_kib": 132148,
+            "vmhwm_kib": 130996
+          },
+          "current": {
+            "pss_kib": 94615,
+            "rss_kib": 122864,
+            "vmhwm_kib": 130996
+          },
+          "samples": 503,
+          "smaps_samples": 503,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "pico",
+        "label": "pico-i8-t4-latency-eager",
+        "load_ms": 213.588281,
+        "loaded_memory": {
+          "pss_kib": 72875,
+          "rss_kib": 100344,
+          "vmhwm_kib": 102076
+        },
+        "pico_chunk_chars": 64,
+        "pico_int8": true,
+        "pico_retain_buffers": true,
+        "pid": 1788,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 91835,
+            "rss_kib": 119380,
+            "vmhwm_kib": 118744
+          },
+          "initial": {
+            "pss_kib": 20559,
+            "rss_kib": 47996,
+            "vmhwm_kib": 47692
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 91835,
+            "rss_kib": 119380,
+            "vmhwm_kib": 118744
+          },
+          "samples": 4,
+          "smaps_samples": 4,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 2,
+        "sample_rate": 24000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 84.955625,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20559,
+            "rss_kib": 47996,
+            "vmhwm_kib": 47692
+          },
+          "peak": {
+            "pss_kib": 114222,
+            "rss_kib": 142540,
+            "vmhwm_kib": 141624
+          },
+          "current": {
+            "pss_kib": 95364,
+            "rss_kib": 123672,
+            "vmhwm_kib": 141624
+          },
+          "samples": 502,
+          "smaps_samples": 502,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "pico",
+        "label": "pico-i8-t4-latency-eager",
+        "load_ms": 279.007969,
+        "loaded_memory": {
+          "pss_kib": 73693,
+          "rss_kib": 101288,
+          "vmhwm_kib": 102864
+        },
+        "pico_chunk_chars": 64,
+        "pico_int8": true,
+        "pico_retain_buffers": true,
+        "pid": 4079,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 92524,
+            "rss_kib": 120196,
+            "vmhwm_kib": 119232
+          },
+          "initial": {
+            "pss_kib": 20628,
+            "rss_kib": 48192,
+            "vmhwm_kib": 47304
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 92524,
+            "rss_kib": 120196,
+            "vmhwm_kib": 119232
+          },
+          "samples": 5,
+          "smaps_samples": 5,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 3,
+        "sample_rate": 24000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 105.025312,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20628,
+            "rss_kib": 48192,
+            "vmhwm_kib": 47304
+          },
+          "peak": {
+            "pss_kib": 104892,
+            "rss_kib": 133340,
+            "vmhwm_kib": 132364
+          },
+          "current": {
+            "pss_kib": 96832,
+            "rss_kib": 125264,
+            "vmhwm_kib": 132364
+          },
+          "samples": 504,
+          "smaps_samples": 504,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "pico",
+        "label": "pico-i8-t4-latency-eager",
+        "load_ms": 239.384479,
+        "loaded_memory": {
+          "pss_kib": 72862,
+          "rss_kib": 100392,
+          "vmhwm_kib": 102012
+        },
+        "pico_chunk_chars": 64,
+        "pico_int8": true,
+        "pico_retain_buffers": true,
+        "pid": 6057,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 91797,
+            "rss_kib": 119388,
+            "vmhwm_kib": 119024
+          },
+          "initial": {
+            "pss_kib": 20610,
+            "rss_kib": 48108,
+            "vmhwm_kib": 47612
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 91797,
+            "rss_kib": 119388,
+            "vmhwm_kib": 119024
+          },
+          "samples": 5,
+          "smaps_samples": 5,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 4,
+        "sample_rate": 24000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 85.103594,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20610,
+            "rss_kib": 48108,
+            "vmhwm_kib": 47612
+          },
+          "peak": {
+            "pss_kib": 103854,
+            "rss_kib": 132168,
+            "vmhwm_kib": 131048
+          },
+          "current": {
+            "pss_kib": 94476,
+            "rss_kib": 122780,
+            "vmhwm_kib": 131048
+          },
+          "samples": 504,
+          "smaps_samples": 504,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      },
+      {
+        "codec_adaptive_groups": false,
+        "codec_first_frames": 0,
+        "codec_follow_frames": 0,
+        "engine": "pico",
+        "label": "pico-i8-t4-latency-eager",
+        "load_ms": 243.637812,
+        "loaded_memory": {
+          "pss_kib": 72931,
+          "rss_kib": 100228,
+          "vmhwm_kib": 101820
+        },
+        "pico_chunk_chars": 64,
+        "pico_int8": true,
+        "pico_retain_buffers": true,
+        "pid": 7959,
+        "pre_requests_memory": {
+          "current": {
+            "pss_kib": 91847,
+            "rss_kib": 119236,
+            "vmhwm_kib": 118704
+          },
+          "initial": {
+            "pss_kib": 20647,
+            "rss_kib": 47880,
+            "vmhwm_kib": 47520
+          },
+          "interval_ms": 100,
+          "peak": {
+            "pss_kib": 91847,
+            "rss_kib": 119236,
+            "vmhwm_kib": 118704
+          },
+          "samples": 5,
+          "smaps_samples": 5,
+          "vmhwm_scope": "process_lifetime"
+        },
+        "round": 5,
+        "sample_rate": 24000,
+        "start_output_on_admission": true,
+        "threads": 4,
+        "warmup_ms": 88.289687,
+        "lifetime": {
+          "initial": {
+            "pss_kib": 20647,
+            "rss_kib": 47880,
+            "vmhwm_kib": 47520
+          },
+          "peak": {
+            "pss_kib": 114252,
+            "rss_kib": 142392,
+            "vmhwm_kib": 141372
+          },
+          "current": {
+            "pss_kib": 95374,
+            "rss_kib": 123504,
+            "vmhwm_kib": 141372
+          },
+          "samples": 502,
+          "smaps_samples": 502,
+          "interval_ms": 100,
+          "vmhwm_scope": "process_lifetime"
+        }
+      }
+    ]
+  },
+  "comparisons": [
+    {
+      "bucket": "short",
+      "baseline": "full-t4-eager",
+      "candidate": "adaptive3-t4-eager",
+      "first_audible_ms": {
+        "rounds": 6,
+        "complete": true,
+        "ratio": 4.698939539033483,
+        "ci95": [
+          3.8480805773450135,
+          5.60414443753541
+        ],
+        "raw_ratios": [
+          4.5017981853376305,
+          4.896080892729335,
+          5.893975475004193,
+          3.7091954484406564,
+          3.9869657062493706,
+          5.314313400066627
+        ]
+      },
+      "synthesis_ms": {
+        "rounds": 6,
+        "complete": true,
+        "ratio": 0.9334048327858463,
+        "ci95": [
+          0.8246342801335846,
+          1.0280435862637334
+        ],
+        "raw_ratios": [
+          0.9378447806752237,
+          0.9337836014907881,
+          1.1182423918522433,
+          0.9253379523167368,
+          0.7239306079504326,
+          0.9330260640809045
+        ]
+      },
+      "rtf": {
+        "rounds": 6,
+        "complete": true,
+        "ratio": 0.80504559632615,
+        "ci95": [
+          0.6703746142866489,
+          0.8697794650319941
+        ],
+        "raw_ratios": [
+          0.7959289184896843,
+          0.7274298079591338,
+          0.9201902048839724,
+          0.8193687251800159,
+          0.613319420614164,
+          0.8141622741626157
+        ]
+      },
+      "exclude_pcm_retention_round": {
+        "first_audible_ms": {
+          "rounds": 5,
+          "complete": true,
+          "ratio": 4.896080892729335,
+          "ci95": [
+            3.7091954484406564,
+            5.893975475004193
+          ],
+          "raw_ratios": [
+            4.896080892729335,
+            5.893975475004193,
+            3.7091954484406564,
+            3.9869657062493706,
+            5.314313400066627
+          ]
+        },
+        "synthesis_ms": {
+          "rounds": 5,
+          "complete": true,
+          "ratio": 0.9330260640809045,
+          "ci95": [
+            0.7239306079504326,
+            1.1182423918522433
+          ],
+          "raw_ratios": [
+            0.9337836014907881,
+            1.1182423918522433,
+            0.9253379523167368,
+            0.7239306079504326,
+            0.9330260640809045
+          ]
+        },
+        "rtf": {
+          "rounds": 5,
+          "complete": true,
+          "ratio": 0.8141622741626157,
+          "ci95": [
+            0.613319420614164,
+            0.9201902048839724
+          ],
+          "raw_ratios": [
+            0.7274298079591338,
+            0.9201902048839724,
+            0.8193687251800159,
+            0.613319420614164,
+            0.8141622741626157
+          ]
+        }
+      }
+    },
+    {
+      "bucket": "medium",
+      "baseline": "full-t4-eager",
+      "candidate": "adaptive3-t4-eager",
+      "first_audible_ms": {
+        "rounds": 6,
+        "complete": true,
+        "ratio": 4.5193600402372045,
+        "ci95": [
+          4.007009879766761,
+          5.277119680246656
+        ],
+        "raw_ratios": [
+          5.079986487254468,
+          4.055460930123,
+          5.474252873238846,
+          4.155284949819806,
+          3.9585588294105207,
+          4.883435130654604
+        ]
+      },
+      "synthesis_ms": {
+        "rounds": 6,
+        "complete": true,
+        "ratio": 0.7638924534437032,
+        "ci95": [
+          0.6838771129212808,
+          0.8137970927423566
+        ],
+        "raw_ratios": [
+          0.756495947756638,
+          0.8154709519991732,
+          0.8121232334855399,
+          0.7712889591307683,
+          0.6585356966484138,
+          0.7092185291941479
+        ]
+      },
+      "rtf": {
+        "rounds": 6,
+        "complete": true,
+        "ratio": 0.7731144866278556,
+        "ci95": [
+          0.7314385576806259,
+          0.8518005034956231
+        ],
+        "raw_ratios": [
+          0.8999219948296043,
+          0.7515276120366363,
+          0.8036790121616417,
+          0.7712889591307683,
+          0.7113495033246157,
+          0.7749400141249428
+        ]
+      },
+      "exclude_pcm_retention_round": {
+        "first_audible_ms": {
+          "rounds": 5,
+          "complete": true,
+          "ratio": 4.155284949819806,
+          "ci95": [
+            3.9585588294105207,
+            5.474252873238846
+          ],
+          "raw_ratios": [
+            4.055460930123,
+            5.474252873238846,
+            4.155284949819806,
+            3.9585588294105207,
+            4.883435130654604
+          ]
+        },
+        "synthesis_ms": {
+          "rounds": 5,
+          "complete": true,
+          "ratio": 0.7712889591307683,
+          "ci95": [
+            0.6585356966484138,
+            0.8154709519991732
+          ],
+          "raw_ratios": [
+            0.8154709519991732,
+            0.8121232334855399,
+            0.7712889591307683,
+            0.6585356966484138,
+            0.7092185291941479
+          ]
+        },
+        "rtf": {
+          "rounds": 5,
+          "complete": true,
+          "ratio": 0.7712889591307683,
+          "ci95": [
+            0.7113495033246157,
+            0.8036790121616417
+          ],
+          "raw_ratios": [
+            0.7515276120366363,
+            0.8036790121616417,
+            0.7712889591307683,
+            0.7113495033246157,
+            0.7749400141249428
+          ]
+        }
+      }
+    },
+    {
+      "bucket": "long",
+      "baseline": "full-t4-eager",
+      "candidate": "adaptive3-t4-eager",
+      "first_audible_ms": {
+        "rounds": 6,
+        "complete": true,
+        "ratio": 2.7066124800026437,
+        "ci95": [
+          2.5248768877098344,
+          3.191849779461873
+        ],
+        "raw_ratios": [
+          2.4916728940067885,
+          2.749202988555886,
+          3.278102122643773,
+          2.6640219714494013,
+          2.5580808814128804,
+          3.1055974362799734
+        ]
+      },
+      "synthesis_ms": {
+        "rounds": 6,
+        "complete": true,
+        "ratio": 0.8104555487819595,
+        "ci95": [
+          0.7008116120656462,
+          1.0975527408423138
+        ],
+        "raw_ratios": [
+          0.6918894431216638,
+          0.8311445565299839,
+          0.9959382321915924,
+          0.7897665410339351,
+          0.7097337810096288,
+          1.1991672494930352
+        ]
+      },
+      "rtf": {
+        "rounds": 6,
+        "complete": true,
+        "ratio": 0.8011974074005745,
+        "ci95": [
+          0.7107742520971829,
+          1.1037187674762594
+        ],
+        "raw_ratios": [
+          0.7118147231847373,
+          0.8126282737672142,
+          1.0015333907994102,
+          0.789766541033935,
+          0.7097337810096286,
+          1.2059041441531086
+        ]
+      },
+      "exclude_pcm_retention_round": {
+        "first_audible_ms": {
+          "rounds": 5,
+          "complete": true,
+          "ratio": 2.749202988555886,
+          "ci95": [
+            2.5580808814128804,
+            3.278102122643773
+          ],
+          "raw_ratios": [
+            2.749202988555886,
+            3.278102122643773,
+            2.6640219714494013,
+            2.5580808814128804,
+            3.1055974362799734
+          ]
+        },
+        "synthesis_ms": {
+          "rounds": 5,
+          "complete": true,
+          "ratio": 0.8311445565299839,
+          "ci95": [
+            0.7097337810096288,
+            1.1991672494930352
+          ],
+          "raw_ratios": [
+            0.8311445565299839,
+            0.9959382321915924,
+            0.7897665410339351,
+            0.7097337810096288,
+            1.1991672494930352
+          ]
+        },
+        "rtf": {
+          "rounds": 5,
+          "complete": true,
+          "ratio": 0.8126282737672142,
+          "ci95": [
+            0.7097337810096286,
+            1.2059041441531086
+          ],
+          "raw_ratios": [
+            0.8126282737672142,
+            1.0015333907994102,
+            0.789766541033935,
+            0.7097337810096286,
+            1.2059041441531086
+          ]
+        }
+      }
+    }
+  ],
+  "failures": [],
+  "raw_sha256": {
+    "cells/001-full-t4-eager-0/requests.jsonl": "58a4d5e1b45ed06eef9982cbdd402d16dbb45408efa3298ed1c326b40d5d2c5b",
+    "cells/002-adaptive3-t4-eager-0/requests.jsonl": "26f3d60ed0d65917e64d2cbec6c1f9b7007a177532ce0e1efa19ef138c69f148",
+    "cells/003-pico-i8-t4-latency-eager-0/requests.jsonl": "9a1954db1471e26bff23988d0e8a632726ee6c0d16ff411f4a7bbbd094dc8455",
+    "cells/004-full-t4-eager-1/requests.jsonl": "c90ec18431225819fe6c45004cb40701599a96888e731d922e7d9ce1119ae877",
+    "cells/005-pico-i8-t4-latency-eager-1/requests.jsonl": "4127db71ae0e4c75092a6d848af54e113e56dd531b74bdfc5edcdaf96c17824d",
+    "cells/006-adaptive3-t4-eager-1/requests.jsonl": "e971a7dab39caf4e410ff2e24b32cc1c25f008a578a4b79e683a3da00bb0d887",
+    "cells/007-adaptive3-t4-eager-2/requests.jsonl": "dab4428fe956a4f1bcf7c0dc720c295e7b379ca7b0de3cf59d487d48cd25ae5c",
+    "cells/008-full-t4-eager-2/requests.jsonl": "80d29253bf886f14b335b589bb53a0753dee69c34f50e6997dc0b43be393ceba",
+    "cells/009-pico-i8-t4-latency-eager-2/requests.jsonl": "746635163cf34392958fffa15c40228741e58dcebe5f6c2d6b837d65a961e41a",
+    "cells/010-adaptive3-t4-eager-3/requests.jsonl": "6bdfab477f295d94e827001d46e5ffb8f1ea2931f66a0d2a79f5ea482743ec23",
+    "cells/011-pico-i8-t4-latency-eager-3/requests.jsonl": "295e55bbd90fc4e2662ee556a3ce7f4f4a1d91c7521c65061bfb76048a5fb9ce",
+    "cells/012-full-t4-eager-3/requests.jsonl": "be686d0fdc98911c08aeb5e50c75ee40831bf6424ca3bb6a943ece34d21bb1a6",
+    "cells/013-pico-i8-t4-latency-eager-4/requests.jsonl": "f69a4eca85f907ee8692568b43f358893f2b62a15f53c48a4d825e665c1ae679",
+    "cells/014-full-t4-eager-4/requests.jsonl": "71fabf47ed2acce3e68eef6d077380a4700adc727d347e0a61ce7a35d0b46915",
+    "cells/015-adaptive3-t4-eager-4/requests.jsonl": "d825bcb0adb9c26b66234e35b7c3dc530619d3f6b224b42dfc3d42e781367fed",
+    "cells/016-pico-i8-t4-latency-eager-5/requests.jsonl": "4a1ef5392e66ddb0708e70c18b2787fa7ce3163a4cf6929a2b2339e71e3c271a",
+    "cells/017-adaptive3-t4-eager-5/requests.jsonl": "f5e72db90c2bb50d83dd393af1178f0312eb31561f7fa4ccb7722b04ab662816",
+    "cells/018-full-t4-eager-5/requests.jsonl": "36bed69677d67b77f73c418afa6d6f69a29b91ade1d588dd05c29221206d1c05",
+    "cells/019-full-t4-eager--3/requests.jsonl": "3ddaaa02ed05d38f55fa12a3853f58b19aad9e4e4a7bf00264961cc085bd78dc",
+    "cells/020-adaptive3-t4-eager--3/requests.jsonl": "e15f5a2fd2dffd96162c9f3458730d84cd7648eae0764a16e58be8dd122bb1d2"
+  }
+}

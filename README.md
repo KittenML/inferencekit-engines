@@ -54,9 +54,9 @@ GPT-6.1 Sol used inferencekit to remove a redundant sampler sort, compile single
 
 [Run the MAIN5/Tower5 profile](drama-3_apple-m4-16gb/profiles/main5-tower5/README.md) · [What the agent changed](drama-3_apple-m4-16gb/README.md#how-it-was-made)
 
-### VieNeu-TTS-v3-Turbo: five real-time streams on Galaxy S25
+### VieNeu-TTS-v3-Turbo on Galaxy S25
 
-Codex used InferenceKit to tune CPU threads per session. VieNeu-TTS.cpp sustained **five Vietnamese streams for 7.5 minutes** with a 700 ms simulated playback buffer. [Run the engine and see the audio.cpp comparison](vieneu-tts-v3-turbo_galaxy-s25/)
+The experimental adaptive decoder starts speech earlier on the Galaxy S25. It failed exact PCM parity. [Single-request playback and results](vieneu-tts-v3-turbo_galaxy-s25/)
 
 ### MOSS-Image-SFT: an accepted speed/quality trade-off on AMD
 

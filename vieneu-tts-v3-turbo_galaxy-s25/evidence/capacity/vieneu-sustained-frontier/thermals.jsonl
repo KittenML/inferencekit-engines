@@ -1,5 +1,0 @@
-{"cell": "phone-after", "thermal_status": 3, "sensors": {"AP": {"celsius": 57.7, "status": 0}, "SKIN": {"celsius": 42.2, "status": 3}}}
-{"cell": "vieneu-cpp-direct1-r0-n5-after", "thermal_status": 1, "sensors": {"AP": {"celsius": 53.3, "status": 0}, "SKIN": {"celsius": 39.0, "status": 1}}}
-{"cell": "vieneu-cpp-direct1-r0-n5-before", "thermal_status": 0, "sensors": {"AP": {"celsius": 21.1, "status": 0}, "SKIN": {"celsius": 23.6, "status": 0}}}
-{"cell": "vieneu-cpp-direct1-r0-n6-after", "thermal_status": 3, "sensors": {"AP": {"celsius": 57.7, "status": 0}, "SKIN": {"celsius": 42.2, "status": 3}}}
-{"cell": "vieneu-cpp-direct1-r0-n6-before", "thermal_status": 1, "sensors": {"AP": {"celsius": 53.3, "status": 0}, "SKIN": {"celsius": 39.0, "status": 1}}}
