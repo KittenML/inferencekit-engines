@@ -13,6 +13,10 @@ This single matched capacity cell delivered **1.43× as much audio on time**. Th
 
 At 250 ms, changing from two CPU threads per session to one increased the verified capacity **from three to four simultaneous streams** in four balanced repeats. Both thread settings completed every c4 request on time. The one-thread setting eliminated two gaps in the two-thread control, and all 168 comparable saved chunks matched byte for byte. At one stream the measured two- versus four-thread onset interval included parity. [Matched thread tests](evidence/capacity/vieneu-native-confirmation/)
 
+### Sentence delivery at one and three streams
+
+The one-thread native VieNeu-TTS.cpp Q8_0 profile also ran four matched Vietnamese rounds at one and three streams with sentence and whole-utterance delivery. Both modes passed the playback simulation. The whole-utterance to sentence startup latency ratio was **2.18× [95% CI 2.15–2.19]** at one stream and **2.05× [2.00–2.09]** at three. These are ratios of median worst-stream p95 first nonzero PCM for the native profile. [Matched timing](evidence/capacity/whole-matched-controls/vieneu-cpp-whole-vs-sentences-paired.json) · [Run plan](evidence/capacity/whole-matched-controls/run-plan.json)
+
 ### One active request with Android playback
 
 The experimental decoder retains the native Q8_0 talker, acoustic model and voice. It decodes the first three codec frames early, then uses smaller or larger groups depending on the buffered audio. The paired first-speech ratios below compare it against the full MOSS decoder on the same text, runtime and playback policy. Warm confirmation used four CPU threads and six matched **English** rounds. [Latency summary](evidence/single-user/confirmation-summary.json)
@@ -38,7 +42,7 @@ uv tool install 'git+https://github.com/KittenML/inferencekit.git@b23245653361e3
 ./bench.sh whole-matched-controls
 ```
 
-For the one-request experiment, use the [separate adaptive decoder build and launch instructions](latency/REPRODUCE.md). Use `confirmation` as the APK plan and the labels `full-t4-eager` and `adaptive3-t4-eager` for the paired reducer. The default `install.sh`, `serve.sh` and `test.sh` use the native capacity profile.
+Build the adaptive decoder APK using the [build instructions](latency/REPRODUCE.md) and run `./bench.sh playback latency/build/s25-study.apk results/one-request`. This selects the `confirmation` plan. Use labels `full-t4-eager` and `adaptive3-t4-eager` for the paired reducer. The default `install.sh`, `serve.sh` and `test.sh` use the native capacity profile.
 
 ## Files and outputs
 

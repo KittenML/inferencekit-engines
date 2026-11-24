@@ -315,6 +315,7 @@ public final class MainActivity extends Activity {
             Path cells = Files.createDirectories(output.resolve("cells"));
             String name = getIntent().getStringExtra("plan_name");
             if (name == null) name = "plan";
+            index.put("capture_id", getIntent().getStringExtra("capture_id"));
             int timeoutSeconds = getIntent().getIntExtra("cell_timeout_s", 180);
             if (timeoutSeconds < 1 || timeoutSeconds > 600) throw new IllegalArgumentException("Invalid cell timeout");
             index.put("plan", name).put("cell_timeout_seconds", timeoutSeconds)

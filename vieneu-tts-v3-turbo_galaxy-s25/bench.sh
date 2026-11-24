@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")"
+if [[ ${1:-} == playback ]]; then
+    shift
+    exec bash latency/scripts/capture-phone.sh "$@"
+fi
 phase=${1:-vieneu-sustained-cool}
 if [[ ! $phase =~ ^[a-z0-9][a-z0-9-]*$ || ! -f source/$phase.json ]]; then
     echo 'Choose a registered phase listed in REPORT.md.' >&2

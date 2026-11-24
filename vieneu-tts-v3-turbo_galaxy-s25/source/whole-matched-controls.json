@@ -23,36 +23,20 @@
   ],
   "round_orders": [
     [
-      "kokoro-adreno-fp16-sentences",
-      "kokoro-opencl-whole",
-      "kokoro-opencl-sentences",
       "vieneu-cpp-whole",
-      "vieneu-cpp-sentences",
-      "kokoro-adreno-fp16-whole"
+      "vieneu-cpp-sentences"
     ],
     [
-      "kokoro-adreno-fp16-whole",
       "vieneu-cpp-sentences",
-      "vieneu-cpp-whole",
-      "kokoro-opencl-sentences",
-      "kokoro-opencl-whole",
-      "kokoro-adreno-fp16-sentences"
+      "vieneu-cpp-whole"
     ],
     [
-      "kokoro-adreno-fp16-whole",
       "vieneu-cpp-sentences",
-      "kokoro-opencl-whole",
-      "kokoro-opencl-sentences",
-      "vieneu-cpp-whole",
-      "kokoro-adreno-fp16-sentences"
+      "vieneu-cpp-whole"
     ],
     [
-      "kokoro-adreno-fp16-sentences",
       "vieneu-cpp-whole",
-      "kokoro-opencl-sentences",
-      "kokoro-opencl-whole",
-      "vieneu-cpp-sentences",
-      "kokoro-adreno-fp16-whole"
+      "vieneu-cpp-sentences"
     ]
   ],
   "thermal_start": {
